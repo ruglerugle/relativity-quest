@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241a5e">
+<title>相対性理論クエスト STAGE4 ― 動くと縮んで見える ―</title>
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .shrink-svg .bar-still{fill:#2f8f65}
+  .shrink-svg .bar-move{fill:#5b3fa6;animation:shrink 2.2s ease-in-out infinite alternate}
+  @keyframes shrink{0%{transform:scaleX(1)}100%{transform:scaleX(.55)}}
+  .shrink-svg .bar-move{transform-box:fill-box;transform-origin:center}
+  @media (prefers-reduced-motion:reduce){.shrink-svg .bar-move{animation:none;transform:scaleX(.7)}}
+</style>
+</head>
+<body>
+<div class="app-shell side-collapsed" id="app-shell">
+  <header class="game-header">
+    <div class="brand">
+      <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>相対性理論クエスト</span></div>
+      <div class="brand-sub">STAGE 4 ― 動くと縮んで見える ―</div>
+    </div>
+    <div class="head-progress-wrap">
+      <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
+      <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="header-actions">
+      <button class="head-reset" id="btn-reset-all">🔄 最初から</button>
+      <button class="head-reset" id="head-nav-toggle" title="ステージ一覧の表示切替">☰ ナビ</button>
+    </div>
+  </header>
+
+  <div class="game-layout">
+    <div class="side-backdrop" id="side-backdrop"></div>
+    <aside class="side-panel">
+      <div class="side-head">
+        <button class="side-toggle" id="sidebar-toggle" title="ステージ一覧の表示切替" aria-label="ステージ一覧の表示切替">☰</button>
+        <span class="side-head-text">📚 ステージ一覧</span>
+      </div>
+      <div class="side-list" id="side-list"></div>
+    </aside>
+
+    <main class="main-area">
+      <div class="chapter-head">
+        <span class="chapter-badge">STAGE 4</span><span class="chapter-title">動くと縮んで見える</span>
+        <div class="chapter-sub">ローレンツ収縮</div>
+      </div>
+
+      <div class="mission-box">
+        <div class="mission-label">🎯 ミッション</div>
+        <div class="mission-text">時間が遅れるなら距離も変わる。進行方向の長さが縮んで見える理由を直感的に理解しよう。</div>
+        <span class="mission-status" id="mission-status">未達成</span>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">時間が遅れるなら、実は「長さ」も変わるんだ。高速で動いている物体は、進む方向に縮んで見える。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">縮む!? どうして？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">電車が2つの駅の間を走る時間を考えよう。電車の中の人から見た時間と、外の人から見た時間は、ステージ3で学んだ通り違うよね。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">うん、電車の中の時計の方がゆっくり進む。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">「距離＝速さ×時間」を思い出して。速さは同じでも、電車の中の人にとって時間が短く感じられるなら、駅と駅の距離も短く感じられるはずだよね。これがローレンツ収縮だよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">時間が伸び縮みするなら、距離も伸び縮みするのか…つながってるんだね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">その通り。ただし縮むのは「動く方向」だけ。横幅や高さは変わらないんだ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="shrink-svg" viewBox="0 0 260 120" width="100%" height="120" role="img" aria-label="静止した棒と高速で動く棒の長さの比較図">
+          <rect class="bar-still" x="20" y="20" width="220" height="26" rx="4"></rect>
+          <text x="20" y="60" font-size="10" fill="#8a7a5c" font-weight="700">静止しているとき（もとの長さ）</text>
+          <rect class="bar-move" x="20" y="80" width="220" height="26" rx="4"></rect>
+          <text x="20" y="118" font-size="10" fill="#8a7a5c" font-weight="700">高速で動いているとき（進行方向に縮む）</text>
+        </svg>
+        <div class="diagram-caption">速さが光速に近づくほど、進行方向の長さは縮んで見える（横方向の幅は変わらない）</div>
+      </div>
+
+      <div class="formula-box">
+        <span class="step">距離 ＝ 速さ × 時間</span>
+        <span class="step">速さが同じでも、動いている人にとって時間が短くなる → 動いている人には距離も短く感じられる</span>
+      </div>
+
+      <div class="quiz-head">確認クイズ</div>
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q1. ローレンツ収縮で縮んで見えるのはどの方向？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="false">全方向</button>
+          <button class="choice-btn" data-correct="true">動く方向（進行方向）だけ</button>
+          <button class="choice-btn" data-correct="false">動く方向と垂直な方向だけ</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 横幅や高さは変わらず、進んでいる方向だけが縮んで見える。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q2. 「距離＝速さ×時間」で、速さが同じまま時間が短くなると、距離はどうなる？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="true">短くなる</button>
+          <button class="choice-btn" data-correct="false">長くなる</button>
+          <button class="choice-btn" data-correct="false">変わらない</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 速さが一定なら、時間が短くなった分だけ距離も短くなる。これがローレンツ収縮の考え方だよ。</div>
+      </div>
+
+      <div class="stage-nav">
+        <a class="btn" href="stage3.html">← 前へ</a>
+        <button class="btn btn-primary" id="btn-next" disabled>次へ →</button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="js/progress.js"></script>
+<script>RQ.initStagePage(4);</script>
+</body>
+</html>

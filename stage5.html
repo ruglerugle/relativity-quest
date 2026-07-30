@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241a5e">
+<title>相対性理論クエスト STAGE5 ― 「同時」は人によって違う ―</title>
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .sim-svg .train{fill:#5b3fa6}
+  .sim-svg .wave{fill:none;stroke:#d9a441;stroke-width:2;opacity:.85}
+  .sim-svg .wave-front{animation:grow-front 1.8s ease-out infinite}
+  .sim-svg .wave-back{animation:grow-back 1.8s ease-out infinite}
+  @keyframes grow-front{0%{r:2;opacity:1}70%{opacity:.9}100%{r:46;opacity:0}}
+  @keyframes grow-back{0%{r:2;opacity:1}55%{opacity:.9}100%{r:46;opacity:0}}
+  @media (prefers-reduced-motion:reduce){.sim-svg .wave-front,.sim-svg .wave-back{animation:none;r:30;opacity:.4}}
+</style>
+</head>
+<body>
+<div class="app-shell side-collapsed" id="app-shell">
+  <header class="game-header">
+    <div class="brand">
+      <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>相対性理論クエスト</span></div>
+      <div class="brand-sub">STAGE 5 ― 「同時」は人によって違う ―</div>
+    </div>
+    <div class="head-progress-wrap">
+      <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
+      <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="header-actions">
+      <button class="head-reset" id="btn-reset-all">🔄 最初から</button>
+      <button class="head-reset" id="head-nav-toggle" title="ステージ一覧の表示切替">☰ ナビ</button>
+    </div>
+  </header>
+
+  <div class="game-layout">
+    <div class="side-backdrop" id="side-backdrop"></div>
+    <aside class="side-panel">
+      <div class="side-head">
+        <button class="side-toggle" id="sidebar-toggle" title="ステージ一覧の表示切替" aria-label="ステージ一覧の表示切替">☰</button>
+        <span class="side-head-text">📚 ステージ一覧</span>
+      </div>
+      <div class="side-list" id="side-list"></div>
+    </aside>
+
+    <main class="main-area">
+      <div class="chapter-head">
+        <span class="chapter-badge">STAGE 5</span><span class="chapter-title">「同時」は人によって違う</span>
+        <div class="chapter-sub">同時性の相対性</div>
+      </div>
+
+      <div class="mission-box">
+        <div class="mission-label">🎯 ミッション</div>
+        <div class="mission-text">2つの出来事が「同時」に起きたかどうかは、見ている人によって変わることを理解しよう。</div>
+        <span class="mission-status" id="mission-status">未達成</span>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">動いている電車の真ん中で、光を前後に同時に発射したとしよう。電車の中の人からは、光は前と後ろの壁に同時に届くように見える。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">真ん中から同じ速さで光が出るんだから、そうなりそう。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">でも、外で電車を眺めている人にはどう見えると思う？ 電車は前に進んでいるから…</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">あ、後ろの壁は光に近づいてくるから早く届いて、前の壁は光から逃げるから遅く届く、ってこと？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">その通り！ 電車の中の人には「同時」でも、外の人には「同時じゃない」んだ。「同時」かどうかは、見ている人（動いているかどうか）によって変わる。これを同時性の相対性というよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">絶対的な「同時」なんてものは、そもそもないんだね…</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="sim-svg" viewBox="0 0 240 100" width="100%" height="110" role="img" aria-label="電車の中心から前後に広がる光と、外から見た到着タイミングの違い">
+          <rect class="train" x="20" y="35" width="200" height="30" rx="4" opacity=".18"></rect>
+          <line x1="20" y1="50" x2="220" y2="50" stroke="#ddd0ad" stroke-width="1"></line>
+          <circle class="wave wave-front" cx="150" cy="50" r="2"></circle>
+          <circle class="wave wave-back" cx="150" cy="50" r="2"></circle>
+          <circle cx="150" cy="50" r="3" fill="#241d12"></circle>
+          <rect x="16" y="30" width="4" height="40" fill="#a6742a"></rect>
+          <rect x="220" y="30" width="4" height="40" fill="#a6742a"></rect>
+          <text x="10" y="88" font-size="9" fill="#8a7a5c" font-weight="700">外から見ると：後ろの壁（左）に光が先に届く</text>
+        </svg>
+        <div class="diagram-caption">電車の中心から出た光は、外から見ると後ろの壁に先に届く（電車が右へ動いているため）</div>
+      </div>
+
+      <div class="quiz-head">確認クイズ</div>
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q1. 動く電車の中で、真ん中から前後に同時に光を出すと、電車の中の人にはどう見える？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="true">前後の壁に同時に届く</button>
+          <button class="choice-btn" data-correct="false">後ろの壁に先に届く</button>
+          <button class="choice-btn" data-correct="false">前の壁に先に届く</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 電車と一緒に動いている人にとっては、前後どちらの壁までも同じ距離、同じ速さなので同時に届く。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q2. 外で静止して見ている人には、光はどちらの壁に先に届く？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="true">後ろの壁（電車が近づいていく側と逆）</button>
+          <button class="choice-btn" data-correct="false">前の壁（電車が進んでいく側）</button>
+          <button class="choice-btn" data-correct="false">同時に届く</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 電車が前に進む分、後ろの壁の方が光に近づいてくるので先に届く。</div>
+      </div>
+
+      <div class="stage-nav">
+        <a class="btn" href="stage4.html">← 前へ</a>
+        <button class="btn btn-primary" id="btn-next" disabled>次へ →</button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="js/progress.js"></script>
+<script>RQ.initStagePage(5);</script>
+</body>
+</html>

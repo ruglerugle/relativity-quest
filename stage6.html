@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241a5e">
+<title>相対性理論クエスト STAGE6 ― E=mc² ―</title>
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .sun-svg .sun{fill:#d9a441;animation:pulse 2.4s ease-in-out infinite}
+  .sun-svg .photon{fill:#f3d99a;animation:emit 2.4s ease-out infinite}
+  @keyframes pulse{0%,100%{r:26}50%{r:28}}
+  @keyframes emit{0%{cx:60;opacity:1}100%{cx:220;opacity:0}}
+  @media (prefers-reduced-motion:reduce){.sun-svg .sun{animation:none}.sun-svg .photon{animation:none;opacity:.5}}
+</style>
+</head>
+<body>
+<div class="app-shell side-collapsed" id="app-shell">
+  <header class="game-header">
+    <div class="brand">
+      <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>相対性理論クエスト</span></div>
+      <div class="brand-sub">STAGE 6 ― E=mc² ―</div>
+    </div>
+    <div class="head-progress-wrap">
+      <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
+      <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="header-actions">
+      <button class="head-reset" id="btn-reset-all">🔄 最初から</button>
+      <button class="head-reset" id="head-nav-toggle" title="ステージ一覧の表示切替">☰ ナビ</button>
+    </div>
+  </header>
+
+  <div class="game-layout">
+    <div class="side-backdrop" id="side-backdrop"></div>
+    <aside class="side-panel">
+      <div class="side-head">
+        <button class="side-toggle" id="sidebar-toggle" title="ステージ一覧の表示切替" aria-label="ステージ一覧の表示切替">☰</button>
+        <span class="side-head-text">📚 ステージ一覧</span>
+      </div>
+      <div class="side-list" id="side-list"></div>
+    </aside>
+
+    <main class="main-area">
+      <div class="chapter-head">
+        <span class="chapter-badge">STAGE 6</span><span class="chapter-title">E=mc² 質量とエネルギーは同じもの</span>
+        <div class="chapter-sub">質量とエネルギーの等価性</div>
+      </div>
+
+      <div class="mission-box">
+        <div class="mission-label">🎯 ミッション</div>
+        <div class="mission-text">相対性理論で一番有名な式 E=mc² が何を意味しているのか、直感的に理解しよう。</div>
+        <span class="mission-status" id="mission-status">未達成</span>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">最後に、相対性理論で一番有名な式、E=mc² を見てみよう。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">聞いたことある！ でも意味がよくわからないんだよね…</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">E はエネルギー、m は質量、c は光の速さだったね。この式は「質量とエネルギーは同じもの」だと言っているんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">質量とエネルギーが同じ…？ 重さとエネルギーって全然違うものに思えるけど。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">実は、物が動いてエネルギーを持つと、ほんの少しだけ重くなるんだ。逆に、質量をエネルギーに変えることもできる。太陽が輝いているのも、水素の質量の一部が光のエネルギーに変わっているからなんだよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">太陽の光は、質量が変身した姿ってこと!?</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">そういうこと。c は秒速30万kmというとても大きい数だから、c² はものすごく大きな数になる。だから、ほんの少しの質量でも、ものすごく大きなエネルギーに変わるんだ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="sun-svg" viewBox="0 0 240 100" width="100%" height="110" role="img" aria-label="太陽の質量の一部が光エネルギーに変わって放出される図">
+          <circle class="sun" cx="60" cy="50" r="26"></circle>
+          <text x="38" y="90" font-size="9" fill="#8a7a5c" font-weight="700">太陽（質量 m の一部）</text>
+          <circle class="photon" cx="60" cy="42" r="4"></circle>
+          <circle class="photon" cx="60" cy="50" r="4" style="animation-delay:.5s"></circle>
+          <circle class="photon" cx="60" cy="58" r="4" style="animation-delay:1s"></circle>
+          <text x="150" y="30" font-size="9" fill="#8a6614" font-weight="700">光エネルギー E</text>
+        </svg>
+        <div class="diagram-caption">太陽の中では、水素の質量のごく一部が莫大な光エネルギーに変わり続けている</div>
+      </div>
+
+      <div class="formula-box">
+        <span class="step">E ＝ m × c²</span>
+        <span class="step">E：エネルギー　m：質量　c：光の速さ（秒速約30万km）</span>
+        <span class="step">c² はとても大きな数なので、わずかな質量からでも莫大なエネルギーが生まれる</span>
+      </div>
+
+      <div class="quiz-head">確認クイズ</div>
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q1. E=mc² の c は何を表す？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="false">電子の数</button>
+          <button class="choice-btn" data-correct="true">光の速さ</button>
+          <button class="choice-btn" data-correct="false">温度</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ c は光の速さ（秒速約30万km）を表す記号だよ。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q2. 太陽が輝いているエネルギーの元は？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="false">太陽の中で石炭が燃えている</button>
+          <button class="choice-btn" data-correct="true">水素の質量の一部がエネルギーに変わったもの</button>
+          <button class="choice-btn" data-correct="false">電気の力</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 太陽の中心では水素がヘリウムに変わる反応が起き、その際に失われたわずかな質量が莫大な光エネルギーになっている。</div>
+      </div>
+
+      <div class="stage-nav">
+        <a class="btn" href="stage5.html">← 前へ</a>
+        <button class="btn btn-primary" id="btn-next" disabled>次へ →</button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="js/progress.js"></script>
+<script>RQ.initStagePage(6);</script>
+</body>
+</html>

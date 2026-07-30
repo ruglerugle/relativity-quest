@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241a5e">
+<title>相対性理論クエスト STAGE7 ― 重力は空間のゆがみ ―</title>
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .grid-svg .grid-line{stroke:#cbb7ec;stroke-width:1.2;fill:none}
+  .grid-svg .ball{fill:#3d2a8c}
+  .grid-svg .marble{fill:#d9a441;animation:orbit-marble 2.6s linear infinite}
+  .grid-svg .light-bend{stroke:#2f8f65;stroke-width:2;fill:none;stroke-dasharray:4 3}
+  @keyframes orbit-marble{
+    0%{transform:translate(40px,-6px)}
+    50%{transform:translate(0px,10px)}
+    100%{transform:translate(40px,-6px)}
+  }
+  @media (prefers-reduced-motion:reduce){.grid-svg .marble{animation:none}}
+</style>
+</head>
+<body>
+<div class="app-shell side-collapsed" id="app-shell">
+  <header class="game-header">
+    <div class="brand">
+      <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>相対性理論クエスト</span></div>
+      <div class="brand-sub">STAGE 7 ― 重力は空間のゆがみ ―</div>
+    </div>
+    <div class="head-progress-wrap">
+      <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
+      <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="header-actions">
+      <button class="head-reset" id="btn-reset-all">🔄 最初から</button>
+      <button class="head-reset" id="head-nav-toggle" title="ステージ一覧の表示切替">☰ ナビ</button>
+    </div>
+  </header>
+
+  <div class="game-layout">
+    <div class="side-backdrop" id="side-backdrop"></div>
+    <aside class="side-panel">
+      <div class="side-head">
+        <button class="side-toggle" id="sidebar-toggle" title="ステージ一覧の表示切替" aria-label="ステージ一覧の表示切替">☰</button>
+        <span class="side-head-text">📚 ステージ一覧</span>
+      </div>
+      <div class="side-list" id="side-list"></div>
+    </aside>
+
+    <main class="main-area">
+      <div class="chapter-head">
+        <span class="chapter-badge">STAGE 7</span><span class="chapter-title">重力は空間のゆがみ</span>
+        <div class="chapter-sub">一般相対性理論への入り口</div>
+      </div>
+
+      <div class="mission-box">
+        <div class="mission-label">🎯 ミッション</div>
+        <div class="mission-text">ゴムシートモデルを使って、「重力とは空間そのもののゆがみである」という考え方に触れよう。</div>
+        <span class="mission-status" id="mission-status">未達成</span>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">ここからは一般相対性理論、重力についての理論だよ。アインシュタインは「重力とは、空間そのものがゆがんでいることだ」と考えたんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">空間がゆがむ、ってどういうこと？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">よく使われるたとえが、ピンと張ったゴムシートだよ。真ん中に重いボールを置くと、シートがへこむよね。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">うん、お椀みたいにへこむイメージ。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">そのへこみの近くでビー玉を転がすと、まっすぐ進まずに、重いボールの方へ引き寄せられるように曲がって進む。これが「重力」の正体だとアインシュタインは考えたんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">重力って、引っ張る力じゃなくて、空間のへこみのせいだったのか…</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">そう。だから、まっすぐ進むはずの光も、太陽のように重い星のそばを通ると、空間のゆがみに沿って進路が曲がってしまうんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="grid-svg" viewBox="0 0 240 140" width="100%" height="150" role="img" aria-label="ゴムシートが重いボールでへこみ、光やビー玉の進路が曲がる図">
+          <path class="grid-line" d="M10,20 Q120,50 230,20"></path>
+          <path class="grid-line" d="M10,40 Q120,80 230,40"></path>
+          <path class="grid-line" d="M10,60 Q120,105 230,60"></path>
+          <path class="grid-line" d="M10,80 Q120,110 230,80"></path>
+          <path class="grid-line" d="M20,15 Q60,90 60,125"></path>
+          <path class="grid-line" d="M70,12 Q100,90 100,130"></path>
+          <path class="grid-line" d="M140,12 Q120,90 140,130"></path>
+          <path class="grid-line" d="M190,15 Q150,90 180,125"></path>
+          <circle class="ball" cx="120" cy="78" r="16"></circle>
+          <circle class="marble" cx="0" cy="0" r="4" style="transform:translate(40px,-6px)"></circle>
+          <path class="light-bend" d="M20,110 Q120,86 220,110"></path>
+          <text x="14" y="130" font-size="9" fill="#8a7a5c" font-weight="700">光の進路も、重い星の近くでは曲がる</text>
+        </svg>
+        <div class="diagram-caption">重いボールがゴムシート（空間）をへこませ、近くを通るものはそのへこみに沿って進路を曲げられる</div>
+      </div>
+
+      <div class="quiz-head">確認クイズ</div>
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q1. アインシュタインは重力の正体を何だと考えた？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="false">磁石のような引力</button>
+          <button class="choice-btn" data-correct="true">空間（時空）のゆがみ</button>
+          <button class="choice-btn" data-correct="false">空気の圧力</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 重い物体があると周りの空間がゆがみ、そのゆがみに沿って物が動くことを「重力」として感じる、と考えたんだ。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q2. 重い星の近くを通る光はどうなる？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="false">まっすぐ進む</button>
+          <button class="choice-btn" data-correct="false">止まってしまう</button>
+          <button class="choice-btn" data-correct="true">空間のゆがみに沿って進路が曲がる</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 光さえも、空間のゆがみの影響を受けて進路が曲がる。これは実際の観測でも確認されているよ。</div>
+      </div>
+
+      <div class="stage-nav">
+        <a class="btn" href="stage6.html">← 前へ</a>
+        <button class="btn btn-primary" id="btn-next" disabled>次へ →</button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="js/progress.js"></script>
+<script>RQ.initStagePage(7);</script>
+</body>
+</html>

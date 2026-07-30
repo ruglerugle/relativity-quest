@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241a5e">
+<title>相対性理論クエスト STAGE1 ― 光の速さは秒速30万km ―</title>
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .orbit-svg circle.path{fill:none;stroke:#cbb7ec;stroke-width:2;stroke-dasharray:4 4}
+  .orbit-svg .earth{fill:#2f8f65}
+  .orbit-svg .photon{fill:#d9a441}
+  .orbit-svg .orbiter{animation:orbit-spin 2.4s linear infinite}
+  @keyframes orbit-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.orbit-svg .orbiter{animation:none}}
+</style>
+</head>
+<body>
+<div class="app-shell side-collapsed" id="app-shell">
+  <header class="game-header">
+    <div class="brand">
+      <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>相対性理論クエスト</span></div>
+      <div class="brand-sub">STAGE 1 ― 光の速さは秒速30万km ―</div>
+    </div>
+    <div class="head-progress-wrap">
+      <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
+      <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="header-actions">
+      <button class="head-reset" id="btn-reset-all">🔄 最初から</button>
+      <button class="head-reset" id="head-nav-toggle" title="ステージ一覧の表示切替">☰ ナビ</button>
+    </div>
+  </header>
+
+  <div class="game-layout">
+    <div class="side-backdrop" id="side-backdrop"></div>
+    <aside class="side-panel">
+      <div class="side-head">
+        <button class="side-toggle" id="sidebar-toggle" title="ステージ一覧の表示切替" aria-label="ステージ一覧の表示切替">☰</button>
+        <span class="side-head-text">📚 ステージ一覧</span>
+      </div>
+      <div class="side-list" id="side-list"></div>
+    </aside>
+
+    <main class="main-area">
+      <div class="chapter-head">
+        <span class="chapter-badge">STAGE 1</span><span class="chapter-title">光の速さは秒速30万km</span>
+        <div class="chapter-sub">相対性理論のはじまり</div>
+      </div>
+
+      <div class="mission-box">
+        <div class="mission-label">🎯 ミッション</div>
+        <div class="mission-text">「速さ＝距離÷時間」を確認しながら、光の速さがどれくらいすごいのかを知ろう。</div>
+        <span class="mission-status" id="mission-status">未達成</span>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">相対性理論を学ぶ前に、まず「速さ」の復習をしよう。速さは「距離 ÷ 時間」で求められたね。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">うん、小学校の算数で習った！ 時速40kmの自転車で80km進むには2時間、みたいな計算だよね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">その通り。実は光にも速さがあって、秒速およそ30万km。1秒間に地球を7周半できるスピードなんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student">🧑‍🎓</div>
+            <div class="dialog-name student">学習者</div>
+          </div>
+          <div class="dialog-bubble">そんなに速いの!? 想像もつかないや。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor">🧑‍🔬</div>
+            <div class="dialog-name mentor">メンター</div>
+          </div>
+          <div class="dialog-bubble">この「光の速さ」こそが、実は相対性理論の主役なんだ。この先のステージで、その理由がだんだんわかっていくよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="orbit-svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="光が1秒間に地球を7周半するイメージ図">
+          <circle class="path" cx="120" cy="120" r="90"></circle>
+          <circle class="earth" cx="120" cy="120" r="26"></circle>
+          <g class="orbiter" style="transform-origin:120px 120px">
+            <circle class="photon" cx="120" cy="30" r="6"></circle>
+          </g>
+        </svg>
+        <div class="diagram-caption">光は1秒間に、地球のまわりを約7周半する速さで進む（秒速約30万km）</div>
+      </div>
+
+      <div class="formula-box">
+        <span class="step">速さ ＝ 距離 ÷ 時間</span>
+        <span class="step">光の速さ ＝ 秒速 約300,000 km（記号では c と書く）</span>
+      </div>
+
+      <div class="quiz-head">確認クイズ</div>
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q1. 「速さ」を求める式はどれ？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="true">距離 ÷ 時間</button>
+          <button class="choice-btn" data-correct="false">距離 × 時間</button>
+          <button class="choice-btn" data-correct="false">時間 ÷ 距離</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 例えば80kmを2時間で進んだら、80÷2＝時速40kmだね。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q2. 光は1秒間におよそ何周、地球のまわりを回れる速さ？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="false">約1周</button>
+          <button class="choice-btn" data-correct="true">約7周半</button>
+          <button class="choice-btn" data-correct="false">約100周</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 秒速約30万kmという速さは、1秒で地球を7周半できるほどのスピードなんだ。</div>
+      </div>
+
+      <div class="stage-nav">
+        <a class="btn" href="index.html">← トップへ</a>
+        <button class="btn btn-primary" id="btn-next" disabled>次へ →</button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="js/progress.js"></script>
+<script>RQ.initStagePage(1);</script>
+</body>
+</html>
