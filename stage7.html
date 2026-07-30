@@ -10,9 +10,19 @@
   .grid-svg .grid-line{stroke:#cbb7ec;stroke-width:1.2;fill:none}
   .grid-svg .ball{fill:#3d2a8c}
   .grid-svg .marble-path{stroke:#d9a441;stroke-width:1.5;fill:none;stroke-dasharray:3 3;opacity:.6}
-  .grid-svg .marble{fill:#d9a441;offset-path:path('M15,25 Q65,35 95,70 Q125,98 225,55');offset-distance:0%;animation:marble-move 2.6s ease-in-out infinite alternate}
+  .grid-svg .marble{fill:#d9a441;animation:marble-move 2.6s ease-in-out infinite alternate}
   .grid-svg .light-bend{stroke:#2f8f65;stroke-width:2;fill:none;stroke-dasharray:4 3}
-  @keyframes marble-move{0%{offset-distance:0%}100%{offset-distance:100%}}
+  @keyframes marble-move{
+    0%{transform:translate(0,0)}
+    12.5%{transform:translate(23.75px,6.56px)}
+    25%{transform:translate(45px,16.25px)}
+    37.5%{transform:translate(63.75px,29.06px)}
+    50%{transform:translate(80px,45px)}
+    62.5%{transform:translate(99.4px,54.56px)}
+    75%{transform:translate(127.5px,55.25px)}
+    87.5%{transform:translate(164.4px,47.06px)}
+    100%{transform:translate(210px,30px)}
+  }
   @media (prefers-reduced-motion:reduce){.grid-svg .marble{animation:none}}
 </style>
 </head>
@@ -119,7 +129,7 @@
           <path class="grid-line" d="M190,15 Q150,90 180,125"></path>
           <circle class="ball" cx="120" cy="78" r="16"></circle>
           <path class="marble-path" d="M15,25 Q65,35 95,70 Q125,98 225,55"></path>
-          <circle class="marble" cx="0" cy="0" r="4"></circle>
+          <circle class="marble" cx="15" cy="25" r="4"></circle>
           <path class="light-bend" d="M20,110 Q120,86 220,110"></path>
           <text x="14" y="130" font-size="9" fill="#8a7a5c" font-weight="700">ビー玉も光も、重いボールの近くで進路が曲がる</text>
         </svg>

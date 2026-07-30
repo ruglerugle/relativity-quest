@@ -13,9 +13,9 @@
   .clock-svg .photon-still{fill:#d9a441;animation:bounce-still 1.4s ease-in-out infinite alternate}
   .clock-svg .photon-move{fill:#5b3fa6;animation:bounce-move 1.4s ease-in-out infinite alternate}
   .clock-svg .train-group{animation:train-slide 1.4s ease-in-out infinite alternate}
-  @keyframes bounce-still{0%{cy:20}100%{cy:100}}
-  @keyframes bounce-move{0%{cx:130;cy:20}50%{cx:190;cy:94}100%{cx:250;cy:20}}
-  @keyframes train-slide{0%{transform:translateX(0)}100%{transform:translateX(60px)}}
+  @keyframes bounce-still{0%{transform:translateY(0)}100%{transform:translateY(80px)}}
+  @keyframes bounce-move{0%{transform:translate(0,0)}50%{transform:translate(60px,74px)}100%{transform:translate(120px,0)}}
+  @keyframes train-slide{0%{transform:translateX(0)}50%{transform:translateX(60px)}100%{transform:translateX(120px)}}
   @media (prefers-reduced-motion:reduce){.clock-svg .photon-still,.clock-svg .photon-move,.clock-svg .train-group{animation:none}}
 </style>
 </head>
@@ -133,8 +133,8 @@
           <text x="6" y="122" font-size="9" fill="#8a7a5c" font-weight="700">静止した光時計</text>
 
           <g class="train-group">
-            <line class="mirror" x1="130" y1="20" x2="190" y2="20"></line>
-            <line class="mirror" x1="130" y1="100" x2="190" y2="100"></line>
+            <line class="mirror" x1="100" y1="20" x2="160" y2="20"></line>
+            <line class="mirror" x1="100" y1="100" x2="160" y2="100"></line>
           </g>
           <path class="path-move" d="M130,20 L190,94 L250,20"></path>
           <circle class="photon-move" cx="130" cy="20" r="5"></circle>

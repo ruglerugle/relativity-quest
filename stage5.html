@@ -9,11 +9,11 @@
 <style>
   .sim-svg .train{fill:#5b3fa6}
   .sim-svg .wave{fill:none;stroke:#d9a441;stroke-width:2;opacity:.85}
-  .sim-svg .wave-front{animation:grow-front 1.8s ease-out infinite}
-  .sim-svg .wave-back{animation:grow-back 1.8s ease-out infinite}
-  @keyframes grow-front{0%{r:2;opacity:1}70%{opacity:.9}100%{r:46;opacity:0}}
-  @keyframes grow-back{0%{r:2;opacity:1}55%{opacity:.9}100%{r:46;opacity:0}}
-  @media (prefers-reduced-motion:reduce){.sim-svg .wave-front,.sim-svg .wave-back{animation:none;r:30;opacity:.4}}
+  .sim-svg .wave-front{animation:grow-front 1.8s ease-out infinite;transform-origin:150px 50px}
+  .sim-svg .wave-back{animation:grow-back 1.8s ease-out infinite;transform-origin:150px 50px}
+  @keyframes grow-front{0%{transform:scale(.04);opacity:1}70%{opacity:.9}100%{transform:scale(1);opacity:0}}
+  @keyframes grow-back{0%{transform:scale(.04);opacity:1}55%{opacity:.9}100%{transform:scale(1);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.sim-svg .wave-front,.sim-svg .wave-back{animation:none;opacity:.4}}
 </style>
 </head>
 <body>
@@ -104,8 +104,8 @@
         <svg class="sim-svg" viewBox="0 0 240 100" width="100%" height="110" role="img" aria-label="電車の中心から前後に広がる光と、外から見た到着タイミングの違い">
           <rect class="train" x="20" y="35" width="200" height="30" rx="4" opacity=".18"></rect>
           <line x1="20" y1="50" x2="220" y2="50" stroke="#ddd0ad" stroke-width="1"></line>
-          <circle class="wave wave-front" cx="150" cy="50" r="2"></circle>
-          <circle class="wave wave-back" cx="150" cy="50" r="2"></circle>
+          <circle class="wave wave-front" cx="150" cy="50" r="46"></circle>
+          <circle class="wave wave-back" cx="150" cy="50" r="46"></circle>
           <circle cx="150" cy="50" r="3" fill="#241d12"></circle>
           <rect x="16" y="30" width="4" height="40" fill="#a6742a"></rect>
           <rect x="220" y="30" width="4" height="40" fill="#a6742a"></rect>
