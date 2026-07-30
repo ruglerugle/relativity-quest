@@ -10,11 +10,13 @@
   .clock-svg .mirror{stroke:#a6742a;stroke-width:4}
   .clock-svg .path-still{stroke:#d9a441;stroke-width:2.5;fill:none}
   .clock-svg .path-move{stroke:#5b3fa6;stroke-width:2.5;fill:none;stroke-dasharray:5 4}
-  .clock-svg .photon-still{fill:#d9a441;animation:bounce-still 1.4s ease-in-out infinite}
-  .clock-svg .photon-move{fill:#5b3fa6;animation:bounce-move 1.4s ease-in-out infinite}
-  @keyframes bounce-still{0%,100%{cy:26}50%{cy:94}}
-  @keyframes bounce-move{0%{cx:40;cy:26}50%{cx:80;cy:94}100%{cx:120;cy:26}}
-  @media (prefers-reduced-motion:reduce){.clock-svg .photon-still,.clock-svg .photon-move{animation:none}}
+  .clock-svg .photon-still{fill:#d9a441;animation:bounce-still 1.4s ease-in-out infinite alternate}
+  .clock-svg .photon-move{fill:#5b3fa6;animation:bounce-move 1.4s ease-in-out infinite alternate}
+  .clock-svg .train-group{animation:train-slide 1.4s ease-in-out infinite alternate}
+  @keyframes bounce-still{0%{cy:20}100%{cy:100}}
+  @keyframes bounce-move{0%{cx:130;cy:20}50%{cx:190;cy:94}100%{cx:250;cy:20}}
+  @keyframes train-slide{0%{transform:translateX(0)}100%{transform:translateX(60px)}}
+  @media (prefers-reduced-motion:reduce){.clock-svg .photon-still,.clock-svg .photon-move,.clock-svg .train-group{animation:none}}
 </style>
 </head>
 <body>
@@ -123,20 +125,22 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="clock-svg" viewBox="0 0 320 120" width="100%" height="140" role="img" aria-label="静止した光時計とと動く光時計の光の道のりの比較図">
+        <svg class="clock-svg" viewBox="0 0 300 130" width="100%" height="150" role="img" aria-label="静止した光時計と、外から見た動く光時計の光の道のりの比較図">
           <line class="mirror" x1="10" y1="20" x2="70" y2="20"></line>
           <line class="mirror" x1="10" y1="100" x2="70" y2="100"></line>
           <path class="path-still" d="M40,20 L40,100"></path>
-          <circle class="photon-still" cx="40" cy="26" r="5"></circle>
-          <text x="6" y="115" font-size="9" fill="#8a7a5c" font-weight="700">静止した光時計</text>
+          <circle class="photon-still" cx="40" cy="20" r="5"></circle>
+          <text x="6" y="122" font-size="9" fill="#8a7a5c" font-weight="700">静止した光時計</text>
 
-          <line class="mirror" x1="140" y1="20" x2="200" y2="20"></line>
-          <line class="mirror" x1="140" y1="100" x2="200" y2="100"></line>
-          <path class="path-move" d="M40,20 L120,94 L200,20" transform="translate(60,0)"></path>
-          <circle class="photon-move" cx="40" cy="26" r="5" transform="translate(60,0)"></circle>
-          <text x="146" y="115" font-size="9" fill="#8a7a5c" font-weight="700">外から見た「動く」光時計</text>
+          <g class="train-group">
+            <line class="mirror" x1="130" y1="20" x2="190" y2="20"></line>
+            <line class="mirror" x1="130" y1="100" x2="190" y2="100"></line>
+          </g>
+          <path class="path-move" d="M130,20 L190,94 L250,20"></path>
+          <circle class="photon-move" cx="130" cy="20" r="5"></circle>
+          <text x="122" y="122" font-size="9" fill="#8a7a5c" font-weight="700">外から見た「動く」光時計（鏡ごと右へ移動）</text>
         </svg>
-        <div class="diagram-caption">静止した光時計は上下に往復するだけだが、動く光時計を外から見ると光は斜めのジグザグに進み、道のりが長くなる</div>
+        <div class="diagram-caption">静止した光時計は上下に往復するだけだが、動く光時計を外から見ると、鏡（電車）が横に動きながら光は点線のジグザグに沿って進み、道のりが長くなる</div>
       </div>
 
       <div class="formula-box">

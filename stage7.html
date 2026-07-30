@@ -9,13 +9,10 @@
 <style>
   .grid-svg .grid-line{stroke:#cbb7ec;stroke-width:1.2;fill:none}
   .grid-svg .ball{fill:#3d2a8c}
-  .grid-svg .marble{fill:#d9a441;animation:orbit-marble 2.6s linear infinite}
+  .grid-svg .marble-path{stroke:#d9a441;stroke-width:1.5;fill:none;stroke-dasharray:3 3;opacity:.6}
+  .grid-svg .marble{fill:#d9a441;offset-path:path('M15,25 Q65,35 95,70 Q125,98 225,55');offset-distance:0%;animation:marble-move 2.6s ease-in-out infinite alternate}
   .grid-svg .light-bend{stroke:#2f8f65;stroke-width:2;fill:none;stroke-dasharray:4 3}
-  @keyframes orbit-marble{
-    0%{transform:translate(40px,-6px)}
-    50%{transform:translate(0px,10px)}
-    100%{transform:translate(40px,-6px)}
-  }
+  @keyframes marble-move{0%{offset-distance:0%}100%{offset-distance:100%}}
   @media (prefers-reduced-motion:reduce){.grid-svg .marble{animation:none}}
 </style>
 </head>
@@ -121,9 +118,10 @@
           <path class="grid-line" d="M140,12 Q120,90 140,130"></path>
           <path class="grid-line" d="M190,15 Q150,90 180,125"></path>
           <circle class="ball" cx="120" cy="78" r="16"></circle>
-          <circle class="marble" cx="0" cy="0" r="4" style="transform:translate(40px,-6px)"></circle>
+          <path class="marble-path" d="M15,25 Q65,35 95,70 Q125,98 225,55"></path>
+          <circle class="marble" cx="0" cy="0" r="4"></circle>
           <path class="light-bend" d="M20,110 Q120,86 220,110"></path>
-          <text x="14" y="130" font-size="9" fill="#8a7a5c" font-weight="700">光の進路も、重い星の近くでは曲がる</text>
+          <text x="14" y="130" font-size="9" fill="#8a7a5c" font-weight="700">ビー玉も光も、重いボールの近くで進路が曲がる</text>
         </svg>
         <div class="diagram-caption">重いボールがゴムシート（空間）をへこませ、近くを通るものはそのへこみに沿って進路を曲げられる</div>
       </div>
