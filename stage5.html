@@ -9,8 +9,8 @@
 <style>
   .sim-svg .train{fill:#5b3fa6}
   .sim-svg .wave{fill:none;stroke:#d9a441;stroke-width:2;opacity:.85}
-  .sim-svg .wave-front{animation:grow-front 1.8s ease-out infinite;transform-origin:150px 50px}
-  .sim-svg .wave-back{animation:grow-back 1.8s ease-out infinite;transform-origin:150px 50px}
+  .sim-svg .wave-front{animation:grow-front 1.8s linear infinite;transform-origin:150px 50px}
+  .sim-svg .wave-back{animation:grow-back 1.8s linear infinite;transform-origin:150px 50px}
   @keyframes grow-front{0%{transform:scale(.04);opacity:1}70%{opacity:.9}100%{transform:scale(1);opacity:0}}
   @keyframes grow-back{0%{transform:scale(.04);opacity:1}55%{opacity:.9}100%{transform:scale(1);opacity:0}}
   @media (prefers-reduced-motion:reduce){.sim-svg .wave-front,.sim-svg .wave-back{animation:none;opacity:.4}}

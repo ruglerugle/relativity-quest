@@ -9,7 +9,7 @@
 <style>
   .clock-a-svg .mirror{stroke:#a6742a;stroke-width:4}
   .clock-a-svg .path-still{stroke:#d9a441;stroke-width:2.5;fill:none}
-  .clock-a-svg .photon-still{fill:#d9a441;animation:bounce-still 1.4s ease-in-out infinite alternate}
+  .clock-a-svg .photon-still{fill:#d9a441;animation:bounce-still 1.4s linear infinite alternate}
   @keyframes bounce-still{0%{transform:translateY(0)}100%{transform:translateY(80px)}}
 
   .clock-b-svg .ground{stroke:#cbb7ec;stroke-width:2;stroke-dasharray:2 4}
@@ -18,8 +18,8 @@
   .clock-b-svg .wheel{fill:#241d12}
   .clock-b-svg .mirror{stroke:#f3d99a;stroke-width:4}
   .clock-b-svg .path-move{stroke:#d9a441;stroke-width:2.5;fill:none;stroke-dasharray:5 4}
-  .clock-b-svg .photon-move{fill:#ffe9a8;stroke:#a6742a;stroke-width:1;animation:bounce-move 1.6s ease-in-out infinite alternate}
-  .clock-b-svg .train-group{animation:train-slide 1.6s ease-in-out infinite alternate}
+  .clock-b-svg .photon-move{fill:#ffe9a8;stroke:#a6742a;stroke-width:1;animation:bounce-move 1.6s linear infinite alternate}
+  .clock-b-svg .train-group{animation:train-slide 1.6s linear infinite alternate}
   @keyframes bounce-move{0%{transform:translate(0,0)}50%{transform:translate(60px,74px)}100%{transform:translate(120px,0)}}
   @keyframes train-slide{0%{transform:translateX(0)}50%{transform:translateX(60px)}100%{transform:translateX(120px)}}
   @media (prefers-reduced-motion:reduce){.clock-a-svg .photon-still,.clock-b-svg .photon-move,.clock-b-svg .train-group{animation:none}}
