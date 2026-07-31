@@ -7,16 +7,25 @@
 <title>相対性理論クエスト STAGE3 ― 動くと時間が遅れる ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .clock-svg .mirror{stroke:#a6742a;stroke-width:4}
-  .clock-svg .path-still{stroke:#d9a441;stroke-width:2.5;fill:none}
-  .clock-svg .path-move{stroke:#5b3fa6;stroke-width:2.5;fill:none;stroke-dasharray:5 4}
-  .clock-svg .photon-still{fill:#d9a441;animation:bounce-still 1.4s ease-in-out infinite alternate}
-  .clock-svg .photon-move{fill:#5b3fa6;animation:bounce-move 1.4s ease-in-out infinite alternate}
-  .clock-svg .train-group{animation:train-slide 1.4s ease-in-out infinite alternate}
+  .clock-a-svg .mirror{stroke:#a6742a;stroke-width:4}
+  .clock-a-svg .path-still{stroke:#d9a441;stroke-width:2.5;fill:none}
+  .clock-a-svg .photon-still{fill:#d9a441;animation:bounce-still 1.4s ease-in-out infinite alternate}
   @keyframes bounce-still{0%{transform:translateY(0)}100%{transform:translateY(80px)}}
+
+  .clock-b-svg .ground{stroke:#cbb7ec;stroke-width:2;stroke-dasharray:2 4}
+  .clock-b-svg .train-body{fill:#5b3fa6;stroke:#3d2a8c;stroke-width:2}
+  .clock-b-svg .window{fill:#d9ecff;opacity:.85}
+  .clock-b-svg .wheel{fill:#241d12}
+  .clock-b-svg .mirror{stroke:#f3d99a;stroke-width:4}
+  .clock-b-svg .path-move{stroke:#d9a441;stroke-width:2.5;fill:none;stroke-dasharray:5 4}
+  .clock-b-svg .photon-move{fill:#ffe9a8;stroke:#a6742a;stroke-width:1;animation:bounce-move 1.6s ease-in-out infinite alternate}
+  .clock-b-svg .train-group{animation:train-slide 1.6s ease-in-out infinite alternate}
   @keyframes bounce-move{0%{transform:translate(0,0)}50%{transform:translate(60px,74px)}100%{transform:translate(120px,0)}}
   @keyframes train-slide{0%{transform:translateX(0)}50%{transform:translateX(60px)}100%{transform:translateX(120px)}}
-  @media (prefers-reduced-motion:reduce){.clock-svg .photon-still,.clock-svg .photon-move,.clock-svg .train-group{animation:none}}
+  @media (prefers-reduced-motion:reduce){.clock-a-svg .photon-still,.clock-b-svg .photon-move,.clock-b-svg .train-group{animation:none}}
+
+  .triangle-svg .triangle{fill:rgba(91,63,166,.1);stroke:#5b3fa6;stroke-width:2.5;stroke-linejoin:round}
+  .triangle-svg .right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
 </style>
 </head>
 <body>
@@ -87,6 +96,19 @@
           </div>
           <div class="dialog-bubble">光が上下にピョンピョン跳ね返るイメージだね。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="clock-a-svg" viewBox="0 0 120 130" width="160" height="170" role="img" aria-label="静止した光時計。光が上下の鏡の間をまっすぐ往復する">
+          <line class="mirror" x1="20" y1="20" x2="80" y2="20"></line>
+          <line class="mirror" x1="20" y1="100" x2="80" y2="100"></line>
+          <path class="path-still" d="M50,20 L50,100"></path>
+          <circle class="photon-still" cx="50" cy="20" r="5"></circle>
+        </svg>
+        <div class="diagram-caption">これが「光時計」。光が上下の鏡の間を1往復する時間を、この時計の「1秒」とする</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor">🧑‍🔬</div>
@@ -101,6 +123,27 @@
           </div>
           <div class="dialog-bubble">（図を見て）あ、ジグザグに進んでる！ 道のりが長くなってる。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="clock-b-svg" viewBox="0 0 300 150" width="100%" height="170" role="img" aria-label="外から見ると、電車ごと鏡が右へ動きながら、光は斜めのジグザグに進む">
+          <line class="ground" x1="0" y1="130" x2="300" y2="130"></line>
+          <g class="train-group">
+            <rect class="train-body" x="95" y="10" width="70" height="105" rx="10"></rect>
+            <rect class="window" x="108" y="24" width="18" height="14" rx="3"></rect>
+            <rect class="window" x="134" y="24" width="18" height="14" rx="3"></rect>
+            <circle class="wheel" cx="112" cy="120" r="7"></circle>
+            <circle class="wheel" cx="148" cy="120" r="7"></circle>
+            <line class="mirror" x1="100" y1="25" x2="160" y2="25"></line>
+            <line class="mirror" x1="100" y1="100" x2="160" y2="100"></line>
+          </g>
+          <path class="path-move" d="M130,25 L190,99 L250,25"></path>
+          <circle class="photon-move" cx="130" cy="25" r="5"></circle>
+        </svg>
+        <div class="diagram-caption">外から見ると、電車ごと鏡が右へ動きながら、光は点線のジグザグに沿って進む。道のりが長くなる分、かかる時間も長くなる</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor">🧑‍🔬</div>
@@ -125,22 +168,14 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="clock-svg" viewBox="0 0 300 130" width="100%" height="150" role="img" aria-label="静止した光時計と、外から見た動く光時計の光の道のりの比較図">
-          <line class="mirror" x1="10" y1="20" x2="70" y2="20"></line>
-          <line class="mirror" x1="10" y1="100" x2="70" y2="100"></line>
-          <path class="path-still" d="M40,20 L40,100"></path>
-          <circle class="photon-still" cx="40" cy="20" r="5"></circle>
-          <text x="6" y="122" font-size="9" fill="#8a7a5c" font-weight="700">静止した光時計</text>
-
-          <g class="train-group">
-            <line class="mirror" x1="100" y1="20" x2="160" y2="20"></line>
-            <line class="mirror" x1="100" y1="100" x2="160" y2="100"></line>
-          </g>
-          <path class="path-move" d="M130,20 L190,94 L250,20"></path>
-          <circle class="photon-move" cx="130" cy="20" r="5"></circle>
-          <text x="122" y="122" font-size="9" fill="#8a7a5c" font-weight="700">外から見た「動く」光時計（鏡ごと右へ移動）</text>
+        <svg class="triangle-svg" viewBox="0 0 220 130" width="220" height="160" role="img" aria-label="直角三角形。高さh、底辺v×(tダッシュ÷2)、斜辺c×(tダッシュ÷2)">
+          <polygon class="triangle" points="30,110 30,15 175,110"></polygon>
+          <rect class="right-angle" x="30" y="100" width="10" height="10"></rect>
+          <text x="8" y="65" font-size="13" font-weight="800" fill="#5b3fa6">h</text>
+          <text x="72" y="126" font-size="13" font-weight="800" fill="#2f8f65">v×(t'÷2)</text>
+          <text x="90" y="58" font-size="13" font-weight="800" fill="#a6742a" transform="rotate(33 90,58)">c×(t'÷2)</text>
         </svg>
-        <div class="diagram-caption">静止した光時計は上下に往復するだけだが、動く光時計を外から見ると、鏡（電車）が横に動きながら光は点線のジグザグに沿って進み、道のりが長くなる</div>
+        <div class="diagram-caption">この直角三角形に三平方の定理を当てはめると、時間の遅れの式が導ける</div>
       </div>
 
       <div class="formula-box">

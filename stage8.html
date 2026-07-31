@@ -90,6 +90,21 @@
           </div>
           <div class="dialog-bubble">そう、衛星の時計と地上の時計では、進み方が微妙にズレるんだ。このズレを相対性理論の式で補正しないと、GPSの位置情報は1日で数kmもズレてしまう。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="gps-svg" viewBox="0 0 240 160" width="100%" height="160" role="img" aria-label="地球のまわりを回るGPS衛星と地上との通信を示す図">
+          <circle class="earth" cx="120" cy="90" r="30"></circle>
+          <g class="sat-orbit">
+            <circle class="sat" cx="120" cy="20" r="6"></circle>
+          </g>
+          <line class="beam" x1="120" y1="90" x2="120" y2="26"></line>
+          <text x="60" y="140" font-size="9" fill="#8a7a5c" font-weight="700">GPS衛星の時計は、速さと重力の違いでズレる → 相対性理論で補正</text>
+        </svg>
+        <div class="diagram-caption">GPS衛星は地上より速く動き、重力が弱い場所にあるため、時計の進み方がわずかにズレる</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student">🧑‍🎓</div>
@@ -104,18 +119,6 @@
           </div>
           <div class="dialog-bubble">重力がとても強い天体「ブラックホール」も、一般相対性理論から予言された天体だよ。空間のゆがみが極限まで強くなって、光さえも脱出できなくなる場所なんだ。これで相対性理論クエストは完了だよ。よく頑張ったね！</div>
         </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="gps-svg" viewBox="0 0 240 160" width="100%" height="160" role="img" aria-label="地球のまわりを回るGPS衛星と地上との通信を示す図">
-          <circle class="earth" cx="120" cy="90" r="30"></circle>
-          <g class="sat-orbit">
-            <circle class="sat" cx="120" cy="20" r="6"></circle>
-          </g>
-          <line class="beam" x1="120" y1="90" x2="120" y2="26"></line>
-          <text x="60" y="140" font-size="9" fill="#8a7a5c" font-weight="700">GPS衛星の時計は、速さと重力の違いでズレる → 相対性理論で補正</text>
-        </svg>
-        <div class="diagram-caption">GPS衛星は地上より速く動き、重力が弱い場所にあるため、時計の進み方がわずかにズレる</div>
       </div>
 
       <div class="quiz-head">確認クイズ</div>
