@@ -7,23 +7,16 @@
 <title>相対性理論クエスト STAGE1 ― 光の速さは秒速30万km ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .light-speed-scene{display:block;width:100%;max-width:720px;height:auto;margin:auto;border-radius:18px;overflow:hidden}
-  .light-speed-scene .star{fill:#fff;animation:star-twinkle 2.8s ease-in-out infinite}
-  .light-speed-scene .star:nth-of-type(2n){animation-delay:-1.4s}
-  .light-speed-scene .orbit-line{fill:none;stroke:#70d7ff;stroke-width:2;stroke-dasharray:8 11;opacity:.38}
-  .light-speed-scene .light-run{transform-origin:360px 180px;animation:light-lap 1.45s linear infinite}
-  .light-speed-scene .light-trail{fill:none;stroke:url(#s1-light);stroke-width:8;stroke-linecap:round;opacity:.78}
-  .light-speed-scene .photon-core{fill:#fff8c7;filter:url(#s1-glow)}
-  .light-speed-scene .speed-sweep{transform-box:fill-box;transform-origin:center bottom;animation:speed-sweep 1.45s cubic-bezier(.2,.7,.2,1) infinite}
-  .light-speed-scene .lap-dot{fill:#83e8ff;transform-box:fill-box;transform-origin:center;animation:lap-ping 1.45s ease-out infinite}
-  @keyframes light-lap{to{transform:rotate(360deg)}}
-  @keyframes speed-sweep{0%{transform:rotate(-118deg)}85%,100%{transform:rotate(118deg)}}
-  @keyframes lap-ping{0%,18%{opacity:0;transform:scale(.4)}32%,70%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.8)}}
-  @keyframes star-twinkle{0%,100%{opacity:.25}50%{opacity:.9}}
-  @media (prefers-reduced-motion:reduce){
-    .light-speed-scene .star,.light-speed-scene .light-run,.light-speed-scene .speed-sweep,.light-speed-scene .lap-dot{animation:none}
-  }
-  @media (max-width:640px){.diagram-box{overflow-x:auto!important}.light-speed-scene{min-width:620px}}
+  .orbit-svg .orbit-path{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 5}
+  .orbit-svg .earth-fill{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
+  .orbit-svg .earth-line{fill:none;stroke:var(--felt);stroke-width:1.1;opacity:.55}
+  .orbit-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .orbit-svg .orbiter{animation:orbit-spin 2.4s linear infinite}
+  .orbit-svg .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
+  .orbit-svg .info-label{fill:var(--muted);font-size:10px;font-weight:700}
+  .orbit-svg .info-value{fill:var(--ink);font-size:13px;font-weight:900}
+  @keyframes orbit-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.orbit-svg .orbiter{animation:none}}
 </style>
 </head>
 <body>
@@ -97,56 +90,24 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="light-speed-scene" viewBox="0 0 720 360" role="img" aria-label="光が地球を一瞬で何周もする速さを、宇宙空間とスピードメーターで示すイラスト">
-          <defs>
-            <linearGradient id="s1-space" x1="0" x2="1"><stop stop-color="#071124"></stop><stop offset=".55" stop-color="#111d48"></stop><stop offset="1" stop-color="#090d25"></stop></linearGradient>
-            <radialGradient id="s1-earth" cx=".35" cy=".3"><stop stop-color="#66e6d3"></stop><stop offset=".5" stop-color="#177fc1"></stop><stop offset="1" stop-color="#092c69"></stop></radialGradient>
-            <linearGradient id="s1-light"><stop stop-color="#fff" stop-opacity="0"></stop><stop offset=".7" stop-color="#46e8ff"></stop><stop offset="1" stop-color="#fff3a6"></stop></linearGradient>
-            <filter id="s1-glow" x="-300%" y="-300%" width="600%" height="600%"><feGaussianBlur stdDeviation="5" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
-            <filter id="s1-earth-shadow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity=".55"></feDropShadow></filter>
-          </defs>
-          <rect width="720" height="360" rx="18" fill="url(#s1-space)"></rect>
-          <g opacity=".85">
-            <circle class="star" cx="38" cy="42" r="2"></circle><circle class="star" cx="162" cy="70" r="1.5"></circle>
-            <circle class="star" cx="238" cy="30" r="2"></circle><circle class="star" cx="548" cy="46" r="1.5"></circle>
-            <circle class="star" cx="670" cy="92" r="2"></circle><circle class="star" cx="627" cy="292" r="1.5"></circle>
-            <circle class="star" cx="210" cy="320" r="1.5"></circle><circle class="star" cx="475" cy="326" r="2"></circle>
+        <svg class="orbit-svg" viewBox="0 0 340 240" width="100%" height="240" role="img" aria-label="光が1秒間に地球を7周半するイメージ図">
+          <circle class="orbit-path" cx="120" cy="120" r="90"></circle>
+          <circle class="earth-fill" cx="120" cy="120" r="26"></circle>
+          <path class="earth-line" d="M101,108 q10,-9 24,-4 q9,4 3,13 q-6,8 -18,4 q-9,-4 -9,-13z"></path>
+          <path class="earth-line" d="M107,131 q13,6 21,-2"></path>
+          <g class="orbiter" style="transform-origin:120px 120px">
+            <circle class="photon" cx="120" cy="30" r="6"></circle>
           </g>
-          <g transform="translate(18 18)">
-            <rect width="185" height="45" rx="22.5" fill="#101a39" stroke="#38537a"></rect>
-            <circle cx="24" cy="22.5" r="7" fill="#77f0ff"></circle>
-            <text x="42" y="28" fill="#dffaff" font-size="15" font-weight="800" letter-spacing="1">LIGHT SPEED</text>
+          <g transform="translate(228,58)">
+            <rect class="info-box" width="100" height="46" rx="8"></rect>
+            <text class="info-label" x="50" y="18" text-anchor="middle">光の速さ</text>
+            <text class="info-value" x="50" y="36" text-anchor="middle">秒速 約30万km</text>
           </g>
-          <g transform="translate(28 120)">
-            <path d="M18 113 A66 66 0 1 1 150 113" fill="#0b132d" stroke="#355075" stroke-width="4"></path>
-            <path d="M30 111 A54 54 0 0 1 138 111" fill="none" stroke="#28435f" stroke-width="8" stroke-linecap="round"></path>
-            <path d="M30 111 A54 54 0 0 1 138 111" fill="none" stroke="#5ee7ff" stroke-width="8" stroke-linecap="round" stroke-dasharray="118 52"></path>
-            <g class="speed-sweep"><line x1="84" y1="113" x2="84" y2="62" stroke="#fff2a1" stroke-width="4" stroke-linecap="round"></line><circle cx="84" cy="113" r="7" fill="#fff2a1"></circle></g>
-            <text x="84" y="139" fill="#7f96ba" font-size="11" text-anchor="middle" letter-spacing="1">km / SECOND</text>
-            <text x="84" y="162" fill="#fff" font-size="25" font-weight="900" text-anchor="middle">300,000</text>
+          <g transform="translate(228,136)">
+            <rect class="info-box" width="100" height="46" rx="8"></rect>
+            <text class="info-label" x="50" y="18" text-anchor="middle">1秒間に地球を</text>
+            <text class="info-value" x="50" y="36" text-anchor="middle">約7.5周</text>
           </g>
-          <g filter="url(#s1-earth-shadow)">
-            <circle cx="430" cy="184" r="82" fill="#0a1637" stroke="#65dcff" stroke-opacity=".35" stroke-width="9"></circle>
-            <circle cx="430" cy="184" r="73" fill="url(#s1-earth)"></circle>
-            <path d="M390 130c21-17 50-23 68-8l-5 20-24 5-9 22-29-6-12-19zm-12 70 31-15 20 13-4 25 17 17-12 15-24-8-11-24-25-7zm83-22 28 4 9 20-22 8-10 28-18-8 7-20-9-15z" fill="#74d884" opacity=".88"></path>
-            <ellipse cx="407" cy="151" rx="45" ry="66" fill="none" stroke="#b9f6ff" stroke-opacity=".16"></ellipse>
-            <path d="M360 177q70 25 140 0M369 147q61 20 122 0M371 216q59 18 118 0" fill="none" stroke="#d7fbff" stroke-opacity=".18" stroke-width="2"></path>
-          </g>
-          <circle class="orbit-line" cx="430" cy="184" r="127"></circle>
-          <g class="light-run">
-            <path class="light-trail" d="M430 57a127 127 0 0 0-57 14"></path>
-            <circle class="photon-core" cx="430" cy="57" r="7"></circle>
-            <path d="M430 45l4 8 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#fff5aa" opacity=".9"></path>
-          </g>
-          <g transform="translate(548 124)">
-            <rect width="142" height="118" rx="16" fill="#0c1732" stroke="#38547c"></rect>
-            <text x="71" y="27" fill="#8197b9" font-size="11" text-anchor="middle" letter-spacing="1.5">IN 1 SECOND</text>
-            <text x="71" y="71" fill="#fff" font-size="38" font-weight="900" text-anchor="middle">7.5</text>
-            <text x="71" y="94" fill="#63e8ff" font-size="14" font-weight="800" text-anchor="middle">LAPS AROUND EARTH</text>
-            <circle class="lap-dot" cx="122" cy="20" r="5"></circle>
-          </g>
-          <path d="M537 188h-22" stroke="#5ee7ff" stroke-width="2" stroke-dasharray="4 5"></path>
-          <text x="430" y="335" fill="#adc2e2" font-size="13" text-anchor="middle">地球一周 約4万km × 7.5周 ≒ 30万km</text>
         </svg>
         <div class="diagram-caption">光は1秒間に、地球のまわりを約7周半する速さで進む（秒速約30万km）</div>
       </div>

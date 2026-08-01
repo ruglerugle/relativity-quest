@@ -17,7 +17,7 @@
   .sim-svg .motion-chevron{fill:none;stroke:#a6742a;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;animation:chevron-drift 2s ease-in-out infinite}
   .sim-svg .photon-comet{opacity:0}
   .sim-svg .photon-comet .tail{stroke-width:3.5;stroke-linecap:round}
-  .sim-svg .photon-comet .core{fill:#ffe9a8;stroke:#d9a441;stroke-width:1;filter:drop-shadow(0 0 5px rgba(217,164,65,.8))}
+  .sim-svg .photon-comet .core{fill:#ffe9a8;stroke:#d9a441;stroke-width:1}
   .sim-svg .photon-back{animation:photon-back 5.4s linear infinite}
   .sim-svg .photon-front{animation:photon-front 5.4s linear infinite}
   .sim-svg .emission-ring,.sim-svg .hit-glow{fill:none;stroke:#d9a441;stroke-width:1.5;transform-box:fill-box;transform-origin:center;opacity:0}
@@ -48,8 +48,8 @@
   @keyframes emission-pulse{0%,13%{opacity:0;transform:scale(.45)}15%{opacity:.85;transform:scale(1)}21%,100%{opacity:0;transform:scale(2)}}
   @keyframes hit-back{0%,46.5%{opacity:0;transform:scale(.55)}47.3%{opacity:.9;transform:scale(1)}51%,100%{opacity:0;transform:scale(1.7)}}
   @keyframes hit-front{0%,57.2%{opacity:0;transform:scale(.55)}58%{opacity:.9;transform:scale(1)}62%,100%{opacity:0;transform:scale(1.7)}}
-  @keyframes rear-wall-glow{0%,46.5%{stroke:#a6742a;filter:none}47.3%,57%{stroke:#ffe9a8;filter:drop-shadow(0 0 4px rgba(217,164,65,.8))}64%,100%{stroke:#a6742a;filter:none}}
-  @keyframes front-wall-glow{0%,57.2%{stroke:#a6742a;filter:none}58%,68%{stroke:#ffe9a8;filter:drop-shadow(0 0 4px rgba(217,164,65,.8))}75%,100%{stroke:#a6742a;filter:none}}
+  @keyframes rear-wall-glow{0%,46.5%{stroke:#a6742a}47.3%,57%{stroke:#ffe9a8}64%,100%{stroke:#a6742a}}
+  @keyframes front-wall-glow{0%,57.2%{stroke:#a6742a}58%,68%{stroke:#ffe9a8}75%,100%{stroke:#a6742a}}
   @keyframes track-flow{to{stroke-dashoffset:-20}}
   @keyframes chevron-drift{0%,100%{transform:translateX(0);opacity:.25}50%{transform:translateX(10px);opacity:.75}}
   @media (prefers-reduced-motion:reduce){
@@ -140,16 +140,6 @@
 
       <div class="diagram-box">
         <svg class="sim-svg" viewBox="0 0 240 100" width="100%" height="110" role="img" aria-label="電車の中心から前後に広がる光と、外から見た到着タイミングの違い">
-          <defs>
-            <linearGradient id="trail-back" x1="112" y1="50" x2="126" y2="50" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#d9a441" stop-opacity=".9"></stop>
-              <stop offset="1" stop-color="#d9a441" stop-opacity="0"></stop>
-            </linearGradient>
-            <linearGradient id="trail-front" x1="112" y1="50" x2="98" y2="50" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#d9a441" stop-opacity=".9"></stop>
-              <stop offset="1" stop-color="#d9a441" stop-opacity="0"></stop>
-            </linearGradient>
-          </defs>
           <line class="track" x1="0" y1="74" x2="240" y2="74"></line>
           <path class="motion-chevron" d="M94 19 L101 24 L94 29 M108 19 L115 24 L108 29"></path>
           <g class="train-frame">
@@ -169,11 +159,11 @@
           </g>
           <circle class="emission-ring" cx="112" cy="50" r="7"></circle>
           <g class="photon-comet photon-back">
-            <line class="tail" x1="112" y1="50" x2="126" y2="50" stroke="url(#trail-back)"></line>
+            <line class="tail" x1="112" y1="50" x2="126" y2="50" stroke="#d9a441" stroke-opacity=".45"></line>
             <circle class="core" cx="112" cy="50" r="4"></circle>
           </g>
           <g class="photon-comet photon-front">
-            <line class="tail" x1="98" y1="50" x2="112" y2="50" stroke="url(#trail-front)"></line>
+            <line class="tail" x1="98" y1="50" x2="112" y2="50" stroke="#d9a441" stroke-opacity=".45"></line>
             <circle class="core" cx="112" cy="50" r="4"></circle>
           </g>
           <text x="10" y="88" font-size="9" fill="#8a7a5c" font-weight="700">外から見ると：後ろの壁（左）に光が先に届く</text>

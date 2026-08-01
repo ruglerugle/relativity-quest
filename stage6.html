@@ -7,27 +7,33 @@
 <title>相対性理論クエスト STAGE6 ― E=mc² ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .fusion-scene{display:block;width:100%;max-width:760px;height:auto;margin:auto;border-radius:18px;overflow:hidden}
+  .fusion-scene .nucleus{fill:var(--paper2);stroke:#c0524f;stroke-width:2}
   .fusion-scene .nucleus-a{animation:s6-a 4s cubic-bezier(.55,0,.35,1) infinite}
   .fusion-scene .nucleus-b{animation:s6-b 4s cubic-bezier(.55,0,.35,1) infinite}
   .fusion-scene .nucleus-c{animation:s6-c 4s cubic-bezier(.55,0,.35,1) infinite}
   .fusion-scene .nucleus-d{animation:s6-d 4s cubic-bezier(.55,0,.35,1) infinite}
+  .fusion-scene .arrow-line{stroke:var(--muted);stroke-width:1.6;stroke-dasharray:3 3}
+  .fusion-scene .arrow-head{fill:var(--muted)}
+  .fusion-scene .reaction-ring{fill:none;stroke:var(--gold);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:s6-ring 4s ease-out infinite}
   .fusion-scene .helium{transform-box:fill-box;transform-origin:center;animation:s6-helium 4s ease-out infinite}
-  .fusion-scene .reaction-ring{transform-box:fill-box;transform-origin:center;animation:s6-ring 4s ease-out infinite}
-  .fusion-scene .energy-packet{animation:s6-energy 4s cubic-bezier(.25,.75,.25,1) infinite;filter:url(#s6-glow)}
-  .fusion-scene .mass-meter{animation:s6-meter 4s ease-in-out infinite}
-  @keyframes s6-a{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(168px,67px);opacity:0}100%{opacity:1}}
-  @keyframes s6-b{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(168px,-67px);opacity:0}100%{opacity:1}}
-  @keyframes s6-c{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(98px,78px);opacity:0}100%{opacity:1}}
-  @keyframes s6-d{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(98px,-78px);opacity:0}100%{opacity:1}}
+  .fusion-scene .helium-circle{fill:var(--paper2);stroke:var(--gold-dark);stroke-width:2}
+  .fusion-scene .helium-dot{fill:var(--paper2);stroke:#c0524f;stroke-width:1.4}
+  .fusion-scene .energy-path{stroke:var(--line);stroke-width:2;stroke-dasharray:4 4}
+  .fusion-scene .energy-packet{animation:s6-energy 4s cubic-bezier(.25,.75,.25,1) infinite}
+  .fusion-scene .energy-dot{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .fusion-scene .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
+  .fusion-scene .info-label{fill:var(--muted);font-size:9px;font-weight:700}
+  .fusion-scene .info-value{fill:var(--ink);font-size:12px;font-weight:900}
+  @keyframes s6-a{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(95px,25px);opacity:0}100%{opacity:1}}
+  @keyframes s6-b{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(95px,-25px);opacity:0}100%{opacity:1}}
+  @keyframes s6-c{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(55px,35px);opacity:0}100%{opacity:1}}
+  @keyframes s6-d{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(55px,-35px);opacity:0}100%{opacity:1}}
   @keyframes s6-helium{0%,38%{opacity:0;transform:scale(.35)}48%,84%{opacity:1;transform:scale(1)}92%,100%{opacity:0;transform:scale(.8)}}
   @keyframes s6-ring{0%,38%{opacity:0;transform:scale(.25)}48%{opacity:1}72%,100%{opacity:0;transform:scale(2.6)}}
-  @keyframes s6-energy{0%,43%{transform:translateX(0);opacity:0}48%{opacity:1}82%{transform:translateX(250px);opacity:1}92%,100%{transform:translateX(250px);opacity:0}}
-  @keyframes s6-meter{0%,43%{opacity:.35}55%,88%{opacity:1}100%{opacity:.35}}
+  @keyframes s6-energy{0%,43%{transform:translateX(0);opacity:0}48%{opacity:1}82%{transform:translateX(150px);opacity:1}92%,100%{transform:translateX(150px);opacity:0}}
   @media (prefers-reduced-motion:reduce){
-    .fusion-scene .nucleus-a,.fusion-scene .nucleus-b,.fusion-scene .nucleus-c,.fusion-scene .nucleus-d,.fusion-scene .helium,.fusion-scene .reaction-ring,.fusion-scene .energy-packet,.fusion-scene .mass-meter{animation:none}
+    .fusion-scene .nucleus-a,.fusion-scene .nucleus-b,.fusion-scene .nucleus-c,.fusion-scene .nucleus-d,.fusion-scene .helium,.fusion-scene .reaction-ring,.fusion-scene .energy-packet{animation:none}
   }
-  @media (max-width:640px){.diagram-box{overflow-x:auto!important}.fusion-scene{min-width:620px}}
 </style>
 </head>
 <body>
@@ -125,57 +131,38 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="fusion-scene" viewBox="0 0 760 420" role="img" aria-label="太陽内部で四つの水素原子核が融合してヘリウムになり、わずかな質量差が光エネルギーとして飛び出すイラスト">
-          <defs>
-            <radialGradient id="s6-bg"><stop stop-color="#843816"></stop><stop offset=".48" stop-color="#36172d"></stop><stop offset="1" stop-color="#0a1028"></stop></radialGradient>
-            <radialGradient id="s6-core"><stop stop-color="#fffbd0"></stop><stop offset=".4" stop-color="#ffc14c"></stop><stop offset="1" stop-color="#ef5c28"></stop></radialGradient>
-            <linearGradient id="s6-energy" x1="0" x2="1"><stop stop-color="#fff" stop-opacity="0"></stop><stop offset=".6" stop-color="#fff379"></stop><stop offset="1" stop-color="#70ecff"></stop></linearGradient>
-            <filter id="s6-glow" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="8" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
-          </defs>
-          <rect width="760" height="420" rx="18" fill="url(#s6-bg)"></rect>
-          <g opacity=".18" fill="#ffdb6c">
-            <circle cx="44" cy="95" r="28"></circle><circle cx="106" cy="342" r="40"></circle><circle cx="706" cy="94" r="37"></circle><circle cx="665" cy="371" r="50"></circle>
+        <svg class="fusion-scene" viewBox="0 0 400 175" width="100%" height="180" role="img" aria-label="太陽内部で四つの水素原子核が融合してヘリウムになり、わずかな質量差が光エネルギーとして飛び出すイラスト">
+          <text x="4" y="14" font-size="10.5" fill="var(--muted)" font-weight="700">太陽内部の核融合</text>
+
+          <g transform="translate(90 55)"><circle class="nucleus nucleus-a" r="13"></circle></g>
+          <g transform="translate(90 115)"><circle class="nucleus nucleus-b" r="13"></circle></g>
+          <g transform="translate(130 45)"><circle class="nucleus nucleus-c" r="13"></circle></g>
+          <g transform="translate(130 125)"><circle class="nucleus nucleus-d" r="13"></circle></g>
+          <text x="110" y="152" font-size="9.5" fill="var(--muted)" font-weight="700" text-anchor="middle">4つの水素原子核</text>
+
+          <path class="arrow-line" d="M158 85h20"></path>
+          <path class="arrow-head" d="M178 79l10 6-10 6z"></path>
+
+          <circle class="reaction-ring" cx="220" cy="85" r="20"></circle>
+          <g class="helium" transform="translate(220 85)">
+            <circle class="helium-circle" r="23"></circle>
+            <circle class="helium-dot" cx="-8" cy="-7" r="8"></circle>
+            <circle class="helium-dot" cx="9" cy="-7" r="8"></circle>
+            <circle class="helium-dot" cx="-8" cy="8" r="8"></circle>
+            <circle class="helium-dot" cx="9" cy="8" r="8"></circle>
           </g>
-          <g transform="translate(24 22)">
-            <rect width="148" height="34" rx="17" fill="#2f1930" stroke="#ff9a49"></rect>
-            <text x="74" y="22" fill="#ffe3c2" font-size="13" font-weight="800" text-anchor="middle">太陽内部の核融合</text>
-          </g>
-          <g transform="translate(180 117)">
-            <g class="nucleus-a"><circle r="22" fill="#e85459" stroke="#ffc7a2" stroke-width="3"></circle><circle cx="-7" cy="-4" r="6" fill="#fff0cb"></circle><circle cx="8" cy="6" r="6" fill="#ff936c"></circle></g>
-          </g>
-          <g transform="translate(180 251)">
-            <g class="nucleus-b"><circle r="22" fill="#e85459" stroke="#ffc7a2" stroke-width="3"></circle><circle cx="-7" cy="6" r="6" fill="#fff0cb"></circle><circle cx="8" cy="-5" r="6" fill="#ff936c"></circle></g>
-          </g>
-          <g transform="translate(250 106)">
-            <g class="nucleus-c"><circle r="22" fill="#e85459" stroke="#ffc7a2" stroke-width="3"></circle><circle cx="-7" cy="-4" r="6" fill="#fff0cb"></circle><circle cx="8" cy="6" r="6" fill="#ff936c"></circle></g>
-          </g>
-          <g transform="translate(250 262)">
-            <g class="nucleus-d"><circle r="22" fill="#e85459" stroke="#ffc7a2" stroke-width="3"></circle><circle cx="-7" cy="6" r="6" fill="#fff0cb"></circle><circle cx="8" cy="-5" r="6" fill="#ff936c"></circle></g>
-          </g>
-          <text x="216" y="306" fill="#ffc5a1" font-size="14" font-weight="800" text-anchor="middle">4つの水素原子核</text>
-          <path d="M294 184h34" stroke="#ffcf70" stroke-width="3" stroke-dasharray="5 6"></path>
-          <path d="M320 176l16 8-16 8z" fill="#ffcf70"></path>
-          <circle class="reaction-ring" cx="348" cy="184" r="32" fill="none" stroke="#fff2a1" stroke-width="5"></circle>
-          <g class="helium">
-            <circle cx="348" cy="184" r="43" fill="url(#s6-core)" stroke="#fff3b1" stroke-width="4"></circle>
-            <circle cx="332" cy="174" r="14" fill="#f1644f"></circle><circle cx="358" cy="168" r="14" fill="#f9a241"></circle>
-            <circle cx="340" cy="198" r="14" fill="#f9a241"></circle><circle cx="366" cy="195" r="14" fill="#f1644f"></circle>
-          </g>
-          <text x="348" y="259" fill="#fff0bb" font-size="14" font-weight="900" text-anchor="middle">ヘリウム</text>
-          <path d="M392 184h286" stroke="url(#s6-energy)" stroke-width="8" stroke-linecap="round" opacity=".4"></path>
+          <text x="220" y="130" font-size="9.5" fill="var(--muted)" font-weight="700" text-anchor="middle">ヘリウム</text>
+
+          <line class="energy-path" x1="244" y1="85" x2="392" y2="85"></line>
           <g class="energy-packet">
-            <path d="M404 184h-66" stroke="url(#s6-energy)" stroke-width="9" stroke-linecap="round"></path>
-            <circle cx="404" cy="184" r="11" fill="#fff7ac"></circle>
-            <path d="M404 164l6 14 14 6-14 6-6 14-6-14-14-6 14-6z" fill="#fff"></path>
+            <circle class="energy-dot" cx="255" cy="85" r="5"></circle>
           </g>
-          <g class="mass-meter" transform="translate(486 258)">
-            <rect width="226" height="111" rx="17" fill="#20152d" stroke="#83596d"></rect>
-            <text x="113" y="28" fill="#c9a9b5" font-size="12" text-anchor="middle">融合前 − 融合後</text>
-            <text x="113" y="57" fill="#fff" font-size="20" font-weight="900" text-anchor="middle">わずかな質量差 Δm</text>
-            <path d="M28 72h170" stroke="#5e3e51"></path>
-            <text x="113" y="96" fill="#fff18c" font-size="19" font-weight="900" text-anchor="middle">E = Δmc² → 光</text>
+
+          <g transform="translate(255 12)">
+            <rect class="info-box" width="140" height="46" rx="8"></rect>
+            <text class="info-label" x="70" y="17" text-anchor="middle">融合前後のわずかな質量差</text>
+            <text class="info-value" x="70" y="36" text-anchor="middle">E = Δm × c² → 光</text>
           </g>
-          <text x="380" y="399" fill="#e0b8b7" font-size="13" text-anchor="middle">小さな質量差も、c²を掛けると莫大なエネルギーになる</text>
         </svg>
         <div class="diagram-caption">太陽の中では、水素の質量のごく一部が莫大な光エネルギーに変わり続けている</div>
       </div>
