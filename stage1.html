@@ -15,15 +15,16 @@
 <title>相対性理論クエスト STAGE1 ― 光の速さは秒速30万km ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .orbit-svg .orbit-path{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 5}
-  .orbit-svg .earth-fill{fill:#bfe3ee;stroke:var(--felt);stroke-width:1.6}
-  .orbit-svg .earth-continent{fill:var(--ok);stroke:none;opacity:.9}
+  .orbit-svg .orbit-path{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:3 4}
+  .orbit-svg .earth-fill{fill:url(#earth-gradient);stroke:#0c4a63;stroke-width:1}
+  .orbit-svg .earth-continent{fill:#3a9a5c;stroke:#276b3e;stroke-width:.5;opacity:.95}
+  .orbit-svg .earth-cloud{fill:#fff;opacity:.5}
   .orbit-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
-  .orbit-svg .orbiter{animation:orbit-spin 2.4s linear infinite}
+  .orbit-svg .orbiter{animation:orbit-spin 1.6s linear infinite}
   .orbit-svg .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
   .orbit-svg .info-label{fill:var(--muted);font-size:10px;font-weight:700}
   .orbit-svg .info-value{fill:var(--ink);font-size:13px;font-weight:900}
-  @keyframes orbit-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  @keyframes orbit-spin{0%{transform:rotate(0deg)}62.5%{transform:rotate(2700deg)}100%{transform:rotate(2700deg)}}
   @media (prefers-reduced-motion:reduce){.orbit-svg .orbiter{animation:none}}
 </style>
 </head>
@@ -98,20 +99,29 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="orbit-svg" viewBox="0 0 340 240" width="100%" height="240" role="img" aria-label="光が1秒間に地球を7周半するイメージ図">
-          <circle class="orbit-path" cx="120" cy="120" r="90"></circle>
-          <circle class="earth-fill" cx="120" cy="120" r="26"></circle>
-          <path class="earth-continent" d="M101,108 q10,-9 24,-4 q9,4 3,13 q-6,8 -18,4 q-9,-4 -9,-13z"></path>
-          <path class="earth-continent" d="M104,131 q13,4 20,-1 q4,4 -3,8 q-11,4 -18,-2 q-2,-3 1,-5z"></path>
-          <g class="orbiter" style="transform-origin:120px 120px">
-            <circle class="photon" cx="120" cy="30" r="6"></circle>
+        <svg class="orbit-svg" viewBox="0 0 280 240" width="100%" height="240" role="img" aria-label="光が1秒間に地球のすぐそばを7周半するイメージ図">
+          <defs>
+            <radialGradient id="earth-gradient" cx=".35" cy=".3">
+              <stop offset="0" stop-color="#a5e6f5"></stop>
+              <stop offset=".55" stop-color="#3fa8cc"></stop>
+              <stop offset="1" stop-color="#1c6e94"></stop>
+            </radialGradient>
+          </defs>
+          <circle class="orbit-path" cx="100" cy="120" r="40"></circle>
+          <circle class="earth-fill" cx="100" cy="120" r="26"></circle>
+          <path class="earth-continent" d="M81,107 q11,-10 25,-3 q9,5 2,14 q-7,9 -19,5 q-10,-4 -9,-14 q0,-1 1,-2z"></path>
+          <path class="earth-continent" d="M84,132 q13,3 19,-2 q4,4 -3,9 q-10,5 -17,-1 q-3,-3 1,-6z"></path>
+          <ellipse class="earth-cloud" cx="91" cy="103" rx="7" ry="2.6"></ellipse>
+          <ellipse class="earth-cloud" cx="112" cy="126" rx="6" ry="2.2"></ellipse>
+          <g class="orbiter" style="transform-origin:100px 120px">
+            <circle class="photon" cx="100" cy="80" r="6"></circle>
           </g>
-          <g transform="translate(228,58)">
+          <g transform="translate(168,58)">
             <rect class="info-box" width="100" height="46" rx="8"></rect>
             <text class="info-label" x="50" y="18" text-anchor="middle">光の速さ</text>
             <text class="info-value" x="50" y="36" text-anchor="middle">秒速 約30万km</text>
           </g>
-          <g transform="translate(228,136)">
+          <g transform="translate(168,136)">
             <rect class="info-box" width="100" height="46" rx="8"></rect>
             <text class="info-label" x="50" y="18" text-anchor="middle">1秒間に地球を</text>
             <text class="info-value" x="50" y="36" text-anchor="middle">約7.5周</text>
