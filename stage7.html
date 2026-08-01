@@ -7,19 +7,33 @@
 <title>相対性理論クエスト STAGE7 ― 重力は空間のゆがみ ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .grid-svg .grid-wave{transform-box:fill-box;transform-origin:120px 70px;animation:grid-wave-anim 4.8s ease-in-out infinite}
-  .grid-svg .grid-line{stroke:#cbb7ec;stroke-width:1.2;fill:none}
-  .grid-svg .ball{fill:#3d2a8c;transform-box:fill-box;transform-origin:center;animation:ball-pulse 2.6s ease-in-out infinite}
-  .grid-svg .marble-path{stroke:#d9a441;stroke-width:1.5;fill:none;stroke-dasharray:3 3;opacity:.6}
-  .grid-svg .marble{fill:#d9a441;offset-path:path('M15,25 Q65,35 95,70 Q125,98 225,55');offset-distance:0%;animation:marble-move 2.6s linear infinite}
-  .grid-svg .light-bend{stroke:#2f8f65;stroke-width:2;fill:none;stroke-dasharray:4 3}
-  @keyframes grid-wave-anim{0%,100%{transform:scaleY(.98);opacity:.68}50%{transform:scaleY(1.04);opacity:1}}
-  @keyframes ball-pulse{0%,100%{transform:scale(.96)}50%{transform:scale(1.06)}}
-  @keyframes marble-move{0%{offset-distance:0%;opacity:0}8%{opacity:1}92%{opacity:1}100%{offset-distance:100%;opacity:0}}
+  .gravity-scene{display:block;width:100%;max-width:760px;height:auto;margin:auto}
+  .gravity-scene .grid-wave{animation:s7-grid 4.8s ease-in-out infinite;transform-origin:385px 229px}
+  .gravity-scene .grid-well{fill:var(--felt);opacity:.07}
+  .gravity-scene .grid-line{fill:none;stroke:var(--line);stroke-width:1.4;opacity:.9}
+  .gravity-scene .path-flow{fill:none;stroke:var(--gold);stroke-width:2.5;opacity:.6;stroke-dasharray:9 12;animation:s7-flow .85s linear infinite}
+  .gravity-scene .orbit-guide{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 8;opacity:.8}
+  .gravity-scene .star-core{transform-box:fill-box;transform-origin:center;animation:s7-star 2.6s ease-in-out infinite}
+  .gravity-scene .star-fill{fill:var(--felt);stroke:var(--gold-dark);stroke-width:3}
+  .gravity-scene .light-probe{offset-path:path("M72 126 C245 110 292 245 394 245 S536 102 690 126");animation:s7-light 4s linear infinite}
+  .gravity-scene .light-probe .spark{fill:var(--gold-dark)}
+  .gravity-scene .light-probe .core{fill:var(--gold)}
+  .gravity-scene .orbit-probe{offset-path:path("M267 235 C294 157 479 157 508 235 C479 309 294 309 267 235");animation:s7-orbit 5.2s linear infinite}
+  .gravity-scene .orbit-probe .core{fill:var(--gold);stroke:var(--gold-dark);stroke-width:2}
+  .gravity-scene .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
+  .gravity-scene .info-title{fill:var(--ink);font-size:13px;font-weight:800}
+  .gravity-scene .info-label{fill:var(--ink);font-size:13px;font-weight:800}
+  @keyframes s7-grid{0%,100%{transform:scaleY(.98);opacity:.68}50%{transform:scaleY(1.04);opacity:1}}
+  @keyframes s7-star{0%,100%{transform:scale(.96)}50%{transform:scale(1.06)}}
+  @keyframes s7-light{0%{offset-distance:0%;opacity:0}8%{opacity:1}92%{opacity:1}100%{offset-distance:100%;opacity:0}}
+  @keyframes s7-orbit{to{offset-distance:100%}}
+  @keyframes s7-flow{to{stroke-dashoffset:-42}}
   @media (prefers-reduced-motion:reduce){
-    .grid-svg .marble,.grid-svg .ball,.grid-svg .grid-wave{animation:none}
-    .grid-svg .marble{offset-distance:50%;opacity:.8}
+    .gravity-scene .grid-wave,.gravity-scene .star-core,.gravity-scene .light-probe,.gravity-scene .orbit-probe,.gravity-scene .path-flow{animation:none}
+    .gravity-scene .light-probe{offset-distance:18%}
+    .gravity-scene .orbit-probe{offset-distance:62%}
   }
+  @media (max-width:640px){.diagram-box{overflow-x:auto!important}.gravity-scene{min-width:620px}}
 </style>
 </head>
 <body>
@@ -117,22 +131,46 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="grid-svg" viewBox="0 0 240 140" width="100%" height="150" role="img" aria-label="ゴムシートが重いボールでへこみ、光やビー玉の進路が曲がる図">
-          <g class="grid-wave">
-            <path class="grid-line" d="M10,20 Q120,50 230,20"></path>
-            <path class="grid-line" d="M10,40 Q120,80 230,40"></path>
-            <path class="grid-line" d="M10,60 Q120,105 230,60"></path>
-            <path class="grid-line" d="M10,80 Q120,110 230,80"></path>
-            <path class="grid-line" d="M20,15 Q60,90 60,125"></path>
-            <path class="grid-line" d="M70,12 Q100,90 100,130"></path>
-            <path class="grid-line" d="M140,12 Q120,90 140,130"></path>
-            <path class="grid-line" d="M190,15 Q150,90 180,125"></path>
+        <svg class="gravity-scene" viewBox="0 0 760 440" role="img" aria-label="重い星の周囲で時空の格子が深くへこみ、光と惑星が曲がった経路を進む様子を示すイラスト">
+          <g transform="translate(25 23)">
+            <rect class="info-box" width="174" height="34" rx="17"></rect>
+            <text class="info-title" x="87" y="22" text-anchor="middle">質量が時空を曲げる</text>
           </g>
-          <circle class="ball" cx="120" cy="78" r="16"></circle>
-          <path class="marble-path" d="M15,25 Q65,35 95,70 Q125,98 225,55"></path>
-          <circle class="marble" cx="0" cy="0" r="4"></circle>
-          <path class="light-bend" d="M20,110 Q120,86 220,110"></path>
-          <text x="14" y="130" font-size="9" fill="#8a7a5c" font-weight="700">ビー玉も光も、重いボールの近くで進路が曲がる</text>
+          <g class="grid-wave">
+            <ellipse class="grid-well" cx="385" cy="235" rx="318" ry="152"></ellipse>
+            <g class="grid-line">
+              <path d="M42 188 C204 171 268 229 385 298 C501 229 566 171 718 188"></path>
+              <path d="M32 222 C198 202 274 249 385 318 C497 249 570 202 728 222"></path>
+              <path d="M36 259 C206 238 279 267 385 337 C492 267 564 238 724 259"></path>
+              <path d="M57 300 C215 278 290 289 385 355 C481 289 552 278 703 300"></path>
+              <path d="M105 348 C242 321 304 313 385 371 C467 313 527 321 655 348"></path>
+              <path d="M93 152 C159 201 227 282 267 372"></path>
+              <path d="M187 125 C242 198 300 300 319 386"></path>
+              <path d="M284 111 C312 210 349 320 358 395"></path>
+              <path d="M476 111 C451 210 420 320 411 395"></path>
+              <path d="M573 125 C519 198 464 300 451 386"></path>
+              <path d="M667 152 C605 201 544 282 503 372"></path>
+            </g>
+          </g>
+          <path class="path-flow" d="M72 126 C245 110 292 245 394 245 S536 102 690 126"></path>
+          <path class="orbit-guide" d="M267 235 C294 157 479 157 508 235 C479 309 294 309 267 235"></path>
+          <g class="star-core">
+            <circle class="star-fill" cx="385" cy="232" r="54"></circle>
+          </g>
+          <g class="light-probe">
+            <path class="spark" d="M0-14l5 9 10 5-10 5-5 10-5-10-10-5 10-5z"></path>
+            <circle class="core" r="7"></circle>
+          </g>
+          <g class="orbit-probe">
+            <circle class="core" r="10"></circle>
+          </g>
+          <g transform="translate(56 365)">
+            <rect class="info-box" width="650" height="50" rx="14"></rect>
+            <path d="M21 25h110" stroke="var(--gold)" stroke-width="3" stroke-dasharray="8 7"></path>
+            <text class="info-label" x="145" y="30">光：自分では直進</text>
+            <path d="M337 25c30-18 58-18 89 0" fill="none" stroke="var(--line)" stroke-width="2" stroke-dasharray="6 6"></path>
+            <text class="info-label" x="442" y="30">外からは曲がって見える</text>
+          </g>
         </svg>
         <div class="diagram-caption">重いボールがゴムシート（空間）をへこませ、近くを通るものはそのへこみに沿って進路を曲げられる</div>
       </div>
