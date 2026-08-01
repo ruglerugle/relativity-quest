@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="design-system.css">
 <style>
   .orbit-svg .orbit-path{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 5}
-  .orbit-svg .earth-fill{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
-  .orbit-svg .earth-line{fill:none;stroke:var(--felt);stroke-width:1.1;opacity:.55}
+  .orbit-svg .earth-fill{fill:#bfe3ee;stroke:var(--felt);stroke-width:1.6}
+  .orbit-svg .earth-continent{fill:var(--ok);stroke:none;opacity:.9}
   .orbit-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
   .orbit-svg .orbiter{animation:orbit-spin 2.4s linear infinite}
   .orbit-svg .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
@@ -101,8 +101,8 @@
         <svg class="orbit-svg" viewBox="0 0 340 240" width="100%" height="240" role="img" aria-label="光が1秒間に地球を7周半するイメージ図">
           <circle class="orbit-path" cx="120" cy="120" r="90"></circle>
           <circle class="earth-fill" cx="120" cy="120" r="26"></circle>
-          <path class="earth-line" d="M101,108 q10,-9 24,-4 q9,4 3,13 q-6,8 -18,4 q-9,-4 -9,-13z"></path>
-          <path class="earth-line" d="M107,131 q13,6 21,-2"></path>
+          <path class="earth-continent" d="M101,108 q10,-9 24,-4 q9,4 3,13 q-6,8 -18,4 q-9,-4 -9,-13z"></path>
+          <path class="earth-continent" d="M104,131 q13,4 20,-1 q4,4 -3,8 q-11,4 -18,-2 q-2,-3 1,-5z"></path>
           <g class="orbiter" style="transform-origin:120px 120px">
             <circle class="photon" cx="120" cy="30" r="6"></circle>
           </g>
