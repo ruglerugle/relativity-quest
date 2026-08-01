@@ -8,6 +8,11 @@
 
   var STORAGE_KEY = "relativityQuestProgress";
 
+  var BOOK_RECOMMEND = {
+    title: "福江純『「超」入門 相対性理論 アインシュタインは何を考えたのか』（ブルーバックス）",
+    url: "https://www.amazon.co.jp/dp/4065149088?tag=senjin-22"
+  };
+
   var STAGES = [
     { n: 1, file: "stage1.html", title: "光の速さは秒速30万km", sub: "相対性理論のはじまり" },
     { n: 2, file: "stage2.html", title: "光の速さは誰から見ても同じ", sub: "光速不変の原理" },
@@ -141,6 +146,19 @@
     });
   }
 
+  function renderBookRecommend() {
+    var el = document.getElementById("book-recommend");
+    if (!el) return;
+    el.innerHTML =
+      '<p class="book-recommend-label">参考文献</p>' +
+      '<div class="book-recommend-body">' +
+      '<div>' +
+      '<p class="book-recommend-lead">もっと深く学びたい方へ</p>' +
+      '<a href="' + BOOK_RECOMMEND.url + '" target="_blank" rel="sponsored noopener">' + BOOK_RECOMMEND.title + "</a>" +
+      "</div>" +
+      "</div>";
+  }
+
   function bindSidebarToggle() {
     var shell = document.getElementById("app-shell");
     if (!shell) return;
@@ -164,6 +182,7 @@
       updateHeaderProgress();
       bindResetAll();
       bindSidebarToggle();
+      renderBookRecommend();
 
       var nextBtn = document.getElementById("btn-next");
       var alreadyCleared = cleared.indexOf(stageNum) !== -1;
@@ -210,6 +229,7 @@
           if (cta) cta.textContent = "クリア済み ✓";
         }
       });
+      renderBookRecommend();
     });
   }
 
