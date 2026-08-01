@@ -7,23 +7,19 @@
 <title>相対性理論クエスト STAGE7 ― 重力は空間のゆがみ ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
+  .grid-svg .grid-wave{transform-box:fill-box;transform-origin:120px 70px;animation:grid-wave-anim 4.8s ease-in-out infinite}
   .grid-svg .grid-line{stroke:#cbb7ec;stroke-width:1.2;fill:none}
-  .grid-svg .ball{fill:#3d2a8c}
+  .grid-svg .ball{fill:#3d2a8c;transform-box:fill-box;transform-origin:center;animation:ball-pulse 2.6s ease-in-out infinite}
   .grid-svg .marble-path{stroke:#d9a441;stroke-width:1.5;fill:none;stroke-dasharray:3 3;opacity:.6}
-  .grid-svg .marble{fill:#d9a441;animation:marble-move 2.6s linear infinite alternate}
+  .grid-svg .marble{fill:#d9a441;offset-path:path('M15,25 Q65,35 95,70 Q125,98 225,55');offset-distance:0%;animation:marble-move 2.6s linear infinite}
   .grid-svg .light-bend{stroke:#2f8f65;stroke-width:2;fill:none;stroke-dasharray:4 3}
-  @keyframes marble-move{
-    0%{transform:translate(0,0)}
-    12.5%{transform:translate(27.63px,8.02px)}
-    25%{transform:translate(53.14px,21.23px)}
-    37.5%{transform:translate(75.17px,39.66px)}
-    50%{transform:translate(99.09px,54.5px)}
-    62.5%{transform:translate(127.76px,55.22px)}
-    75%{transform:translate(155.91px,49.52px)}
-    87.5%{transform:translate(183.28px,40.68px)}
-    100%{transform:translate(210px,30px)}
+  @keyframes grid-wave-anim{0%,100%{transform:scaleY(.98);opacity:.68}50%{transform:scaleY(1.04);opacity:1}}
+  @keyframes ball-pulse{0%,100%{transform:scale(.96)}50%{transform:scale(1.06)}}
+  @keyframes marble-move{0%{offset-distance:0%;opacity:0}8%{opacity:1}92%{opacity:1}100%{offset-distance:100%;opacity:0}}
+  @media (prefers-reduced-motion:reduce){
+    .grid-svg .marble,.grid-svg .ball,.grid-svg .grid-wave{animation:none}
+    .grid-svg .marble{offset-distance:50%;opacity:.8}
   }
-  @media (prefers-reduced-motion:reduce){.grid-svg .marble{animation:none}}
 </style>
 </head>
 <body>
@@ -122,17 +118,19 @@
 
       <div class="diagram-box">
         <svg class="grid-svg" viewBox="0 0 240 140" width="100%" height="150" role="img" aria-label="ゴムシートが重いボールでへこみ、光やビー玉の進路が曲がる図">
-          <path class="grid-line" d="M10,20 Q120,50 230,20"></path>
-          <path class="grid-line" d="M10,40 Q120,80 230,40"></path>
-          <path class="grid-line" d="M10,60 Q120,105 230,60"></path>
-          <path class="grid-line" d="M10,80 Q120,110 230,80"></path>
-          <path class="grid-line" d="M20,15 Q60,90 60,125"></path>
-          <path class="grid-line" d="M70,12 Q100,90 100,130"></path>
-          <path class="grid-line" d="M140,12 Q120,90 140,130"></path>
-          <path class="grid-line" d="M190,15 Q150,90 180,125"></path>
+          <g class="grid-wave">
+            <path class="grid-line" d="M10,20 Q120,50 230,20"></path>
+            <path class="grid-line" d="M10,40 Q120,80 230,40"></path>
+            <path class="grid-line" d="M10,60 Q120,105 230,60"></path>
+            <path class="grid-line" d="M10,80 Q120,110 230,80"></path>
+            <path class="grid-line" d="M20,15 Q60,90 60,125"></path>
+            <path class="grid-line" d="M70,12 Q100,90 100,130"></path>
+            <path class="grid-line" d="M140,12 Q120,90 140,130"></path>
+            <path class="grid-line" d="M190,15 Q150,90 180,125"></path>
+          </g>
           <circle class="ball" cx="120" cy="78" r="16"></circle>
           <path class="marble-path" d="M15,25 Q65,35 95,70 Q125,98 225,55"></path>
-          <circle class="marble" cx="15" cy="25" r="4"></circle>
+          <circle class="marble" cx="0" cy="0" r="4"></circle>
           <path class="light-bend" d="M20,110 Q120,86 220,110"></path>
           <text x="14" y="130" font-size="9" fill="#8a7a5c" font-weight="700">ビー玉も光も、重いボールの近くで進路が曲がる</text>
         </svg>
