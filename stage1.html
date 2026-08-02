@@ -16,9 +16,7 @@
 <link rel="stylesheet" href="design-system.css">
 <style>
   .orbit-svg .orbit-path{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:3 4}
-  .orbit-svg .earth-fill{fill:url(#earth-gradient);stroke:#0c4a63;stroke-width:1}
-  .orbit-svg .earth-continent{fill:#3a9a5c;stroke:#276b3e;stroke-width:.5;opacity:.95}
-  .orbit-svg .earth-cloud{fill:#fff;opacity:.5}
+  .orbit-svg .earth-emoji{font-size:54px;text-anchor:middle;dominant-baseline:central}
   .orbit-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
   .orbit-svg .orbiter{animation:orbit-spin 1.6s linear infinite}
   .orbit-svg .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
@@ -100,25 +98,8 @@
 
       <div class="diagram-box">
         <svg class="orbit-svg" viewBox="0 0 280 240" width="100%" height="240" role="img" aria-label="光が1秒間に地球のすぐそばを7周半するイメージ図">
-          <defs>
-            <radialGradient id="earth-gradient" cx=".35" cy=".3">
-              <stop offset="0" stop-color="#a5e6f5"></stop>
-              <stop offset=".55" stop-color="#3fa8cc"></stop>
-              <stop offset="1" stop-color="#1c6e94"></stop>
-            </radialGradient>
-            <clipPath id="earth-clip">
-              <circle cx="100" cy="120" r="26"></circle>
-            </clipPath>
-          </defs>
           <circle class="orbit-path" cx="100" cy="120" r="40"></circle>
-          <circle class="earth-fill" cx="100" cy="120" r="26"></circle>
-          <g clip-path="url(#earth-clip)">
-            <path class="earth-continent" d="M108,96 Q119,98 122,107 Q124,113 118,116 Q123,121 120,129 Q117,137 111,143 Q104,147 101,140 Q99,134 103,129 Q98,123 101,117 Q96,111 101,105 Q104,99 108,96 Z"></path>
-            <path class="earth-continent" d="M78,101 Q85,97 87,105 Q89,111 85,117 Q88,123 84,131 Q81,139 76,133 Q73,125 75,117 Q74,109 78,101 Z"></path>
-            <path class="earth-continent" d="M92,138 Q98,137 99,142 Q99,146 94,146 Q90,145 91,141 Q91,139 92,138 Z"></path>
-            <ellipse class="earth-cloud" cx="88" cy="98" rx="6" ry="2.3"></ellipse>
-            <ellipse class="earth-cloud" cx="115" cy="132" rx="5.5" ry="2"></ellipse>
-          </g>
+          <text class="earth-emoji" x="100" y="122">🌍</text>
           <g class="orbiter" style="transform-origin:100px 120px">
             <circle class="photon" cx="100" cy="80" r="6"></circle>
           </g>
