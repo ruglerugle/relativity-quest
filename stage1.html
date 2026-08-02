@@ -106,13 +106,19 @@
               <stop offset=".55" stop-color="#3fa8cc"></stop>
               <stop offset="1" stop-color="#1c6e94"></stop>
             </radialGradient>
+            <clipPath id="earth-clip">
+              <circle cx="100" cy="120" r="26"></circle>
+            </clipPath>
           </defs>
           <circle class="orbit-path" cx="100" cy="120" r="40"></circle>
           <circle class="earth-fill" cx="100" cy="120" r="26"></circle>
-          <path class="earth-continent" d="M81,107 q11,-10 25,-3 q9,5 2,14 q-7,9 -19,5 q-10,-4 -9,-14 q0,-1 1,-2z"></path>
-          <path class="earth-continent" d="M84,132 q13,3 19,-2 q4,4 -3,9 q-10,5 -17,-1 q-3,-3 1,-6z"></path>
-          <ellipse class="earth-cloud" cx="91" cy="103" rx="7" ry="2.6"></ellipse>
-          <ellipse class="earth-cloud" cx="112" cy="126" rx="6" ry="2.2"></ellipse>
+          <g clip-path="url(#earth-clip)">
+            <path class="earth-continent" d="M108,96 Q119,98 122,107 Q124,113 118,116 Q123,121 120,129 Q117,137 111,143 Q104,147 101,140 Q99,134 103,129 Q98,123 101,117 Q96,111 101,105 Q104,99 108,96 Z"></path>
+            <path class="earth-continent" d="M78,101 Q85,97 87,105 Q89,111 85,117 Q88,123 84,131 Q81,139 76,133 Q73,125 75,117 Q74,109 78,101 Z"></path>
+            <path class="earth-continent" d="M92,138 Q98,137 99,142 Q99,146 94,146 Q90,145 91,141 Q91,139 92,138 Z"></path>
+            <ellipse class="earth-cloud" cx="88" cy="98" rx="6" ry="2.3"></ellipse>
+            <ellipse class="earth-cloud" cx="115" cy="132" rx="5.5" ry="2"></ellipse>
+          </g>
           <g class="orbiter" style="transform-origin:100px 120px">
             <circle class="photon" cx="100" cy="80" r="6"></circle>
           </g>
