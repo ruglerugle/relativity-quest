@@ -21,18 +21,20 @@
   .clock-a-svg .path-still{stroke:var(--line);stroke-width:1.2;fill:none;stroke-dasharray:3 4}
   .clock-a-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 3s linear infinite}
   .clock-a-svg .ground{stroke:var(--line);stroke-width:2;stroke-dasharray:6 6;animation:ground-scroll 1s linear infinite}
+  .clock-a-svg .km-label{fill:var(--muted);font-size:11px;font-weight:700}
   @keyframes still-up{
     0%,10%{transform:translateY(0);opacity:0}
     14%{opacity:1}
     60%{transform:translateY(-80px);opacity:1}
     66%,100%{transform:translateY(-80px);opacity:0}
   }
-  @keyframes ground-scroll{to{stroke-dashoffset:-12}}
+  @keyframes ground-scroll{to{stroke-dashoffset:12}}
   @media (prefers-reduced-motion:reduce){.clock-a-svg .photon,.clock-a-svg .ground{animation:none}}
 
   .clock-b-svg .train-body{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
   .clock-b-svg .wheel{fill:var(--ink)}
   .clock-b-svg .mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
+  .clock-b-svg .ground{stroke:var(--line);stroke-width:2;stroke-dasharray:6 6}
   .clock-b-svg .path-move{stroke:var(--line);stroke-width:1.2;fill:none;stroke-dasharray:4 5}
   .clock-b-svg .train-group{animation:clock-train-slide 3s linear infinite}
   .clock-b-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:moving-up 3s linear infinite}
@@ -124,7 +126,7 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">そう。まず「光時計」を電車の中に置こう。鏡を上下に向かい合わせて置いて、下の鏡から上の鏡へ光を片道進ませる。この片道にかかる時間を、この時計の「1秒」とする。その間に光が進む距離は、光の速さ×1秒＝30万kmだ。まずは、電車に乗っている人自身の目線で見てみよう。</div>
+          <div class="dialog-bubble">そう。まず、巨大な電車を想像してみよう。鏡と鏡の間が30万kmも離れた、とてつもなく大きな電車だ。その中に「光時計」を置いて、下の鏡から上の鏡へ光を片道進ませる。この片道にかかる時間を、この時計の「1秒」とする。まずは、電車に乗っている人自身の目線で見てみよう。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
@@ -136,15 +138,16 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="clock-a-svg" viewBox="0 0 120 140" width="160" height="187" role="img" aria-label="電車に乗っている人から見た光時計。光が下の鏡から上の鏡へ片道まっすぐ進む。電車の下では地面が流れていく">
-          <rect class="train-body" x="20" y="10" width="60" height="105" rx="8"></rect>
-          <circle class="wheel" cx="34" cy="121" r="6"></circle>
-          <circle class="wheel" cx="66" cy="121" r="6"></circle>
-          <line class="mirror" x1="20" y1="20" x2="80" y2="20"></line>
-          <line class="mirror" x1="20" y1="100" x2="80" y2="100"></line>
-          <path class="path-still" d="M50,100 L50,20"></path>
-          <circle class="photon" cx="50" cy="100" r="5"></circle>
-          <line class="ground" x1="0" y1="132" x2="120" y2="132"></line>
+        <svg class="clock-a-svg" viewBox="0 0 300 140" width="100%" height="150" role="img" aria-label="電車に乗っている人から見た光時計。光が下の鏡から上の鏡へ片道まっすぐ進む。電車の下では地面が流れていく。鏡と鏡の間の距離は30万km">
+          <rect class="train-body" x="120" y="10" width="60" height="105" rx="8"></rect>
+          <circle class="wheel" cx="134" cy="121" r="6"></circle>
+          <circle class="wheel" cx="166" cy="121" r="6"></circle>
+          <line class="mirror" x1="120" y1="20" x2="180" y2="20"></line>
+          <line class="mirror" x1="120" y1="100" x2="180" y2="100"></line>
+          <path class="path-still" d="M150,100 L150,20"></path>
+          <circle class="photon" cx="150" cy="100" r="5"></circle>
+          <text class="km-label" x="192" y="63">30万km</text>
+          <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
         </svg>
         <div class="diagram-caption">電車に乗っている人から見ると、光は下の鏡から上の鏡へまっすぐ片道進む。電車の下を地面が流れていくのは、電車が動いている証拠。この片道にかかる時間を、この時計の「1秒」とする（片道の距離＝光の速さ×1秒＝30万km）</div>
       </div>
@@ -167,7 +170,7 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="clock-b-svg" viewBox="0 0 300 130" width="100%" height="150" role="img" aria-label="電車の外にいる人から見ると、電車ごと鏡が右へ動きながら、光は下の鏡から上の鏡へ斜め一直線に進む">
+        <svg class="clock-b-svg" viewBox="0 0 300 140" width="100%" height="150" role="img" aria-label="電車の外にいる人から見ると、電車ごと鏡が右へ動きながら、光は下の鏡から上の鏡へ斜め一直線に進む。地面は動かない">
           <g class="train-group">
             <rect class="train-body" x="100" y="10" width="60" height="105" rx="8"></rect>
             <circle class="wheel" cx="114" cy="121" r="6"></circle>
@@ -177,6 +180,7 @@
             <circle class="photon" cx="130" cy="100" r="5"></circle>
           </g>
           <path class="path-move" d="M130,100 L250,20"></path>
+          <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
         </svg>
         <div class="diagram-caption">電車の外にいる人から見ると、電車ごと鏡が右へ動きながら、光は下の鏡から上の鏡へ斜め一直線の道のりを進む。道のりが長くなる分、かかる時間も長くなる</div>
       </div>
