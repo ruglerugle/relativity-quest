@@ -22,6 +22,8 @@
   .clock-a-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 3s linear infinite}
   .clock-a-svg .ground{stroke:var(--line);stroke-width:2;stroke-dasharray:6 6;animation:ground-scroll 1s linear infinite}
   .clock-a-svg .km-label{fill:var(--muted);font-size:11px;font-weight:700}
+  .clock-a-svg .dim-line{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:3 3}
+  .clock-a-svg .dim-tick{stroke:var(--muted);stroke-width:1.5}
   @keyframes still-up{
     0%,10%{transform:translateY(0);opacity:0}
     14%{opacity:1}
@@ -46,14 +48,14 @@
   }
   @keyframes clock-train-slide{
     0%,10%{transform:translateX(0);opacity:1}
-    70%,85%{transform:translateX(120px);opacity:1}
-    90%{transform:translateX(120px);opacity:0}
+    70%,85%{transform:translateX(48px);opacity:1}
+    90%{transform:translateX(48px);opacity:0}
     94%{transform:translateX(0);opacity:0}
     100%{transform:translateX(0);opacity:1}
   }
   @media (prefers-reduced-motion:reduce){
     .clock-b-svg .train-group,.clock-b-svg .photon{animation:none}
-    .clock-b-svg .train-group{transform:translateX(120px)}
+    .clock-b-svg .train-group{transform:translateX(48px)}
     .clock-b-svg .photon{transform:translateY(-80px);opacity:1}
   }
 
@@ -65,6 +67,9 @@
   .triangle-svg .right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
   .triangle-svg .tri-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
   .tri-compare .ghost-train{fill:var(--felt);opacity:.15}
+  .tri-compare .mini-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .mini-static-svg .mini-ground{animation:ground-scroll 1s linear infinite}
+  @media (prefers-reduced-motion:reduce){.mini-static-svg .mini-ground{animation:none}}
 </style>
 </head>
 <body>
@@ -146,7 +151,10 @@
           <line class="mirror" x1="120" y1="100" x2="180" y2="100"></line>
           <path class="path-still" d="M150,100 L150,20"></path>
           <circle class="photon" cx="150" cy="100" r="5"></circle>
-          <text class="km-label" x="192" y="63">30万km</text>
+          <line class="dim-tick" x1="184" y1="20" x2="196" y2="20"></line>
+          <line class="dim-tick" x1="184" y1="100" x2="196" y2="100"></line>
+          <line class="dim-line" x1="190" y1="20" x2="190" y2="100"></line>
+          <text class="km-label" x="200" y="63">30万km</text>
           <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
         </svg>
         <div class="diagram-caption">電車に乗っている人から見ると、光は下の鏡から上の鏡へまっすぐ片道進む。電車の下を地面が流れていくのは、電車が動いている証拠。この片道にかかる時間を、この時計の「1秒」とする（片道の距離＝光の速さ×1秒＝30万km）</div>
@@ -179,7 +187,7 @@
             <line class="mirror" x1="100" y1="100" x2="160" y2="100"></line>
             <circle class="photon" cx="130" cy="100" r="5"></circle>
           </g>
-          <path class="path-move" d="M130,100 L250,20"></path>
+          <path class="path-move" d="M130,100 L178,20"></path>
           <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
         </svg>
         <div class="diagram-caption">電車の外にいる人から見ると、電車ごと鏡が右へ動きながら、光は下の鏡から上の鏡へ斜め一直線の道のりを進む。道のりが長くなる分、かかる時間も長くなる</div>
@@ -213,28 +221,30 @@
         <div class="tri-compare">
           <svg class="mini-static-svg" viewBox="0 0 70 110" width="70" height="110" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh">
             <g class="ghost-train">
-              <rect x="11" y="4" width="48" height="92" rx="6"></rect>
-              <circle cx="22" cy="100" r="4"></circle>
-              <circle cx="48" cy="100" r="4"></circle>
+              <rect x="15" y="4" width="40" height="84" rx="5"></rect>
+              <circle cx="24" cy="92" r="4"></circle>
+              <circle cx="46" cy="92" r="4"></circle>
             </g>
+            <line class="mini-ground" x1="0" y1="100" x2="70" y2="100"></line>
             <line class="mini-mirror" x1="15" y1="10" x2="55" y2="10"></line>
             <line class="mini-mirror" x1="15" y1="90" x2="55" y2="90"></line>
             <line class="mini-h" x1="35" y1="90" x2="35" y2="10"></line>
             <text x="42" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
           </svg>
-          <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ">
+          <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ。電車の速さは光より遅いので底辺は高さより短い">
             <g class="ghost-train">
-              <rect x="4" y="4" width="32" height="84" rx="5"></rect>
-              <circle cx="12" cy="92" r="4"></circle>
-              <circle cx="28" cy="92" r="4"></circle>
+              <rect x="72" y="4" width="40" height="84" rx="5"></rect>
+              <circle cx="81" cy="92" r="4"></circle>
+              <circle cx="103" cy="92" r="4"></circle>
             </g>
-            <polygon class="triangle" points="26,88 165,10 165,88"></polygon>
-            <rect class="right-angle" x="156" y="78" width="9" height="9"></rect>
-            <line class="tri-mirror" x1="18" y1="88" x2="34" y2="88"></line>
-            <line class="tri-mirror" x1="157" y1="10" x2="173" y2="10"></line>
-            <text x="172" y="52" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
-            <text x="68" y="104" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
-            <text x="72" y="44" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(-29 72,44)">c×t'（光の軌道）</text>
+            <line class="mini-ground" x1="20" y1="96" x2="164" y2="96"></line>
+            <polygon class="triangle" points="92,88 140,8 140,88"></polygon>
+            <rect class="right-angle" x="131" y="79" width="9" height="9"></rect>
+            <line class="tri-mirror" x1="84" y1="88" x2="100" y2="88"></line>
+            <line class="tri-mirror" x1="132" y1="8" x2="148" y2="8"></line>
+            <text x="147" y="52" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
+            <text x="96" y="104" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
+            <text x="96" y="42" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(-59 96,42)">c×t'（光の軌道）</text>
           </svg>
         </div>
         <span class="tri-compare-caption">左：電車に乗っている人から見た片道 h／右：電車の外にいる人から見た光の軌道（下の鏡→動いた先の上の鏡）をそのまま直角三角形として取り出したもの</span>
