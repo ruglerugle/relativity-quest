@@ -62,7 +62,7 @@
   .tri-compare{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap}
   .tri-compare-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin:2px 0 10px}
   .tri-compare .mini-static-svg{flex:0 1 70px;min-width:0;width:100%;height:auto}
-  .tri-compare .triangle-svg{flex:1 1 200px;min-width:0;width:100%;height:auto}
+  .tri-compare .triangle-svg{flex:0 1 200px;min-width:0;width:100%;height:auto}
   .mini-static-svg .mini-mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
   .mini-static-svg .mini-h{stroke:var(--gold-dark);stroke-width:1.5;stroke-dasharray:3 4}
   .mini-static-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 3s linear infinite}
@@ -230,33 +230,33 @@
 
       <div class="formula-box">
         <div class="tri-compare">
-          <svg class="mini-static-svg" viewBox="0 0 70 110" width="70" height="110" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh。光が下の鏡から上の鏡へ進む">
+          <svg class="mini-static-svg" viewBox="0 0 70 118" width="70" height="118" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh。光が下の鏡から上の鏡へ進む">
             <g class="ghost-train">
-              <rect x="11" y="4" width="48" height="84" rx="5"></rect>
-              <circle cx="22" cy="92" r="4"></circle>
-              <circle cx="48" cy="92" r="4"></circle>
+              <rect x="11" y="4" width="48" height="90" rx="5"></rect>
+              <circle cx="22" cy="98" r="4"></circle>
+              <circle cx="48" cy="98" r="4"></circle>
             </g>
-            <line class="mini-ground" x1="0" y1="100" x2="70" y2="100"></line>
+            <line class="mini-ground" x1="0" y1="108" x2="70" y2="108"></line>
             <line class="mini-mirror" x1="15" y1="10" x2="55" y2="10"></line>
             <line class="mini-mirror" x1="15" y1="90" x2="55" y2="90"></line>
             <line class="mini-h" x1="35" y1="90" x2="35" y2="10"></line>
             <circle class="photon" cx="35" cy="90" r="4"></circle>
             <text x="42" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
           </svg>
-          <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ。電車の速さは光より遅いので底辺は高さより短い">
-            <line class="mini-ground" x1="60" y1="96" x2="168" y2="96"></line>
+          <svg class="triangle-svg" viewBox="0 0 200 120" width="200" height="120" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ。電車の速さは光より遅いので底辺は高さより短い">
+            <line class="mini-ground" x1="60" y1="110" x2="168" y2="110"></line>
             <g class="tri-train-group">
               <g class="ghost-train">
-                <rect x="68" y="4" width="48" height="84" rx="5"></rect>
-                <circle cx="79" cy="92" r="4"></circle>
-                <circle cx="105" cy="92" r="4"></circle>
+                <rect x="68" y="4" width="48" height="90" rx="5"></rect>
+                <circle cx="79" cy="98" r="4"></circle>
+                <circle cx="105" cy="98" r="4"></circle>
               </g>
-              <line class="tri-mirror" x1="84" y1="88" x2="100" y2="88"></line>
+              <line class="tri-mirror" x1="68" y1="88" x2="116" y2="88"></line>
+              <line class="tri-mirror" x1="68" y1="8" x2="116" y2="8"></line>
               <circle class="photon" cx="92" cy="88" r="4"></circle>
             </g>
             <polygon class="triangle" points="92,88 140,8 140,88"></polygon>
             <rect class="right-angle" x="131" y="79" width="9" height="9"></rect>
-            <line class="tri-mirror" x1="132" y1="8" x2="148" y2="8"></line>
             <text x="147" y="52" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
             <text x="96" y="104" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
             <text x="96" y="42" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(-59 96,42)">c×t'</text>
