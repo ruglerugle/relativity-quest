@@ -33,10 +33,10 @@
   .clock-b-svg .train-group{animation:clock-train-slide 3s linear infinite}
   .clock-b-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:moving-up 3s linear infinite}
   @keyframes moving-up{
-    0%,18%{transform:translate(0,0);opacity:0}
+    0%,18%{transform:translateY(0);opacity:0}
     22%{opacity:1}
-    60%{transform:translate(120px,-80px);opacity:1}
-    66%,100%{transform:translate(120px,-80px);opacity:0}
+    60%{transform:translateY(-80px);opacity:1}
+    66%,100%{transform:translateY(-80px);opacity:0}
   }
   @keyframes clock-train-slide{
     0%,8%{transform:translateX(0);opacity:1}
@@ -48,7 +48,7 @@
   @media (prefers-reduced-motion:reduce){
     .clock-b-svg .train-group,.clock-b-svg .photon{animation:none}
     .clock-b-svg .train-group{transform:translateX(120px)}
-    .clock-b-svg .photon{transform:translate(120px,-80px);opacity:1}
+    .clock-b-svg .photon{transform:translateY(-80px);opacity:1}
   }
 
   .tri-compare{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
@@ -57,6 +57,7 @@
   .mini-static-svg .mini-h{stroke:var(--gold-dark);stroke-width:1.5;stroke-dasharray:3 4}
   .triangle-svg .triangle{fill:rgba(91,63,166,.1);stroke:#5b3fa6;stroke-width:2.5;stroke-linejoin:round}
   .triangle-svg .right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
+  .triangle-svg .tri-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
 </style>
 </head>
 <body>
@@ -164,9 +165,9 @@
             <circle class="wheel" cx="146" cy="121" r="6"></circle>
             <line class="mirror" x1="100" y1="20" x2="160" y2="20"></line>
             <line class="mirror" x1="100" y1="100" x2="160" y2="100"></line>
+            <circle class="photon" cx="130" cy="100" r="5"></circle>
           </g>
           <path class="path-move" d="M130,100 L250,20"></path>
-          <circle class="photon" cx="130" cy="100" r="5"></circle>
         </svg>
         <div class="diagram-caption">外から見ると、電車ごと鏡が右へ動きながら、光は下の鏡から上の鏡へ斜め一直線の道のりを進む。道のりが長くなる分、かかる時間も長くなる</div>
       </div>
@@ -203,15 +204,17 @@
             <line class="mini-h" x1="35" y1="90" x2="35" y2="10"></line>
             <text x="42" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
           </svg>
-          <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="直角三角形。高さh、底辺v×tダッシュ、斜辺c×tダッシュ">
-            <polygon class="triangle" points="26,88 26,10 165,88"></polygon>
-            <rect class="right-angle" x="26" y="78" width="9" height="9"></rect>
-            <text x="6" y="52" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
-            <text x="65" y="104" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
-            <text x="78" y="46" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(30 78,46)">c×t'</text>
+          <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="電車から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ">
+            <polygon class="triangle" points="26,88 165,10 165,88"></polygon>
+            <rect class="right-angle" x="156" y="78" width="9" height="9"></rect>
+            <line class="tri-mirror" x1="18" y1="88" x2="34" y2="88"></line>
+            <line class="tri-mirror" x1="157" y1="10" x2="173" y2="10"></line>
+            <text x="172" y="52" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
+            <text x="68" y="104" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
+            <text x="72" y="44" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(-29 72,44)">c×t'（光の軌道）</text>
           </svg>
         </div>
-        <span class="tri-compare-caption">左：静止した時計の片道 h／右：電車から見た斜めの片道をそのまま直角三角形として取り出したもの</span>
+        <span class="tri-compare-caption">左：静止した時計の片道 h／右：電車から見た光の軌道（下の鏡→動いた先の上の鏡）をそのまま直角三角形として取り出したもの</span>
         <span class="step">① 静止した光時計：片道の距離 h ＝ 光の速さ c ×（時間 t）</span>
         <span class="step">② 動く光時計を外から見た直角三角形の3辺：高さ h／電車の移動距離 v×t'／光の斜めの道のり c×t'</span>
         <span class="step">③ 三平方の定理：(c×t')² ＝ h² ＋ (v×t')²</span>
