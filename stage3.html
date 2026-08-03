@@ -17,56 +17,44 @@
 <style>
   .clock-a-svg .mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
   .clock-a-svg .path-still{stroke:var(--line);stroke-width:1.2;fill:none;stroke-dasharray:3 4}
-  .clock-a-svg .photon-still{opacity:0}
-  .clock-a-svg .photon-down{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-down 5s linear infinite}
-  .clock-a-svg .photon-up{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 5s linear infinite}
-  @keyframes still-down{
-    0%,10%{transform:translateY(0);opacity:0}
-    12%{opacity:1}
-    26%{transform:translateY(80px);opacity:1}
-    27%,100%{transform:translateY(80px);opacity:0}
-  }
+  .clock-a-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 3s linear infinite}
   @keyframes still-up{
-    0%,25%{transform:translateY(0);opacity:0}
-    27%{opacity:1}
-    42%{transform:translateY(-80px);opacity:1}
-    44%,100%{transform:translateY(-80px);opacity:0}
+    0%,10%{transform:translateY(0);opacity:0}
+    14%{opacity:1}
+    60%{transform:translateY(-80px);opacity:1}
+    66%,100%{transform:translateY(-80px);opacity:0}
   }
-  @media (prefers-reduced-motion:reduce){.clock-a-svg .photon-down,.clock-a-svg .photon-up{animation:none}}
+  @media (prefers-reduced-motion:reduce){.clock-a-svg .photon{animation:none}}
 
   .clock-b-svg .train-body{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
   .clock-b-svg .wheel{fill:var(--ink)}
   .clock-b-svg .mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
   .clock-b-svg .path-move{stroke:var(--line);stroke-width:1.2;fill:none;stroke-dasharray:4 5}
-  .clock-b-svg .train-group{animation:clock-train-slide 5s linear infinite}
-  .clock-b-svg .photon-leg{opacity:0}
-  .clock-b-svg .photon-leg-down{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:moving-down 5s linear infinite}
-  .clock-b-svg .photon-leg-up{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:moving-up 5s linear infinite}
-  @keyframes moving-down{
-    0%,10%{transform:translate(0,0);opacity:0}
-    12%{opacity:1}
-    29%{transform:translate(60px,74px);opacity:1}
-    30%,100%{transform:translate(60px,74px);opacity:0}
-  }
+  .clock-b-svg .train-group{animation:clock-train-slide 3s linear infinite}
+  .clock-b-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:moving-up 3s linear infinite}
   @keyframes moving-up{
-    0%,28%{transform:translate(0,0);opacity:0}
-    30%{opacity:1}
-    48%{transform:translate(60px,-74px);opacity:1}
-    50%,100%{transform:translate(60px,-74px);opacity:0}
+    0%,18%{transform:translate(0,0);opacity:0}
+    22%{opacity:1}
+    60%{transform:translate(120px,-80px);opacity:1}
+    66%,100%{transform:translate(120px,-80px);opacity:0}
   }
   @keyframes clock-train-slide{
-    0%,10%{transform:translateX(0);opacity:1}
-    48%,80%{transform:translateX(120px);opacity:1}
+    0%,8%{transform:translateX(0);opacity:1}
+    60%,80%{transform:translateX(120px);opacity:1}
     86%{transform:translateX(120px);opacity:0}
     90%{transform:translateX(0);opacity:0}
     100%{transform:translateX(0);opacity:1}
   }
   @media (prefers-reduced-motion:reduce){
-    .clock-b-svg .train-group,.clock-b-svg .photon-leg{animation:none}
+    .clock-b-svg .train-group,.clock-b-svg .photon{animation:none}
     .clock-b-svg .train-group{transform:translateX(120px)}
-    .clock-b-svg .photon-leg-up{transform:translate(60px,-74px);opacity:1}
+    .clock-b-svg .photon{transform:translate(120px,-80px);opacity:1}
   }
 
+  .tri-compare{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+  .tri-compare-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin:2px 0 10px}
+  .mini-static-svg .mini-mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
+  .mini-static-svg .mini-h{stroke:var(--gold-dark);stroke-width:1.5;stroke-dasharray:3 4}
   .triangle-svg .triangle{fill:rgba(91,63,166,.1);stroke:#5b3fa6;stroke-width:2.5;stroke-linejoin:round}
   .triangle-svg .right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
 </style>
@@ -130,26 +118,25 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">そう。まず「光時計」を考えよう。鏡を上下に向かい合わせて置いて、光を1往復させる。この1往復にかかる時間を、この時計の「1秒」とする。</div>
+          <div class="dialog-bubble">そう。まず「光時計」を考えよう。鏡を上下に向かい合わせて置いて、下の鏡から上の鏡へ光を片道進ませる。この片道にかかる時間を、この時計の「1秒」とする。その間に光が進む距離は、光の速さ×1秒＝30万kmだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">光が上下にピョンピョン跳ね返るイメージだね。</div>
+          <div class="dialog-bubble">光が下からピュンと上に飛んでいくイメージだね。</div>
         </div>
       </div>
 
       <div class="diagram-box">
-        <svg class="clock-a-svg" viewBox="0 0 120 130" width="160" height="170" role="img" aria-label="静止した光時計。光が上下の鏡の間をまっすぐ往復する">
+        <svg class="clock-a-svg" viewBox="0 0 120 130" width="160" height="170" role="img" aria-label="静止した光時計。光が下の鏡から上の鏡へ片道まっすぐ進む">
           <line class="mirror" x1="20" y1="20" x2="80" y2="20"></line>
           <line class="mirror" x1="20" y1="100" x2="80" y2="100"></line>
-          <path class="path-still" d="M50,20 L50,100"></path>
-          <circle class="photon-still photon-down" cx="50" cy="20" r="5"></circle>
-          <circle class="photon-still photon-up" cx="50" cy="100" r="5"></circle>
+          <path class="path-still" d="M50,100 L50,20"></path>
+          <circle class="photon" cx="50" cy="100" r="5"></circle>
         </svg>
-        <div class="diagram-caption">これが「光時計」。光が上下の鏡の間を1往復する時間を、この時計の「1秒」とする</div>
+        <div class="diagram-caption">これが「光時計」。光が下の鏡から上の鏡へ片道進む時間を、この時計の「1秒」とする（片道の距離＝光の速さ×1秒＝30万km）</div>
       </div>
 
       <div class="dialogue-scene">
@@ -165,12 +152,12 @@
             <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">（図を見て）あ、ジグザグに進んでる！ 道のりが長くなってる。</div>
+          <div class="dialog-bubble">（図を見て）あ、斜めに進んでる！ 道のりが長くなってる。</div>
         </div>
       </div>
 
       <div class="diagram-box">
-        <svg class="clock-b-svg" viewBox="0 0 300 130" width="100%" height="150" role="img" aria-label="外から見ると、電車ごと鏡が右へ動きながら、光は斜めのジグザグに進む">
+        <svg class="clock-b-svg" viewBox="0 0 300 130" width="100%" height="150" role="img" aria-label="外から見ると、電車ごと鏡が右へ動きながら、光は下の鏡から上の鏡へ斜め一直線に進む">
           <g class="train-group">
             <rect class="train-body" x="100" y="10" width="60" height="105" rx="8"></rect>
             <circle class="wheel" cx="114" cy="121" r="6"></circle>
@@ -178,11 +165,10 @@
             <line class="mirror" x1="100" y1="20" x2="160" y2="20"></line>
             <line class="mirror" x1="100" y1="100" x2="160" y2="100"></line>
           </g>
-          <path class="path-move" d="M130,20 L190,94 L250,20"></path>
-          <circle class="photon-leg photon-leg-down" cx="130" cy="20" r="5"></circle>
-          <circle class="photon-leg photon-leg-up" cx="190" cy="94" r="5"></circle>
+          <path class="path-move" d="M130,100 L250,20"></path>
+          <circle class="photon" cx="130" cy="100" r="5"></circle>
         </svg>
-        <div class="diagram-caption">外から見ると、電車ごと鏡が右へ動きながら、光は点線のジグザグに沿って進む。道のりが長くなる分、かかる時間も長くなる</div>
+        <div class="diagram-caption">外から見ると、電車ごと鏡が右へ動きながら、光は下の鏡から上の鏡へ斜め一直線の道のりを進む。道のりが長くなる分、かかる時間も長くなる</div>
       </div>
 
       <div class="dialogue-scene">
@@ -191,7 +177,7 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">その通り。斜めの道は、まっすぐ往復する道より長い。でもステージ2の光速不変の原理があるから、光の速さはどちらから見ても変わらない。距離が長いのに速さが同じなら…</div>
+          <div class="dialog-bubble">その通り。斜めの道は、まっすぐ片道進む道より長い。でもステージ2の光速不変の原理があるから、光の速さはどちらから見ても変わらない。距離が長いのに速さが同じなら…</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
@@ -210,16 +196,25 @@
       </div>
 
       <div class="formula-box">
-        <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="直角三角形。高さh、底辺v×(tダッシュ÷2)、斜辺c×(tダッシュ÷2)" style="display:block;margin:0 auto 8px">
-          <polygon class="triangle" points="26,88 26,10 165,88"></polygon>
-          <rect class="right-angle" x="26" y="78" width="9" height="9"></rect>
-          <text x="6" y="52" font-size="12" font-weight="800" fill="#5b3fa6">h</text>
-          <text x="65" y="104" font-size="12" font-weight="800" fill="#2f8f65">v×(t'÷2)</text>
-          <text x="78" y="46" font-size="12" font-weight="800" fill="#a6742a" transform="rotate(30 78,46)">c×(t'÷2)</text>
-        </svg>
-        <span class="step">① 静止した光時計：片道の距離 h ＝ 光の速さ c ×（時間 t ÷ 2）</span>
-        <span class="step">② 動く光時計を外から見た直角三角形の3辺：高さ h／電車の移動距離 v×(t'÷2)／光の斜めの道のり c×(t'÷2)</span>
-        <span class="step">③ 三平方の定理：{ c×(t'÷2) }² ＝ h² ＋ { v×(t'÷2) }²</span>
+        <div class="tri-compare">
+          <svg class="mini-static-svg" viewBox="0 0 70 100" width="70" height="100" role="img" aria-label="静止した光時計の片道の道のりh">
+            <line class="mini-mirror" x1="15" y1="10" x2="55" y2="10"></line>
+            <line class="mini-mirror" x1="15" y1="90" x2="55" y2="90"></line>
+            <line class="mini-h" x1="35" y1="90" x2="35" y2="10"></line>
+            <text x="42" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
+          </svg>
+          <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="直角三角形。高さh、底辺v×tダッシュ、斜辺c×tダッシュ">
+            <polygon class="triangle" points="26,88 26,10 165,88"></polygon>
+            <rect class="right-angle" x="26" y="78" width="9" height="9"></rect>
+            <text x="6" y="52" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
+            <text x="65" y="104" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
+            <text x="78" y="46" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(30 78,46)">c×t'</text>
+          </svg>
+        </div>
+        <span class="tri-compare-caption">左：静止した時計の片道 h／右：電車から見た斜めの片道をそのまま直角三角形として取り出したもの</span>
+        <span class="step">① 静止した光時計：片道の距離 h ＝ 光の速さ c ×（時間 t）</span>
+        <span class="step">② 動く光時計を外から見た直角三角形の3辺：高さ h／電車の移動距離 v×t'／光の斜めの道のり c×t'</span>
+        <span class="step">③ 三平方の定理：(c×t')² ＝ h² ＋ (v×t')²</span>
         <span class="step">④ ①を代入して整理すると… t' ＝ t ÷ √(1 −(v÷c)²)</span>
         <span class="step">⑤ v（速さ）が c（光速）に近づくほど、t'（外から見た時間）はどんどん大きくなる＝時間が遅れる</span>
       </div>
