@@ -59,17 +59,28 @@
     .clock-b-svg .photon{transform:translateY(-80px);opacity:1}
   }
 
-  .tri-compare{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+  .tri-compare{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap}
   .tri-compare-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin:2px 0 10px}
+  .tri-compare .mini-static-svg{flex:0 1 70px;min-width:0;width:100%;height:auto}
+  .tri-compare .triangle-svg{flex:1 1 200px;min-width:0;width:100%;height:auto}
   .mini-static-svg .mini-mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
   .mini-static-svg .mini-h{stroke:var(--gold-dark);stroke-width:1.5;stroke-dasharray:3 4}
+  .mini-static-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 3s linear infinite}
   .triangle-svg .triangle{fill:none;stroke:#5b3fa6;stroke-width:2;stroke-dasharray:4 5;stroke-linejoin:round}
   .triangle-svg .right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
   .triangle-svg .tri-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
+  .triangle-svg .tri-train-group{animation:clock-train-slide 3s linear infinite}
+  .triangle-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:moving-up 3s linear infinite}
   .tri-compare .ghost-train{fill:var(--felt);opacity:.15}
   .tri-compare .mini-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
   .mini-static-svg .mini-ground{animation:ground-scroll 1s linear infinite}
-  @media (prefers-reduced-motion:reduce){.mini-static-svg .mini-ground{animation:none}}
+  @media (prefers-reduced-motion:reduce){
+    .mini-static-svg .mini-ground,.mini-static-svg .photon{animation:none}
+    .mini-static-svg .photon{transform:translateY(-80px);opacity:1}
+    .triangle-svg .tri-train-group,.triangle-svg .photon{animation:none}
+    .triangle-svg .tri-train-group{transform:translateX(48px)}
+    .triangle-svg .photon{transform:translateY(-80px);opacity:1}
+  }
 </style>
 </head>
 <body>
@@ -131,7 +142,7 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">そう。まず、巨大な電車を想像してみよう。鏡と鏡の間が30万kmも離れた、とてつもなく大きな電車だ。その中に「光時計」を置いて、下の鏡から上の鏡へ光を片道進ませる。この片道にかかる時間を、この時計の「1秒」とする。まずは、電車に乗っている人自身の目線で見てみよう。</div>
+          <div class="dialog-bubble">そう。まず、巨大な電車を想像してみよう。天井高が30万kmもある、とてつもなく大きな電車だ。その中に「光時計」を置いて、下の鏡から上の鏡へ光を片道進ませる。この片道にかかる時間を、この時計の「1秒」とする。まずは、電車に乗っている人自身の目線で見てみよう。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
@@ -219,7 +230,7 @@
 
       <div class="formula-box">
         <div class="tri-compare">
-          <svg class="mini-static-svg" viewBox="0 0 70 110" width="70" height="110" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh">
+          <svg class="mini-static-svg" viewBox="0 0 70 110" width="70" height="110" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh。光が下の鏡から上の鏡へ進む">
             <g class="ghost-train">
               <rect x="15" y="4" width="40" height="84" rx="5"></rect>
               <circle cx="24" cy="92" r="4"></circle>
@@ -229,22 +240,26 @@
             <line class="mini-mirror" x1="15" y1="10" x2="55" y2="10"></line>
             <line class="mini-mirror" x1="15" y1="90" x2="55" y2="90"></line>
             <line class="mini-h" x1="35" y1="90" x2="35" y2="10"></line>
+            <circle class="photon" cx="35" cy="90" r="4"></circle>
             <text x="42" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
           </svg>
           <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ。電車の速さは光より遅いので底辺は高さより短い">
-            <g class="ghost-train">
-              <rect x="72" y="4" width="40" height="84" rx="5"></rect>
-              <circle cx="81" cy="92" r="4"></circle>
-              <circle cx="103" cy="92" r="4"></circle>
-            </g>
             <line class="mini-ground" x1="20" y1="96" x2="164" y2="96"></line>
+            <g class="tri-train-group">
+              <g class="ghost-train">
+                <rect x="72" y="4" width="40" height="84" rx="5"></rect>
+                <circle cx="81" cy="92" r="4"></circle>
+                <circle cx="103" cy="92" r="4"></circle>
+              </g>
+              <circle class="photon" cx="92" cy="88" r="4"></circle>
+            </g>
             <polygon class="triangle" points="92,88 140,8 140,88"></polygon>
             <rect class="right-angle" x="131" y="79" width="9" height="9"></rect>
             <line class="tri-mirror" x1="84" y1="88" x2="100" y2="88"></line>
             <line class="tri-mirror" x1="132" y1="8" x2="148" y2="8"></line>
             <text x="147" y="52" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
             <text x="96" y="104" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
-            <text x="96" y="42" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(-59 96,42)">c×t'（光の軌道）</text>
+            <text x="96" y="42" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(-59 96,42)">c×t'</text>
           </svg>
         </div>
         <span class="tri-compare-caption">左：電車に乗っている人から見た片道 h／右：電車の外にいる人から見た光の軌道（下の鏡→動いた先の上の鏡）をそのまま直角三角形として取り出したもの</span>
