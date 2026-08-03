@@ -15,16 +15,20 @@
 <title>相対性理論クエスト STAGE3 ― 動くと時間が遅れる ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
+  .clock-a-svg .train-body{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
+  .clock-a-svg .wheel{fill:var(--ink)}
   .clock-a-svg .mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
   .clock-a-svg .path-still{stroke:var(--line);stroke-width:1.2;fill:none;stroke-dasharray:3 4}
   .clock-a-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 3s linear infinite}
+  .clock-a-svg .ground{stroke:var(--line);stroke-width:2;stroke-dasharray:6 6;animation:ground-scroll 1s linear infinite}
   @keyframes still-up{
     0%,10%{transform:translateY(0);opacity:0}
     14%{opacity:1}
     60%{transform:translateY(-80px);opacity:1}
     66%,100%{transform:translateY(-80px);opacity:0}
   }
-  @media (prefers-reduced-motion:reduce){.clock-a-svg .photon{animation:none}}
+  @keyframes ground-scroll{to{stroke-dashoffset:-12}}
+  @media (prefers-reduced-motion:reduce){.clock-a-svg .photon,.clock-a-svg .ground{animation:none}}
 
   .clock-b-svg .train-body{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
   .clock-b-svg .wheel{fill:var(--ink)}
@@ -58,7 +62,7 @@
   .triangle-svg .triangle{fill:none;stroke:#5b3fa6;stroke-width:2;stroke-dasharray:4 5;stroke-linejoin:round}
   .triangle-svg .right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
   .triangle-svg .tri-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
-  .triangle-svg .ghost-train{fill:var(--felt);opacity:.15}
+  .tri-compare .ghost-train{fill:var(--felt);opacity:.15}
 </style>
 </head>
 <body>
@@ -132,13 +136,17 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="clock-a-svg" viewBox="0 0 120 130" width="160" height="170" role="img" aria-label="電車に乗っている人から見た光時計。光が下の鏡から上の鏡へ片道まっすぐ進む">
+        <svg class="clock-a-svg" viewBox="0 0 120 140" width="160" height="187" role="img" aria-label="電車に乗っている人から見た光時計。光が下の鏡から上の鏡へ片道まっすぐ進む。電車の下では地面が流れていく">
+          <rect class="train-body" x="20" y="10" width="60" height="105" rx="8"></rect>
+          <circle class="wheel" cx="34" cy="121" r="6"></circle>
+          <circle class="wheel" cx="66" cy="121" r="6"></circle>
           <line class="mirror" x1="20" y1="20" x2="80" y2="20"></line>
           <line class="mirror" x1="20" y1="100" x2="80" y2="100"></line>
           <path class="path-still" d="M50,100 L50,20"></path>
           <circle class="photon" cx="50" cy="100" r="5"></circle>
+          <line class="ground" x1="0" y1="132" x2="120" y2="132"></line>
         </svg>
-        <div class="diagram-caption">電車に乗っている人から見ると、光は下の鏡から上の鏡へまっすぐ片道進む。この片道にかかる時間を、この時計の「1秒」とする（片道の距離＝光の速さ×1秒＝30万km）</div>
+        <div class="diagram-caption">電車に乗っている人から見ると、光は下の鏡から上の鏡へまっすぐ片道進む。電車の下を地面が流れていくのは、電車が動いている証拠。この片道にかかる時間を、この時計の「1秒」とする（片道の距離＝光の速さ×1秒＝30万km）</div>
       </div>
 
       <div class="dialogue-scene">
@@ -199,14 +207,23 @@
 
       <div class="formula-box">
         <div class="tri-compare">
-          <svg class="mini-static-svg" viewBox="0 0 70 100" width="70" height="100" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh">
+          <svg class="mini-static-svg" viewBox="0 0 70 110" width="70" height="110" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh">
+            <g class="ghost-train">
+              <rect x="11" y="4" width="48" height="92" rx="6"></rect>
+              <circle cx="22" cy="100" r="4"></circle>
+              <circle cx="48" cy="100" r="4"></circle>
+            </g>
             <line class="mini-mirror" x1="15" y1="10" x2="55" y2="10"></line>
             <line class="mini-mirror" x1="15" y1="90" x2="55" y2="90"></line>
             <line class="mini-h" x1="35" y1="90" x2="35" y2="10"></line>
             <text x="42" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
           </svg>
           <svg class="triangle-svg" viewBox="0 0 200 100" width="200" height="110" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ">
-            <rect class="ghost-train" x="4" y="2" width="28" height="90" rx="5"></rect>
+            <g class="ghost-train">
+              <rect x="4" y="4" width="32" height="84" rx="5"></rect>
+              <circle cx="12" cy="92" r="4"></circle>
+              <circle cx="28" cy="92" r="4"></circle>
+            </g>
             <polygon class="triangle" points="26,88 165,10 165,88"></polygon>
             <rect class="right-angle" x="156" y="78" width="9" height="9"></rect>
             <line class="tri-mirror" x1="18" y1="88" x2="34" y2="88"></line>
