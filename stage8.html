@@ -12,32 +12,34 @@
   gtag('js', new Date());
   gtag('config', 'G-9RTQCP2HXM');
 </script>
-<title>相対性理論クエスト STAGE8 ― 身近な相対性理論 ―</title>
+<title>相対性理論クエスト STAGE8 ― 重力は空間のゆがみ ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .gps-svg .earth{fill:#2f8f65}
-  .gps-svg .sat{fill:#d9a441}
-  .gps-svg .orbit-track{fill:none;stroke:#cbb7ec;stroke-width:1.5;stroke-dasharray:4 4}
-  .gps-svg .sat-system{animation:gps-orbit 6s linear infinite;transform-origin:120px 90px}
-  .gps-svg .beam{stroke:#a6742a;stroke-width:1.4;stroke-dasharray:3 3;opacity:.7}
-  .gps-svg .panel{fill:#5b3fa6;stroke:#3d2a8c;stroke-width:.7}
-  .gps-svg .sat-clock{fill:#fffaf0;stroke:#a6742a;stroke-width:.8}
-  .gps-svg .clock-hand{stroke:#a6742a;stroke-width:.8;stroke-linecap:round}
-  .gps-svg .signal{fill:#f3d99a;stroke:#a6742a;stroke-width:.8;animation:gps-signal 1.5s ease-in infinite}
-  .gps-svg .effect-speed{animation:effect-speed 6s ease-out infinite}
-  .gps-svg .effect-gravity{animation:effect-gravity 6s ease-out infinite}
-  .gps-svg .correction-ring{fill:none;stroke:#2f8f65;stroke-width:2;transform-origin:120px 90px;animation:correction-ring 6s ease-out infinite}
-  .gps-svg .correction{animation:correction-in 6s ease-out infinite}
-  @keyframes gps-orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-  @keyframes gps-signal{0%{transform:translateY(0);opacity:0}12%{opacity:1}75%{transform:translateY(34px);opacity:1}100%{transform:translateY(34px);opacity:0}}
-  @keyframes effect-speed{0%,4%{opacity:0;transform:translateY(3px)}9%,30%{opacity:1;transform:translateY(0)}36%,100%{opacity:0;transform:translateY(0)}}
-  @keyframes effect-gravity{0%,30%{opacity:0;transform:translateY(3px)}36%,57%{opacity:1;transform:translateY(0)}63%,100%{opacity:0;transform:translateY(0)}}
-  @keyframes correction-ring{0%,58%{transform:scale(.8);opacity:0}64%{opacity:.75}78%,100%{transform:scale(1.35);opacity:0}}
-  @keyframes correction-in{0%,60%{opacity:0;transform:translateY(3px)}66%,88%{opacity:1;transform:translateY(0)}96%,100%{opacity:0;transform:translateY(0)}}
+  .gravity-scene{display:block;width:100%;max-width:760px;height:auto;margin:auto}
+  .gravity-scene .grid-wave{animation:s7-grid 4.8s ease-in-out infinite;transform-origin:385px 229px}
+  .gravity-scene .grid-well{fill:var(--felt);opacity:.07}
+  .gravity-scene .grid-line{fill:none;stroke:var(--line);stroke-width:1.4;opacity:.9}
+  .gravity-scene .path-flow{fill:none;stroke:var(--gold);stroke-width:2.5;opacity:.6;stroke-dasharray:9 12;animation:s7-flow .85s linear infinite}
+  .gravity-scene .orbit-guide{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 8;opacity:.8}
+  .gravity-scene .star-core{transform-box:fill-box;transform-origin:center;animation:s7-star 2.6s ease-in-out infinite}
+  .gravity-scene .star-fill{fill:var(--felt);stroke:var(--gold-dark);stroke-width:3}
+  .gravity-scene .light-probe{offset-path:path("M72 126 C245 110 292 245 394 245 S536 102 690 126");animation:s7-light 4s linear infinite}
+  .gravity-scene .light-probe .spark{fill:var(--gold-dark)}
+  .gravity-scene .light-probe .core{fill:var(--gold)}
+  .gravity-scene .orbit-probe{offset-path:path("M267 234 A120.5 76 0 1 1 508 234 A120.5 76 0 1 1 267 234");animation:s7-orbit 5.2s linear infinite}
+  .gravity-scene .orbit-probe .core{fill:var(--gold);stroke:var(--gold-dark);stroke-width:2}
+  .gravity-scene .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
+  .gravity-scene .info-title{fill:var(--ink);font-size:30px;font-weight:800}
+  .gravity-scene .info-label{fill:var(--ink);font-size:30px;font-weight:800}
+  @keyframes s7-grid{0%,100%{transform:scaleY(.98);opacity:.68}50%{transform:scaleY(1.04);opacity:1}}
+  @keyframes s7-star{0%,100%{transform:scale(.96)}50%{transform:scale(1.06)}}
+  @keyframes s7-light{0%{offset-distance:0%;opacity:0}8%{opacity:1}92%{opacity:1}100%{offset-distance:100%;opacity:0}}
+  @keyframes s7-orbit{to{offset-distance:100%}}
+  @keyframes s7-flow{to{stroke-dashoffset:-42}}
   @media (prefers-reduced-motion:reduce){
-    .gps-svg .sat-system,.gps-svg .signal,.gps-svg .effect-speed,.gps-svg .effect-gravity,.gps-svg .correction-ring,.gps-svg .correction{animation:none}
-    .gps-svg .signal{transform:translateY(34px);opacity:1}
-    .gps-svg .effect-speed,.gps-svg .effect-gravity,.gps-svg .correction{opacity:1}
+    .gravity-scene .grid-wave,.gravity-scene .star-core,.gravity-scene .light-probe,.gravity-scene .orbit-probe,.gravity-scene .path-flow{animation:none}
+    .gravity-scene .light-probe{offset-distance:18%}
+    .gravity-scene .orbit-probe{offset-distance:62%}
   }
 </style>
 </head>
@@ -46,10 +48,10 @@
   <header class="game-header">
     <div class="brand">
       <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>相対性理論クエスト</span></div>
-      <div class="brand-sub">STAGE 8 ― 身近な相対性理論 ―</div>
+      <div class="brand-sub">STAGE 8 ― 重力は空間のゆがみ ―</div>
     </div>
     <div class="head-progress-wrap">
-      <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
+      <div class="head-progress-label" id="progress-label">クリア 0 / 9</div>
       <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
     </div>
     <div class="header-actions">
@@ -70,13 +72,13 @@
 
     <main class="main-area">
       <div class="chapter-head">
-        <span class="chapter-badge">STAGE 8</span><span class="chapter-title">身近な相対性理論</span>
-        <div class="chapter-sub">ブラックホールとGPS</div>
+        <span class="chapter-badge">STAGE 8</span><span class="chapter-title">重力は空間のゆがみ</span>
+        <div class="chapter-sub">一般相対性理論への入り口</div>
       </div>
 
       <div class="mission-box">
         <div class="mission-label">🎯 ミッション</div>
-        <div class="mission-text">相対性理論が実際に役立っている身近な例を知り、これまでの旅を振り返ろう。</div>
+        <div class="mission-text">ゴムシートモデルを使って、「重力とは空間そのもののゆがみである」という考え方に触れよう。</div>
         <span class="mission-status" id="mission-status">未達成</span>
       </div>
 
@@ -86,124 +88,123 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">最後に、相対性理論が実際に役立っている例を見てみよう。</div>
+          <div class="dialog-bubble">ここからは一般相対性理論、重力についての理論だよ。アインシュタインは「重力とは、空間そのものがゆがんでいることだ」と考えたんだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">相対性理論って、宇宙の話だけじゃないんですか？</div>
+          <div class="dialog-bubble">空間がゆがむ、ってどういうことですか？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">実は、みんなが毎日使っているスマホのGPSにも相対性理論が使われているんだ。GPS衛星は地球より速く動いていて、しかも地球から離れて重力が弱い場所にいる。</div>
+          <div class="dialog-bubble">よく使われるたとえが、ピンと張ったゴムシートだよ。真ん中に重いボールを置くと、シートがへこむよね。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">動いていると時間が遅れる（ステージ3）し、重力の強さでも時間の進み方が違うということは…</div>
+          <div class="dialog-bubble">はい、お椀みたいにへこむイメージですね。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そのへこみの近くでビー玉を転がすと、まっすぐ進まずに、重いボールの方へ引き寄せられるように曲がって進む。これが「重力」の正体だとアインシュタインは考えたんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">重力って、引っ張る力じゃなくて、空間のへこみのせいだったんですね…</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">そう、衛星の時計と地上の時計では、進み方が微妙にズレるんだ。このズレを相対性理論の式で補正しないと、GPSの位置情報は1日で数kmもズレてしまう。</div>
+          <div class="dialog-bubble">そう。だから、まっすぐ進むはずの光も、太陽のように重い星のそばを通ると、空間のゆがみに沿って進路が曲がってしまうんだよ。</div>
         </div>
       </div>
 
       <div class="diagram-box">
-        <svg class="gps-svg" viewBox="0 0 240 160" width="100%" height="160" role="img" aria-label="地球のまわりを回るGPS衛星と地上との通信を示す図">
-          <circle class="orbit-track" cx="120" cy="90" r="70"></circle>
-          <g class="sat-system">
-            <line class="beam" x1="120" y1="90" x2="120" y2="26"></line>
-            <circle class="signal" cx="120" cy="26" r="3"></circle>
-            <rect class="panel" x="106" y="17" width="8" height="6" rx="1"></rect>
-            <rect class="panel" x="126" y="17" width="8" height="6" rx="1"></rect>
-            <circle class="sat" cx="120" cy="20" r="6"></circle>
-            <circle class="sat-clock" cx="120" cy="20" r="2.5"></circle>
-            <line class="clock-hand" x1="120" y1="20" x2="120" y2="18.4"></line>
+        <svg class="gravity-scene" viewBox="0 0 760 440" role="img" aria-label="重い星の周囲で時空の格子が深くへこみ、光と惑星が曲がった経路を進む様子を示すイラスト">
+          <g transform="translate(25 20)">
+            <rect class="info-box" width="300" height="48" rx="24"></rect>
+            <text class="info-title" x="150" y="32" text-anchor="middle">質量が時空を曲げる</text>
           </g>
-          <circle class="earth" cx="120" cy="90" r="30"></circle>
-          <g class="effect-speed">
-            <rect x="7" y="8" width="86" height="20" rx="10" fill="#f7f3ff" stroke="#cbb7ec"></rect>
-            <text x="50" y="22" font-size="8.5" fill="#5b3fa6" font-weight="700" text-anchor="middle">速さ → 時計が遅れる</text>
+          <g class="grid-wave">
+            <ellipse class="grid-well" cx="385" cy="235" rx="318" ry="152"></ellipse>
+            <g class="grid-line">
+              <path d="M42 188 C204 171 268 229 385 298 C501 229 566 171 718 188"></path>
+              <path d="M32 222 C198 202 274 249 385 318 C497 249 570 202 728 222"></path>
+              <path d="M36 259 C206 238 279 267 385 337 C492 267 564 238 724 259"></path>
+              <path d="M57 300 C215 278 290 289 385 355 C481 289 552 278 703 300"></path>
+              <path d="M105 348 C242 321 304 313 385 371 C467 313 527 321 655 348"></path>
+              <path d="M93 152 C159 201 227 282 267 372"></path>
+              <path d="M187 125 C242 198 300 300 319 386"></path>
+              <path d="M284 111 C312 210 349 320 358 395"></path>
+              <path d="M476 111 C451 210 420 320 411 395"></path>
+              <path d="M573 125 C519 198 464 300 451 386"></path>
+              <path d="M667 152 C605 201 544 282 503 372"></path>
+            </g>
           </g>
-          <g class="effect-gravity">
-            <rect x="147" y="8" width="86" height="20" rx="10" fill="#edf8f3" stroke="#2f8f65"></rect>
-            <text x="190" y="22" font-size="8.5" fill="#2f8f65" font-weight="700" text-anchor="middle">弱い重力 → 時計が進む</text>
+          <path class="path-flow" d="M72 126 C245 110 292 245 394 245 S536 102 690 126"></path>
+          <path class="orbit-guide" d="M267 234 A120.5 76 0 1 1 508 234 A120.5 76 0 1 1 267 234"></path>
+          <g class="star-core">
+            <circle class="star-fill" cx="385" cy="232" r="54"></circle>
           </g>
-          <circle class="correction-ring" cx="120" cy="90" r="35"></circle>
-          <g class="correction">
-            <rect x="88" y="80" width="64" height="20" rx="10" fill="#fffaf0" stroke="#d9a441"></rect>
-            <text x="120" y="94" font-size="9" fill="#2f8f65" font-weight="700" text-anchor="middle">補正 ✓</text>
+          <g class="light-probe">
+            <path class="spark" d="M0-14l5 9 10 5-10 5-5 10-5-10-10-5 10-5z"></path>
+            <circle class="core" r="7"></circle>
           </g>
-          <text x="60" y="140" font-size="9" fill="#8a7a5c" font-weight="700">GPS衛星の時計は、速さと重力の違いでズレる → 相対性理論で補正</text>
+          <g class="orbit-probe">
+            <circle class="core" r="10"></circle>
+          </g>
+          <g transform="translate(30 365)">
+            <rect class="info-box" width="700" height="50" rx="14"></rect>
+            <line x1="350" y1="10" x2="350" y2="40" stroke="var(--line)" stroke-width="1.5" opacity=".6"></line>
+            <text class="info-label" x="175" y="34" text-anchor="middle">光：自分では直進</text>
+            <text class="info-label" x="525" y="34" text-anchor="middle">外からは曲がって見える</text>
+          </g>
         </svg>
-        <div class="diagram-caption">GPS衛星は地上より速く動き、重力が弱い場所にあるため、時計の進み方がわずかにズレる</div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">そんなに!? 相対性理論がないとGPSが使えないなんて、意外と身近だったんですね。</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">重力がとても強い天体「ブラックホール」も、一般相対性理論から予言された天体だよ。空間のゆがみが極限まで強くなって、光さえも脱出できなくなる場所なんだ。これで相対性理論クエストは完了だよ。よく頑張ったね！</div>
-        </div>
+        <div class="diagram-caption">重いボールがゴムシート（空間）をへこませ、近くを通るものはそのへこみに沿って進路を曲げられる</div>
       </div>
 
       <div class="quiz-head">確認クイズ</div>
       <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q1. GPSの時計のズレを相対性理論で補正しないとどうなる？</p>
+        <p class="quiz-q">Q1. アインシュタインは重力の正体を何だと考えた？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="true">位置情報が1日で数kmもズレてしまう</button>
-          <button class="choice-btn" data-correct="false">衛星の電池がすぐ切れる</button>
-          <button class="choice-btn" data-correct="false">スマホの画面が壊れる</button>
+          <button class="choice-btn" data-correct="false">磁石のような引力</button>
+          <button class="choice-btn" data-correct="true">空間（時空）のゆがみ</button>
+          <button class="choice-btn" data-correct="false">空気の圧力</button>
         </div>
-        <div class="quiz-explain" hidden>正解！ 速さによる時間の遅れ（ステージ3）と、重力による時間の違いの両方を補正して、はじめて正確な位置がわかるんだ。</div>
+        <div class="quiz-explain" hidden>正解！ 重い物体があると周りの空間がゆがみ、そのゆがみに沿って物が動くことを「重力」として感じる、と考えたんだ。</div>
       </div>
 
       <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q2. ブラックホールとはどんな天体？</p>
+        <p class="quiz-q">Q2. 重い星の近くを通る光はどうなる？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="false">真っ黒に塗られた惑星</button>
-          <button class="choice-btn" data-correct="false">宇宙のゴミが集まった場所</button>
-          <button class="choice-btn" data-correct="true">空間のゆがみが非常に強く、光も脱出できない天体</button>
+          <button class="choice-btn" data-correct="false">まっすぐ進む</button>
+          <button class="choice-btn" data-correct="false">止まってしまう</button>
+          <button class="choice-btn" data-correct="true">空間のゆがみに沿って進路が曲がる</button>
         </div>
-        <div class="quiz-explain" hidden>正解！ 一般相対性理論から存在が予言され、実際に観測もされている天体だよ。</div>
-      </div>
-
-      <div class="ending">
-        <h2>🎉 相対性理論クエスト クリア！</h2>
-        <p>中学数学と理科の知識だけで、アインシュタインの相対性理論の入り口をひと通り旅してきたね。ここまで学んだことを振り返ってみよう。</p>
-        <div class="ending-list">
-          <div>① 光の速さは、どこから見ても秒速約30万kmで一定（光速不変の原理）</div>
-          <div>② 動いているものの時間はゆっくり進む（光時計と三平方の定理）</div>
-          <div>③ 動いているものは進行方向に縮んで見える（ローレンツ収縮）</div>
-          <div>④ 「同時」に起きたかどうかは、見ている人によって変わる（同時性の相対性）</div>
-          <div>⑤ 質量とエネルギーは同じもの（E＝mc²）</div>
-          <div>⑥ 重力とは、空間そのもののゆがみである（一般相対性理論）</div>
-          <div>⑦ GPSやブラックホールなど、相対性理論は身近なところにも関わっている</div>
-        </div>
+        <div class="quiz-explain" hidden>正解！ 光さえも、空間のゆがみの影響を受けて進路が曲がる。これは実際の観測でも確認されているよ。</div>
       </div>
 
       <div class="stage-nav">
         <a class="btn" href="stage7.html">← 前へ</a>
-        <button class="btn btn-primary" id="btn-next" disabled>クリアしてトップへ →</button>
+        <button class="btn btn-primary" id="btn-next" disabled>次へ →</button>
       </div>
 
       <div id="book-recommend"></div>

@@ -12,34 +12,35 @@
   gtag('js', new Date());
   gtag('config', 'G-9RTQCP2HXM');
 </script>
-<title>相対性理論クエスト STAGE7 ― 重力は空間のゆがみ ―</title>
+<title>相対性理論クエスト STAGE7 ― E=mc² ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .gravity-scene{display:block;width:100%;max-width:760px;height:auto;margin:auto}
-  .gravity-scene .grid-wave{animation:s7-grid 4.8s ease-in-out infinite;transform-origin:385px 229px}
-  .gravity-scene .grid-well{fill:var(--felt);opacity:.07}
-  .gravity-scene .grid-line{fill:none;stroke:var(--line);stroke-width:1.4;opacity:.9}
-  .gravity-scene .path-flow{fill:none;stroke:var(--gold);stroke-width:2.5;opacity:.6;stroke-dasharray:9 12;animation:s7-flow .85s linear infinite}
-  .gravity-scene .orbit-guide{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 8;opacity:.8}
-  .gravity-scene .star-core{transform-box:fill-box;transform-origin:center;animation:s7-star 2.6s ease-in-out infinite}
-  .gravity-scene .star-fill{fill:var(--felt);stroke:var(--gold-dark);stroke-width:3}
-  .gravity-scene .light-probe{offset-path:path("M72 126 C245 110 292 245 394 245 S536 102 690 126");animation:s7-light 4s linear infinite}
-  .gravity-scene .light-probe .spark{fill:var(--gold-dark)}
-  .gravity-scene .light-probe .core{fill:var(--gold)}
-  .gravity-scene .orbit-probe{offset-path:path("M267 234 A120.5 76 0 1 1 508 234 A120.5 76 0 1 1 267 234");animation:s7-orbit 5.2s linear infinite}
-  .gravity-scene .orbit-probe .core{fill:var(--gold);stroke:var(--gold-dark);stroke-width:2}
-  .gravity-scene .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
-  .gravity-scene .info-title{fill:var(--ink);font-size:30px;font-weight:800}
-  .gravity-scene .info-label{fill:var(--ink);font-size:30px;font-weight:800}
-  @keyframes s7-grid{0%,100%{transform:scaleY(.98);opacity:.68}50%{transform:scaleY(1.04);opacity:1}}
-  @keyframes s7-star{0%,100%{transform:scale(.96)}50%{transform:scale(1.06)}}
-  @keyframes s7-light{0%{offset-distance:0%;opacity:0}8%{opacity:1}92%{opacity:1}100%{offset-distance:100%;opacity:0}}
-  @keyframes s7-orbit{to{offset-distance:100%}}
-  @keyframes s7-flow{to{stroke-dashoffset:-42}}
+  .fusion-scene .nucleus{fill:var(--paper2);stroke:#c0524f;stroke-width:2}
+  .fusion-scene .nucleus-a{animation:s6-a 4s cubic-bezier(.55,0,.35,1) infinite}
+  .fusion-scene .nucleus-b{animation:s6-b 4s cubic-bezier(.55,0,.35,1) infinite}
+  .fusion-scene .nucleus-c{animation:s6-c 4s cubic-bezier(.55,0,.35,1) infinite}
+  .fusion-scene .nucleus-d{animation:s6-d 4s cubic-bezier(.55,0,.35,1) infinite}
+  .fusion-scene .arrow-line{stroke:var(--muted);stroke-width:1.6;stroke-dasharray:3 3}
+  .fusion-scene .arrow-head{fill:var(--muted)}
+  .fusion-scene .reaction-ring{fill:none;stroke:var(--gold);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:s6-ring 4s ease-out infinite}
+  .fusion-scene .helium{transform-box:fill-box;transform-origin:center;animation:s6-helium 4s ease-out infinite}
+  .fusion-scene .helium-circle{fill:var(--paper2);stroke:var(--gold-dark);stroke-width:2}
+  .fusion-scene .helium-dot{fill:var(--paper2);stroke:#c0524f;stroke-width:1.4}
+  .fusion-scene .energy-path{stroke:var(--line);stroke-width:2;stroke-dasharray:4 4}
+  .fusion-scene .energy-packet{animation:s6-energy 4s cubic-bezier(.25,.75,.25,1) infinite}
+  .fusion-scene .energy-dot{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .fusion-scene .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
+  .fusion-scene .info-label{fill:var(--muted);font-size:9px;font-weight:700}
+  .fusion-scene .info-value{fill:var(--ink);font-size:12px;font-weight:900}
+  @keyframes s6-a{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(95px,25px);opacity:0}100%{opacity:1}}
+  @keyframes s6-b{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(95px,-25px);opacity:0}100%{opacity:1}}
+  @keyframes s6-c{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(55px,35px);opacity:0}100%{opacity:1}}
+  @keyframes s6-d{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(55px,-35px);opacity:0}100%{opacity:1}}
+  @keyframes s6-helium{0%,38%{opacity:0;transform:scale(.35)}48%,84%{opacity:1;transform:scale(1)}92%,100%{opacity:0;transform:scale(.8)}}
+  @keyframes s6-ring{0%,38%{opacity:0;transform:scale(.25)}48%{opacity:1}72%,100%{opacity:0;transform:scale(2.6)}}
+  @keyframes s6-energy{0%,43%{transform:translateX(0);opacity:0}48%{opacity:1}82%{transform:translateX(150px);opacity:1}92%,100%{transform:translateX(150px);opacity:0}}
   @media (prefers-reduced-motion:reduce){
-    .gravity-scene .grid-wave,.gravity-scene .star-core,.gravity-scene .light-probe,.gravity-scene .orbit-probe,.gravity-scene .path-flow{animation:none}
-    .gravity-scene .light-probe{offset-distance:18%}
-    .gravity-scene .orbit-probe{offset-distance:62%}
+    .fusion-scene .nucleus-a,.fusion-scene .nucleus-b,.fusion-scene .nucleus-c,.fusion-scene .nucleus-d,.fusion-scene .helium,.fusion-scene .reaction-ring,.fusion-scene .energy-packet{animation:none}
   }
 </style>
 </head>
@@ -48,10 +49,10 @@
   <header class="game-header">
     <div class="brand">
       <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>相対性理論クエスト</span></div>
-      <div class="brand-sub">STAGE 7 ― 重力は空間のゆがみ ―</div>
+      <div class="brand-sub">STAGE 7 ― E=mc² ―</div>
     </div>
     <div class="head-progress-wrap">
-      <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
+      <div class="head-progress-label" id="progress-label">クリア 0 / 9</div>
       <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
     </div>
     <div class="header-actions">
@@ -72,13 +73,13 @@
 
     <main class="main-area">
       <div class="chapter-head">
-        <span class="chapter-badge">STAGE 7</span><span class="chapter-title">重力は空間のゆがみ</span>
-        <div class="chapter-sub">一般相対性理論への入り口</div>
+        <span class="chapter-badge">STAGE 7</span><span class="chapter-title">E=mc² 質量とエネルギーは同じもの</span>
+        <div class="chapter-sub">質量とエネルギーの等価性</div>
       </div>
 
       <div class="mission-box">
         <div class="mission-label">🎯 ミッション</div>
-        <div class="mission-text">ゴムシートモデルを使って、「重力とは空間そのもののゆがみである」という考え方に触れよう。</div>
+        <div class="mission-text">相対性理論で一番有名な式 E=mc² が何を意味しているのか、直感的に理解しよう。</div>
         <span class="mission-status" id="mission-status">未達成</span>
       </div>
 
@@ -88,28 +89,28 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">ここからは一般相対性理論、重力についての理論だよ。アインシュタインは「重力とは、空間そのものがゆがんでいることだ」と考えたんだ。</div>
+          <div class="dialog-bubble">最後に、相対性理論で一番有名な式、E=mc² を見てみよう。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">空間がゆがむ、ってどういうことですか？</div>
+          <div class="dialog-bubble">聞いたことあります！ でも意味がよくわからないんですよね…</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">よく使われるたとえが、ピンと張ったゴムシートだよ。真ん中に重いボールを置くと、シートがへこむよね。</div>
+          <div class="dialog-bubble">E はエネルギー、m は質量、c は光の速さだったね。この式は「質量とエネルギーは同じもの」だと言っているんだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">はい、お椀みたいにへこむイメージですね。</div>
+          <div class="dialog-bubble">質量とエネルギーが同じ…？ 重さとエネルギーって全然違うものに思えますけど。</div>
         </div>
       </div>
 
@@ -119,87 +120,86 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">そのへこみの近くでビー玉を転がすと、まっすぐ進まずに、重いボールの方へ引き寄せられるように曲がって進む。これが「重力」の正体だとアインシュタインは考えたんだ。</div>
+          <div class="dialog-bubble">実は、物が動いてエネルギーを持つと、ほんの少しだけ重くなるんだ。逆に、質量をエネルギーに変えることもできる。太陽が輝いているのも、水素の質量の一部が光のエネルギーに変わっているからなんだよ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">重力って、引っ張る力じゃなくて、空間のへこみのせいだったんですね…</div>
+          <div class="dialog-bubble">太陽の光は、質量が変身した姿ってことですか!?</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">そう。だから、まっすぐ進むはずの光も、太陽のように重い星のそばを通ると、空間のゆがみに沿って進路が曲がってしまうんだよ。</div>
+          <div class="dialog-bubble">そういうこと。c は秒速30万kmというとても大きい数だから、c² はものすごく大きな数になる。だから、ほんの少しの質量でも、ものすごく大きなエネルギーに変わるんだ。</div>
         </div>
       </div>
 
       <div class="diagram-box">
-        <svg class="gravity-scene" viewBox="0 0 760 440" role="img" aria-label="重い星の周囲で時空の格子が深くへこみ、光と惑星が曲がった経路を進む様子を示すイラスト">
-          <g transform="translate(25 20)">
-            <rect class="info-box" width="300" height="48" rx="24"></rect>
-            <text class="info-title" x="150" y="32" text-anchor="middle">質量が時空を曲げる</text>
+        <svg class="fusion-scene" viewBox="0 0 400 175" width="100%" height="180" role="img" aria-label="太陽内部で四つの水素原子核が融合してヘリウムになり、わずかな質量差が光エネルギーとして飛び出すイラスト">
+          <text x="4" y="14" font-size="10.5" fill="var(--muted)" font-weight="700">太陽内部の核融合</text>
+
+          <g transform="translate(90 55)"><circle class="nucleus nucleus-a" r="13"></circle></g>
+          <g transform="translate(90 115)"><circle class="nucleus nucleus-b" r="13"></circle></g>
+          <g transform="translate(130 45)"><circle class="nucleus nucleus-c" r="13"></circle></g>
+          <g transform="translate(130 125)"><circle class="nucleus nucleus-d" r="13"></circle></g>
+          <text x="110" y="152" font-size="9.5" fill="var(--muted)" font-weight="700" text-anchor="middle">4つの水素原子核</text>
+
+          <path class="arrow-line" d="M158 85h20"></path>
+          <path class="arrow-head" d="M178 79l10 6-10 6z"></path>
+
+          <circle class="reaction-ring" cx="220" cy="85" r="20"></circle>
+          <g class="helium" transform="translate(220 85)">
+            <circle class="helium-circle" r="23"></circle>
+            <circle class="helium-dot" cx="-8" cy="-7" r="8"></circle>
+            <circle class="helium-dot" cx="9" cy="-7" r="8"></circle>
+            <circle class="helium-dot" cx="-8" cy="8" r="8"></circle>
+            <circle class="helium-dot" cx="9" cy="8" r="8"></circle>
           </g>
-          <g class="grid-wave">
-            <ellipse class="grid-well" cx="385" cy="235" rx="318" ry="152"></ellipse>
-            <g class="grid-line">
-              <path d="M42 188 C204 171 268 229 385 298 C501 229 566 171 718 188"></path>
-              <path d="M32 222 C198 202 274 249 385 318 C497 249 570 202 728 222"></path>
-              <path d="M36 259 C206 238 279 267 385 337 C492 267 564 238 724 259"></path>
-              <path d="M57 300 C215 278 290 289 385 355 C481 289 552 278 703 300"></path>
-              <path d="M105 348 C242 321 304 313 385 371 C467 313 527 321 655 348"></path>
-              <path d="M93 152 C159 201 227 282 267 372"></path>
-              <path d="M187 125 C242 198 300 300 319 386"></path>
-              <path d="M284 111 C312 210 349 320 358 395"></path>
-              <path d="M476 111 C451 210 420 320 411 395"></path>
-              <path d="M573 125 C519 198 464 300 451 386"></path>
-              <path d="M667 152 C605 201 544 282 503 372"></path>
-            </g>
+          <text x="220" y="130" font-size="9.5" fill="var(--muted)" font-weight="700" text-anchor="middle">ヘリウム</text>
+
+          <line class="energy-path" x1="244" y1="85" x2="392" y2="85"></line>
+          <g class="energy-packet">
+            <circle class="energy-dot" cx="255" cy="85" r="5"></circle>
           </g>
-          <path class="path-flow" d="M72 126 C245 110 292 245 394 245 S536 102 690 126"></path>
-          <path class="orbit-guide" d="M267 234 A120.5 76 0 1 1 508 234 A120.5 76 0 1 1 267 234"></path>
-          <g class="star-core">
-            <circle class="star-fill" cx="385" cy="232" r="54"></circle>
-          </g>
-          <g class="light-probe">
-            <path class="spark" d="M0-14l5 9 10 5-10 5-5 10-5-10-10-5 10-5z"></path>
-            <circle class="core" r="7"></circle>
-          </g>
-          <g class="orbit-probe">
-            <circle class="core" r="10"></circle>
-          </g>
-          <g transform="translate(30 365)">
-            <rect class="info-box" width="700" height="50" rx="14"></rect>
-            <line x1="350" y1="10" x2="350" y2="40" stroke="var(--line)" stroke-width="1.5" opacity=".6"></line>
-            <text class="info-label" x="175" y="34" text-anchor="middle">光：自分では直進</text>
-            <text class="info-label" x="525" y="34" text-anchor="middle">外からは曲がって見える</text>
+
+          <g transform="translate(255 12)">
+            <rect class="info-box" width="140" height="46" rx="8"></rect>
+            <text class="info-label" x="70" y="17" text-anchor="middle">融合前後のわずかな質量差</text>
+            <text class="info-value" x="70" y="36" text-anchor="middle">E = Δm × c² → 光</text>
           </g>
         </svg>
-        <div class="diagram-caption">重いボールがゴムシート（空間）をへこませ、近くを通るものはそのへこみに沿って進路を曲げられる</div>
+        <div class="diagram-caption">太陽の中では、水素の質量のごく一部が莫大な光エネルギーに変わり続けている</div>
+      </div>
+
+      <div class="formula-box">
+        <span class="step">E ＝ m × c²</span>
+        <span class="step">E：エネルギー　m：質量　c：光の速さ（秒速約30万km）</span>
+        <span class="step">c² はとても大きな数なので、わずかな質量からでも莫大なエネルギーが生まれる</span>
       </div>
 
       <div class="quiz-head">確認クイズ</div>
       <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q1. アインシュタインは重力の正体を何だと考えた？</p>
+        <p class="quiz-q">Q1. E=mc² の c は何を表す？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="false">磁石のような引力</button>
-          <button class="choice-btn" data-correct="true">空間（時空）のゆがみ</button>
-          <button class="choice-btn" data-correct="false">空気の圧力</button>
+          <button class="choice-btn" data-correct="false">電子の数</button>
+          <button class="choice-btn" data-correct="true">光の速さ</button>
+          <button class="choice-btn" data-correct="false">温度</button>
         </div>
-        <div class="quiz-explain" hidden>正解！ 重い物体があると周りの空間がゆがみ、そのゆがみに沿って物が動くことを「重力」として感じる、と考えたんだ。</div>
+        <div class="quiz-explain" hidden>正解！ c は光の速さ（秒速約30万km）を表す記号だよ。</div>
       </div>
 
       <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q2. 重い星の近くを通る光はどうなる？</p>
+        <p class="quiz-q">Q2. 太陽が輝いているエネルギーの元は？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="false">まっすぐ進む</button>
-          <button class="choice-btn" data-correct="false">止まってしまう</button>
-          <button class="choice-btn" data-correct="true">空間のゆがみに沿って進路が曲がる</button>
+          <button class="choice-btn" data-correct="false">太陽の中で石炭が燃えている</button>
+          <button class="choice-btn" data-correct="true">水素の質量の一部がエネルギーに変わったもの</button>
+          <button class="choice-btn" data-correct="false">電気の力</button>
         </div>
-        <div class="quiz-explain" hidden>正解！ 光さえも、空間のゆがみの影響を受けて進路が曲がる。これは実際の観測でも確認されているよ。</div>
+        <div class="quiz-explain" hidden>正解！ 太陽の中心では水素がヘリウムに変わる反応が起き、その際に失われたわずかな質量が莫大な光エネルギーになっている。</div>
       </div>
 
       <div class="stage-nav">

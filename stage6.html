@@ -12,36 +12,19 @@
   gtag('js', new Date());
   gtag('config', 'G-9RTQCP2HXM');
 </script>
-<title>相対性理論クエスト STAGE6 ― E=mc² ―</title>
+<title>相対性理論クエスト STAGE6 ― 双子のパラドックスの種明かし ―</title>
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .fusion-scene .nucleus{fill:var(--paper2);stroke:#c0524f;stroke-width:2}
-  .fusion-scene .nucleus-a{animation:s6-a 4s cubic-bezier(.55,0,.35,1) infinite}
-  .fusion-scene .nucleus-b{animation:s6-b 4s cubic-bezier(.55,0,.35,1) infinite}
-  .fusion-scene .nucleus-c{animation:s6-c 4s cubic-bezier(.55,0,.35,1) infinite}
-  .fusion-scene .nucleus-d{animation:s6-d 4s cubic-bezier(.55,0,.35,1) infinite}
-  .fusion-scene .arrow-line{stroke:var(--muted);stroke-width:1.6;stroke-dasharray:3 3}
-  .fusion-scene .arrow-head{fill:var(--muted)}
-  .fusion-scene .reaction-ring{fill:none;stroke:var(--gold);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:s6-ring 4s ease-out infinite}
-  .fusion-scene .helium{transform-box:fill-box;transform-origin:center;animation:s6-helium 4s ease-out infinite}
-  .fusion-scene .helium-circle{fill:var(--paper2);stroke:var(--gold-dark);stroke-width:2}
-  .fusion-scene .helium-dot{fill:var(--paper2);stroke:#c0524f;stroke-width:1.4}
-  .fusion-scene .energy-path{stroke:var(--line);stroke-width:2;stroke-dasharray:4 4}
-  .fusion-scene .energy-packet{animation:s6-energy 4s cubic-bezier(.25,.75,.25,1) infinite}
-  .fusion-scene .energy-dot{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
-  .fusion-scene .info-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.2}
-  .fusion-scene .info-label{fill:var(--muted);font-size:9px;font-weight:700}
-  .fusion-scene .info-value{fill:var(--ink);font-size:12px;font-weight:900}
-  @keyframes s6-a{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(95px,25px);opacity:0}100%{opacity:1}}
-  @keyframes s6-b{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(95px,-25px);opacity:0}100%{opacity:1}}
-  @keyframes s6-c{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(55px,35px);opacity:0}100%{opacity:1}}
-  @keyframes s6-d{0%,10%{transform:translate(0,0);opacity:1}42%,88%{transform:translate(55px,-35px);opacity:0}100%{opacity:1}}
-  @keyframes s6-helium{0%,38%{opacity:0;transform:scale(.35)}48%,84%{opacity:1;transform:scale(1)}92%,100%{opacity:0;transform:scale(.8)}}
-  @keyframes s6-ring{0%,38%{opacity:0;transform:scale(.25)}48%{opacity:1}72%,100%{opacity:0;transform:scale(2.6)}}
-  @keyframes s6-energy{0%,43%{transform:translateX(0);opacity:0}48%{opacity:1}82%{transform:translateX(150px);opacity:1}92%,100%{transform:translateX(150px);opacity:0}}
-  @media (prefers-reduced-motion:reduce){
-    .fusion-scene .nucleus-a,.fusion-scene .nucleus-b,.fusion-scene .nucleus-c,.fusion-scene .nucleus-d,.fusion-scene .helium,.fusion-scene .reaction-ring,.fusion-scene .energy-packet{animation:none}
-  }
+  .jump-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
+  .jump-svg .axis{stroke:var(--line);stroke-width:1.5}
+  .jump-svg .ref-line{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4;opacity:.6}
+  .jump-svg .path-out{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .jump-svg .path-jump{stroke:#b5504a;stroke-width:2;stroke-dasharray:3 3;fill:none}
+  .jump-svg .path-return{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .jump-svg .pt{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .jump-svg .axis-label{fill:var(--ink);font-size:9.5px;font-weight:800}
+  .jump-svg .lbl{fill:var(--muted);font-size:9px;font-weight:700}
+  .jump-svg .lbl-jump{fill:#b5504a;font-size:9px;font-weight:800}
 </style>
 </head>
 <body>
@@ -49,10 +32,10 @@
   <header class="game-header">
     <div class="brand">
       <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>相対性理論クエスト</span></div>
-      <div class="brand-sub">STAGE 6 ― E=mc² ―</div>
+      <div class="brand-sub">STAGE 6 ― 双子のパラドックスの種明かし ―</div>
     </div>
     <div class="head-progress-wrap">
-      <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
+      <div class="head-progress-label" id="progress-label">クリア 0 / 9</div>
       <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
     </div>
     <div class="header-actions">
@@ -73,44 +56,30 @@
 
     <main class="main-area">
       <div class="chapter-head">
-        <span class="chapter-badge">STAGE 6</span><span class="chapter-title">E=mc² 質量とエネルギーは同じもの</span>
-        <div class="chapter-sub">質量とエネルギーの等価性</div>
+        <span class="chapter-badge">STAGE 6</span><span class="chapter-title">双子のパラドックスの種明かし</span>
+        <div class="chapter-sub">うさ美自身の視点でも、答えは変わらない</div>
       </div>
 
       <div class="mission-box">
         <div class="mission-label">🎯 ミッション</div>
-        <div class="mission-text">相対性理論で一番有名な式 E=mc² が何を意味しているのか、直感的に理解しよう。</div>
+        <div class="mission-text">電車に乗って加速したうさ美自身の視点から計算しても、なぜ同じ結論にたどり着くのかを理解しよう。</div>
         <span class="mission-status" id="mission-status">未達成</span>
       </div>
 
       <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">最後に、相対性理論で一番有名な式、E=mc² を見てみよう。</div>
-        </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">聞いたことあります！ でも意味がよくわからないんですよね…</div>
+          <div class="dialog-bubble">でも、博士の視点だけで計算して「博士は動いていないから正しい」って言われても、まだ少しモヤモヤします。わたし自身の視点からちゃんと計算しても、同じ答えになるんですか？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">E はエネルギー、m は質量、c は光の速さだったね。この式は「質量とエネルギーは同じもの」だと言っているんだ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">質量とエネルギーが同じ…？ 重さとエネルギーって全然違うものに思えますけど。</div>
+          <div class="dialog-bubble">するどい指摘だね。実はここが双子のパラドックスでいちばん面白いところで、ちゃんと説明できるんだ。順番に見ていこう。</div>
         </div>
       </div>
 
@@ -120,86 +89,116 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">実は、物が動いてエネルギーを持つと、ほんの少しだけ重くなるんだ。逆に、質量をエネルギーに変えることもできる。太陽が輝いているのも、水素の質量の一部が光のエネルギーに変わっているからなんだよ。</div>
+          <div class="dialog-bubble">うさ美が出発点を離れていく間（うさ美自身の時間で0.8秒）、うさ美から見ると自分は止まっていて、博士の方が秒速18万kmで遠ざかっていくように見える。だから、博士の時計Bの方が遅れて進むように見えるはずだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">太陽の光は、質量が変身した姿ってことですか!?</div>
+          <div class="dialog-bubble">はい、動いているのはお互い様のはずだから、わたしからは博士の時計が遅れて見えるはずですよね。わたしの0.8秒の間に、博士の時計は0.8秒÷1.25＝0.64秒しか進んでいないように見えます。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り。ここまでは対称的だ。でも、うさ美が折り返す瞬間、大事なことが起きる。実は「博士の時計が今何秒を指しているか」の感じ方が、折り返しの瞬間に一気に変わるんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">え、どういうことですか？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">そういうこと。c は秒速30万kmというとても大きい数だから、c² はものすごく大きな数になる。だから、ほんの少しの質量でも、ものすごく大きなエネルギーに変わるんだ。</div>
+          <div class="dialog-bubble">行きの電車から見た「博士の今」と、帰りの電車から見た「博士の今」はズレているんだ。まっすぐ進んでいる間は「同時」の感じ方が一定なんだけど、向きを変えた瞬間に、その基準もガラッと切り替わる。ステージ5で学んだ「同時性の相対性」が、ここでも働いているんだよ。計算すると、折り返しの瞬間、うさ美から見た博士の時計は0.64秒から1.36秒へ——一気に0.72秒分ジャンプするんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">自分は一瞬しか経っていないのに、相手の時計の「今」が大きく先に進んで見える…？</div>
         </div>
       </div>
 
       <div class="diagram-box">
-        <svg class="fusion-scene" viewBox="0 0 400 175" width="100%" height="180" role="img" aria-label="太陽内部で四つの水素原子核が融合してヘリウムになり、わずかな質量差が光エネルギーとして飛び出すイラスト">
-          <text x="4" y="14" font-size="10.5" fill="var(--muted)" font-weight="700">太陽内部の核融合</text>
-
-          <g transform="translate(90 55)"><circle class="nucleus nucleus-a" r="13"></circle></g>
-          <g transform="translate(90 115)"><circle class="nucleus nucleus-b" r="13"></circle></g>
-          <g transform="translate(130 45)"><circle class="nucleus nucleus-c" r="13"></circle></g>
-          <g transform="translate(130 125)"><circle class="nucleus nucleus-d" r="13"></circle></g>
-          <text x="110" y="152" font-size="9.5" fill="var(--muted)" font-weight="700" text-anchor="middle">4つの水素原子核</text>
-
-          <path class="arrow-line" d="M158 85h20"></path>
-          <path class="arrow-head" d="M178 79l10 6-10 6z"></path>
-
-          <circle class="reaction-ring" cx="220" cy="85" r="20"></circle>
-          <g class="helium" transform="translate(220 85)">
-            <circle class="helium-circle" r="23"></circle>
-            <circle class="helium-dot" cx="-8" cy="-7" r="8"></circle>
-            <circle class="helium-dot" cx="9" cy="-7" r="8"></circle>
-            <circle class="helium-dot" cx="-8" cy="8" r="8"></circle>
-            <circle class="helium-dot" cx="9" cy="8" r="8"></circle>
-          </g>
-          <text x="220" y="130" font-size="9.5" fill="var(--muted)" font-weight="700" text-anchor="middle">ヘリウム</text>
-
-          <line class="energy-path" x1="244" y1="85" x2="392" y2="85"></line>
-          <g class="energy-packet">
-            <circle class="energy-dot" cx="255" cy="85" r="5"></circle>
-          </g>
-
-          <g transform="translate(255 12)">
-            <rect class="info-box" width="140" height="46" rx="8"></rect>
-            <text class="info-label" x="70" y="17" text-anchor="middle">融合前後のわずかな質量差</text>
-            <text class="info-value" x="70" y="36" text-anchor="middle">E = Δm × c² → 光</text>
-          </g>
+        <svg class="jump-svg" viewBox="0 0 280 150" role="img" aria-label="うさ美自身の視点で計算した、博士の時計の読みの変化。行きは0秒から0.64秒までゆっくり進み、折り返しの瞬間に1.36秒へジャンプし、帰りは1.36秒から2.0秒まで進む">
+          <text class="axis-label" x="8" y="14">うさ美から見た「博士の時計は今何秒か」</text>
+          <line class="axis" x1="30" y1="120" x2="260" y2="120"></line>
+          <line class="axis" x1="30" y1="20" x2="30" y2="120"></line>
+          <line class="ref-line" x1="30" y1="20" x2="260" y2="20"></line>
+          <path class="path-out" d="M30,120 L145,88"></path>
+          <path class="path-jump" d="M145,88 L145,52"></path>
+          <path class="path-return" d="M145,52 L260,20"></path>
+          <circle class="pt" cx="30" cy="120" r="3.5"></circle>
+          <circle class="pt" cx="145" cy="88" r="3.5"></circle>
+          <circle class="pt" cx="145" cy="52" r="3.5"></circle>
+          <circle class="pt" cx="260" cy="20" r="3.5"></circle>
+          <text class="lbl" x="30" y="133" text-anchor="middle">0秒</text>
+          <text class="lbl" x="145" y="133" text-anchor="middle" font-size="8.5">0.8秒（折り返し）</text>
+          <text class="lbl" x="260" y="133" text-anchor="middle">1.6秒</text>
+          <text class="lbl" x="26" y="123" text-anchor="end">0</text>
+          <text class="lbl" x="26" y="91" text-anchor="end">0.64</text>
+          <text class="lbl" x="26" y="55" text-anchor="end">1.36</text>
+          <text class="lbl" x="26" y="23" text-anchor="end">2.0</text>
+          <text class="lbl-jump" x="151" y="72">＋0.72秒</text>
         </svg>
-        <div class="diagram-caption">太陽の中では、水素の質量のごく一部が莫大な光エネルギーに変わり続けている</div>
+        <div class="diagram-caption">横軸はうさ美自身の経過時間、縦軸はうさ美から見た博士の時計の読み。折り返しの瞬間だけ0.72秒分ジャンプし、最終的に博士の視点と同じ2.0秒に一致する</div>
       </div>
 
-      <div class="formula-box">
-        <span class="step">E ＝ m × c²</span>
-        <span class="step">E：エネルギー　m：質量　c：光の速さ（秒速約30万km）</span>
-        <span class="step">c² はとても大きな数なので、わずかな質量からでも莫大なエネルギーが生まれる</span>
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そう。帰りの電車でも、うさ美から見ると博士の時計はまた遅れて進む（0.8秒の間に0.64秒分）。1.36秒に0.64秒を足すと、ちょうど2.0秒。博士の時計は、うさ美が戻ってきたときにぴったり2.0秒——博士自身の視点で計算したのと同じ答えになるんだ！</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">つまり、行きと帰りは対称に見えても、折り返しの瞬間に「同時」の基準がジャンプするから、最終的にちゃんと同じ答えにたどり着くんですね！ 加速しているのは自分だけだから、このジャンプが起きるのも自分の方だけ——博士にはこんなジャンプは起きないんですね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ これが双子のパラドックスの本当の種明かしだよ。二人がずっと同じ速度で動き続けていたら「同時」の基準はズレたままだけど、片方が向きを変えると、その瞬間に基準が一気に切り替わる。だから、行って戻ってきた方（＝加速した方）の時間だけが、本当に遅れることになるんだ。</div>
+        </div>
       </div>
 
       <div class="quiz-head">確認クイズ</div>
       <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q1. E=mc² の c は何を表す？</p>
+        <p class="quiz-q">Q1. うさ美自身の視点で計算すると、行き・帰りそれぞれの間、博士の時計はどう見える？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="false">電子の数</button>
-          <button class="choice-btn" data-correct="true">光の速さ</button>
-          <button class="choice-btn" data-correct="false">温度</button>
+          <button class="choice-btn" data-correct="true">遅れて進む</button>
+          <button class="choice-btn" data-correct="false">同じ速さで進む</button>
+          <button class="choice-btn" data-correct="false">一瞬で全部進む</button>
         </div>
-        <div class="quiz-explain" hidden>正解！ c は光の速さ（秒速約30万km）を表す記号だよ。</div>
+        <div class="quiz-explain" hidden>正解！ 動いているのはお互い様だから、行きも帰りも、うさ美からは博士の時計が遅れて（0.8秒あたり0.64秒）進むように見える。</div>
       </div>
 
       <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q2. 太陽が輝いているエネルギーの元は？</p>
+        <p class="quiz-q">Q2. うさ美と博士、最終的に答えが一致するのはなぜ？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="false">太陽の中で石炭が燃えている</button>
-          <button class="choice-btn" data-correct="true">水素の質量の一部がエネルギーに変わったもの</button>
-          <button class="choice-btn" data-correct="false">電気の力</button>
+          <button class="choice-btn" data-correct="true">折り返しの瞬間に「同時」の基準がジャンプするから</button>
+          <button class="choice-btn" data-correct="false">二人とも数え間違えたから</button>
+          <button class="choice-btn" data-correct="false">博士の時計だけ特別な時計だから</button>
         </div>
-        <div class="quiz-explain" hidden>正解！ 太陽の中心では水素がヘリウムに変わる反応が起き、その際に失われたわずかな質量が莫大な光エネルギーになっている。</div>
+        <div class="quiz-explain" hidden>正解！ 加速して向きを変えたうさ美だけに、「同時」の基準が一気に切り替わるジャンプが起きる。これを合わせて計算すると、博士の視点と同じ答えになるんだ。</div>
       </div>
 
       <div class="stage-nav">
