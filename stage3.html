@@ -81,6 +81,17 @@
     .triangle-svg .tri-train-group{transform:translateX(48px)}
     .triangle-svg .photon{transform:translateY(-80px);opacity:1}
   }
+
+  .brain-diagram{display:block;margin-top:8px;max-width:100%;height:auto}
+  .brain-diagram .bd-mirror{stroke:var(--gold-dark);stroke-width:1.5}
+  .brain-diagram .bd-line{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3}
+  .brain-diagram .bd-divider{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3}
+  .brain-diagram .bd-photon-done{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .brain-diagram .bd-photon-wait{fill:var(--muted);opacity:.55}
+  .brain-diagram .bd-title{fill:var(--ink);font-size:10px;font-weight:800}
+  .brain-diagram .bd-label{fill:var(--muted);font-size:9px;font-weight:700}
+  .brain-diagram .bd-status-done{fill:var(--ok);font-size:9px;font-weight:800}
+  .brain-diagram .bd-status-wait{fill:var(--muted);font-size:9px;font-weight:700}
 </style>
 </head>
 <body>
@@ -304,7 +315,37 @@
             <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">だとしたら、秒速22万5千kmで動く電車に光時計Aを設置し、電車の進行方向に22万5千km離れた地面に光時計Bを設置します。わたしは電車に乗って、博士は光時計Bのところにいてください。そして光時計AとBを同時に光を発射させます。わたしが博士と出会った時、わたしが見ている光時計Aは天井に達していて、Bはまだ天井に達していません。博士が見ている光時計Aはまだ天井に達していないのに、Bは天井に達しています。同じ場所で、同じものを見ているのに、食い違ってしまうんじゃないですか？</div>
+          <div class="dialog-bubble">だとしたら、秒速22万5千kmで動く電車に光時計Aを設置し、電車の進行方向に22万5千km離れた地面に光時計Bを設置します。わたしは電車に乗って、博士は光時計Bのところにいてください。そして光時計AとBを同時に光を発射させます。わたしが博士と出会った時、わたしが見ている光時計Aは天井に達していて、Bはまだ天井に達していません。博士が見ている光時計Aはまだ天井に達していないのに、Bは天井に達しています。同じ場所で、同じものを見ているのに、食い違ってしまうんじゃないですか？
+            <svg class="brain-diagram" viewBox="0 0 260 118" role="img" aria-label="うさ美から見るとAが到達しBはまだ、博士から見るとAはまだでBが到達という、観測者によって食い違う状況の図">
+              <text class="bd-title" x="60" y="14" text-anchor="middle">うさ美から見ると</text>
+              <line class="bd-mirror" x1="20" y1="26" x2="40" y2="26"></line>
+              <line class="bd-mirror" x1="20" y1="76" x2="40" y2="76"></line>
+              <line class="bd-line" x1="30" y1="26" x2="30" y2="76"></line>
+              <circle class="bd-photon-done" cx="30" cy="26" r="4"></circle>
+              <text class="bd-label" x="30" y="92" text-anchor="middle">A</text>
+              <text class="bd-status-done" x="30" y="104" text-anchor="middle">到達</text>
+              <line class="bd-mirror" x1="80" y1="26" x2="100" y2="26"></line>
+              <line class="bd-mirror" x1="80" y1="76" x2="100" y2="76"></line>
+              <line class="bd-line" x1="90" y1="26" x2="90" y2="76"></line>
+              <circle class="bd-photon-wait" cx="90" cy="51" r="3.5"></circle>
+              <text class="bd-label" x="90" y="92" text-anchor="middle">B</text>
+              <text class="bd-status-wait" x="90" y="104" text-anchor="middle">まだ</text>
+              <line class="bd-divider" x1="130" y1="8" x2="130" y2="112"></line>
+              <text class="bd-title" x="200" y="14" text-anchor="middle">博士から見ると</text>
+              <line class="bd-mirror" x1="160" y1="26" x2="180" y2="26"></line>
+              <line class="bd-mirror" x1="160" y1="76" x2="180" y2="76"></line>
+              <line class="bd-line" x1="170" y1="26" x2="170" y2="76"></line>
+              <circle class="bd-photon-wait" cx="170" cy="51" r="3.5"></circle>
+              <text class="bd-label" x="170" y="92" text-anchor="middle">A</text>
+              <text class="bd-status-wait" x="170" y="104" text-anchor="middle">まだ</text>
+              <line class="bd-mirror" x1="220" y1="26" x2="240" y2="26"></line>
+              <line class="bd-mirror" x1="220" y1="76" x2="240" y2="76"></line>
+              <line class="bd-line" x1="230" y1="26" x2="230" y2="76"></line>
+              <circle class="bd-photon-done" cx="230" cy="26" r="4"></circle>
+              <text class="bd-label" x="230" y="92" text-anchor="middle">B</text>
+              <text class="bd-status-done" x="230" y="104" text-anchor="middle">到達</text>
+            </svg>
+          </div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
