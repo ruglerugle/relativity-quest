@@ -25,6 +25,15 @@
   .jump-svg .axis-label{fill:var(--ink);font-size:9.5px;font-weight:800}
   .jump-svg .lbl{fill:var(--muted);font-size:9px;font-weight:700}
   .jump-svg .lbl-jump{fill:#b5504a;font-size:9px;font-weight:800}
+
+  .b-path-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap}
+  .b-path-compare .bp-svg{flex:0 1 150px;min-width:0;width:100%;max-width:170px;height:auto}
+  .bp-svg .bp-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .bp-svg .bp-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
+  .bp-svg .bp-path{stroke:#5b3fa6;stroke-width:2;stroke-dasharray:4 5;fill:none}
+  .bp-svg .bp-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .bp-svg .bp-caption{fill:var(--muted);font-size:10px;font-weight:700}
+  .b-path-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin-top:6px}
 </style>
 </head>
 <body>
@@ -129,6 +138,28 @@
           </div>
           <div class="dialog-bubble">いい着眼点だ。しかも、行きと帰りではうさ美自身が進む向きが逆になるから、うさ美から見たBの光がジグザグに傾く向きも、行きと帰りで逆になるんだ。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="b-path-compare">
+          <svg class="bp-svg" viewBox="0 0 150 124" role="img" aria-label="行き：うさ美から見て博士の光時計Bが遠ざかりながら、光が下の鏡から右上の鏡へ斜めに進む">
+            <line class="bp-ground" x1="0" y1="104" x2="150" y2="104"></line>
+            <line class="bp-mirror" x1="18" y1="92" x2="53" y2="92"></line>
+            <line class="bp-mirror" x1="93" y1="14" x2="128" y2="14"></line>
+            <path class="bp-path" d="M35,92 L110,14"></path>
+            <circle class="bp-photon" cx="35" cy="92" r="4"></circle>
+            <text class="bp-caption" x="75" y="120" text-anchor="middle">行き（Bが遠ざかる）</text>
+          </svg>
+          <svg class="bp-svg" viewBox="0 0 150 124" role="img" aria-label="帰り：うさ美から見て博士の光時計Bが近づきながら、光が下の鏡から左上の鏡へ斜めに進む">
+            <line class="bp-ground" x1="0" y1="104" x2="150" y2="104"></line>
+            <line class="bp-mirror" x1="97" y1="92" x2="132" y2="92"></line>
+            <line class="bp-mirror" x1="22" y1="14" x2="57" y2="14"></line>
+            <path class="bp-path" d="M115,92 L40,14"></path>
+            <circle class="bp-photon" cx="115" cy="92" r="4"></circle>
+            <text class="bp-caption" x="75" y="120" text-anchor="middle">帰り（Bが近づく）</text>
+          </svg>
+        </div>
+        <span class="b-path-caption">うさ美自身は静止していると考えるので、動いているのはB。光は下の鏡から上の鏡へまっすぐ進まず、斜めのジグザグの道のりを進む——行きと帰りで傾く向きが逆になる</span>
       </div>
 
       <div class="dialogue-scene">
