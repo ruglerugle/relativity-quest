@@ -149,14 +149,45 @@
             <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">ステージ4で計算できるようになった「同時のズレ」、ここでも実際に計算できますか？</div>
+          <div class="dialog-bubble">どれくらいズレるのか、ちゃんと計算できるんですか？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">もちろん。この電車の長さも30万km、速さも秒速18万kmだとすると、ステージ4と同じ式でΔt＝1.25×18万×30万÷30万²＝0.75秒。外から見ると、後ろの壁に光が届いてから0.75秒後に、前の壁に光が届くことになるんだ。</div>
+          <div class="dialog-bubble">できるよ。このズレの大きさは、次の式で計算できるんだ。</div>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <span class="step">ズレの大きさ Δt ＝ γ × 速さ(v) × 電車の長さ(L) ÷ 光速(c)²</span>
+        <span class="step">γはステージ3で出てきた「時間の遅れの倍率」（速さが光速の0.6倍なら γ＝1.25）</span>
+        <span class="step">例：電車の長さ L＝30万km、速さ v＝秒速18万km（0.6c）のとき</span>
+        <span class="step">Δt ＝ 1.25 × 18万km × 30万km ÷（30万km）² ＝ 1.25 × 0.6 ＝ 0.75秒</span>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">つまり、外から見ると、後ろの壁に光が届いてから0.75秒後に、前の壁に光が届くことになるんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">電車が長いほど、速いほど、このズレも大きくなるんですね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ これが「同時のズレ」の正体だよ。時間の遅れ・長さの収縮・そしてこの「同時のズレ」――この3つをまとめて「ローレンツ変換」と呼ぶんだ。</div>
         </div>
       </div>
 
@@ -319,6 +350,16 @@
           <button class="choice-btn" data-correct="false">同時に届く</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 電車が前に進む分、後ろの壁の方が光に近づいてくるので先に届く。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q3. 動く電車の中で「同時」に起きた、離れた場所の2つの出来事は、外から見るとどうなる？</p>
+        <div class="choice-list">
+          <button class="choice-btn" data-correct="true">同時ではなくなる（速さと距離に応じてズレる）</button>
+          <button class="choice-btn" data-correct="false">やっぱり同時に見える</button>
+          <button class="choice-btn" data-correct="false">常に前の出来事の方が先に見える</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 動いている人には「同時」でも、外から見るとズレて見える。ズレの大きさは、速さと距離（Δt＝γvL/c²）で計算できる。</div>
       </div>
 
       <div class="stage-nav">

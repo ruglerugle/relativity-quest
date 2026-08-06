@@ -57,7 +57,7 @@
 
       <div class="mission-box">
         <div class="mission-label">🎯 ミッション</div>
-        <div class="mission-text">時間が遅れるなら距離も変わる。進行方向の長さが縮んで見える理由と、離れた場所の「同時」がズレて見える理由を直感的に理解しよう。</div>
+        <div class="mission-text">時間が遅れるなら距離も変わる。進行方向の長さが縮んで見える理由を直感的に理解しよう。</div>
         <span class="mission-status" id="mission-status">未達成</span>
       </div>
 
@@ -141,75 +141,6 @@
         </div>
       </div>
 
-      <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">時間の遅れと長さの収縮――この2つを合わせると、実はもう一つ大事なことが分かるんだ。「同時」に起きたはずの出来事も、離れた場所で起きると、見る人によってズレて見えるんだよ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">ズレるって、どれくらいズレるんですか？ ちゃんと計算できるんですか？</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">できるよ。電車の真ん中から、前と後ろの壁に向けて同時に光を出したとしよう。電車に乗っている人には、光は前と後ろに同時に届く。でも外から見ている人には、電車が前に進んでいる分、後ろの壁に先に光が届くように見える。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">それは何となく分かります。後ろの壁は光に近づいていって、前の壁は光から逃げる形になるから、届く時間が変わりそうです。</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">その通り。このズレの大きさは、次の式で計算できるんだ。時間の遅れ・長さの収縮・そしてこの「同時のズレ」――この3つをまとめて「ローレンツ変換」と呼ぶんだよ。</div>
-        </div>
-      </div>
-
-      <div class="formula-box">
-        <span class="step">ズレの大きさ Δt ＝ γ × 速さ(v) × 電車の長さ(L) ÷ 光速(c)²</span>
-        <span class="step">γはステージ3で出てきた「時間の遅れの倍率」（速さが光速の0.6倍なら γ＝1.25）</span>
-        <span class="step">例：電車の長さ L＝30万km、速さ v＝秒速18万km（0.6c）のとき</span>
-        <span class="step">Δt ＝ 1.25 × 18万km × 30万km ÷（30万km）² ＝ 1.25 × 0.6 ＝ 0.75秒</span>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">つまり、外から見ると、後ろの壁に光が届いてから0.75秒後に、前の壁に光が届くことになるんだ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">電車が長いほど、速いほど、このズレも大きくなるんですね。</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">その通り！ これを覚えておくと、この先のステージで「同時」がズレる場面が出てきても、ちゃんと計算で追いかけられるようになるよ。</div>
-        </div>
-      </div>
-
       <div class="quiz-head">確認クイズ</div>
       <div class="quiz-card" data-quiz>
         <p class="quiz-q">Q1. ローレンツ収縮で縮んで見えるのはどの方向？</p>
@@ -229,16 +160,6 @@
           <button class="choice-btn" data-correct="false">変わらない</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 速さが一定なら、時間が短くなった分だけ距離も短くなる。これがローレンツ収縮の考え方だよ。</div>
-      </div>
-
-      <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q3. 動く電車の中で「同時」に起きた、離れた場所の2つの出来事は、外から見るとどうなる？</p>
-        <div class="choice-list">
-          <button class="choice-btn" data-correct="true">同時ではなくなる（速さと距離に応じてズレる）</button>
-          <button class="choice-btn" data-correct="false">やっぱり同時に見える</button>
-          <button class="choice-btn" data-correct="false">常に前の出来事の方が先に見える</button>
-        </div>
-        <div class="quiz-explain" hidden>正解！ 動いている人には「同時」でも、外から見るとズレて見える。ズレの大きさは、速さと距離（Δt＝γvL/c²）で計算できる。</div>
       </div>
 
       <div class="stage-nav">
