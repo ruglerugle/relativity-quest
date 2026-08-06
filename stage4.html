@@ -20,16 +20,6 @@
   @keyframes shrink{0%{transform:scaleX(1)}100%{transform:scaleX(.8)}}
   .shrink-svg .bar-move{transform-box:fill-box;transform-origin:center}
   @media (prefers-reduced-motion:reduce){.shrink-svg .bar-move{animation:none;transform:scaleX(.8)}}
-
-  .sim-mini-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
-  .sim-mini-svg .mini-train{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
-  .sim-mini-svg .mini-emit{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
-  .sim-mini-svg .mini-flash{fill:none;stroke:#d9a441;stroke-width:2.5;opacity:0;transform-box:fill-box;transform-origin:center}
-  .sim-mini-svg .flash-back{animation:mini-flash-back 2.6s ease-out infinite}
-  .sim-mini-svg .flash-front{animation:mini-flash-front 2.6s ease-out infinite}
-  @keyframes mini-flash-back{0%,18%{opacity:0;transform:scale(.4)}26%{opacity:.9;transform:scale(1)}38%,100%{opacity:0;transform:scale(1.8)}}
-  @keyframes mini-flash-front{0%,36%{opacity:0;transform:scale(.4)}44%{opacity:.9;transform:scale(1)}56%,100%{opacity:0;transform:scale(1.8)}}
-  @media (prefers-reduced-motion:reduce){.sim-mini-svg .mini-flash{animation:none;opacity:0}}
 </style>
 </head>
 <body>
@@ -186,16 +176,6 @@
           </div>
           <div class="dialog-bubble">その通り。このズレの大きさは、次の式で計算できるんだ。時間の遅れ・長さの収縮・そしてこの「同時のズレ」――この3つをまとめて「ローレンツ変換」と呼ぶんだよ。</div>
         </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="sim-mini-svg" viewBox="0 0 260 90" role="img" aria-label="電車の外から見ると、真ん中で光った瞬間より後ろの壁に先に光が届き、前の壁には遅れて届く">
-          <rect class="mini-train" x="20" y="28" width="220" height="34" rx="10"></rect>
-          <circle class="mini-emit" cx="130" cy="45" r="5"></circle>
-          <circle class="mini-flash flash-back" cx="24" cy="45" r="11"></circle>
-          <circle class="mini-flash flash-front" cx="236" cy="45" r="11"></circle>
-        </svg>
-        <div class="diagram-caption">外から見ると、真ん中で光った瞬間より、後ろの壁（左）の方が先に光を受け取り、前の壁（右）は遅れて受け取る（電車が右に進んでいるため）</div>
       </div>
 
       <div class="formula-box">

@@ -41,13 +41,6 @@
     .gravity-scene .light-probe{offset-distance:18%}
     .gravity-scene .orbit-probe{offset-distance:62%}
   }
-
-  .dip-svg{display:block;max-width:min(100%,260px);width:100%;height:auto;margin:auto}
-  .dip-svg .dip-surface{fill:none;stroke:var(--line);stroke-width:2}
-  .dip-svg .dip-ball{fill:#5b3fa6}
-  .dip-svg .dip-marble{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;offset-path:path("M20 30 Q60 26 100 55 Q140 26 200 30");animation:dip-roll 3s ease-in-out infinite}
-  @keyframes dip-roll{to{offset-distance:100%}}
-  @media (prefers-reduced-motion:reduce){.dip-svg .dip-marble{animation:none;offset-distance:50%}}
 </style>
 </head>
 <body>
@@ -142,15 +135,6 @@
           </div>
           <div class="dialog-bubble">そう。だから、まっすぐ進むはずの光も、太陽のように重い星のそばを通ると、空間のゆがみに沿って進路が曲がってしまうんだよ。</div>
         </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="dip-svg" viewBox="0 0 220 70" role="img" aria-label="重いボールでへこんだシートの上を、ビー玉が曲がりながら転がっていくアニメーション">
-          <path class="dip-surface" d="M20 30 Q60 26 100 55 Q140 26 200 30"></path>
-          <circle class="dip-ball" cx="100" cy="52" r="10"></circle>
-          <circle class="dip-marble" r="5"></circle>
-        </svg>
-        <div class="diagram-caption">シートのへこみに沿って、ビー玉はまっすぐ進めずに曲がっていく</div>
       </div>
 
       <div class="diagram-box">

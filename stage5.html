@@ -67,19 +67,6 @@
     .sim-svg .photon-front{transform:translateX(116px);opacity:1}
     .sim-svg .hit-glow{opacity:.65}
   }
-
-  .round-trip-svg{display:block;max-width:min(100%,300px);width:100%;height:auto;margin:auto}
-  .round-trip-svg .rt-track{stroke:var(--line);stroke-width:2;stroke-dasharray:5 6}
-  .round-trip-svg .rt-home{fill:var(--paper2);stroke:var(--gold-dark);stroke-width:2}
-  .round-trip-svg .rt-flag{fill:#b5504a}
-  .round-trip-svg .rt-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
-  .round-trip-svg .rt-train{fill:#5b3fa6;stroke:#3d2a8c;stroke-width:1.5;animation:rt-round-trip 5s ease-in-out infinite}
-  @keyframes rt-round-trip{
-    0%,4%{transform:translateX(0)}
-    48%,52%{transform:translateX(200px)}
-    96%,100%{transform:translateX(0)}
-  }
-  @media (prefers-reduced-motion:reduce){.round-trip-svg .rt-train{animation:none}}
 </style>
 </head>
 <body>
@@ -276,21 +263,6 @@
           </div>
           <div class="dialog-bubble">じゃあ、こんな場合はどうですか？ 電車がまっすぐ22万5千km進んで、そこで折り返してまた出発点に戻ってくるとします。光の方も、天井の鏡に着いたらそこで折り返して、また発射台に戻ってきます。博士はずっと出発点にいてください。出発の瞬間、光時計AとBが同時に光を発射するのを見て、電車が戻ってきたとき——わたしから見ればAの光はまっすぐ往復しているだけですが、博士から見たAの光は斜めに折れ曲がって見えるはずです。逆にBの光は、博士からはまっすぐ、わたしからは折れ曲がって見えます。それでもやっぱり、戻ってきた瞬間にAとBがどこまで進んでいるかは、二人で一致するんですか？</div>
         </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="round-trip-svg" viewBox="0 0 280 100" role="img" aria-label="電車が出発点から22万5千km先の折り返し地点まで行って、また出発点に戻ってくる往復のアニメーション">
-          <line class="rt-track" x1="30" y1="60" x2="250" y2="60"></line>
-          <rect class="rt-home" x="16" y="46" width="28" height="28" rx="6"></rect>
-          <text class="rt-label" x="30" y="88">出発点（博士）</text>
-          <path class="rt-flag" d="M250,30 L250,58 L258,44 Z"></path>
-          <text class="rt-label" x="250" y="88">折り返し地点（22万5千km）</text>
-          <rect class="rt-train" x="18" y="50" width="24" height="16" rx="4"></rect>
-        </svg>
-        <div class="diagram-caption">電車は出発点から22万5千km先の折り返し地点まで行って、また出発点に戻ってくる</div>
-      </div>
-
-      <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>

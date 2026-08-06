@@ -35,25 +35,6 @@
   .bp-svg .bp-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
   .bp-svg .bp-caption{fill:var(--muted);font-size:10px;font-weight:700}
   .b-path-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin-top:6px}
-
-  .journey-svg{display:block;max-width:min(100%,300px);width:100%;height:auto;margin:auto}
-  .journey-svg .j-track{stroke:var(--line);stroke-width:2;stroke-dasharray:5 6}
-  .journey-svg .j-home{fill:var(--paper2);stroke:var(--gold-dark);stroke-width:2}
-  .journey-svg .j-flag{fill:#b5504a}
-  .journey-svg .j-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
-  .journey-svg .j-train{fill:#5b3fa6;stroke:#3d2a8c;stroke-width:1.5;animation:j-round-trip 6s ease-in-out infinite}
-  .journey-svg .j-turn-pulse{fill:none;stroke:#b5504a;stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:j-pulse 6s ease-in-out infinite}
-  @keyframes j-round-trip{
-    0%,4%{transform:translateX(0)}
-    46%,54%{transform:translateX(200px)}
-    96%,100%{transform:translateX(0)}
-  }
-  @keyframes j-pulse{
-    0%,45%{opacity:0;transform:scale(.5)}
-    50%{opacity:.9;transform:scale(1.4)}
-    55%,100%{opacity:0;transform:scale(1.8)}
-  }
-  @media (prefers-reduced-motion:reduce){.journey-svg .j-train{animation:none}.journey-svg .j-turn-pulse{animation:none;opacity:0}}
 </style>
 </head>
 <body>
@@ -93,19 +74,6 @@
         <div class="mission-label">🎯 ミッション</div>
         <div class="mission-text">電車に乗って加速したうさ美自身の視点から計算しても、なぜ同じ結論にたどり着くのかを理解しよう。</div>
         <span class="mission-status" id="mission-status">未達成</span>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="journey-svg" viewBox="0 0 280 100" role="img" aria-label="うさ美を乗せた電車が出発点から折り返し地点まで行って、また出発点に戻ってくる往復のアニメーション">
-          <line class="j-track" x1="30" y1="60" x2="250" y2="60"></line>
-          <rect class="j-home" x="16" y="46" width="28" height="28" rx="6"></rect>
-          <text class="j-label" x="30" y="88">出発点（博士）</text>
-          <path class="j-flag" d="M250,30 L250,58 L258,44 Z"></path>
-          <text class="j-label" x="250" y="88">折り返し地点</text>
-          <circle class="j-turn-pulse" cx="250" cy="44" r="14"></circle>
-          <rect class="j-train" x="18" y="50" width="24" height="16" rx="4"></rect>
-        </svg>
-        <div class="diagram-caption">うさ美を乗せた電車は、出発点から折り返し地点まで行って、また出発点に戻ってくる。折り返しの瞬間だけ、電車（とうさ美）は向きを変えるために力を受ける</div>
       </div>
 
       <div class="dialogue-scene">
