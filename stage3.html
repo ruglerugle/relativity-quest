@@ -86,12 +86,15 @@
   .brain-diagram .bd-mirror{stroke:var(--gold-dark);stroke-width:1.5}
   .brain-diagram .bd-line{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3}
   .brain-diagram .bd-divider{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3}
-  .brain-diagram .bd-photon-done{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
-  .brain-diagram .bd-photon-wait{fill:var(--muted);opacity:.55}
+  .brain-diagram .bd-photon-done{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:bd-glow 1.8s ease-in-out infinite}
+  .brain-diagram .bd-photon-wait{fill:var(--muted);opacity:.55;transform-box:fill-box;transform-origin:center;animation:bd-bob 1.8s ease-in-out infinite}
   .brain-diagram .bd-title{fill:var(--ink);font-size:11px;font-weight:800}
   .brain-diagram .bd-label{fill:var(--muted);font-size:10px;font-weight:700}
   .brain-diagram .bd-status-done{fill:var(--ok);font-size:10px;font-weight:800}
   .brain-diagram .bd-status-wait{fill:var(--muted);font-size:10px;font-weight:700}
+  @keyframes bd-glow{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+  @keyframes bd-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @media (prefers-reduced-motion:reduce){.brain-diagram .bd-photon-done,.brain-diagram .bd-photon-wait{animation:none}}
 </style>
 </head>
 <body>
@@ -352,7 +355,7 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">するどい！ それはまさに正しい疑問で、実際にその通りの食い違いが起きる。でも矛盾ではないんだ。カラクリは「AとBを同時に発射させる」という部分にある。実は「同時」かどうかは、見ている人がどこにいて、どう動いているかによって変わってしまうんだよ。ホーム（地上）から見て同時でも、電車から見ると同時じゃない——だから、うさ美と博士が出会った瞬間に見えるものが違っても、ちゃんと辻褄が合うんだ。この「同時性の相対性」は、ステージ5でじっくり見ていこう。</div>
+          <div class="dialog-bubble">するどい！ それはまさに正しい疑問で、実際にその通りの食い違いが起きる。でも矛盾ではないんだ。カラクリは「AとBを同時に発射させる」という部分にある。実は「同時」かどうかは、見ている人がどこにいて、どう動いているかによって変わってしまうんだよ。ホーム（地上）から見て同時でも、電車から見ると同時じゃない——だから、うさ美と博士が出会った瞬間に見えるものが違っても、ちゃんと辻褄が合うんだ。ただ、これをちゃんと理解するにはもう一つ手がかりが要る。時間が遅れるなら、実は距離の測り方も変わってくるはずなんだ。まずはそこから確かめていこう。</div>
         </div>
       </div>
 
