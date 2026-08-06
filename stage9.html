@@ -39,6 +39,14 @@
     .gps-svg .signal{transform:translateY(34px);opacity:1}
     .gps-svg .effect-speed,.gps-svg .effect-gravity,.gps-svg .correction{opacity:1}
   }
+
+  .bh-svg{display:block;max-width:min(100%,240px);width:100%;height:auto;margin:auto}
+  .bh-svg .bh-disk{fill:none;stroke:var(--gold);stroke-width:3;stroke-dasharray:6 4;opacity:.7;transform-box:fill-box;transform-origin:center;animation:bh-spin 4s linear infinite}
+  .bh-svg .bh-core{fill:#1a1a2e}
+  .bh-svg .bh-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;offset-path:path("M20 20 C55 8 118 18 132 46 C142 66 104 72 80 60");animation:bh-fall 2.6s ease-in infinite}
+  @keyframes bh-spin{to{transform:rotate(360deg)}}
+  @keyframes bh-fall{0%{offset-distance:0%;opacity:1;transform:scale(1)}85%{offset-distance:92%;opacity:1;transform:scale(.7)}100%{offset-distance:100%;opacity:0;transform:scale(0)}}
+  @media (prefers-reduced-motion:reduce){.bh-svg .bh-disk,.bh-svg .bh-photon{animation:none;opacity:0}}
 </style>
 </head>
 <body>
@@ -164,6 +172,15 @@
           </div>
           <div class="dialog-bubble">重力がとても強い天体「ブラックホール」も、一般相対性理論から予言された天体だよ。空間のゆがみが極限まで強くなって、光さえも脱出できなくなる場所なんだ。これで相対性理論クエストは完了だよ。よく頑張ったね！</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="bh-svg" viewBox="0 0 160 120" role="img" aria-label="ブラックホールに吸い込まれ、脱出できずに消えていく光のアニメーション">
+          <ellipse class="bh-disk" cx="80" cy="60" rx="65" ry="22"></ellipse>
+          <circle class="bh-core" cx="80" cy="60" r="26"></circle>
+          <circle class="bh-photon" r="4"></circle>
+        </svg>
+        <div class="diagram-caption">ブラックホールの近くでは空間のゆがみが極限まで強く、光さえも脱出できずに吸い込まれてしまう</div>
       </div>
 
       <div class="quiz-head">確認クイズ</div>

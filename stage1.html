@@ -26,6 +26,15 @@
   .orbit-svg .info-value{fill:var(--ink);font-size:13px;font-weight:900}
   @keyframes orbit-spin{0%{transform:rotate(0deg)}62.5%{transform:rotate(2700deg)}100%{transform:rotate(2700deg)}}
   @media (prefers-reduced-motion:reduce){.orbit-svg .orbiter{animation:none}}
+
+  .race-svg{display:block;max-width:min(100%,300px);width:100%;height:auto;margin:auto}
+  .race-svg .race-track{stroke:var(--line);stroke-width:2;stroke-dasharray:4 5}
+  .race-svg .race-label{fill:var(--muted);font-size:10px;font-weight:700}
+  .race-svg .race-car{fill:#5b3fa6;animation:race-car 6s linear infinite alternate}
+  .race-svg .race-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:race-photon .5s linear infinite alternate}
+  @keyframes race-car{0%{transform:translateX(0)}100%{transform:translateX(190px)}}
+  @keyframes race-photon{0%{transform:translateX(0)}100%{transform:translateX(190px)}}
+  @media (prefers-reduced-motion:reduce){.race-svg .race-car,.race-svg .race-photon{animation:none}}
 </style>
 </head>
 <body>
@@ -122,6 +131,18 @@
       <div class="formula-box">
         <span class="step">速さ ＝ 距離 ÷ 時間</span>
         <span class="step">光の速さ ＝ 秒速 約300,000 km（記号では c と書く）</span>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="race-svg" viewBox="0 0 240 90" role="img" aria-label="同じ道のりを、車はゆっくり進み、光は何度も往復できるほど速く進むアニメーション">
+          <text class="race-label" x="20" y="20">車（時速60km）</text>
+          <line class="race-track" x1="20" y1="30" x2="220" y2="30"></line>
+          <rect class="race-car" x="14" y="23" width="26" height="14" rx="4"></rect>
+          <text class="race-label" x="20" y="55">光（秒速30万km）</text>
+          <line class="race-track" x1="20" y1="65" x2="220" y2="65"></line>
+          <circle class="race-photon" cx="20" cy="65" r="5"></circle>
+        </svg>
+        <div class="diagram-caption">車が同じ道のりをゆっくり進む間に、光は何度も往復できてしまう――それくらい光の速さはケタ違い</div>
       </div>
 
       <div class="dialogue-scene">

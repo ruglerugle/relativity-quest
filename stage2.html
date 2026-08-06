@@ -61,6 +61,15 @@
     .train-svg .trail1,.train-svg .trail2,.train-svg .trail3,.train-svg .trail4{stroke-dashoffset:0}
     .train-svg .result{opacity:1}
   }
+
+  .recip-svg{display:block;max-width:min(100%,260px);width:100%;height:auto;margin:auto}
+  .recip-svg .rc-train{fill:#5b3fa6}
+  .recip-svg .rc-label{fill:#8a6614;font-size:10px;font-weight:700}
+  .recip-svg .rc-trail{stroke:#d9a441;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:150;stroke-dashoffset:150;animation:rc-trail 1.8s linear infinite}
+  .recip-svg .rc-photon{fill:#d9a441;stroke:#8a6614;stroke-width:1;animation:rc-fly 1.8s linear infinite}
+  @keyframes rc-fly{0%,8%{transform:translateX(0);opacity:0}12%{opacity:1}85%{transform:translateX(150px);opacity:1}92%,100%{transform:translateX(150px);opacity:0}}
+  @keyframes rc-trail{0%,8%{stroke-dashoffset:150;opacity:0}12%{opacity:.85}85%{stroke-dashoffset:0;opacity:.85}92%,100%{stroke-dashoffset:0;opacity:0}}
+  @media (prefers-reduced-motion:reduce){.recip-svg .rc-photon,.recip-svg .rc-trail{animation:none}}
 </style>
 </head>
 <body>
@@ -213,6 +222,20 @@
           </div>
           <div class="dialog-bubble">いや、電車に乗っている人から見ても、光はちゃんとcの速さで遠ざかっていくんだ。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="recip-svg" viewBox="0 0 240 60" role="img" aria-label="電車の中から見ても、光は秒速30万kmで遠ざかっていくアニメーション">
+          <rect class="rc-train" x="10" y="18" width="50" height="26" rx="4"></rect>
+          <text x="15" y="35" fill="#fff" font-size="10" font-weight="700">電車</text>
+          <line class="rc-trail" x1="60" y1="31" x2="210" y2="31"></line>
+          <circle class="rc-photon" cx="60" cy="31" r="4"></circle>
+          <text class="rc-label" x="145" y="55" text-anchor="middle">電車の中から見ても c</text>
+        </svg>
+        <div class="diagram-caption">電車に乗っている人の視点でも、光はやっぱり秒速30万kmで遠ざかっていく（「c－電車の速さ」にはならない）</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
