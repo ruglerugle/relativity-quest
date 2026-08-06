@@ -86,15 +86,23 @@
   .brain-diagram .bd-mirror{stroke:var(--gold-dark);stroke-width:1.5}
   .brain-diagram .bd-line{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3}
   .brain-diagram .bd-divider{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3}
-  .brain-diagram .bd-photon-done{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:bd-glow 1.8s ease-in-out infinite}
-  .brain-diagram .bd-photon-wait{fill:var(--muted);opacity:.55;transform-box:fill-box;transform-origin:center;animation:bd-bob 1.8s ease-in-out infinite}
+  .brain-diagram .bd-photon-done{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .brain-diagram .bd-photon-wait{fill:var(--muted);opacity:.55}
   .brain-diagram .bd-title{fill:var(--ink);font-size:11px;font-weight:800}
   .brain-diagram .bd-label{fill:var(--muted);font-size:10px;font-weight:700}
   .brain-diagram .bd-status-done{fill:var(--ok);font-size:10px;font-weight:800}
   .brain-diagram .bd-status-wait{fill:var(--muted);font-size:10px;font-weight:700}
-  @keyframes bd-glow{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
-  @keyframes bd-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-  @media (prefers-reduced-motion:reduce){.brain-diagram .bd-photon-done,.brain-diagram .bd-photon-wait{animation:none}}
+
+  .tick-compare-svg{display:block;max-width:min(100%,300px);width:100%;height:auto;margin:auto}
+  .tick-compare-svg .tc-clock{fill:var(--paper2);stroke:var(--line);stroke-width:2}
+  .tick-compare-svg .tc-tick{stroke:var(--muted);stroke-width:1.5}
+  .tick-compare-svg .tc-label{fill:var(--ink);font-size:11px;font-weight:800;text-anchor:middle}
+  .tick-compare-svg .tc-sub{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .tick-compare-svg .tc-hand{stroke-linecap:round;transform-box:fill-box;transform-origin:center;animation:tc-spin linear infinite}
+  .tick-compare-svg .tc-hand-still{stroke:#2f8f65;stroke-width:3;animation-duration:2s}
+  .tick-compare-svg .tc-hand-move{stroke:#5b3fa6;stroke-width:3;animation-duration:2.5s}
+  @keyframes tc-spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.tick-compare-svg .tc-hand{animation:none}}
 </style>
 </head>
 <body>
@@ -299,6 +307,31 @@
           </div>
           <div class="dialog-bubble">正解！ 高さhは30万kmのまま、電車の移動距離v×t'は18万km×1.25秒＝22万5千km。三平方の定理で確かめると30万²＋22万5千²＝37万5千²になっていて、ちゃんと辻褄が合っているんだ。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="tick-compare-svg" viewBox="0 0 280 150" role="img" aria-label="外から見た時計は1周1秒、動いている電車の時計は1周1.25秒。同じ時間で比べると動いている時計の方が遅れて進む">
+          <circle class="tc-clock" cx="70" cy="65" r="48"></circle>
+          <line class="tc-tick" x1="70" y1="21" x2="70" y2="29"></line>
+          <line class="tc-tick" x1="70" y1="101" x2="70" y2="109"></line>
+          <line class="tc-tick" x1="26" y1="65" x2="34" y2="65"></line>
+          <line class="tc-tick" x1="106" y1="65" x2="114" y2="65"></line>
+          <line class="tc-hand tc-hand-still" x1="70" y1="65" x2="70" y2="27"></line>
+          <text class="tc-label" x="70" y="128">外から見た時計</text>
+          <text class="tc-sub" x="70" y="141">1周＝1秒</text>
+          <circle class="tc-clock" cx="210" cy="65" r="48"></circle>
+          <line class="tc-tick" x1="210" y1="21" x2="210" y2="29"></line>
+          <line class="tc-tick" x1="210" y1="101" x2="210" y2="109"></line>
+          <line class="tc-tick" x1="166" y1="65" x2="174" y2="65"></line>
+          <line class="tc-tick" x1="246" y1="65" x2="254" y2="65"></line>
+          <line class="tc-hand tc-hand-move" x1="210" y1="65" x2="210" y2="27"></line>
+          <text class="tc-label" x="210" y="128">動く電車の時計</text>
+          <text class="tc-sub" x="210" y="141">1周＝1.25秒</text>
+        </svg>
+        <div class="diagram-caption">外の時計が1周する間に、動いている電車の時計はまだ1周しきっていない――同じだけ時間が経っても、動いている時計の方が遅れて進む</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>

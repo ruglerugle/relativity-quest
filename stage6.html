@@ -25,19 +25,6 @@
   .jump-svg .axis-label{fill:var(--ink);font-size:9.5px;font-weight:800}
   .jump-svg .lbl{fill:var(--muted);font-size:9px;font-weight:700}
   .jump-svg .lbl-jump{fill:#b5504a;font-size:9px;font-weight:800}
-  .jump-svg .jump-marker{fill:#fff;stroke:#b5504a;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:jump-marker-move 6s ease-in-out infinite}
-  @keyframes jump-marker-move{
-    0%{transform:translate(0,0);opacity:0}
-    4%{opacity:1}
-    46%{transform:translate(115px,-32px);opacity:1}
-    50%{transform:translate(115px,-32px);opacity:1}
-    54%{transform:translate(115px,-68px);opacity:1}
-    58%{transform:translate(115px,-68px);opacity:1}
-    94%{transform:translate(230px,-100px);opacity:1}
-    98%,100%{transform:translate(230px,-100px);opacity:0}
-  }
-  @media (prefers-reduced-motion:reduce){.jump-svg .jump-marker{animation:none;opacity:0}}
-
   .b-path-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap}
   .b-path-compare .bp-svg{flex:0 1 150px;min-width:0;width:100%;max-width:170px;height:auto}
   .bp-svg .bp-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
@@ -45,14 +32,28 @@
   .bp-svg .bp-mirror-faint{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round;stroke-dasharray:3 3;opacity:.4}
   .bp-svg .bp-path{stroke:#5b3fa6;stroke-width:2;fill:none}
   .bp-svg .bp-path-faint{stroke:#5b3fa6;stroke-width:1.5;stroke-dasharray:3 4;fill:none;opacity:.4}
-  .bp-svg .bp-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center}
-  .bp-svg .bp-photon-out{animation:bp-travel-out 2.4s ease-in-out infinite}
-  .bp-svg .bp-photon-return{animation:bp-travel-return 2.4s ease-in-out infinite}
-  @keyframes bp-travel-out{0%{transform:translate(0,0);opacity:0}8%{opacity:.95}82%{transform:translate(60px,-62px);opacity:.95}94%,100%{transform:translate(60px,-62px);opacity:0}}
-  @keyframes bp-travel-return{0%{transform:translate(0,0);opacity:0}8%{opacity:.95}82%{transform:translate(23px,23px);opacity:.95}94%,100%{transform:translate(23px,23px);opacity:0}}
-  @media (prefers-reduced-motion:reduce){.bp-svg .bp-photon-out,.bp-svg .bp-photon-return{animation:none;opacity:.95}}
+  .bp-svg .bp-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
   .bp-svg .bp-caption{fill:var(--muted);font-size:10px;font-weight:700}
   .b-path-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin-top:6px}
+
+  .journey-svg{display:block;max-width:min(100%,300px);width:100%;height:auto;margin:auto}
+  .journey-svg .j-track{stroke:var(--line);stroke-width:2;stroke-dasharray:5 6}
+  .journey-svg .j-home{fill:var(--paper2);stroke:var(--gold-dark);stroke-width:2}
+  .journey-svg .j-flag{fill:#b5504a}
+  .journey-svg .j-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
+  .journey-svg .j-train{fill:#5b3fa6;stroke:#3d2a8c;stroke-width:1.5;animation:j-round-trip 6s ease-in-out infinite}
+  .journey-svg .j-turn-pulse{fill:none;stroke:#b5504a;stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:j-pulse 6s ease-in-out infinite}
+  @keyframes j-round-trip{
+    0%,4%{transform:translateX(0)}
+    46%,54%{transform:translateX(200px)}
+    96%,100%{transform:translateX(0)}
+  }
+  @keyframes j-pulse{
+    0%,45%{opacity:0;transform:scale(.5)}
+    50%{opacity:.9;transform:scale(1.4)}
+    55%,100%{opacity:0;transform:scale(1.8)}
+  }
+  @media (prefers-reduced-motion:reduce){.journey-svg .j-train{animation:none}.journey-svg .j-turn-pulse{animation:none;opacity:0}}
 </style>
 </head>
 <body>
@@ -92,6 +93,19 @@
         <div class="mission-label">🎯 ミッション</div>
         <div class="mission-text">電車に乗って加速したうさ美自身の視点から計算しても、なぜ同じ結論にたどり着くのかを理解しよう。</div>
         <span class="mission-status" id="mission-status">未達成</span>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="journey-svg" viewBox="0 0 280 100" role="img" aria-label="うさ美を乗せた電車が出発点から折り返し地点まで行って、また出発点に戻ってくる往復のアニメーション">
+          <line class="j-track" x1="30" y1="60" x2="250" y2="60"></line>
+          <rect class="j-home" x="16" y="46" width="28" height="28" rx="6"></rect>
+          <text class="j-label" x="30" y="88">出発点（博士）</text>
+          <path class="j-flag" d="M250,30 L250,58 L258,44 Z"></path>
+          <text class="j-label" x="250" y="88">折り返し地点</text>
+          <circle class="j-turn-pulse" cx="250" cy="44" r="14"></circle>
+          <rect class="j-train" x="18" y="50" width="24" height="16" rx="4"></rect>
+        </svg>
+        <div class="diagram-caption">うさ美を乗せた電車は、出発点から折り返し地点まで行って、また出発点に戻ってくる。折り返しの瞬間だけ、電車（とうさ美）は向きを変えるために力を受ける</div>
       </div>
 
       <div class="dialogue-scene">
@@ -217,7 +231,6 @@
           <circle class="pt" cx="145" cy="88" r="3.5"></circle>
           <circle class="pt" cx="145" cy="52" r="3.5"></circle>
           <circle class="pt" cx="260" cy="20" r="3.5"></circle>
-          <circle class="jump-marker" cx="30" cy="120" r="5"></circle>
           <text class="lbl" x="30" y="133" text-anchor="middle">0秒</text>
           <text class="lbl" x="145" y="133" text-anchor="middle" font-size="8.5">1.0秒（折り返し）</text>
           <text class="lbl" x="260" y="133" text-anchor="middle">2.0秒</text>
@@ -238,7 +251,7 @@
             <line class="bp-mirror-faint" x1="93" y1="14" x2="128" y2="14"></line>
             <path class="bp-path-faint" d="M95,30 L110,14"></path>
             <path class="bp-path" d="M35,92 L95,30"></path>
-            <circle class="bp-photon bp-photon-out" cx="35" cy="92" r="4"></circle>
+            <circle class="bp-photon" cx="95" cy="30" r="4"></circle>
             <text class="bp-caption" x="75" y="120" text-anchor="middle">行き：1.0秒＝折り返しの瞬間</text>
           </svg>
           <svg class="bp-svg" viewBox="0 0 150 124" role="img" aria-label="帰り：同時性のジャンプの直後、Bの光は上の鏡から70%下った地点（高さ30%）から進み始め、下の鏡に向かって下っていく――行きが止まった80%地点とは別の場所">
@@ -247,7 +260,7 @@
             <line class="bp-mirror" x1="97" y1="92" x2="132" y2="92"></line>
             <path class="bp-path-faint" d="M40,14 L92,69"></path>
             <path class="bp-path" d="M92,69 L115,92"></path>
-            <circle class="bp-photon bp-photon-return" cx="92" cy="69" r="4"></circle>
+            <circle class="bp-photon" cx="92" cy="69" r="4"></circle>
             <text class="bp-caption" x="75" y="120" text-anchor="middle">帰り：ジャンプ直後は70%下った地点</text>
           </svg>
         </div>
