@@ -69,12 +69,12 @@
   }
 
   .calc-flow-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
-  .calc-flow-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
-  .calc-flow-svg .cf-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
-  .calc-flow-svg .cf-value{fill:var(--ink);font-size:12px;font-weight:800;text-anchor:middle}
-  .calc-flow-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
-  .calc-flow-svg .cf-arrow-head{fill:var(--gold-dark)}
-  .calc-flow-svg .cf-op{fill:#8a6614;font-size:9px;font-weight:800}
+  .calc-flow-svg .cf-box,.pyth-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .calc-flow-svg .cf-label,.pyth-svg .cf-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .calc-flow-svg .cf-value,.pyth-svg .cf-value{fill:var(--ink);font-size:12px;font-weight:800;text-anchor:middle}
+  .calc-flow-svg .cf-arrow,.pyth-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .calc-flow-svg .cf-arrow-head,.pyth-svg .cf-arrow-head{fill:var(--gold-dark)}
+  .calc-flow-svg .cf-op,.pyth-svg .cf-op{fill:#8a6614;font-size:9px;font-weight:800}
 
   .pyth-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
   .pyth-svg .pt-triangle{fill:none;stroke:#5b3fa6;stroke-width:2;stroke-linejoin:round}
@@ -206,14 +206,19 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="pyth-svg" viewBox="0 0 280 180" role="img" aria-label="直角三角形。高さ30万km、底辺22万5千km、斜辺37万5千kmで、ここからγ＝1.25が求まる">
-          <polygon class="pt-triangle" points="40,150 210,150 210,20"></polygon>
-          <rect class="pt-right-angle" x="195" y="135" width="15" height="15"></rect>
-          <text class="pt-label" x="220" y="88" fill="var(--gold-dark)">h＝30万km</text>
-          <text class="pt-label" x="125" y="166" text-anchor="middle" fill="#2f8f65">v×t'＝22万5千km</text>
-          <text class="pt-label" x="120" y="77" text-anchor="middle" fill="var(--gold-dark)" transform="rotate(-37 120,77)">c×t'＝37万5千km</text>
+        <svg class="pyth-svg" viewBox="0 0 280 260" role="img" aria-label="高さ30万km、底辺22万5千km、斜辺37万5千kmの直角三角形（辺の長さの比は正しく3:4:5）。底辺÷斜辺で0.6が求まり、γ＝1.25をかけるとズレΔt＝0.75秒が求まる">
+          <polygon class="pt-triangle" points="30,160 135,160 135,20"></polygon>
+          <rect class="pt-right-angle" x="120" y="145" width="15" height="15"></rect>
+          <text class="pt-label" x="145" y="92" fill="var(--gold-dark)">h＝30万km</text>
+          <text class="pt-label" x="82" y="178" text-anchor="middle" fill="#2f8f65">v×t'＝22万5千km</text>
+          <text class="pt-label" x="82" y="83" text-anchor="middle" fill="var(--gold-dark)" transform="rotate(-53 82,83)">c×t'＝37万5千km</text>
+          <line class="cf-arrow" x1="135" y1="168" x2="135" y2="196"></line>
+          <path class="cf-arrow-head" d="M135,200 L130,191 L140,191 Z"></path>
+          <rect class="cf-box" x="20" y="204" width="240" height="42" rx="8"></rect>
+          <text class="cf-label" x="140" y="222">底辺÷斜辺＝0.6／γ＝斜辺÷高さ＝1.25</text>
+          <text class="cf-value" x="140" y="240">Δt＝0.6×1.25＝0.75秒</text>
         </svg>
-        <div class="diagram-caption">ステージ3の直角三角形と同じ関係（30万²＋22.5万²＝37.5万²）。ここから求まる γ＝37.5万km÷30万km＝1.25 が、Δt＝γ×v×L÷c²の式で使われている</div>
+        <div class="diagram-caption">ステージ3と同じ直角三角形（3辺の比は3:4:5で正しい縮尺）。底辺÷斜辺＝0.6（v÷cと同じ比）に、斜辺÷高さで求まるγ＝1.25をかけると、ズレΔt＝0.75秒になる</div>
       </div>
 
       <div class="dialogue-scene">
