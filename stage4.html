@@ -20,6 +20,14 @@
   .shrink-svg .ground-line{stroke:var(--line);stroke-width:2;stroke-dasharray:6 6;animation:shrink-ground-scroll .5s linear infinite}
   @keyframes shrink-ground-scroll{to{stroke-dashoffset:12}}
   @media (prefers-reduced-motion:reduce){.shrink-svg .ground-line{animation:none}}
+
+  .calc-flow-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .calc-flow-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .calc-flow-svg .cf-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .calc-flow-svg .cf-value{fill:var(--ink);font-size:12px;font-weight:800;text-anchor:middle}
+  .calc-flow-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .calc-flow-svg .cf-arrow-head{fill:var(--gold-dark)}
+  .calc-flow-svg .cf-op{fill:#8a6614;font-size:9px;font-weight:800}
 </style>
 </head>
 <body>
@@ -129,6 +137,39 @@
         <span class="step">駅間22万5千km ÷ 速さ18万km/s ＝ ホームから見た時間1.25秒</span>
         <span class="step">1.25秒 ÷ γ(1.25) ＝ 電車の中の時間1.0秒</span>
         <span class="step">速さ18万km/s × 1.0秒 ＝ 電車から見た距離18万km（22万5千km÷γ）</span>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="calc-flow-svg" viewBox="0 0 260 280" role="img" aria-label="駅間22万5千kmから、ホームの時間1.25秒、電車の中の時間1.0秒を経て、電車から見た距離18万kmが求まる計算の流れ">
+          <rect class="cf-box" x="10" y="6" width="240" height="42" rx="8"></rect>
+          <text class="cf-label" x="130" y="24">ホームから見た駅間</text>
+          <text class="cf-value" x="130" y="40">22万5千km</text>
+
+          <line class="cf-arrow" x1="130" y1="48" x2="130" y2="76"></line>
+          <path class="cf-arrow-head" d="M130,80 L125,71 L135,71 Z"></path>
+          <text class="cf-op" x="140" y="66">÷ 18万km/s（速さ）</text>
+
+          <rect class="cf-box" x="10" y="80" width="240" height="42" rx="8"></rect>
+          <text class="cf-label" x="130" y="98">ホームから見た時間</text>
+          <text class="cf-value" x="130" y="114">1.25秒</text>
+
+          <line class="cf-arrow" x1="130" y1="122" x2="130" y2="150"></line>
+          <path class="cf-arrow-head" d="M130,154 L125,145 L135,145 Z"></path>
+          <text class="cf-op" x="140" y="140">÷ γ（1.25）</text>
+
+          <rect class="cf-box" x="10" y="154" width="240" height="42" rx="8"></rect>
+          <text class="cf-label" x="130" y="172">電車の中の時間</text>
+          <text class="cf-value" x="130" y="188">1.0秒</text>
+
+          <line class="cf-arrow" x1="130" y1="196" x2="130" y2="224"></line>
+          <path class="cf-arrow-head" d="M130,228 L125,219 L135,219 Z"></path>
+          <text class="cf-op" x="140" y="214">× 18万km/s（速さ）</text>
+
+          <rect class="cf-box" x="10" y="228" width="240" height="42" rx="8"></rect>
+          <text class="cf-label" x="130" y="246">電車から見た距離</text>
+          <text class="cf-value" x="130" y="262">18万km</text>
+        </svg>
+        <div class="diagram-caption">駅間の距離から、時間の遅れを経て、電車から見た距離が求まるまでの計算の流れ</div>
       </div>
 
       <div class="dialogue-scene">

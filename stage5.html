@@ -67,6 +67,14 @@
     .sim-svg .photon-front{transform:translateX(116px);opacity:1}
     .sim-svg .hit-glow{opacity:.65}
   }
+
+  .calc-flow-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .calc-flow-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .calc-flow-svg .cf-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .calc-flow-svg .cf-value{fill:var(--ink);font-size:12px;font-weight:800;text-anchor:middle}
+  .calc-flow-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .calc-flow-svg .cf-arrow-head{fill:var(--gold-dark)}
+  .calc-flow-svg .cf-op{fill:#8a6614;font-size:9px;font-weight:800}
 </style>
 </head>
 <body>
@@ -165,6 +173,31 @@
         <span class="step">γはステージ3で出てきた「時間の遅れの倍率」（速さが光速の0.6倍なら γ＝1.25）</span>
         <span class="step">例：電車の長さ L＝30万km、速さ v＝秒速18万km（0.6c）のとき</span>
         <span class="step">Δt ＝ 1.25 × 18万km × 30万km ÷（30万km）² ＝ 1.25 × 0.6 ＝ 0.75秒</span>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="calc-flow-svg" viewBox="0 0 260 220" role="img" aria-label="速さ18万km/sと電車の長さ30万kmから、v×L÷c²＝0.6を経て、ズレΔt＝0.75秒が求まる計算の流れ">
+          <rect class="cf-box" x="10" y="6" width="240" height="56" rx="8"></rect>
+          <text class="cf-label" x="130" y="26">速さ v ＝ 秒速18万km</text>
+          <text class="cf-value" x="130" y="46">電車の長さ L ＝ 30万km</text>
+
+          <line class="cf-arrow" x1="130" y1="62" x2="130" y2="90"></line>
+          <path class="cf-arrow-head" d="M130,94 L125,85 L135,85 Z"></path>
+          <text class="cf-op" x="140" y="80">v × L ÷ c²</text>
+
+          <rect class="cf-box" x="10" y="94" width="240" height="42" rx="8"></rect>
+          <text class="cf-label" x="130" y="112">v × L ÷ c²</text>
+          <text class="cf-value" x="130" y="128">＝ 0.6</text>
+
+          <line class="cf-arrow" x1="130" y1="136" x2="130" y2="164"></line>
+          <path class="cf-arrow-head" d="M130,168 L125,159 L135,159 Z"></path>
+          <text class="cf-op" x="140" y="154">× γ（1.25）</text>
+
+          <rect class="cf-box" x="10" y="168" width="240" height="42" rx="8"></rect>
+          <text class="cf-label" x="130" y="186">ズレの大きさ Δt</text>
+          <text class="cf-value" x="130" y="202">0.75秒</text>
+        </svg>
+        <div class="diagram-caption">速さと電車の長さから、v×L÷c²を求め、γをかけることでズレの大きさΔtが求まる</div>
       </div>
 
       <div class="dialogue-scene">
