@@ -80,6 +80,17 @@
   .pyth-svg .pt-triangle{fill:none;stroke:#5b3fa6;stroke-width:2;stroke-linejoin:round}
   .pyth-svg .pt-right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
   .pyth-svg .pt-label{font-size:11px;font-weight:800}
+
+  .lamp-calc-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .lamp-calc-svg .lc-train{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .lamp-calc-svg .lc-emit{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .lamp-calc-svg .lc-arrow{stroke:#8a6614;stroke-width:2}
+  .lamp-calc-svg .lc-arrow-head{fill:#8a6614}
+  .lamp-calc-svg .lc-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .lamp-calc-svg .lc-time{fill:var(--ink);font-size:10px;font-weight:800;text-anchor:middle}
+  .lamp-calc-svg .lc-time-value{fill:#8a6614;font-size:10px;font-weight:800;text-anchor:middle}
+  .lamp-calc-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .lamp-calc-svg .cf-value{fill:var(--ink);font-size:12px;font-weight:800;text-anchor:middle}
 </style>
 </head>
 <body>
@@ -219,6 +230,25 @@
           <text class="cf-value" x="140" y="240">Δt＝0.6×1.25＝0.75秒</text>
         </svg>
         <div class="diagram-caption">ステージ3と同じ直角三角形（3辺の比は3:4:5で正しい縮尺）。底辺÷斜辺＝0.6（v÷cと同じ比）に、斜辺÷高さで求まるγ＝1.25をかけると、ズレΔt＝0.75秒になる</div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="lamp-calc-svg" viewBox="0 0 280 150" role="img" aria-label="外から見ると電車は24万kmに縮む。中央で光った瞬間から、後ろの壁には0.25秒後、前の壁には1.0秒後に届き、その差がちょうど0.75秒になる">
+          <text class="lc-label" x="140" y="14">外から見た電車の長さ（縮んで見える）＝24万km</text>
+          <rect class="lc-train" x="70" y="24" width="140" height="30" rx="6"></rect>
+          <circle class="lc-emit" cx="140" cy="39" r="5"></circle>
+          <line class="lc-arrow" x1="140" y1="39" x2="78" y2="39"></line>
+          <path class="lc-arrow-head" d="M70,39 L79,34 L79,44 Z"></path>
+          <line class="lc-arrow" x1="140" y1="39" x2="202" y2="39"></line>
+          <path class="lc-arrow-head" d="M210,39 L201,34 L201,44 Z"></path>
+          <text class="lc-time" x="70" y="74">後ろの壁</text>
+          <text class="lc-time-value" x="70" y="90">0.25秒後に到達</text>
+          <text class="lc-time" x="210" y="74">前の壁</text>
+          <text class="lc-time-value" x="210" y="90">1.0秒後に到達</text>
+          <rect class="cf-box" x="40" y="100" width="200" height="38" rx="8"></rect>
+          <text class="cf-value" x="140" y="124">差 Δt＝1.0秒－0.25秒＝0.75秒</text>
+        </svg>
+        <div class="diagram-caption">電車の中央から出た光は、外から見ると縮んだ電車（24万km）の後ろの壁に0.25秒後、前の壁に1.0秒後に届く。この到達時刻の差が、まさに求めていたΔt＝0.75秒そのもの</div>
       </div>
 
       <div class="dialogue-scene">
