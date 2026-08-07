@@ -28,6 +28,11 @@
   .calc-flow-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
   .calc-flow-svg .cf-arrow-head{fill:var(--gold-dark)}
   .calc-flow-svg .cf-op{fill:#8a6614;font-size:9px;font-weight:800}
+
+  .pyth-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .pyth-svg .pt-triangle{fill:none;stroke:#5b3fa6;stroke-width:2;stroke-linejoin:round}
+  .pyth-svg .pt-right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
+  .pyth-svg .pt-label{font-size:11px;font-weight:800}
 </style>
 </head>
 <body>
@@ -170,6 +175,17 @@
           <text class="cf-value" x="130" y="262">18万km</text>
         </svg>
         <div class="diagram-caption">駅間の距離から、時間の遅れを経て、電車から見た距離が求まるまでの計算の流れ</div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="pyth-svg" viewBox="0 0 280 180" role="img" aria-label="直角三角形。高さ30万km、底辺22万5千km、斜辺37万5千kmで、ここからγ＝1.25が求まる">
+          <polygon class="pt-triangle" points="40,150 210,150 210,20"></polygon>
+          <rect class="pt-right-angle" x="195" y="135" width="15" height="15"></rect>
+          <text class="pt-label" x="220" y="88" fill="var(--gold-dark)">h＝30万km</text>
+          <text class="pt-label" x="125" y="166" text-anchor="middle" fill="#2f8f65">v×t'＝22万5千km</text>
+          <text class="pt-label" x="120" y="77" text-anchor="middle" fill="var(--gold-dark)" transform="rotate(-37 120,77)">c×t'＝37万5千km</text>
+        </svg>
+        <div class="diagram-caption">ステージ3の直角三角形と同じ関係（30万²＋22.5万²＝37.5万²）。ここから時間の遅れの倍率 γ＝37.5万km÷30万km＝1.25 が求まり、22万5千km÷γ＝18万kmという長さの収縮につながる</div>
       </div>
 
       <div class="dialogue-scene">
