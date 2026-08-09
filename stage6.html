@@ -41,42 +41,29 @@
   .bp-combo-svg .bc-mirror-anim{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
   .bp-combo-svg .bc-pad{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
   .bp-combo-svg .bc-pad-leg{stroke:var(--ink);stroke-width:2;stroke-linecap:round}
-  .bp-combo-svg .bc-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center}
-  .bp-combo-svg .bc-group-out{animation:bc-drift-out 6s linear infinite}
-  .bp-combo-svg .bc-photon-out{animation:bc-rise-out 6s linear infinite}
-  .bp-combo-svg .bc-group-return{animation:bc-drift-return 6s linear infinite}
-  .bp-combo-svg .bc-photon-return{animation:bc-rise-return 6s linear infinite}
-  @keyframes bc-drift-out{
+  .bp-combo-svg .bc-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:bc-rise 6s linear infinite}
+  .bp-combo-svg .bc-group{animation:bc-drift 6s linear infinite}
+  @keyframes bc-drift{
     0%{transform:translateX(0);opacity:1}
     40%{transform:translateX(-48px);opacity:1}
-    42%{transform:translateX(-48px);opacity:0}
-    100%{transform:translateX(-48px);opacity:0}
-  }
-  @keyframes bc-rise-out{
-    0%{transform:translateY(0)}
-    40%{transform:translateY(-62.4px)}
-    100%{transform:translateY(-62.4px)}
-  }
-  @keyframes bc-drift-return{
-    0%{transform:translateX(0);opacity:0}
-    42%{transform:translateX(0);opacity:0}
-    44%{transform:translateX(0);opacity:1}
-    84%{transform:translateX(48px);opacity:1}
-    92%{transform:translateX(48px);opacity:1}
-    96%{transform:translateX(48px);opacity:0}
+    80%{transform:translateX(0);opacity:1}
+    90%{transform:translateX(0);opacity:1}
+    96%{transform:translateX(0);opacity:0}
     100%{transform:translateX(0);opacity:0}
   }
-  @keyframes bc-rise-return{
-    0%{transform:translateY(-23.4px)}
-    44%{transform:translateY(-23.4px)}
-    59%{transform:translateY(0px)}
-    84%{transform:translateY(-39px)}
-    100%{transform:translateY(-39px)}
+  @keyframes bc-rise{
+    0%{transform:translateY(0);opacity:1}
+    40%{transform:translateY(-62.4px);opacity:1}
+    41%{transform:translateY(-62.4px);opacity:.15}
+    42%{transform:translateY(-23.4px);opacity:.15}
+    43%{transform:translateY(-23.4px);opacity:1}
+    57%{transform:translateY(0px);opacity:1}
+    80%{transform:translateY(-39px);opacity:1}
+    96%{transform:translateY(-39px);opacity:1}
+    97%{transform:translateY(0px);opacity:1}
+    100%{transform:translateY(0px);opacity:1}
   }
-  @media (prefers-reduced-motion:reduce){
-    .bp-combo-svg .bc-group-out,.bp-combo-svg .bc-photon-out,.bp-combo-svg .bc-group-return,.bp-combo-svg .bc-photon-return{animation:none}
-    .bp-combo-svg .bc-group-return{opacity:0}
-  }
+  @media (prefers-reduced-motion:reduce){.bp-combo-svg .bc-group,.bp-combo-svg .bc-photon{animation:none}}
 </style>
 </head>
 <body>
@@ -280,24 +267,17 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="bp-combo-svg" viewBox="0 0 150 110" role="img" aria-label="うさ美から見た博士の光時計（鏡と発射台の一対）そのものが動くアニメーション。行きは光時計ごと左へ流れながら光が80%の高さまで上って折り返し、同時性のジャンプで一瞬途切れたあと、帰りは光時計ごと右へ流れながら光が発射台まで下りて反射し、2周目の半分の高さまで上る">
-          <line class="bc-ground" x1="0" y1="100" x2="150" y2="100"></line>
-          <g class="bc-group-out">
+        <svg class="bp-combo-svg" viewBox="0 0 150 110" role="img" aria-label="うさ美から見た博士の光時計（鏡と発射台の一対）そのものが動くアニメーション。鏡と発射台自体は左へ流れて折り返し、右へ戻るだけで瞬間移動はしない。ジャンプするのは光の位置だけで、行きは80%の高さまで上ったところで光が30%の高さへ一瞬で切り替わり、発射台まで下りて反射し、2周目の半分の高さまで上る">
+          <g class="bc-group">
+            <line class="bc-ground" x1="-50" y1="100" x2="200" y2="100"></line>
             <line class="bc-mirror-anim" x1="55" y1="14" x2="95" y2="14"></line>
             <line class="bc-pad" x1="55" y1="92" x2="95" y2="92"></line>
             <line class="bc-pad-leg" x1="63" y1="92" x2="63" y2="99"></line>
             <line class="bc-pad-leg" x1="87" y1="92" x2="87" y2="99"></line>
-            <circle class="bc-photon bc-photon-out" cx="75" cy="92" r="4.5"></circle>
-          </g>
-          <g class="bc-group-return">
-            <line class="bc-mirror-anim" x1="55" y1="14" x2="95" y2="14"></line>
-            <line class="bc-pad" x1="55" y1="92" x2="95" y2="92"></line>
-            <line class="bc-pad-leg" x1="63" y1="92" x2="63" y2="99"></line>
-            <line class="bc-pad-leg" x1="87" y1="92" x2="87" y2="99"></line>
-            <circle class="bc-photon bc-photon-return" cx="75" cy="92" r="4.5"></circle>
+            <circle class="bc-photon" cx="75" cy="92" r="4.5"></circle>
           </g>
         </svg>
-        <div class="diagram-caption">博士の光時計（鏡と発射台の一対）そのものが動くアニメーション。行きは左へ流れながら光が80%の高さまで進んで折り返し、同時性のジャンプの瞬間だけ途切れ、帰りは右へ流れながら発射台まで下りて反射し、2周目の半分まで進む</div>
+        <div class="diagram-caption">鏡と発射台の一対（＝博士の光時計）は、うさ美から見ると左へ流れて折り返し、右へ戻ってくるだけ――瞬間移動はしない。ジャンプするのは光の位置（＝「今」の基準）だけで、80%の高さまで上ったところで一瞬で30%の高さに切り替わり、発射台まで下りて反射し、2周目の半分まで進む</div>
       </div>
 
       <div class="dialogue-scene">
