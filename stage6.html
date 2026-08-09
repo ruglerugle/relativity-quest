@@ -35,6 +35,36 @@
   .bp-svg .bp-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
   .bp-svg .bp-caption{fill:var(--muted);font-size:10px;font-weight:700}
   .b-path-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin-top:6px}
+
+  .bp-anim-svg{display:block;max-width:min(100%,150px);width:100%;height:auto;margin:auto}
+  .bp-anim-svg .ba-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
+  .bp-anim-svg .ba-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:ba-rise 2.4s linear infinite}
+  .bp-anim-svg .ba-group-left{animation:ba-slide-left 2.4s linear infinite}
+  .bp-anim-svg .ba-group-right{animation:ba-slide-right 2.4s linear infinite}
+  @keyframes ba-slide-left{
+    0%,10%{transform:translateX(0);opacity:1}
+    70%,85%{transform:translateX(-40px);opacity:1}
+    90%{transform:translateX(-40px);opacity:0}
+    94%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
+  @keyframes ba-slide-right{
+    0%,10%{transform:translateX(0);opacity:1}
+    70%,85%{transform:translateX(40px);opacity:1}
+    90%{transform:translateX(40px);opacity:0}
+    94%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
+  @keyframes ba-rise{
+    0%,10%{transform:translateY(0);opacity:0}
+    12%{opacity:1}
+    70%{transform:translateY(-70px);opacity:1}
+    74%,100%{transform:translateY(-70px);opacity:0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .bp-anim-svg .ba-group-left,.bp-anim-svg .ba-group-right,.bp-anim-svg .ba-photon{animation:none}
+    .bp-anim-svg .ba-photon{transform:translateY(-70px);opacity:1}
+  }
 </style>
 </head>
 <body>
@@ -213,16 +243,16 @@
 
       <div class="diagram-box">
         <div class="b-path-compare">
-          <svg class="bp-svg" viewBox="0 0 150 124" role="img" aria-label="行き：うさ美から見た光時計Bの光の軌道。下の鏡から斜め右上へ進むが、折り返しの瞬間（うさ美自身の時間で1.0秒）にはまだ上の鏡の80%の高さまでしか届いていない">
+          <svg class="bp-svg" viewBox="0 0 150 124" role="img" aria-label="行き：うさ美から見た光時計Bの光の軌道。電車は右へ進むので博士は左へ遠ざかって見え、光は下の鏡から斜め左上へ進むが、折り返しの瞬間（うさ美自身の時間で1.0秒）にはまだ上の鏡の80%の高さまでしか届いていない">
             <line class="bp-ground" x1="0" y1="104" x2="150" y2="104"></line>
-            <line class="bp-mirror" x1="18" y1="92" x2="53" y2="92"></line>
-            <line class="bp-mirror-faint" x1="93" y1="14" x2="128" y2="14"></line>
-            <path class="bp-path-faint" d="M95,30 L110,14"></path>
-            <path class="bp-path" d="M35,92 L95,30"></path>
-            <circle class="bp-photon" cx="95" cy="30" r="4"></circle>
+            <line class="bp-mirror" x1="97" y1="92" x2="132" y2="92"></line>
+            <line class="bp-mirror-faint" x1="22" y1="14" x2="57" y2="14"></line>
+            <path class="bp-path-faint" d="M55,30 L40,14"></path>
+            <path class="bp-path" d="M115,92 L55,30"></path>
+            <circle class="bp-photon" cx="55" cy="30" r="4"></circle>
             <text class="bp-caption" x="75" y="120" text-anchor="middle">行き：1.0秒＝折り返しの瞬間</text>
           </svg>
-          <svg class="bp-svg" viewBox="0 0 150 124" role="img" aria-label="帰り：同時性のジャンプの直後、Bの光は上の鏡から70%下った地点（高さ30%）から進み始め、下の鏡で反射したあと、さらに次の周の半分（高さ50%）まで上る――行きが止まった80%地点とは別の場所">
+          <svg class="bp-svg" viewBox="0 0 150 124" role="img" aria-label="帰り：電車は左へ戻るので博士は右から近づいてくるように見え、光は右上から左下へ進む。同時性のジャンプの直後、Bの光は上の鏡から70%下った地点（高さ30%）から進み始め、下の鏡で反射したあと、さらに次の周の半分（高さ50%）まで上る――行きが止まった80%地点とは別の場所">
             <line class="bp-ground" x1="0" y1="104" x2="150" y2="104"></line>
             <line class="bp-mirror-faint" x1="22" y1="14" x2="57" y2="14"></line>
             <line class="bp-mirror" x1="62" y1="92" x2="97" y2="92"></line>
@@ -235,6 +265,26 @@
           </svg>
         </div>
         <span class="b-path-caption">うさ美自身は静止していると考えるので、動いているのはB。折り返しの瞬間（左図）、Bの光はまだ80%地点までしか届いていない。だが同時性のジャンプは「今のB」の基準ごと切り替えるので、帰り（右図）はその続きではなく、上の鏡から70%下った別の地点から下り始め、下の鏡で反射したあと、さらに次の周の半分（高さ50%）まで上ったところで、うさ美は戻ってくる</span>
+      </div>
+
+      <div class="diagram-box">
+        <div class="b-path-compare">
+          <svg class="bp-anim-svg" viewBox="0 0 150 100" role="img" aria-label="行き：電車が右へ進む間、博士（Bの鏡）は左へ流れながら、光が下の鏡から上の鏡へジグザグに進み続けるアニメーション">
+            <g class="ba-group-left">
+              <line class="ba-mirror" x1="55" y1="80" x2="95" y2="80"></line>
+              <line class="ba-mirror" x1="55" y1="10" x2="95" y2="10"></line>
+              <circle class="ba-photon" cx="75" cy="80" r="4"></circle>
+            </g>
+          </svg>
+          <svg class="bp-anim-svg" viewBox="0 0 150 100" role="img" aria-label="帰り：電車が左へ戻る間、博士（Bの鏡）は右へ流れながら、光が下の鏡から上の鏡へジグザグに進み続けるアニメーション">
+            <g class="ba-group-right">
+              <line class="ba-mirror" x1="55" y1="80" x2="95" y2="80"></line>
+              <line class="ba-mirror" x1="55" y1="10" x2="95" y2="10"></line>
+              <circle class="ba-photon" cx="75" cy="80" r="4"></circle>
+            </g>
+          </svg>
+        </div>
+        <span class="b-path-caption">同じジグザグの動きをアニメーションでも見てみよう。行き（左）はBが左へ、帰り（右）はBが右へ流れる――電車の進む向きとは逆に、Bが流れて見える</span>
       </div>
 
       <div class="dialogue-scene">
