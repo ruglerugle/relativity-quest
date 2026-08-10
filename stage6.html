@@ -87,7 +87,18 @@
     97%{transform:translateY(0px)}
     100%{transform:translateY(0px)}
   }
-  @media (prefers-reduced-motion:reduce){.bp-combo-svg .bc-group,.bp-combo-svg .bc-photon,.bp-combo-svg .bc-photon-smooth{animation:none}}
+  .bp-combo-svg .bc-group-smooth{animation:bc-drift-smooth 6s linear infinite}
+  @keyframes bc-drift-smooth{
+    0%{transform:translateX(0);opacity:1}
+    36%{transform:translateX(-43.2px);opacity:1;animation-timing-function:ease-out}
+    40%{transform:translateX(-48px);opacity:1;animation-timing-function:ease-in}
+    44%{transform:translateX(-43.2px);opacity:1}
+    80%{transform:translateX(0);opacity:1}
+    90%{transform:translateX(0);opacity:1}
+    96%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:0}
+  }
+  @media (prefers-reduced-motion:reduce){.bp-combo-svg .bc-group,.bp-combo-svg .bc-photon,.bp-combo-svg .bc-photon-smooth,.bp-combo-svg .bc-group-smooth{animation:none}}
 </style>
 </head>
 <body>
@@ -336,8 +347,8 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="bp-combo-svg" viewBox="0 0 150 110" role="img" aria-label="うさ美から見た博士の光時計（鏡と発射台の一対）そのものが動くアニメーション。鏡と発射台と地面はなめらかに左へ流れて折り返し、右へ戻るだけ。光もワープはせず、80%の高さから天井鏡まで届いて反射し、そのままなめらかに（でも速く）30%の高さまで下りて、発射台で反射し2周目の半分まで上る">
-          <g class="bc-group">
+        <svg class="bp-combo-svg" viewBox="0 0 150 110" role="img" aria-label="うさ美から見た博士の光時計（鏡と発射台の一対）そのものが動くアニメーション。鏡と発射台と地面はなめらかに減速・加速しながら左へ流れて折り返し、右へ戻るだけ。光もワープはせず、80%の高さから天井鏡まで届いて反射し、そのままなめらかに（でも速く）30%の高さまで下りて、発射台で反射し2周目の半分まで上る">
+          <g class="bc-group bc-group-smooth">
             <line class="bc-ground" x1="-50" y1="100" x2="200" y2="100"></line>
             <line class="bc-mirror-anim" x1="55" y1="14" x2="95" y2="14"></line>
             <line class="bc-pad" x1="55" y1="92" x2="95" y2="92"></line>
