@@ -37,7 +37,16 @@
   .beam-svg .beam-jump-label{fill:#b5504a;font-size:8.5px;font-weight:800}
 
   .fwd-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
-  .fwd-svg .fwd-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .fwd-svg .fwd-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 6;animation:fwd-ground-scroll 6s linear infinite}
+  @keyframes fwd-ground-scroll{
+    0%{stroke-dashoffset:0px}
+    40%{stroke-dashoffset:-96px}
+    44%{stroke-dashoffset:-96px}
+    80%{stroke-dashoffset:0px}
+    90%{stroke-dashoffset:0px}
+    100%{stroke-dashoffset:0px}
+  }
+  @media (prefers-reduced-motion:reduce){.fwd-svg .fwd-ground{animation:none}}
   .fwd-svg .fwd-launcher{fill:var(--ink)}
   .fwd-svg .fwd-tick{stroke:var(--muted);stroke-width:1}
   .fwd-svg .fwd-label{fill:var(--muted);font-size:8px;font-weight:700}
@@ -517,7 +526,7 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="fwd-svg" viewBox="0 0 330 100" role="img" aria-label="うさ美が出発時に前方へ発射した光の動き。折り返し直前は30万km先まで進むが、折り返しの瞬間に7.5万km先まで一瞬で近づき、その後また一定の速さで遠ざかっていく">
+        <svg class="fwd-svg" viewBox="0 0 330 100" role="img" aria-label="うさ美が出発時に前方へ発射した光の動き。地面の破線は行きは前へ、折り返しからは後ろへ流れて電車の進行方向と折り返しを表す。光は折り返し直前は30万km先まで進むが、折り返しの瞬間に7.5万km先まで一瞬で近づき、その後また一定の速さで遠ざかっていく">
           <line class="fwd-ground" x1="0" y1="80" x2="330" y2="80"></line>
           <rect class="fwd-launcher" x="14" y="70" width="12" height="10"></rect>
           <line class="fwd-tick" x1="77.5" y1="70" x2="77.5" y2="90"></line>
@@ -528,7 +537,7 @@
           <text class="fwd-label" x="307.5" y="60" text-anchor="middle">37.5万km</text>
           <circle class="fwd-photon" cx="20" cy="75" r="4.5"></circle>
         </svg>
-        <div class="diagram-caption">発射台（左端）は、うさ美自身の視点なので動かない。光は秒速30万kmで遠ざかり、折り返しの瞬間だけ7.5万kmの地点へワープして見え、そこからまた秒速30万kmで遠ざかっていく</div>
+        <div class="diagram-caption">発射台（左端）は、うさ美自身の視点なので動かない。地面の破線は、行きは前へ、折り返しからは後ろへ流れて、電車の進行方向と折り返しを表している。光は秒速30万kmで遠ざかり、折り返しの瞬間だけ7.5万kmの地点へワープして見え、そこからまた秒速30万kmで遠ざかっていく</div>
       </div>
 
       <div class="dialogue-scene">
