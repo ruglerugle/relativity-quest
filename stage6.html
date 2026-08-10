@@ -20,10 +20,8 @@
   .jump-svg .ref-line{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4;opacity:.6}
   .jump-svg .path-out{stroke:var(--gold-dark);stroke-width:2;fill:none}
   .jump-svg .path-jump{stroke:#b5504a;stroke-width:2;stroke-dasharray:3 3;fill:none}
-  .jump-svg .path-smooth{stroke:#b5504a;stroke-width:2;fill:none}
   .jump-svg .path-return{stroke:var(--gold-dark);stroke-width:2;fill:none}
   .jump-svg .pt{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
-  .jump-svg .pt-hot{fill:#b5504a;stroke:#8a3a35;stroke-width:1}
   .jump-svg .axis-label{fill:var(--ink);font-size:9.5px;font-weight:800}
   .jump-svg .lbl{fill:var(--muted);font-size:9px;font-weight:700}
   .jump-svg .lbl-jump{fill:#b5504a;font-size:9px;font-weight:800}
@@ -466,62 +464,6 @@
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">なるほど…！ 「博士の今」が飛んで見えても、それは私の物差しの都合であって、博士自身にワープが起きているわけじゃないんですね。実際に何かが光速を超えて運ばれているわけじゃないから、矛盾しないんだ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">仮に滑らかに折り返した場合、光は80%の位置から30%の位置に直接移動するのか、一旦天井鏡に急速に跳ね返って30%の位置まで移動するのか、どちらですか？</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">いい質問だ！ 答えは後者――一旦天井鏡まで急速に届いて跳ね返ってから、30%の位置まで下りてくるんだ。直接ワープはしないんだよ。なめらかに折り返すということは、うさ美の速さが秒速18万kmから0を通ってマイナス18万kmまで、一段ずつ連続的に変化するということだよね。さっきの物差し（「博士の今」）は、その速さで決まる量だから、速さが連続的に変わる以上、物差しの方も連続的にしか動けない――0.8秒から1.7秒へ、途中を飛び越さずに動くしかないんだ。</div>
-        </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="jump-svg" viewBox="0 0 280 150" role="img" aria-label="折り返しをなめらかにした場合の「博士の時計は今何秒か」の変化。出発から折り返し直前までは一定の速さで博士の時計が遅れて見え、折り返しのごく短い間だけ急激だがなめらかに変化し、折り返し後はまた一定の速さで遅れて見える。その短い変化の途中で、天井鏡に反射する瞬間（1.0秒）を必ず通過する">
-          <text class="axis-label" x="8" y="14">うさ美から見た「博士の時計は今何秒か」（なめらかな折り返し）</text>
-          <line class="axis" x1="30" y1="120" x2="260" y2="120"></line>
-          <line class="axis" x1="30" y1="20" x2="30" y2="120"></line>
-          <line class="ref-line" x1="30" y1="80" x2="260" y2="80"></line>
-          <path class="path-out" d="M30,120 L133.5,91.2"></path>
-          <path class="path-smooth" d="M133.5,91.2 C145,91.2 145,48.8 156.5,48.8"></path>
-          <path class="path-return" d="M156.5,48.8 L260,20"></path>
-          <circle class="pt" cx="30" cy="120" r="3.5"></circle>
-          <circle class="pt" cx="260" cy="20" r="3.5"></circle>
-          <circle class="pt-hot" cx="142" cy="80" r="4"></circle>
-          <text class="lbl" x="30" y="133" text-anchor="middle">0秒</text>
-          <text class="lbl" x="145" y="133" text-anchor="middle" font-size="8.5">1.0秒（折り返し）</text>
-          <text class="lbl" x="260" y="133" text-anchor="middle">2.0秒</text>
-          <text class="lbl" x="26" y="123" text-anchor="end">0</text>
-          <text class="lbl" x="26" y="91" text-anchor="end">0.8</text>
-          <text class="lbl" x="26" y="55" text-anchor="end">1.7</text>
-          <text class="lbl" x="26" y="23" text-anchor="end">2.5</text>
-          <text class="lbl-jump" x="148" y="70">天井鏡で反射</text>
-          <text class="lbl-jump" x="148" y="80">（1.0秒）</text>
-        </svg>
-        <div class="diagram-caption">横軸はうさ美自身の経過時間、縦軸はうさ美から見た博士の時計の読み。出発から折り返し直前まではずっと一定の速さで進み、折り返しのごく短い間だけ急激に（でもなめらかに）変化し、折り返し後はまた一定の速さで進む。その短い変化の途中で、必ず1.0秒（天井鏡で反射する瞬間）を通過する</div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">0.8と1.7の間には、光がちょうど天井鏡に届く瞬間（1.0秒）がある。物差しが0.8から1.7まで飛び越さずに動く以上、その途中にある1.0秒も必ず通ることになる。だから、光の位置も80%から100%（天井鏡で反射）を経てから30%へ下りてくる――ものすごく速いけど、天井鏡でのバウンドを一回も飛ばさずにね。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">物差し自体が連続的にしか動けないから、その途中にある出来事も一つも飛ばせない、ということなんですね！ 瞬間移動じゃなくて、ものすごい速さの連続的な動きなんだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
