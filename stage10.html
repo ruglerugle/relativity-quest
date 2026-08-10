@@ -25,6 +25,21 @@
   .af-svg .af-label{fill:var(--muted);font-size:9px;font-weight:700}
   .af-svg .af-label-strong{fill:var(--ink);font-size:9.5px;font-weight:800}
   .af-svg .af-angle{fill:#8a6614;font-size:9px;font-weight:800}
+  .af-svg .af-sim-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:af-sim-rise 4s linear infinite}
+  .af-svg .af-sim-group{animation:af-sim-drift 4s linear infinite}
+  @keyframes af-sim-drift{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(60px);opacity:1}
+    85%{transform:translateX(60px);opacity:0}
+    100%{transform:translateX(0);opacity:0}
+  }
+  @keyframes af-sim-rise{
+    0%{transform:translateY(0)}
+    70%{transform:translateY(-104px)}
+    85%{transform:translateY(-104px)}
+    100%{transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion:reduce){.af-svg .af-sim-group,.af-svg .af-sim-photon{animation:none}}
 
   .calc-flow-svg{display:block;max-width:min(100%,300px);width:100%;height:auto;margin:auto}
   .calc-flow-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
@@ -267,6 +282,20 @@
           </div>
           <div class="dialog-bubble">同じ条件、ux＝vを今度は角度から逆算しよう。60度で打ち上げたときの水平方向の速さは、ux＝c×cos60°＝秒速15万km。だから、電車の速さがちょうど秒速15万km（＝0.5c）なら、光は真上に見えることになるんだ。直感的に考えると、こういうことだよ。60度で打ち上げた光は、地上から見て水平方向に秒速15万kmで進む。もし電車もぴったり同じ秒速15万kmで走れば、出発の瞬間からずっと、光と電車は同じ水平位置を保つ――つまり、光は常に電車の真上にいることになる。だから、うさ美からは光がまっすぐ真上に見えるんだよ。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="af-svg" viewBox="0 0 220 175" role="img" aria-label="電車が秒速15万kmで進むときのシミュレーション。60度で発射された光は、地上から見ても常に電車の真上にいることを示すアニメーション">
+          <line class="af-ground" x1="10" y1="157" x2="210" y2="157"></line>
+          <g class="af-sim-group">
+            <rect class="af-launcher" x="32" y="147" width="16" height="10" rx="2"></rect>
+            <circle class="af-sim-photon" cx="40" cy="152" r="4.5"></circle>
+          </g>
+        </svg>
+        <div class="diagram-caption">電車が秒速15万kmで進むとき、60度で発射された光は、地上から見てもずっと電車の真上にいる――だからうさ美からは光がまっすぐ真上に見える</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
