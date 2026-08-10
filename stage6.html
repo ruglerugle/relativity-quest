@@ -37,6 +37,26 @@
   .beam-svg .beam-tick{stroke:#b5504a;stroke-width:1.5}
   .beam-svg .beam-label{fill:var(--muted);font-size:8.5px;font-weight:700}
   .beam-svg .beam-jump-label{fill:#b5504a;font-size:8.5px;font-weight:800}
+
+  .fwd-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
+  .fwd-svg .fwd-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .fwd-svg .fwd-launcher{fill:var(--ink)}
+  .fwd-svg .fwd-tick{stroke:var(--muted);stroke-width:1}
+  .fwd-svg .fwd-label{fill:var(--muted);font-size:8px;font-weight:700}
+  .fwd-svg .fwd-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:fwd-move 6s linear infinite}
+  @keyframes fwd-move{
+    0%{transform:translateX(0);opacity:1}
+    40%{transform:translateX(230px);opacity:1}
+    41%{opacity:.15}
+    43%{transform:translateX(57.5px);opacity:.15}
+    44%{opacity:1}
+    80%{transform:translateX(287.5px);opacity:1}
+    90%{transform:translateX(287.5px);opacity:1}
+    96%{transform:translateX(287.5px);opacity:0}
+    98%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
+  @media (prefers-reduced-motion:reduce){.fwd-svg .fwd-photon{animation:none}}
   .b-path-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap}
   .b-path-compare .bp-svg{flex:0 1 150px;min-width:0;width:100%;max-width:170px;height:auto}
   .bp-svg .bp-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
@@ -502,6 +522,87 @@
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">物差し自体が連続的にしか動けないから、その途中にある出来事も一つも飛ばせない、ということなんですね！ 瞬間移動じゃなくて、ものすごい速さの連続的な動きなんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">では例えば、電車にもう一つ光の発射台があったとして、スタート時に進行方向に向かって光が発射されたとします。うさ美にとっては秒速30万kmで遠ざかっていくように見えるはずですが、折り返し時にはどう見えますか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">面白い応用問題だね！ まず行きの区間から考えよう。うさ美自身の視点では、自分は止まっていて、この光は光速不変の原理どおり、電車の速さに関係なく秒速30万kmでまっすぐ前方へ飛んでいく。彼女自身の時間で1.0秒経った折り返しの瞬間には、光は彼女から見て30万km先にいることになる。ここでも「今」の基準がジャンプするのは博士のときと同じだよ。でも博士は動かない点だったのに対して、この光は動き続けている目標だから、「切り替わった後の基準面が、光の（すでに進み続けている）軌道のどこと交わるか」を計算し直す必要があるんだ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="jump-svg" viewBox="0 0 280 150" role="img" aria-label="うさ美から見た、前方へ発射された光までの距離の変化。折り返し直前は30万kmまで一定の速さで遠ざかり、折り返しの瞬間に7.5万kmまで一気に近づき、その後また一定の速さで遠ざかっていく">
+          <text class="axis-label" x="18" y="14">うさ美から見た「前方の光までの距離」</text>
+          <line class="axis" x1="30" y1="120" x2="260" y2="120"></line>
+          <line class="axis" x1="30" y1="20" x2="30" y2="120"></line>
+          <line class="ref-line" x1="30" y1="20" x2="260" y2="20"></line>
+          <path class="path-out" d="M30,120 L145,40"></path>
+          <path class="path-jump" d="M145,40 L145,100"></path>
+          <path class="path-return" d="M145,100 L260,20"></path>
+          <circle class="pt" cx="30" cy="120" r="3.5"></circle>
+          <circle class="pt" cx="145" cy="40" r="3.5"></circle>
+          <circle class="pt" cx="145" cy="100" r="3.5"></circle>
+          <circle class="pt" cx="260" cy="20" r="3.5"></circle>
+          <text class="lbl" x="30" y="133" text-anchor="middle">0秒</text>
+          <text class="lbl" x="145" y="133" text-anchor="middle" font-size="8.5">1.0秒（折り返し）</text>
+          <text class="lbl" x="260" y="133" text-anchor="middle">2.0秒</text>
+          <text class="lbl" x="26" y="123" text-anchor="end">0</text>
+          <text class="lbl" x="26" y="103" text-anchor="end">7.5万km</text>
+          <text class="lbl" x="26" y="43" text-anchor="end">30万km</text>
+          <text class="lbl" x="26" y="23" text-anchor="end">37.5万km</text>
+          <text class="lbl-jump" x="151" y="73">－22.5万km</text>
+        </svg>
+        <div class="diagram-caption">横軸はうさ美自身の経過時間、縦軸はうさ美から見た「前方の光までの距離」。博士の時計のグラフとは逆に、折り返しの瞬間だけ距離が縮む向きにジャンプする</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">計算すると、帰りの基準に切り替わった瞬間、光は7.5万km先にいることになる。30万kmから7.5万kmへ、22.5万km分「近づいた」ように見えるんだ。博士のジャンプとは向きが逆――博士はうさ美の後ろ（進行方向と逆側）にいたから時計が進む向きにジャンプしたけど、この光は前（進行方向と同じ側）にあるから、距離が縮む向きにジャンプするんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="fwd-svg" viewBox="0 0 330 100" role="img" aria-label="うさ美が出発時に前方へ発射した光の動き。折り返し直前は30万km先まで進むが、折り返しの瞬間に7.5万km先まで一瞬で近づき、その後また一定の速さで遠ざかっていく">
+          <line class="fwd-ground" x1="0" y1="80" x2="330" y2="80"></line>
+          <rect class="fwd-launcher" x="14" y="70" width="12" height="10"></rect>
+          <line class="fwd-tick" x1="77.5" y1="70" x2="77.5" y2="90"></line>
+          <text class="fwd-label" x="77.5" y="60" text-anchor="middle">7.5万km</text>
+          <line class="fwd-tick" x1="250" y1="70" x2="250" y2="90"></line>
+          <text class="fwd-label" x="250" y="60" text-anchor="middle">30万km</text>
+          <line class="fwd-tick" x1="307.5" y1="70" x2="307.5" y2="90"></line>
+          <text class="fwd-label" x="307.5" y="60" text-anchor="middle">37.5万km</text>
+          <circle class="fwd-photon" cx="20" cy="75" r="4.5"></circle>
+        </svg>
+        <div class="diagram-caption">発射台（左端）は、うさ美自身の視点なので動かない。光は秒速30万kmで遠ざかり、折り返しの瞬間だけ7.5万kmの地点へワープして見え、そこからまた秒速30万kmで遠ざかっていく</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">折り返した後も光速不変は変わらないから、光は7.5万kmの地点から、また秒速30万kmで彼女から遠ざかっていく。うさ美が戻ってくるまでに、7.5万＋30万＝37.5万km先まで進んでいることになるんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">なるほど……！ 博士は「後ろ」にあったから時計が進む向きにジャンプして、この光は「前」にあったから距離が縮む向きにジャンプするんですね。同じ「同時性のジャンプ」でも、位置関係によって向きが変わるんだ。</div>
         </div>
       </div>
 
