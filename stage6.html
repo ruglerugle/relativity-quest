@@ -22,9 +22,20 @@
   .jump-svg .path-jump{stroke:#b5504a;stroke-width:2;stroke-dasharray:3 3;fill:none}
   .jump-svg .path-return{stroke:var(--gold-dark);stroke-width:2;fill:none}
   .jump-svg .pt{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .jump-svg .pt-hot{fill:#b5504a;stroke:#8a3a35;stroke-width:1}
   .jump-svg .axis-label{fill:var(--ink);font-size:9.5px;font-weight:800}
   .jump-svg .lbl{fill:var(--muted);font-size:9px;font-weight:700}
   .jump-svg .lbl-jump{fill:#b5504a;font-size:9px;font-weight:800}
+
+  .beam-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .beam-svg .beam-wall{stroke:var(--line);stroke-width:2}
+  .beam-svg .beam-ray{stroke:var(--gold-dark);stroke-width:2;stroke-dasharray:4 3}
+  .beam-svg .beam-source{fill:var(--ink)}
+  .beam-svg .beam-spot{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .beam-svg .beam-jump{stroke:#b5504a;stroke-width:1.5}
+  .beam-svg .beam-tick{stroke:#b5504a;stroke-width:1.5}
+  .beam-svg .beam-label{fill:var(--muted);font-size:8.5px;font-weight:700}
+  .beam-svg .beam-jump-label{fill:#b5504a;font-size:8.5px;font-weight:800}
   .b-path-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap}
   .b-path-compare .bp-svg{flex:0 1 150px;min-width:0;width:100%;max-width:170px;height:auto}
   .bp-svg .bp-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
@@ -316,6 +327,28 @@
           </div>
           <div class="dialog-bubble">するどい質問だね！ でも安心して。ワープして見えるのは「本物の光」じゃなくて、うさ美が「博士の今」をどう決めるかという物差しの方なんだ。光そのものは行きも帰りもずっと秒速30万kmでまっすぐ進んでいて、一瞬たりとも速さは変わっていない。たとえば、すごく遠い壁に向かってレーザーポインターをサッと振ると、点は壁の上を光速より速く走って見えることがある。でも実際に飛んでいる光子1本1本は、ちゃんと秒速30万kmでしか進んでいないよね？ 動いて見えるのは「点の位置」というパターンだけで、物や情報そのものが運ばれているわけじゃないから、光速を超えて見えても問題ないんだ。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="beam-svg" viewBox="0 0 260 120" role="img" aria-label="レーザーポインターを振ったときのたとえ。光線1本1本は秒速30万kmで進むが、遠くの壁の上でスポットが動く速さはそれより速く見えることがある">
+          <line class="beam-wall" x1="200" y1="12" x2="200" y2="108"></line>
+          <line class="beam-ray" x1="20" y1="60" x2="200" y2="22"></line>
+          <line class="beam-ray" x1="20" y1="60" x2="200" y2="98"></line>
+          <circle class="beam-source" cx="20" cy="60" r="4"></circle>
+          <circle class="beam-spot" cx="200" cy="22" r="3.5"></circle>
+          <circle class="beam-spot" cx="200" cy="98" r="3.5"></circle>
+          <text class="beam-label" x="95" y="34" text-anchor="middle">秒速30万km</text>
+          <text class="beam-label" x="95" y="92" text-anchor="middle">秒速30万km</text>
+          <line class="beam-tick" x1="208" y1="22" x2="216" y2="22"></line>
+          <line class="beam-tick" x1="208" y1="98" x2="216" y2="98"></line>
+          <line class="beam-jump" x1="212" y1="22" x2="212" y2="98"></line>
+          <text class="beam-jump-label" x="220" y="56">点の移動は</text>
+          <text class="beam-jump-label" x="220" y="67">もっと速く見える</text>
+        </svg>
+        <div class="diagram-caption">レーザーポインターを速く振ると、遠い壁の上でスポットが動く速さは光速を超えて見えることがある。でも実際に飛んでいる光は1本1本、常に秒速30万kmでまっすぐ進んでいるだけ</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
@@ -342,15 +375,32 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">いい質問だ！ 答えは後者――一旦天井鏡まで急速に届いて跳ね返ってから、30%の位置まで下りてくるんだ。直接ワープはしないんだよ。</div>
+          <div class="dialog-bubble">いい質問だ！ 答えは後者――一旦天井鏡まで急速に届いて跳ね返ってから、30%の位置まで下りてくるんだ。直接ワープはしないんだよ。なめらかに折り返すということは、うさ美の速さが秒速18万kmから0を通ってマイナス18万kmまで、一段ずつ連続的に変化するということだよね。さっきの物差し（「博士の今」）は、その速さで決まる量だから、速さが連続的に変わる以上、物差しの方も連続的にしか動けない――0.8秒から1.7秒へ、途中を飛び越さずに動くしかないんだ。</div>
         </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">なめらかに折り返すということは、うさ美の速さが秒速18万kmから0を通ってマイナス18万kmまで、一段ずつ連続的に変化するということだよね。さっきの物差し（「博士の今」）は、その速さで決まる量だから、速さが連続的に変わる以上、物差しの方も連続的にしか動けない――0.8秒から1.7秒へ、途中を飛び越さずに動くしかないんだ。</div>
-        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="jump-svg" viewBox="0 0 260 140" role="img" aria-label="折り返しをなめらかにした場合の「博士の今」の変化。うさ美の速さが秒速18万kmからマイナス18万kmまで連続的に変わる間、「博士の今」も0.8秒から1.7秒まで連続的に変わり、その途中で天井鏡に反射する瞬間（1.0秒）を必ず通る">
+          <text class="axis-label" x="8" y="14">うさ美から見た「博士の今」（なめらかな折り返し）</text>
+          <line class="axis" x1="30" y1="118" x2="230" y2="118"></line>
+          <line class="axis" x1="30" y1="20" x2="30" y2="118"></line>
+          <line class="ref-line" x1="30" y1="95" x2="230" y2="95"></line>
+          <path class="path-out" d="M30,115 L230,25"></path>
+          <circle class="pt" cx="30" cy="115" r="3.5"></circle>
+          <circle class="pt" cx="230" cy="25" r="3.5"></circle>
+          <circle class="pt-hot" cx="75" cy="95" r="4"></circle>
+          <text class="lbl" x="30" y="131" text-anchor="middle">＋18万km/s</text>
+          <text class="lbl" x="130" y="131" text-anchor="middle">0（一瞬静止）</text>
+          <text class="lbl" x="230" y="131" text-anchor="middle">－18万km/s</text>
+          <text class="lbl" x="26" y="118" text-anchor="end">0.8秒</text>
+          <text class="lbl" x="26" y="98" text-anchor="end">1.0秒</text>
+          <text class="lbl" x="26" y="28" text-anchor="end">1.7秒</text>
+          <text class="lbl-jump" x="82" y="88">天井鏡で反射</text>
+        </svg>
+        <div class="diagram-caption">横軸はうさ美の速さ（折り返しの間、連続的に変化）、縦軸はそのときの「博士の今」。直線は途切れずにつながっているので、0.8秒から1.7秒まで動く途中で、必ず1.0秒（天井鏡で反射する瞬間）を通過する</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
