@@ -94,6 +94,11 @@
   .brain-diagram .bd-status-done{fill:var(--ok);font-size:10px;font-weight:800}
   .brain-diagram .bd-status-wait{fill:var(--muted);font-size:10px;font-weight:700}
 
+  .frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 2px;line-height:1.15}
+  .frac-num,.frac-den{display:block;padding:0 2px}
+  .frac-line{display:block;height:0;border-top:1.5px solid currentColor;margin:1px 0}
+  .frac-sm{font-size:0.82em;margin:0 1px}
+
   .pyth-svg{display:block;max-width:min(100%,180px);width:100%;height:auto;margin:8px auto 2px}
   .pyth-svg .pyth-tri{fill:none;stroke:#5b3fa6;stroke-width:2.5;stroke-linejoin:round}
   .pyth-svg .pyth-right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
@@ -298,7 +303,7 @@
         <span class="step">① 電車に乗っている人から見た光時計：<br>　片道の距離 h ＝ 光の速さ c ×（時間 t）</span>
         <span class="step">② 動く光時計を外から見た直角三角形の3辺：<br>　高さ h<br>　電車の移動距離 v×t'<br>　光の斜めの道のり c×t'</span>
         <span class="step">③ 三平方の定理：<br>　(c×t')² ＝ h² ＋ (v×t')²</span>
-        <span class="step">④ ①を代入して整理すると…<br>　t' ＝ t ÷ √(1 −(v÷c)²)</span>
+        <span class="step">④ ①を代入して整理すると…<br>　t' ＝ <span class="frac"><span class="frac-num">t</span><span class="frac-line"></span><span class="frac-den">√(1 −(<span class="frac frac-sm"><span class="frac-num">v</span><span class="frac-line"></span><span class="frac-den">c</span></span>)²)</span></span></span>
         <span class="step">⑤ v（速さ）が c（光速）に近づくほど、t'（外から見た時間）はどんどん大きくなる＝時間が遅れる</span>
       </div>
 
@@ -308,7 +313,7 @@
             <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">では例えば、この電車が秒速18万km（光速の0.6倍）で走っていたら、④の式に当てはめると t' ＝ 1秒 ÷ √(1−0.6²) ＝ 1.25秒になりますよね。外から見ると光は c×t'＝37万5千km進んで天井の鏡に届く、ってことですよね？</div>
+          <div class="dialog-bubble">では例えば、この電車が秒速18万km（光速の0.6倍）で走っていたら、④の式に当てはめると t' ＝ <span class="frac"><span class="frac-num">1秒</span><span class="frac-line"></span><span class="frac-den">√(1−0.6²)</span></span> ＝ 1.25秒になりますよね。外から見ると光は c×t'＝37万5千km進んで天井の鏡に届く、ってことですよね？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
