@@ -92,6 +92,12 @@
   .brain-diagram .bd-label{fill:var(--muted);font-size:10px;font-weight:700}
   .brain-diagram .bd-status-done{fill:var(--ok);font-size:10px;font-weight:800}
   .brain-diagram .bd-status-wait{fill:var(--muted);font-size:10px;font-weight:700}
+
+  .pyth-svg{display:block;max-width:min(100%,180px);width:100%;height:auto;margin:8px auto 2px}
+  .pyth-svg .pyth-tri{fill:none;stroke:#5b3fa6;stroke-width:2.5;stroke-linejoin:round}
+  .pyth-svg .pyth-right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
+  .pyth-svg .pyth-label{fill:var(--ink);font-size:13px;font-weight:800;text-anchor:middle}
+  .pyth-svg .pyth-title{fill:#8a6614;font-size:14px;font-weight:800;text-anchor:middle}
 </style>
 </head>
 <body>
@@ -146,7 +152,16 @@
             <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">三平方の定理って、直角三角形の a²＋b²＝c² のやつですよね。</div>
+          <div class="dialog-bubble">三平方の定理って、直角三角形の a²＋b²＝c² のやつですよね。
+            <svg class="pyth-svg" viewBox="0 0 220 170" role="img" aria-label="直角三角形と三平方の定理。底辺a、高さb、斜辺cの直角三角形で、aの2乗プラスbの2乗はcの2乗に等しい">
+              <text class="pyth-title" x="110" y="22">a² ＋ b² ＝ c²</text>
+              <polygon class="pyth-tri" points="45,145 155,145 45,55"></polygon>
+              <rect class="pyth-right-angle" x="45" y="136" width="9" height="9"></rect>
+              <text class="pyth-label" x="100" y="162">a</text>
+              <text class="pyth-label" x="28" y="104">b</text>
+              <text class="pyth-label" x="108" y="94" transform="rotate(39 108,94)">c</text>
+            </svg>
+          </div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
