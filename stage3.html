@@ -60,7 +60,8 @@
   }
 
   .tri-compare{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap}
-  .tri-compare-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin:2px 0 10px}
+  .tri-compare-item{display:flex;flex-direction:column;align-items:center}
+  .tri-item-label{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-top:4px}
   .tri-compare .mini-static-svg{flex:0 1 70px;min-width:0;width:100%;height:auto}
   .tri-compare .triangle-svg{flex:0 1 200px;min-width:0;width:100%;height:auto}
   .mini-static-svg .mini-mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
@@ -256,39 +257,44 @@
 
       <div class="formula-box">
         <div class="tri-compare">
-          <svg class="mini-static-svg" viewBox="0 0 70 118" width="70" height="118" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh。光が下の鏡から上の鏡へ進む">
-            <g class="ghost-train">
-              <rect x="11" y="4" width="48" height="90" rx="5"></rect>
-              <circle cx="22" cy="98" r="4"></circle>
-              <circle cx="48" cy="98" r="4"></circle>
-            </g>
-            <line class="mini-ground" x1="0" y1="108" x2="70" y2="108"></line>
-            <line class="mini-mirror" x1="14" y1="10" x2="56" y2="10"></line>
-            <line class="mini-mirror" x1="14" y1="90" x2="56" y2="90"></line>
-            <line class="mini-h" x1="35" y1="90" x2="35" y2="10"></line>
-            <circle class="photon" cx="35" cy="90" r="4"></circle>
-            <text x="42" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
-          </svg>
-          <svg class="triangle-svg" viewBox="0 0 200 120" width="200" height="120" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ。電車の速さは光より遅いので底辺は高さより短い">
-            <line class="mini-ground" x1="60" y1="110" x2="168" y2="110"></line>
-            <g class="tri-train-group">
+          <div class="tri-compare-item">
+            <svg class="mini-static-svg" viewBox="0 0 70 118" width="70" height="118" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh。光が下の鏡から上の鏡へ進む">
               <g class="ghost-train">
-                <rect x="68" y="4" width="48" height="90" rx="5"></rect>
-                <circle cx="79" cy="98" r="4"></circle>
-                <circle cx="105" cy="98" r="4"></circle>
+                <rect x="11" y="4" width="48" height="90" rx="5"></rect>
+                <circle cx="22" cy="98" r="4"></circle>
+                <circle cx="48" cy="98" r="4"></circle>
               </g>
-              <line class="tri-mirror" x1="71" y1="90" x2="113" y2="90"></line>
-              <line class="tri-mirror" x1="71" y1="10" x2="113" y2="10"></line>
-              <circle class="photon" cx="92" cy="90" r="4"></circle>
-            </g>
-            <polygon class="triangle" points="92,90 140,10 140,90"></polygon>
-            <rect class="right-angle" x="131" y="81" width="9" height="9"></rect>
-            <text x="147" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
-            <text x="96" y="106" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
-            <text x="96" y="44" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(-59 96,44)">c×t'</text>
-          </svg>
+              <line class="mini-ground" x1="0" y1="108" x2="70" y2="108"></line>
+              <line class="mini-mirror" x1="14" y1="10" x2="56" y2="10"></line>
+              <line class="mini-mirror" x1="14" y1="90" x2="56" y2="90"></line>
+              <line class="mini-h" x1="35" y1="90" x2="35" y2="10"></line>
+              <circle class="photon" cx="35" cy="90" r="4"></circle>
+              <text x="42" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
+            </svg>
+            <span class="tri-item-label">車内視点</span>
+          </div>
+          <div class="tri-compare-item">
+            <svg class="triangle-svg" viewBox="0 0 200 120" width="200" height="120" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ。電車の速さは光より遅いので底辺は高さより短い">
+              <line class="mini-ground" x1="60" y1="110" x2="168" y2="110"></line>
+              <g class="tri-train-group">
+                <g class="ghost-train">
+                  <rect x="68" y="4" width="48" height="90" rx="5"></rect>
+                  <circle cx="79" cy="98" r="4"></circle>
+                  <circle cx="105" cy="98" r="4"></circle>
+                </g>
+                <line class="tri-mirror" x1="71" y1="90" x2="113" y2="90"></line>
+                <line class="tri-mirror" x1="71" y1="10" x2="113" y2="10"></line>
+                <circle class="photon" cx="92" cy="90" r="4"></circle>
+              </g>
+              <polygon class="triangle" points="92,90 140,10 140,90"></polygon>
+              <rect class="right-angle" x="131" y="81" width="9" height="9"></rect>
+              <text x="147" y="54" font-size="12" font-weight="800" fill="var(--gold-dark)">h</text>
+              <text x="96" y="106" font-size="12" font-weight="800" fill="#2f8f65">v×t'</text>
+              <text x="96" y="44" font-size="12" font-weight="800" fill="var(--gold-dark)" transform="rotate(-59 96,44)">c×t'</text>
+            </svg>
+            <span class="tri-item-label">外からの視点</span>
+          </div>
         </div>
-        <span class="tri-compare-caption">左：電車に乗っている人から見た片道 h／右：電車の外にいる人から見た光の軌道（下の鏡→動いた先の上の鏡）をそのまま直角三角形として取り出したもの</span>
         <span class="step">① 電車に乗っている人から見た光時計：<br>　片道の距離 h ＝ 光の速さ c ×（時間 t）</span>
         <span class="step">② 動く光時計を外から見た直角三角形の3辺：<br>　高さ h<br>　電車の移動距離 v×t'<br>　光の斜めの道のり c×t'</span>
         <span class="step">③ 三平方の定理：<br>　(c×t')² ＝ h² ＋ (v×t')²</span>
