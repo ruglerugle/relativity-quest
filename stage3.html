@@ -60,10 +60,12 @@
   }
 
   .tri-compare{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap}
-  .tri-compare-item{display:flex;flex-direction:column;align-items:center}
+  .tri-compare-item{display:flex;flex-direction:column;align-items:center;min-width:0}
+  .tri-item-mini{flex:0 1 70px}
+  .tri-item-tri{flex:0 1 200px}
   .tri-item-label{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-top:4px}
-  .tri-compare .mini-static-svg{flex:0 1 70px;min-width:0;width:100%;height:auto}
-  .tri-compare .triangle-svg{flex:0 1 200px;min-width:0;width:100%;height:auto}
+  .tri-compare .mini-static-svg{min-width:0;width:100%;height:auto}
+  .tri-compare .triangle-svg{min-width:0;width:100%;height:auto}
   .mini-static-svg .mini-mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
   .mini-static-svg .mini-h{stroke:var(--gold-dark);stroke-width:1.5;stroke-dasharray:3 4}
   .mini-static-svg .photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 3s linear infinite}
@@ -262,7 +264,7 @@
 
       <div class="formula-box">
         <div class="tri-compare">
-          <div class="tri-compare-item">
+          <div class="tri-compare-item tri-item-mini">
             <svg class="mini-static-svg" viewBox="0 0 70 118" width="70" height="118" role="img" aria-label="電車に乗っている人から見た光時計の片道の道のりh。光が下の鏡から上の鏡へ進む">
               <g class="ghost-train">
                 <rect x="11" y="4" width="48" height="90" rx="5"></rect>
@@ -278,7 +280,7 @@
             </svg>
             <span class="tri-item-label">車内視点</span>
           </div>
-          <div class="tri-compare-item">
+          <div class="tri-compare-item tri-item-tri">
             <svg class="triangle-svg" viewBox="0 0 200 120" width="200" height="120" role="img" aria-label="電車の外にいる人から見た光の軌道を直角三角形にしたもの。斜辺c×tダッシュが下の鏡から上の鏡へ向かう光の軌道、高さh、底辺v×tダッシュ。電車の速さは光より遅いので底辺は高さより短い">
               <line class="mini-ground" x1="60" y1="110" x2="168" y2="110"></line>
               <g class="tri-train-group">
