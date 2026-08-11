@@ -134,6 +134,18 @@
     100%{transform:translateX(0);opacity:0}
   }
   @media (prefers-reduced-motion:reduce){.bp-combo-svg .bc-group,.bp-combo-svg .bc-photon,.bp-combo-svg .bc-photon-smooth,.bp-combo-svg .bc-group-smooth{animation:none}}
+
+  .calc-flow-svg{display:block;max-width:min(100%,300px);width:100%;height:auto;margin:auto}
+  .calc-flow-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .calc-flow-svg .cf-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .calc-flow-svg .cf-value{fill:var(--ink);font-size:11px;font-weight:800;text-anchor:middle}
+  .calc-flow-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .calc-flow-svg .cf-arrow-head{fill:var(--gold-dark)}
+  .summary4-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
+  .summary4-svg .s4-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .summary4-svg .s4-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .summary4-svg .s4-value{fill:var(--ink);font-size:10.5px;font-weight:800;text-anchor:middle}
+  .summary4-svg .s4-title{fill:#8a6614;font-size:9.5px;font-weight:800;text-anchor:middle}
 </style>
 </head>
 <body>
@@ -554,6 +566,134 @@
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">なるほど……！ 博士は「後ろ」にあったから時計が進む向きにジャンプして、この光は「前」にあったから距離が縮む向きにジャンプするんですね。同じ「同時性のジャンプ」でも、位置関係によって向きが変わるんだ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">では例えば先ほどの光時計AとBに加えて、地上では電車の進行方向に30度傾いた（地上との角度60度）光時計Cと、電車の上には進行方向逆向きに30度傾いた（地上との角度60度）光時計Dを置いて、秒速15万kmで走る電車のスタートと同時に光を発射させた場合、博士とわたし、それぞれの視点で、光の動きはどう見えますか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">面白い設問だね！ 整理しよう。A（地上に固定・垂直）とB（電車に固定・垂直）はもう馴染みのある光時計、C（地上に固定・60度前傾き）とD（電車に固定・60度後ろ傾き）が今回の新顔だ。速さは全部秒速15万km（0.5c）で統一しよう。まず博士自身の視点から考えよう。AとCはどちらも地上に固定された時計だから、博士にとっては当たり前の話――光速はどの向きでも同じだから、彼自身の1.0秒後には、AもCもちょうど鏡に届く（100%）んだ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">じゃあ、うさ美自身から見たBとDも、同じ理由で当たり前に100%になりますね！ 自分に固定された時計だから。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ 難しいのは、博士から見たBとD、うさ美から見たAとC――つまり「相手側の時計」の方だ。まずはうさ美から見たAを計算してみよう。Aは地上（x＝0）に固定された垂直な時計だから、うさ美の固有時間τ'＝1.0に「同時」だと考える地上の時刻を、相対論的な同時性の条件から求める必要がある。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="calc-flow-svg" viewBox="0 0 260 210" role="img" aria-label="うさ美から見た地上の垂直な光時計Aの位置を求める計算の流れ。電車の基準面の式に、Aの位置x＝0を代入して、地上時刻t_Aを求め、それを鏡までの高さ1.0で割って86.6パーセントという割合を得る">
+          <rect class="cf-box" x="10" y="6" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="24">電車の基準面（t－vx＝一定）</text>
+          <text class="cf-value" x="130" y="42">τ'＝1.0から　t－vx＝√3/2</text>
+          <line class="cf-arrow" x1="130" y1="52" x2="130" y2="80"></line>
+          <path class="cf-arrow-head" d="M130,84 L125,75 L135,75 Z"></path>
+          <rect class="cf-box" x="10" y="88" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="106">Aの位置 x＝0 を代入</text>
+          <text class="cf-value" x="130" y="124">t_A＝√3/2 ≈ 0.866秒</text>
+          <line class="cf-arrow" x1="130" y1="134" x2="130" y2="162"></line>
+          <path class="cf-arrow-head" d="M130,166 L125,157 L135,157 Z"></path>
+          <rect class="cf-box" x="10" y="170" width="240" height="34" rx="8"></rect>
+          <text class="cf-value" x="130" y="192">高さの割合 ＝ t_A ÷ 1.0 ≈ 86.6%</text>
+        </svg>
+        <div class="diagram-caption">うさ美から見ると、Aの光はまだ86.6%（√3/2）の高さまでしか届いていない――ステージ10のＡと同じ計算方法</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">次はC。Cは進行方向に60度傾いているから、ちょうど秒速15万kmという条件のもとでは、うさ美からは真上に打ち上がるように見えるんだったね。でも「真上に見える」というのは向きの話であって、どこまで進んだかは別に計算が必要だ。Cは地上でx≠0の位置にあるから、Aより計算が一段複雑になる。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="calc-flow-svg" viewBox="0 0 260 210" role="img" aria-label="うさ美から見た地上の光時計Cの位置を求める計算の流れ。Cはすでに反射しており、反射後の時刻を求めてから、鏡までの距離との差を取って90.7パーセントという割合を得る">
+          <rect class="cf-box" x="10" y="6" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="24">Cの光路上の位置を代入</text>
+          <text class="cf-value" x="130" y="42">（反射後の区間で解く）</text>
+          <line class="cf-arrow" x1="130" y1="52" x2="130" y2="80"></line>
+          <path class="cf-arrow-head" d="M130,84 L125,75 L135,75 Z"></path>
+          <rect class="cf-box" x="10" y="88" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="106">反射後の地上時刻</text>
+          <text class="cf-value" x="130" y="124">t_C＝(2√3＋2)／5 ≈ 1.093秒</text>
+          <line class="cf-arrow" x1="130" y1="134" x2="130" y2="162"></line>
+          <path class="cf-arrow-head" d="M130,166 L125,157 L135,157 Z"></path>
+          <rect class="cf-box" x="10" y="170" width="240" height="34" rx="8"></rect>
+          <text class="cf-value" x="130" y="192">高さの割合 ＝ 2－t_C ≈ 90.7%</text>
+        </svg>
+        <div class="diagram-caption">うさ美から見ると、Cの光はすでに鏡で反射して、90.7%（(8－2√3)／5）の高さまで戻ってきている</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">なるほど、Cの方がAより進んでいる（すでに反射している）んですね！ で、博士から見たBとDはどうなるんですか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">実は、博士から見たBとDも、まったく同じ理屈で導けるんだ。地上と電車、前傾きと後ろ傾きを入れ替えるのは、「観測者を交換する」のとまったく同じこと。だから、博士から見るとBは86.6%（さっきのAと同じ）、Dは90.7%（さっきのCと同じ）になる。しかも、BはCと同じ60度に傾いて見え、Dはちょうど真上に見えるんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="summary4-svg" viewBox="0 0 280 230" role="img" aria-label="4つの光時計について、博士から見た場合とうさ美から見た場合の光の位置をまとめた表。自分自身に固定された時計はどちらも100パーセント、相手側の時計はAとBが86.6パーセント、CとDが90.7パーセントで一致する">
+          <text class="s4-title" x="140" y="16">秒速15万kmでの4つの光時計（うさ美自身の1.0秒後）</text>
+          <rect class="s4-box" x="10" y="26" width="130" height="90" rx="8"></rect>
+          <text class="s4-label" x="75" y="42">博士から見ると</text>
+          <text class="s4-value" x="75" y="60">A・C（地上）：100%</text>
+          <text class="s4-value" x="75" y="78">B（60度）：86.6%</text>
+          <text class="s4-value" x="75" y="96">D（真上）：90.7%</text>
+          <rect class="s4-box" x="150" y="26" width="120" height="90" rx="8"></rect>
+          <text class="s4-label" x="210" y="42">うさ美から見ると</text>
+          <text class="s4-value" x="210" y="60">B・D（電車）：100%</text>
+          <text class="s4-value" x="210" y="78">A（60度）：86.6%</text>
+          <text class="s4-value" x="210" y="96">C（真上）：90.7%</text>
+          <rect class="s4-box" x="10" y="126" width="260" height="70" rx="8"></rect>
+          <text class="s4-label" x="140" y="144">対称性</text>
+          <text class="s4-value" x="140" y="164">「相手側の垂直な時計」はどちらも86.6%</text>
+          <text class="s4-value" x="140" y="182">「相手側の60度傾いた時計」はどちらも90.7%</text>
+        </svg>
+        <div class="diagram-caption">自分自身に固定された時計はどちらから見ても当然100%。相手側の時計を見ると、垂直な方（A・B）は86.6%、60度傾いた方（C・D）は90.7%で、博士とうさ美のどちらから見ても同じ数字になる――これが相対性理論の「相互性」だ</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">すごい……！ 「地上から見た博士自身の時計」と「電車から見たうさ美自身の時計」がどちらも当たり前に100%で、「相手側の時計」を見ると、垂直な方も傾いた方も、博士とうさ美のどちらから見ても同じ数字（86.6%と90.7%）になるんですね。前にモヤモヤしていた「お互いに相手の時計が遅れて見えるのは矛盾じゃないか」という疑問が、この対称な結果を見て、やっと腑に落ちました。</div>
         </div>
       </div>
 
