@@ -161,6 +161,42 @@
           </div>
           <div class="dialog-bubble">あ、後ろの壁は光に近づいてくるから早く届いて、前の壁は光から逃げるから遅く届く、ってことですか？</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="sim-svg" viewBox="0 0 240 100" width="100%" height="110" role="img" aria-label="電車の中心から前後に広がる光と、外から見た到着タイミングの違い">
+          <line class="track" x1="0" y1="74" x2="240" y2="74"></line>
+          <path class="motion-chevron" d="M94 19 L101 24 L94 29 M108 19 L115 24 L108 29"></path>
+          <g class="train-frame">
+            <rect class="train" x="12" y="34" width="200" height="32" rx="16"></rect>
+            <rect class="train-outline" x="12" y="34" width="200" height="32" rx="16"></rect>
+            <rect class="window" x="50" y="40" width="42" height="16" rx="5"></rect>
+            <rect class="window" x="132" y="40" width="42" height="16" rx="5"></rect>
+            <line x1="20" y1="50" x2="204" y2="50" stroke="#ddd0ad" stroke-width="1" opacity=".7"></line>
+            <circle cx="112" cy="50" r="3.2" fill="#241d12"></circle>
+            <circle cx="112" cy="50" r="1.4" fill="#f3d99a"></circle>
+            <line class="wall rear-wall" x1="12" y1="39" x2="12" y2="61"></line>
+            <line class="wall front-wall" x1="212" y1="39" x2="212" y2="61"></line>
+            <circle class="wheel" cx="54" cy="68" r="3.5"></circle>
+            <circle class="wheel" cx="170" cy="68" r="3.5"></circle>
+            <circle class="hit-glow hit-back" cx="12" cy="50" r="7"></circle>
+            <circle class="hit-glow hit-front" cx="212" cy="50" r="7"></circle>
+          </g>
+          <circle class="emission-ring" cx="112" cy="50" r="7"></circle>
+          <g class="photon-comet photon-back">
+            <line class="tail" x1="112" y1="50" x2="126" y2="50" stroke="#d9a441" stroke-opacity=".45"></line>
+            <circle class="core" cx="112" cy="50" r="4"></circle>
+          </g>
+          <g class="photon-comet photon-front">
+            <line class="tail" x1="98" y1="50" x2="112" y2="50" stroke="#d9a441" stroke-opacity=".45"></line>
+            <circle class="core" cx="112" cy="50" r="4"></circle>
+          </g>
+          <text x="10" y="88" font-size="9" fill="#8a7a5c" font-weight="700">外から見ると：後ろの壁（左）に光が先に届く</text>
+        </svg>
+        <div class="diagram-caption">電車の中心から出た光は、外から見ると後ろの壁に先に届く（電車が右へ動いているため）</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
@@ -273,39 +309,6 @@
           </div>
           <div class="dialog-bubble">その通り！ これが「同時のズレ」の正体だよ。時間の遅れ・長さの収縮・そしてこの「同時のズレ」――この3つをまとめて「ローレンツ変換」と呼ぶんだ。</div>
         </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="sim-svg" viewBox="0 0 240 100" width="100%" height="110" role="img" aria-label="電車の中心から前後に広がる光と、外から見た到着タイミングの違い">
-          <line class="track" x1="0" y1="74" x2="240" y2="74"></line>
-          <path class="motion-chevron" d="M94 19 L101 24 L94 29 M108 19 L115 24 L108 29"></path>
-          <g class="train-frame">
-            <rect class="train" x="12" y="34" width="200" height="32" rx="16"></rect>
-            <rect class="train-outline" x="12" y="34" width="200" height="32" rx="16"></rect>
-            <rect class="window" x="50" y="40" width="42" height="16" rx="5"></rect>
-            <rect class="window" x="132" y="40" width="42" height="16" rx="5"></rect>
-            <line x1="20" y1="50" x2="204" y2="50" stroke="#ddd0ad" stroke-width="1" opacity=".7"></line>
-            <circle cx="112" cy="50" r="3.2" fill="#241d12"></circle>
-            <circle cx="112" cy="50" r="1.4" fill="#f3d99a"></circle>
-            <line class="wall rear-wall" x1="12" y1="39" x2="12" y2="61"></line>
-            <line class="wall front-wall" x1="212" y1="39" x2="212" y2="61"></line>
-            <circle class="wheel" cx="54" cy="68" r="3.5"></circle>
-            <circle class="wheel" cx="170" cy="68" r="3.5"></circle>
-            <circle class="hit-glow hit-back" cx="12" cy="50" r="7"></circle>
-            <circle class="hit-glow hit-front" cx="212" cy="50" r="7"></circle>
-          </g>
-          <circle class="emission-ring" cx="112" cy="50" r="7"></circle>
-          <g class="photon-comet photon-back">
-            <line class="tail" x1="112" y1="50" x2="126" y2="50" stroke="#d9a441" stroke-opacity=".45"></line>
-            <circle class="core" cx="112" cy="50" r="4"></circle>
-          </g>
-          <g class="photon-comet photon-front">
-            <line class="tail" x1="98" y1="50" x2="112" y2="50" stroke="#d9a441" stroke-opacity=".45"></line>
-            <circle class="core" cx="112" cy="50" r="4"></circle>
-          </g>
-          <text x="10" y="88" font-size="9" fill="#8a7a5c" font-weight="700">外から見ると：後ろの壁（左）に光が先に届く</text>
-        </svg>
-        <div class="diagram-caption">電車の中心から出た光は、外から見ると後ろの壁に先に届く（電車が右へ動いているため）</div>
       </div>
 
       <div class="dialogue-scene">
