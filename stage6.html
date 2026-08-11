@@ -162,6 +162,46 @@
   .setup4-svg .s4d-angle{stroke:var(--gold-dark);stroke-width:1.2;fill:none}
   .setup4-svg .s4d-angle-label{fill:#8a6614;font-size:9px;font-weight:800;text-anchor:middle}
   .setup4-svg .s4d-basedot{fill:var(--ink)}
+
+  .cd-compare{display:flex;align-items:flex-start;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .cd-compare .cd-svg{flex:0 1 220px;min-width:0;width:100%;max-width:230px;height:auto}
+  .cd-svg .cd-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .cd-svg .cd-rod{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round;opacity:.6}
+  .cd-svg .cd-vref{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:.6}
+  .cd-svg .cd-train{fill:var(--ink)}
+  .cd-svg .cd-label{fill:var(--muted);font-size:9px;font-weight:700}
+  .cd-svg .cd-caption{fill:var(--muted);font-size:9.5px;font-weight:700;text-anchor:middle}
+  .cd-svg .cd-title{fill:#8a6614;font-size:9.5px;font-weight:800;text-anchor:middle}
+  .cd-svg .c-group{animation:c-drift 3.6s linear infinite}
+  .cd-svg .c-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:c-rise 3.6s linear infinite}
+  @keyframes c-drift{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(60px);opacity:1}
+    85%{transform:translateX(60px);opacity:0}
+    100%{transform:translateX(0);opacity:0}
+  }
+  @keyframes c-rise{
+    0%{transform:translateY(0)}
+    70%{transform:translateY(-104px)}
+    85%{transform:translateY(-104px)}
+    100%{transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion:reduce){.cd-svg .c-group,.cd-svg .c-photon{animation:none}}
+  .cd-svg .d-group{animation:d-drift 3.6s linear infinite}
+  .cd-svg .d-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:d-rise 3.6s linear infinite}
+  @keyframes d-drift{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(60px);opacity:1}
+    85%{transform:translateX(60px);opacity:0}
+    100%{transform:translateX(0);opacity:0}
+  }
+  @keyframes d-rise{
+    0%{transform:translateY(0);opacity:1}
+    70%{transform:translateY(-120px);opacity:1}
+    85%{transform:translateY(-120px);opacity:0}
+    100%{transform:translateY(0);opacity:0}
+  }
+  @media (prefers-reduced-motion:reduce){.cd-svg .d-group,.cd-svg .d-photon{animation:none}}
 </style>
 </head>
 <body>
@@ -620,6 +660,35 @@
           <text class="s4d-sublabel" x="295" y="143">進行方向</text>
         </svg>
         <div class="diagram-caption">A・Cは地上の同じ点から、B・Dは電車の同じ点から、電車のスタートと同時に光を発射する。Aは地面に垂直、Cは地面との角度60度（進行方向へ）。Bは電車の床に垂直、Dは電車の床との角度60度（進行方向と逆向きに）</div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="cd-compare">
+          <svg class="cd-svg" viewBox="0 0 220 175" role="img" aria-label="うさ美から見たCの光の動き。地上に固定されたCから60度で発射された光は、水平方向には電車とちょうど同じ速さで進むため、電車と共に動くうさ美から見ると、光は常に電車の真上にあり続け、まっすぐ上に打ちあがるように見える">
+            <text class="cd-title" x="110" y="14">うさ美から見ると</text>
+            <line class="cd-ground" x1="10" y1="148" x2="210" y2="148"></line>
+            <line class="cd-rod" x1="45" y1="148" x2="60" y2="122"></line>
+            <text class="cd-label" x="64" y="120">C</text>
+            <g class="c-group">
+              <rect class="cd-train" x="37" y="143" width="16" height="9" rx="2"></rect>
+              <circle class="c-photon" cx="45" cy="147" r="4.2"></circle>
+            </g>
+            <text class="cd-caption" x="110" y="166">Cは真上へ打ちあがって見える</text>
+          </svg>
+          <svg class="cd-svg" viewBox="0 0 220 175" role="img" aria-label="博士から見たDの光の動き。電車に固定されたDから発射された光は、水平方向の速さがちょうど0になるため、地上に立つ博士から見ると、電車が先に進んでも光はその場から動かずまっすぐ上に打ちあがるように見える">
+            <text class="cd-title" x="110" y="14">博士から見ると</text>
+            <line class="cd-ground" x1="10" y1="148" x2="210" y2="148"></line>
+            <line class="cd-vref" x1="90" y1="143" x2="90" y2="24"></line>
+            <g class="d-group">
+              <rect class="cd-train" x="82" y="143" width="16" height="9" rx="2"></rect>
+              <line class="cd-rod" x1="90" y1="143" x2="75" y2="117"></line>
+              <text class="cd-label" x="70" y="113">D</text>
+            </g>
+            <circle class="d-photon" cx="90" cy="147" r="4.2"></circle>
+            <text class="cd-caption" x="110" y="166">Dは真上へ打ちあがって見える</text>
+          </svg>
+        </div>
+        <div class="diagram-caption">Cは地上に固定されているのに、光の水平方向の速さがちょうど電車と同じになるので、うさ美からは真上へ。Dは電車に固定されているのに、光の水平方向の速さがちょうど0になるので、博士からは真上へ――電車が先に進んでも、Dの光はその場に取り残されたようにまっすぐ上る</div>
       </div>
 
       <div class="dialogue-scene">
