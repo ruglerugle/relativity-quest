@@ -714,7 +714,49 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">その通り！ 難しいのは、博士から見たBとD、うさ美から見たAとC――つまり「相手側の時計」の方だ。まずはうさ美から見たAを計算してみよう。Aは地上（x＝0）に固定された垂直な時計だから、うさ美の固有時間τ'＝1.0に「同時」だと考える地上の時刻を、相対論的な同時性の条件から求める必要がある。</div>
+          <div class="dialog-bubble">その通り！ 難しいのは、博士から見たBとD、うさ美から見たAとC――つまり「相手側の時計」の方だ。計算に入る前に、一つ大事なコツを教えよう。実は、Dの速度を博士の視点に変換すると、(u_x, u_y)＝(0, c)――つまり「原点から真上へ、光速そのままで進む」という、Aの動きとまったく区別がつかない式になるんだ。これは偶然じゃない。今回選んだ60度という角度は、まさに「水平方向の速度成分がちょうど電車の速さと打ち消し合う」ように選ばれた角度だから、変換後は水平成分がぴったりゼロになる。そして「原点から真上へ光速で進む」動き方は、AもDも（うさ美から見たBもCも）ただ1通りしかない。つまり、反射するまでは、博士から見たDはAと、うさ美から見たCはBと、まったく同じ動きになるんだ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="ac-coincide-svg" viewBox="0 0 220 170" role="img" aria-label="AとDの光は、反射するまでまったく同じ道――真上へ光速で一直線に進む。ただし、Aの鏡は地上に固定されているため博士自身の1.0秒で届くのに対し、Dの鏡は電車に固定されて動いているため、より早い0.866秒で光と出会ってしまう">
+          <line class="ac-track" x1="100" y1="150" x2="100" y2="25"></line>
+          <circle class="ac-dot" cx="100" cy="150" r="4"></circle>
+          <line class="ac-tick" x1="88" y1="42" x2="112" y2="42"></line>
+          <text class="ac-label" x="118" y="39">Dの鏡（動いている）</text>
+          <text class="ac-label" x="118" y="51">0.866秒で反射</text>
+          <line class="ac-tick" x1="88" y1="25" x2="112" y2="25"></line>
+          <text class="ac-label" x="118" y="16">Aの鏡（固定）</text>
+          <text class="ac-label" x="118" y="28">1.0秒で到達</text>
+          <text class="ac-label" x="100" y="165" text-anchor="middle">共通の出発点――真上へ光速で一直線</text>
+        </svg>
+        <div class="diagram-caption">AとDの光は、反射するまでまったく同じ「真上へ光速」の一本道を進む。違うのは鏡がどこにあるか（Aは固定、Dは動いている）だけで、それが反射のタイミングの違いを生む</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">違うのは「どこで鏡に当たるか」だけだよ。Aの鏡は地上に固定されているから、博士自身の1.0秒でちょうど届く。でもDの鏡は電車に固定されていて、しかも後ろ向きに傾いているから、博士の0.866秒という、より早いタイミングで光と鏡が出会ってしまうんだ。つまり、光の道のりはAとDでまったく同じなのに、鏡の位置が違う（Dの鏡は動いているから）ために、反射するタイミングがズレる。90.7%という数字は、「Aと同じ道を進んだ光が、Aより早く鏡に当たって跳ね返り、残り0.134秒分だけ戻ってきた」結果なんだよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">なるほど……！ CとBの関係も、まったく同じ理屈なんですね。同じ道を進むのに、鏡が動いているかどうかで、反射のタイミングだけが変わるんだ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">よし、まずはうさ美から見たAを計算してみよう。Aは地上（x＝0）に固定された垂直な時計だから、うさ美の固有時間τ'＝1.0に「同時」だと考える地上の時刻を、相対論的な同時性の条件から求める必要がある。</div>
         </div>
       </div>
 
@@ -809,55 +851,6 @@
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">すごい……！ 「地上から見た博士自身の時計」と「電車から見たうさ美自身の時計」がどちらも当たり前に100%で、「相手側の時計」を見ると、垂直な方も傾いた方も、博士とうさ美のどちらから見ても同じ数字（86.6%と90.7%）になるんですね。前にモヤモヤしていた「お互いに相手の時計が遅れて見えるのは矛盾じゃないか」という疑問が、この対称な結果を見て、やっと腑に落ちました。</div>
-        </div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">90.7%というのは、折り返しているためですよね。折り返すまでは、博士の場合はAと、うさ美の場合はBと、まったく同じ動きになりますか？</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">その通り！ しかも、それには明確な理由があるんだ。Dの速度を博士の視点に変換すると、(u_x, u_y)＝(0, c)――つまり「原点から真上へ、光速そのままで進む」という、Aの動きとまったく区別がつかない式になる。これは偶然じゃない。今回選んだ60度という角度は、まさに「水平方向の速度成分がちょうど電車の速さと打ち消し合う」ように選ばれた角度だから、変換後は水平成分がぴったりゼロになるんだ。そして「原点から真上へ光速で進む」動き方は、AもDも（うさ美から見たBもCも）ただ1通りしかない。</div>
-        </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="ac-coincide-svg" viewBox="0 0 220 170" role="img" aria-label="AとDの光は、反射するまでまったく同じ道――真上へ光速で一直線に進む。ただし、Aの鏡は地上に固定されているため博士自身の1.0秒で届くのに対し、Dの鏡は電車に固定されて動いているため、より早い0.866秒で光と出会ってしまう">
-          <line class="ac-track" x1="100" y1="150" x2="100" y2="25"></line>
-          <circle class="ac-dot" cx="100" cy="150" r="4"></circle>
-          <line class="ac-tick" x1="88" y1="42" x2="112" y2="42"></line>
-          <text class="ac-label" x="118" y="39">Dの鏡（動いている）</text>
-          <text class="ac-label" x="118" y="51">0.866秒で反射</text>
-          <line class="ac-tick" x1="88" y1="25" x2="112" y2="25"></line>
-          <text class="ac-label" x="118" y="16">Aの鏡（固定）</text>
-          <text class="ac-label" x="118" y="28">1.0秒で到達</text>
-          <text class="ac-label" x="100" y="165" text-anchor="middle">共通の出発点――真上へ光速で一直線</text>
-        </svg>
-        <div class="diagram-caption">AとDの光は、反射するまでまったく同じ「真上へ光速」の一本道を進む。違うのは鏡がどこにあるか（Aは固定、Dは動いている）だけで、それが反射のタイミングの違いを生む</div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">違うのは「どこで鏡に当たるか」だけだよ。Aの鏡は地上に固定されているから、博士自身の1.0秒でちょうど届く。でもDの鏡は電車に固定されていて、しかも後ろ向きに傾いているから、博士の0.866秒という、より早いタイミングで光と鏡が出会ってしまうんだ。つまり、光の道のりはAとDでまったく同じなのに、鏡の位置が違う（Dの鏡は動いているから）ために、反射するタイミングがズレる。90.7%という数字は、「Aと同じ道を進んだ光が、Aより早く鏡に当たって跳ね返り、残り0.134秒分だけ戻ってきた」結果なんだよ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">なるほど……！ CとBの関係も、まったく同じ理屈なんですね。同じ道を進むのに、鏡が動いているかどうかで、反射のタイミングだけが変わるんだ。</div>
         </div>
       </div>
 
