@@ -151,6 +151,17 @@
   .ac-coincide-svg .ac-dot{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
   .ac-coincide-svg .ac-tick{stroke:var(--muted);stroke-width:1.2}
   .ac-coincide-svg .ac-label{fill:var(--muted);font-size:9px;font-weight:700}
+  .setup4-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
+  .setup4-svg .s4d-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .setup4-svg .s4d-rod{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
+  .setup4-svg .s4d-train{fill:var(--ink)}
+  .setup4-svg .s4d-label{fill:var(--ink);font-size:11px;font-weight:800;text-anchor:middle}
+  .setup4-svg .s4d-sublabel{fill:var(--muted);font-size:8px;font-weight:700;text-anchor:middle}
+  .setup4-svg .s4d-arrow{stroke:var(--muted);stroke-width:1.5}
+  .setup4-svg .s4d-arrowhead{fill:var(--muted)}
+  .setup4-svg .s4d-angle{stroke:var(--gold-dark);stroke-width:1.2;fill:none}
+  .setup4-svg .s4d-angle-label{fill:#8a6614;font-size:9px;font-weight:800;text-anchor:middle}
+  .setup4-svg .s4d-basedot{fill:var(--ink)}
 </style>
 </head>
 <body>
@@ -582,6 +593,36 @@
           </div>
           <div class="dialog-bubble">では例えば先ほどの光時計AとBに加えて、地上では電車の進行方向に30度傾いた（地上との角度60度）光時計Cと、電車の上には進行方向逆向きに30度傾いた（地上との角度60度）光時計Dを置いて、秒速15万kmで走る電車のスタートと同時に光を発射させた場合、博士とわたし、それぞれの視点で、光の動きはどう見えますか？ つまりわたしからはCが真上に打ちあがっている状態で、博士からはDが真上に打ちあがっている状態です。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="setup4-svg" viewBox="0 0 320 190" role="img" aria-label="4つの光時計の配置。地上ではAとCが同じ点から出発し、Aは垂直に、Cは進行方向へ60度の角度で傾いて立つ。電車の上ではBとDが同じ点から出発し、Bは垂直に、Dは進行方向と逆向きに60度の角度で傾いて立つ">
+          <line class="s4d-ground" x1="10" y1="162" x2="310" y2="162"></line>
+          <line class="s4d-rod" x1="60" y1="162" x2="60" y2="102"></line>
+          <text class="s4d-label" x="60" y="94">A</text>
+          <line class="s4d-rod" x1="60" y1="162" x2="90" y2="110"></line>
+          <text class="s4d-label" x="97" y="109">C</text>
+          <path class="s4d-angle" d="M84,162 A24,24 0 0,0 72,141"></path>
+          <text class="s4d-angle-label" x="93" y="148">60°</text>
+          <circle class="s4d-basedot" cx="60" cy="162" r="2.5"></circle>
+          <text class="s4d-sublabel" x="60" y="178">A・Cは同じ点から出発</text>
+          <rect class="s4d-train" x="190" y="145" width="90" height="18" rx="3"></rect>
+          <text class="s4d-sublabel" x="235" y="157" fill="#fff">電車</text>
+          <line class="s4d-rod" x1="235" y1="145" x2="235" y2="85"></line>
+          <text class="s4d-label" x="235" y="77">B</text>
+          <line class="s4d-rod" x1="235" y1="145" x2="205" y2="93"></line>
+          <text class="s4d-label" x="197" y="90">D</text>
+          <path class="s4d-angle" d="M211,145 A24,24 0 0,1 223,124"></path>
+          <text class="s4d-angle-label" x="202" y="129">60°</text>
+          <circle class="s4d-basedot" cx="235" cy="145" r="2.5"></circle>
+          <line class="s4d-arrow" x1="285" y1="154" x2="305" y2="154"></line>
+          <path class="s4d-arrowhead" d="M307,154 L300,150 L300,158 Z"></path>
+          <text class="s4d-sublabel" x="295" y="143">進行方向</text>
+        </svg>
+        <div class="diagram-caption">A・Cは地上の同じ点から、B・Dは電車の同じ点から、電車のスタートと同時に光を発射する。Aは地面に垂直、Cは地面との角度60度（進行方向へ）。Bは電車の床に垂直、Dは電車の床との角度60度（進行方向と逆向きに）</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
