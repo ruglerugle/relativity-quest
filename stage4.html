@@ -48,6 +48,19 @@
   .pyth-svg .pt-triangle-inner{fill:none;stroke:#b5504a;stroke-width:2;stroke-dasharray:4 3;stroke-linejoin:round}
   .pyth-svg .pt-right-angle{fill:none;stroke:#5b3fa6;stroke-width:1.5}
   .pyth-svg .pt-label{font-size:11px;font-weight:800}
+
+  .garage-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .garage-compare .garage-svg{flex:0 1 170px;min-width:0;width:100%;max-width:180px;height:auto}
+  .garage-svg .gp-title{fill:#8a6614;font-size:10px;font-weight:800;text-anchor:middle}
+  .garage-svg .gp-wall{stroke:var(--felt);stroke-width:3;stroke-linecap:round}
+  .garage-svg .gp-floor{stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 4}
+  .garage-svg .gp-train-ok{fill:#2f8f65;opacity:.85}
+  .garage-svg .gp-train-warn{fill:#5b3fa6;opacity:.85}
+  .garage-svg .gp-overflow{fill:none;stroke:#b5504a;stroke-width:1.5;stroke-dasharray:3 2}
+  .garage-svg .gp-wheel{fill:var(--ink)}
+  .garage-svg .gp-label{fill:var(--muted);font-size:8.5px;font-weight:700;text-anchor:middle}
+  .garage-svg .gp-result-ok{fill:var(--ok);font-size:10px;font-weight:800;text-anchor:middle}
+  .garage-svg .gp-result-warn{fill:#b5504a;font-size:10px;font-weight:800;text-anchor:middle}
 </style>
 </head>
 <body>
@@ -277,7 +290,49 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">するどい！ それは「車庫のパラドックス」と呼ばれる有名な問題で、うさ美の計算はどちらも合っているんだ。外から見ると18万kmに縮んだ電車は20万kmの車庫に収まるし、電車から見ると25万kmの車庫の方が20万kmに縮んで見えて、22万5千kmの電車は収まらない。同じ電車と車庫のはずなのに、見る人によって「収まる」「収まらない」が入れ替わってしまうように見える——これは、うさ美が最初に持ちかけてくれたAとBの謎と、まったく同じ種類の不思議さなんだ。これも「同時」という考え方の相対性で、ちゃんと辻褄が合うようになっている。次はいよいよそこを見ていこう。</div>
+          <div class="dialog-bubble">するどい！ それは「車庫のパラドックス」と呼ばれる有名な問題で、うさ美の計算はどちらも合っているんだ。外から見ると18万kmに縮んだ電車は20万kmの車庫に収まるし、電車から見ると25万kmの車庫の方が20万kmに縮んで見えて、22万5千kmの電車は収まらない。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="garage-compare">
+          <svg class="garage-svg" viewBox="0 0 170 110" role="img" aria-label="外から見ると、20万kmの車庫に18万kmに縮んだ電車がすっぽり収まる">
+            <text class="gp-title" x="85" y="14">外から見ると</text>
+            <line class="gp-wall" x1="25" y1="30" x2="25" y2="72"></line>
+            <line class="gp-wall" x1="145" y1="30" x2="145" y2="72"></line>
+            <line class="gp-floor" x1="25" y1="72" x2="145" y2="72"></line>
+            <text class="gp-label" x="85" y="26">車庫：20万km</text>
+            <rect class="gp-train-ok" x="31" y="46" width="108" height="18" rx="4"></rect>
+            <circle class="gp-wheel" cx="45" cy="64" r="3"></circle>
+            <circle class="gp-wheel" cx="125" cy="64" r="3"></circle>
+            <text class="gp-label" x="85" y="90">電車：18万km（縮んで見える）</text>
+            <text class="gp-result-ok" x="85" y="104">収まる</text>
+          </svg>
+          <svg class="garage-svg" viewBox="0 0 170 110" role="img" aria-label="電車から見ると、25万kmの車庫が20万kmに縮んで見え、22万5千kmの電車は収まらない">
+            <text class="gp-title" x="85" y="14">電車から見ると</text>
+            <line class="gp-wall" x1="25" y1="30" x2="25" y2="72"></line>
+            <line class="gp-wall" x1="145" y1="30" x2="145" y2="72"></line>
+            <line class="gp-floor" x1="25" y1="72" x2="145" y2="72"></line>
+            <text class="gp-label" x="85" y="26">車庫：25万km→20万kmに収縮</text>
+            <rect class="gp-train-warn" x="17.5" y="46" width="135" height="18" rx="4"></rect>
+            <circle class="gp-wheel" cx="32" cy="64" r="3"></circle>
+            <circle class="gp-wheel" cx="138" cy="64" r="3"></circle>
+            <rect class="gp-overflow" x="17.5" y="46" width="7.5" height="18"></rect>
+            <rect class="gp-overflow" x="145" y="46" width="7.5" height="18"></rect>
+            <text class="gp-label" x="85" y="90">電車：22万5千km（自分は縮まない）</text>
+            <text class="gp-result-warn" x="85" y="104">収まらない</text>
+          </svg>
+        </div>
+        <div class="diagram-caption">外から見ると縮んだ電車（18万km）は20万kmの車庫に収まるが、電車から見ると車庫の方が20万kmに縮んで見え、自分の電車（22万5千km）は収まらない――はみ出す部分（赤い破線）が「車庫のパラドックス」の見た目の矛盾</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">同じ電車と車庫のはずなのに、見る人によって「収まる」「収まらない」が入れ替わってしまうように見える——これは、うさ美が最初に持ちかけてくれたAとBの謎と、まったく同じ種類の不思議さなんだ。これも「同時」という考え方の相対性で、ちゃんと辻褄が合うようになっている。次はいよいよそこを見ていこう。</div>
         </div>
       </div>
 
