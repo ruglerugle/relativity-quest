@@ -202,6 +202,44 @@
     100%{transform:translateY(0);opacity:0}
   }
   @media (prefers-reduced-motion:reduce){.cd-svg .d-group,.cd-svg .d-photon{animation:none}}
+
+  .scissors-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .scissors-svg .sc-hinge{fill:var(--ink)}
+  .scissors-svg .sc-blade{stroke:#5b3fa6;stroke-width:5;stroke-linecap:round;transform-origin:40px 80px;animation-duration:4s;animation-timing-function:linear;animation-iteration-count:infinite}
+  .scissors-svg .sc-blade-upper{animation-name:sc-rotate-upper}
+  .scissors-svg .sc-blade-lower{animation-name:sc-rotate-lower}
+  .scissors-svg .sc-point{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:sc-point-move 4s linear infinite}
+  .scissors-svg .sc-label{fill:var(--muted);font-size:9px;font-weight:700}
+  @keyframes sc-rotate-upper{
+    0%{transform:rotate(-30deg)}
+    20%{transform:rotate(-22deg)}
+    40%{transform:rotate(-16deg)}
+    60%{transform:rotate(-10deg)}
+    80%{transform:rotate(-5deg)}
+    92%{transform:rotate(-2.5deg)}
+    100%{transform:rotate(-30deg)}
+  }
+  @keyframes sc-rotate-lower{
+    0%{transform:rotate(30deg)}
+    20%{transform:rotate(22deg)}
+    40%{transform:rotate(16deg)}
+    60%{transform:rotate(10deg)}
+    80%{transform:rotate(5deg)}
+    92%{transform:rotate(2.5deg)}
+    100%{transform:rotate(30deg)}
+  }
+  @keyframes sc-point-move{
+    0%{transform:translateX(0);opacity:1}
+    20%{transform:translateX(5px);opacity:1}
+    40%{transform:translateX(13px);opacity:1}
+    60%{transform:translateX(30px);opacity:1}
+    80%{transform:translateX(76px);opacity:1}
+    92%{transform:translateX(168px);opacity:1}
+    94%{opacity:0}
+    98%{opacity:0;transform:translateX(0)}
+    100%{opacity:1;transform:translateX(0)}
+  }
+  @media (prefers-reduced-motion:reduce){.scissors-svg .sc-blade,.scissors-svg .sc-point{animation:none}}
 </style>
 </head>
 <body>
@@ -517,6 +555,22 @@
           </div>
           <div class="dialog-bubble">はさみを閉じるところを想像して。刃自体はゆっくり動いているだけなのに、2枚の刃が交わる「点」は、はさみが長ければ長いほど、閉じる角度の変化に応じてすごく速く動くことができる。金属そのものが速く動いているわけじゃなく、「2つの線が交わる場所」という、物ではない幾何学的な点が動いているだけだからなんだ。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="scissors-svg" viewBox="0 0 260 160" role="img" aria-label="はさみが閉じる様子。刃はゆっくり回転するだけだが、2枚の刃が交わる点は、閉じるほどどんどん速く外側へ動いていく">
+          <circle class="sc-hinge" cx="40" cy="80" r="4"></circle>
+          <line class="sc-blade sc-blade-upper" x1="40" y1="80" x2="190" y2="80"></line>
+          <line class="sc-blade sc-blade-lower" x1="40" y1="80" x2="190" y2="80"></line>
+          <circle class="sc-point" cx="56" cy="80" r="5"></circle>
+          <text class="sc-label" x="20" y="102">支点</text>
+          <text class="sc-label" x="140" y="24">刃はゆっくり回転</text>
+          <text class="sc-label" x="120" y="148">交わる点はどんどん加速</text>
+        </svg>
+        <div class="diagram-caption">刃自体はゆっくり閉じていくだけなのに、2枚の刃が交わる点は、閉じるほど（角度が小さいほど）どんどん速く外側へ動いていく——物ではない「交わる場所」だから、光速を超えても物理法則に反しない</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
