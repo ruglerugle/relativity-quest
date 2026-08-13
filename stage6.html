@@ -202,10 +202,14 @@
 
   .scissors-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
   .scissors-svg .sc-hinge{fill:var(--ink)}
-  .scissors-svg .sc-blade{stroke:#5b3fa6;stroke-width:5;stroke-linecap:round;transform-origin:40px 80px;animation-duration:4s;animation-timing-function:linear;animation-iteration-count:infinite}
-  .scissors-svg .sc-blade-upper{animation-name:sc-rotate-upper}
-  .scissors-svg .sc-blade-lower{animation-name:sc-rotate-lower}
-  .scissors-svg .sc-point{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:sc-point-move 4s linear infinite}
+  .scissors-svg .sc-path-guide{stroke:var(--gold-dark);stroke-width:1;stroke-dasharray:2 3;opacity:.3}
+  .scissors-svg .sc-blade{stroke:#5b3fa6;stroke-width:5;stroke-linecap:round;animation-duration:4s;animation-timing-function:linear;animation-iteration-count:infinite}
+  .scissors-svg .sc-blade-upper{transform-origin:40px 86px;animation-name:sc-rotate-upper}
+  .scissors-svg .sc-blade-lower{transform-origin:40px 74px;animation-name:sc-rotate-lower}
+  .scissors-svg .sc-point{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;filter:drop-shadow(0 0 4px rgba(212,160,23,.85));--sc-op:1;animation:sc-point-move 4s linear infinite}
+  .scissors-svg .sc-point-echo{fill:var(--gold);transform-box:fill-box;transform-origin:center;animation:sc-point-move 4s linear infinite}
+  .scissors-svg .sc-echo1{--sc-op:.35;animation-delay:.08s}
+  .scissors-svg .sc-echo2{--sc-op:.15;animation-delay:.16s}
   .scissors-svg .sc-label{fill:var(--muted);font-size:9px;font-weight:700}
   @keyframes sc-rotate-upper{
     0%{transform:rotate(-30deg)}
@@ -226,17 +230,17 @@
     100%{transform:rotate(30deg)}
   }
   @keyframes sc-point-move{
-    0%{transform:translateX(0);opacity:1}
-    20%{transform:translateX(5px);opacity:1}
-    40%{transform:translateX(13px);opacity:1}
-    60%{transform:translateX(30px);opacity:1}
-    80%{transform:translateX(76px);opacity:1}
-    92%{transform:translateX(168px);opacity:1}
+    0%{transform:translateX(0);opacity:var(--sc-op,1)}
+    20%{transform:translateX(4.46px);opacity:var(--sc-op,1)}
+    40%{transform:translateX(10.53px);opacity:var(--sc-op,1)}
+    60%{transform:translateX(23.64px);opacity:var(--sc-op,1)}
+    80%{transform:translateX(58.19px);opacity:var(--sc-op,1)}
+    92%{transform:translateX(127.03px);opacity:var(--sc-op,1)}
     94%{opacity:0}
     98%{opacity:0;transform:translateX(0)}
-    100%{opacity:1;transform:translateX(0)}
+    100%{opacity:var(--sc-op,1);transform:translateX(0)}
   }
-  @media (prefers-reduced-motion:reduce){.scissors-svg .sc-blade,.scissors-svg .sc-point{animation:none}}
+  @media (prefers-reduced-motion:reduce){.scissors-svg .sc-blade,.scissors-svg .sc-point,.scissors-svg .sc-point-echo{animation:none}}
 
   .rt-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
   .rt-compare .rt-svg{flex:0 1 200px;min-width:0;width:100%;max-width:210px;height:auto}
@@ -656,11 +660,14 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="scissors-svg" viewBox="0 0 260 160" role="img" aria-label="はさみが閉じる様子。刃はゆっくり回転するだけだが、2枚の刃が交わる点は、閉じるほどどんどん速く外側へ動いていく">
+        <svg class="scissors-svg" viewBox="0 0 260 160" role="img" aria-label="はさみが閉じる様子。刃はゆっくり回転するだけだが、支点の少し先で実際に交わる点は、閉じるほどどんどん速く刃先の方向へ動いていく">
           <circle class="sc-hinge" cx="40" cy="80" r="4"></circle>
-          <line class="sc-blade sc-blade-upper" x1="40" y1="80" x2="190" y2="80"></line>
-          <line class="sc-blade sc-blade-lower" x1="40" y1="80" x2="190" y2="80"></line>
-          <circle class="sc-point" cx="56" cy="80" r="5"></circle>
+          <line class="sc-path-guide" x1="50" y1="80" x2="178" y2="80"></line>
+          <line class="sc-blade sc-blade-upper" x1="40" y1="86" x2="190" y2="86"></line>
+          <line class="sc-blade sc-blade-lower" x1="40" y1="74" x2="190" y2="74"></line>
+          <circle class="sc-point-echo sc-echo2" cx="50.4" cy="80" r="3"></circle>
+          <circle class="sc-point-echo sc-echo1" cx="50.4" cy="80" r="4"></circle>
+          <circle class="sc-point" cx="50.4" cy="80" r="5"></circle>
           <text class="sc-label" x="20" y="102">支点</text>
           <text class="sc-label" x="140" y="24">刃はゆっくり回転</text>
           <text class="sc-label" x="120" y="148">交わる点はどんどん加速</text>
