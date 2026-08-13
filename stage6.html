@@ -237,6 +237,49 @@
     100%{opacity:1;transform:translateX(0)}
   }
   @media (prefers-reduced-motion:reduce){.scissors-svg .sc-blade,.scissors-svg .sc-point{animation:none}}
+
+  .rt-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .rt-compare .rt-svg{flex:0 1 200px;min-width:0;width:100%;max-width:210px;height:auto}
+  .rt-svg .rt-title{fill:#8a6614;font-size:10px;font-weight:800;text-anchor:middle}
+  .rt-svg .rt-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .rt-svg .rt-base{fill:var(--ink);transform-box:fill-box;transform-origin:center}
+  .rt-svg .rt-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center}
+  .rt-svg .rt-label{fill:var(--muted);font-size:8.5px;font-weight:700;text-anchor:middle}
+  .rt-svg .rt-base-D{animation:rt-base-D 6s linear infinite}
+  .rt-svg .rt-photon-D{animation:rt-photon-D 6s linear infinite}
+  @keyframes rt-base-D{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(139px);opacity:1}
+    85%{transform:translateX(139px);opacity:0}
+    86%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
+  @keyframes rt-photon-D{
+    0%{transform:translate(0,0);opacity:1}
+    26.25%{transform:translate(0,-104px);opacity:1}
+    70%{transform:translate(139px,0);opacity:1}
+    85%{transform:translate(139px,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  .rt-svg .rt-base-C{animation:rt-base-C 6s linear infinite}
+  .rt-svg .rt-photon-C{animation:rt-photon-C 6s linear infinite}
+  @keyframes rt-base-C{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(-139px);opacity:1}
+    85%{transform:translateX(-139px);opacity:0}
+    86%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
+  @keyframes rt-photon-C{
+    0%{transform:translate(0,0);opacity:1}
+    26.25%{transform:translate(0,-104px);opacity:1}
+    70%{transform:translate(-139px,0);opacity:1}
+    85%{transform:translate(-139px,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  @media (prefers-reduced-motion:reduce){.rt-svg .rt-base-D,.rt-svg .rt-photon-D,.rt-svg .rt-base-C,.rt-svg .rt-photon-C{animation:none}}
 </style>
 </head>
 <body>
@@ -777,13 +820,6 @@
           </div>
           <div class="dialog-bubble">はい……実はDの速度を博士の視点に変換すると、(u_x, u_y)＝(0, c)になるはずなんです。つまり「原点から真上へ、光速そのままで進む」という、Aの動きとまったく同じ式になります。60度という角度は、水平方向の速度成分がちょうど電車の速さと打ち消し合うように選びました。だから、反射するまでは博士から見たDはAと、わたしから見たCはBと、まったく同じ動きになるはず……なんですけど、腑に落ちていないのはそこでもないんです。実は、DもCも、もう鏡に反射して戻ってきている途中なんです。Aはまだ86.6%で鏡にすら届いていないのに、Cはもう反射を終えて、戻りの道のりの90.7%まで来ている。博士の同じ1.0秒間のはずなのに、Cの方はもう「反射」という次の段階まで進んでしまっている——そこが分からないんです。</div>
         </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">そこに気づくとは、するどいね。答えを言おう。1.0秒のところで止めずに、光が完全に1往復し終えるまで待ったらどうなるか考えてみよう。Cの光は地上に固定された鏡へ行って戻ってくるだけだから、往復にかかる時間はAとまったく同じ、博士自身の2.0秒だ。一方、うさ美から見たBとDは、電車という同じ場所から出て同じ場所に戻ってくる往復だから、うさ美自身の2.0秒（博士から見ると2.309秒）で、これもBとDでまったく同じになる。つまり、Cが「もう折り返して戻ってきている」ように見えたのは、往復の途中経過にすぎない。傾きが変えるのは「いつ折り返すか」というタイミングだけで、往復の合計時間は、垂直な時計とぴったり同じになるように帳尻が合うんだ。だから、光が完全に1往復し終えた瞬間には、AとC、BとDは、それぞれ博士自身・うさ美自身の時計とぴったり同じ時刻を指していて、二人が最終的に見るものに食い違いは起きないんだよ。</div>
-        </div>
       </div>
 
       <div class="diagram-box">
@@ -799,6 +835,38 @@
           <text class="ac-label" x="100" y="165" text-anchor="middle">共通の出発点――真上へ光速で一直線</text>
         </svg>
         <div class="diagram-caption">AとDの光は、反射するまでまったく同じ「真上へ光速」の一本道を進む。違うのは鏡がどこにあるか（Aは固定、Dは動いている）だけで、それが反射のタイミングの違いを生む</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そこに気づくとは、するどいね。答えを言おう。1.0秒のところで止めずに、光が完全に1往復し終えるまで待ったらどうなるか考えてみよう。Cの光は地上に固定された鏡へ行って戻ってくるだけだから、往復にかかる時間はAとまったく同じ、博士自身の2.0秒だ。一方、うさ美から見たBとDは、電車という同じ場所から出て同じ場所に戻ってくる往復だから、うさ美自身の2.0秒（博士から見ると2.309秒）で、これもBとDでまったく同じになる。つまり、Cが「もう折り返して戻ってきている」ように見えたのは、往復の途中経過にすぎない。傾きが変えるのは「いつ折り返すか」というタイミングだけで、往復の合計時間は、垂直な時計とぴったり同じになるように帳尻が合うんだ。だから、光が完全に1往復し終えた瞬間には、AとC、BとDは、それぞれ博士自身・うさ美自身の時計とぴったり同じ時刻を指していて、二人が最終的に見るものに食い違いは起きないんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="rt-compare">
+          <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="博士から見たDの光の1往復。まっすぐ上に上って0.866秒で反射し、その後は斜めに下って、電車が追いついた2.309秒後にちょうど合流する">
+            <text class="rt-title" x="100" y="14">博士から見ると（Dの往復）</text>
+            <line class="rt-ground" x1="15" y1="140" x2="195" y2="140"></line>
+            <rect class="rt-base rt-base-D" x="34" y="135" width="12" height="10" rx="2"></rect>
+            <circle class="rt-photon rt-photon-D" cx="40" cy="140" r="4.5"></circle>
+            <text class="rt-label" x="40" y="156">出発点</text>
+            <text class="rt-label" x="100" y="166">進行方向 →</text>
+          </svg>
+          <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="うさ美から見たCの光の1往復。まっすぐ上に上って0.866秒で反射し、その後は斜めに下って、地上の出発点が2.309秒後にちょうど追いついてくる">
+            <text class="rt-title" x="100" y="14">うさ美から見ると（Cの往復）</text>
+            <line class="rt-ground" x1="5" y1="140" x2="185" y2="140"></line>
+            <rect class="rt-base rt-base-C" x="154" y="135" width="12" height="10" rx="2"></rect>
+            <circle class="rt-photon rt-photon-C" cx="160" cy="140" r="4.5"></circle>
+            <text class="rt-label" x="160" y="156">出発点</text>
+            <text class="rt-label" x="100" y="166">← 地面の流れ</text>
+          </svg>
+        </div>
+        <div class="diagram-caption">Dの光は真上に上って0.866秒で反射し、その後は斜めに下って、電車自身が博士の2.309秒後に追いつく。Cの光も同じように真上へ上って0.866秒で反射し、地上の出発点がうさ美自身の2.309秒後に追いついてくる——どちらも最後には出発点とぴったり合流する</div>
       </div>
 
       <div class="dialogue-scene">
