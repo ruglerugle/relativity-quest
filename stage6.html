@@ -279,7 +279,16 @@
     86%{transform:translate(0,0);opacity:0}
     100%{transform:translate(0,0);opacity:1}
   }
-  @media (prefers-reduced-motion:reduce){.rt-svg .rt-base-D,.rt-svg .rt-photon-D,.rt-svg .rt-base-C,.rt-svg .rt-photon-C{animation:none}}
+  .rt-svg .rt-train{fill:var(--ink)}
+  .rt-svg .rt-ground-scroll{animation:rt-ground-C 6s linear infinite}
+  @keyframes rt-ground-C{
+    0%{stroke-dashoffset:0px}
+    70%{stroke-dashoffset:170px}
+    85%{stroke-dashoffset:170px}
+    86%{stroke-dashoffset:0px}
+    100%{stroke-dashoffset:0px}
+  }
+  @media (prefers-reduced-motion:reduce){.rt-svg .rt-base-D,.rt-svg .rt-photon-D,.rt-svg .rt-base-C,.rt-svg .rt-photon-C,.rt-svg .rt-ground-scroll{animation:none}}
 </style>
 </head>
 <body>
@@ -859,11 +868,12 @@
           </svg>
           <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="うさ美から見たCの光の1往復。まっすぐ上に上って0.866秒で反射し、その後は斜めに下って、地上の出発点が2.309秒後にちょうど追いついてくる">
             <text class="rt-title" x="100" y="14">うさ美から見ると（Cの往復）</text>
-            <line class="rt-ground" x1="5" y1="140" x2="185" y2="140"></line>
-            <rect class="rt-base rt-base-C" x="154" y="135" width="12" height="10" rx="2"></rect>
+            <line class="rt-ground rt-ground-scroll" x1="5" y1="140" x2="185" y2="140"></line>
+            <rect class="rt-train" x="154" y="135" width="12" height="10" rx="2"></rect>
+            <rect class="rt-base rt-base-C" x="157" y="138" width="6" height="4" rx="1"></rect>
             <circle class="rt-photon rt-photon-C" cx="160" cy="140" r="4.5"></circle>
-            <text class="rt-label" x="160" y="156">出発点</text>
-            <text class="rt-label" x="100" y="166">← 地面の流れ</text>
+            <text class="rt-label" x="160" y="156">電車（固定）</text>
+            <text class="rt-label" x="100" y="166">← 地面が流れる</text>
           </svg>
         </div>
         <div class="diagram-caption">Dの光は真上に上って0.866秒で反射し、その後は斜めに下って、電車自身が博士の2.309秒後に追いつく。Cの光も同じように真上へ上って0.866秒で反射し、地上の出発点がうさ美自身の2.309秒後に追いついてくる——どちらも最後には出発点とぴったり合流する</div>
