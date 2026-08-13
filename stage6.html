@@ -243,6 +243,7 @@
   .rt-svg .rt-title{fill:#8a6614;font-size:10px;font-weight:800;text-anchor:middle}
   .rt-svg .rt-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
   .rt-svg .rt-base{fill:var(--ink);transform-box:fill-box;transform-origin:center}
+  .rt-svg .rt-start-dot{fill:var(--ink)}
   .rt-svg .rt-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center}
   .rt-svg .rt-label{fill:var(--muted);font-size:8.5px;font-weight:700;text-anchor:middle}
   .rt-svg .rt-base-D{animation:rt-base-D 6s linear infinite}
@@ -288,7 +289,36 @@
     86%{stroke-dashoffset:0px}
     100%{stroke-dashoffset:0px}
   }
-  @media (prefers-reduced-motion:reduce){.rt-svg .rt-base-D,.rt-svg .rt-photon-D,.rt-svg .rt-base-C,.rt-svg .rt-photon-C,.rt-svg .rt-ground-scroll{animation:none}}
+  .rt-svg .rt-track-ref{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:.6}
+  .rt-svg .rt-photon-ref{animation:rt-photon-ref 6s linear infinite}
+  @keyframes rt-photon-ref{
+    0%{transform:translate(0,0);opacity:1}
+    30.3%{transform:translate(0,-120px);opacity:1}
+    60.6%{transform:translate(0,0);opacity:1}
+    85%{transform:translate(0,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  .rt-svg .rt-photon-zz{fill:#2f8a8f;stroke:#1f6a6f;stroke-width:1;transform-box:fill-box;transform-origin:center}
+  .rt-svg .rt-photon-zz-right{animation:rt-photon-zz-right 6s linear infinite}
+  .rt-svg .rt-photon-zz-left{animation:rt-photon-zz-left 6s linear infinite}
+  @keyframes rt-photon-zz-right{
+    0%{transform:translate(0,0);opacity:1}
+    35%{transform:translate(69.5px,-120px);opacity:1}
+    70%{transform:translate(139px,0);opacity:1}
+    85%{transform:translate(139px,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  @keyframes rt-photon-zz-left{
+    0%{transform:translate(0,0);opacity:1}
+    35%{transform:translate(-69.5px,-120px);opacity:1}
+    70%{transform:translate(-139px,0);opacity:1}
+    85%{transform:translate(-139px,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  @media (prefers-reduced-motion:reduce){.rt-svg .rt-base-D,.rt-svg .rt-photon-D,.rt-svg .rt-base-C,.rt-svg .rt-photon-C,.rt-svg .rt-ground-scroll,.rt-svg .rt-photon-ref,.rt-svg .rt-photon-zz-right,.rt-svg .rt-photon-zz-left{animation:none}}
 </style>
 </head>
 <body>
@@ -858,25 +888,33 @@
 
       <div class="diagram-box">
         <div class="rt-compare">
-          <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="博士から見たDの光の1往復。まっすぐ上に上って0.866秒で反射し、その後は斜めに下って、電車が追いついた2.309秒後にちょうど合流する">
+          <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="博士から見た光の1往復。Aは真上を垂直に往復し2.0秒で終わる。DとBはどちらも電車という同じ出発点に戻ってくるが、Dはまっすぐ上って0.866秒で反射しその後斜めに下り、Bは斜めに上って1.1547秒で反射しその後斜めに下る。道筋は違うが、どちらも2.309秒後にちょうど電車に合流する">
             <text class="rt-title" x="100" y="14">博士から見ると（Dの往復）</text>
             <line class="rt-ground" x1="15" y1="140" x2="195" y2="140"></line>
+            <line class="rt-track-ref" x1="24" y1="140" x2="24" y2="20"></line>
+            <circle class="rt-photon rt-photon-ref" cx="24" cy="140" r="4"></circle>
+            <text class="rt-label" x="24" y="156">A</text>
+            <circle class="rt-start-dot" cx="24" cy="140" r="2.5"></circle>
             <rect class="rt-base rt-base-D" x="34" y="135" width="12" height="10" rx="2"></rect>
             <circle class="rt-photon rt-photon-D" cx="40" cy="140" r="4.5"></circle>
-            <text class="rt-label" x="40" y="156">出発点</text>
+            <circle class="rt-photon-zz rt-photon-zz-right" cx="40" cy="140" r="4"></circle>
             <text class="rt-label" x="100" y="166">進行方向 →</text>
           </svg>
-          <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="うさ美から見たCの光の1往復。まっすぐ上に上って0.866秒で反射し、その後は斜めに下って、地上の出発点が2.309秒後にちょうど追いついてくる">
+          <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="うさ美から見た光の1往復。Bは真上を垂直に往復し2.0秒で終わる。CとAはどちらも地上という同じ出発点に戻ってくるが、Cはまっすぐ上って0.866秒で反射しその後斜めに下り、Aは斜めに上って1.1547秒で反射しその後斜めに下る。道筋は違うが、どちらも2.309秒後にちょうど出発点に合流する">
             <text class="rt-title" x="100" y="14">うさ美から見ると（Cの往復）</text>
             <line class="rt-ground rt-ground-scroll" x1="5" y1="140" x2="185" y2="140"></line>
-            <rect class="rt-train" x="154" y="135" width="12" height="10" rx="2"></rect>
-            <rect class="rt-base rt-base-C" x="157" y="138" width="6" height="4" rx="1"></rect>
-            <circle class="rt-photon rt-photon-C" cx="160" cy="140" r="4.5"></circle>
-            <text class="rt-label" x="160" y="156">電車（固定）</text>
-            <text class="rt-label" x="100" y="166">← 地面が流れる</text>
+            <line class="rt-track-ref" x1="145" y1="140" x2="145" y2="20"></line>
+            <text class="rt-label" x="145" y="15">B</text>
+            <rect class="rt-train" x="139" y="135" width="12" height="10" rx="2"></rect>
+            <rect class="rt-base rt-base-C" x="126" y="138" width="6" height="4" rx="1"></rect>
+            <circle class="rt-photon rt-photon-C" cx="129" cy="140" r="4.5"></circle>
+            <circle class="rt-photon-zz rt-photon-zz-left" cx="129" cy="140" r="4"></circle>
+            <circle class="rt-photon rt-photon-ref" cx="145" cy="140" r="4"></circle>
+            <text class="rt-label" x="145" y="156">電車（固定・B）</text>
+            <text class="rt-label" x="80" y="166">← 地面が流れる</text>
           </svg>
         </div>
-        <div class="diagram-caption">Dの光は真上に上って0.866秒で反射し、その後は斜めに下って、電車自身が博士の2.309秒後に追いつく。Cの光も同じように真上へ上って0.866秒で反射し、地上の出発点がうさ美自身の2.309秒後に追いついてくる——どちらも最後には出発点とぴったり合流する</div>
+        <div class="diagram-caption">点線の金色（自分の垂直な時計）は、それぞれ自分自身の2.0秒で往復を終える。ゴールド（D・C）は真上に上って0.866秒で反射し、その後は斜めに下って出発点に合流する。ティール色（相手の垂直な時計＝博士から見たB、うさ美から見たA）は、斜めに上って1.1547秒で反射し、その後斜めに下る——道筋はそれぞれ違うが、相手側の時計（D・C・B・A）はすべて2.309秒でちょうど出発点に合流する</div>
       </div>
 
       <div class="dialogue-scene">
