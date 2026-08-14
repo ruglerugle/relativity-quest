@@ -915,6 +915,27 @@
           </div>
           <div class="dialog-bubble">違うのは「どこで鏡に当たるか」だけだよ。ローレンツ変換で考えてみよう。Dの鏡は、電車自身の座標系（x'，t'）ではx'＝－h/2の位置にずっと固定されている（hは鏡までの距離、後ろ向きに60度傾いている分の水平成分がh/2になる）。これを博士の座標(x，t)に変換すると、x＝γ(x'＋vt')になるから、電車が進むにつれて鏡の位置はx＝0に向かって近づいてくる。光はAともDとも共通の出発点（x＝0）から真上へ発射されるから、光の位置はずっとx＝0のまま。だから光と鏡が出会うのは、電車の鏡がちょうどx＝0まで移動してきた瞬間で、計算するとそれは博士自身の時刻で0.866秒（＝√3/2）になる。Aの鏡はそもそも地上に固定されてx＝0から動かないから、光の道のりがそのまま博士自身の1.0秒になるだけだ。つまり、光の道のりはAとDでまったく同じなのに、ローレンツ変換で見ると鏡の位置がズレて動くために、反射するタイミングがズレる。90.7%という数字は、「Aと同じ道を進んだ光が、Aより早く鏡に当たって跳ね返り、残り0.134秒分だけ戻ってきた」結果なんだよ。</div>
         </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="calc-flow-svg" viewBox="0 0 260 210" role="img" aria-label="Dの鏡が博士自身の時刻でいつ光と出会うかを求める計算の流れ。電車の座標系でのDの鏡の位置x'＝－h/2をローレンツ変換で博士の座標に移し、光の位置x＝0と一致する時刻を求めると、博士自身の0.866秒になる">
+          <rect class="cf-box" x="10" y="6" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="24">Dの鏡の位置（電車の座標系）</text>
+          <text class="cf-value" x="130" y="42">x'＝－h/2（一定）</text>
+          <line class="cf-arrow" x1="130" y1="52" x2="130" y2="80"></line>
+          <path class="cf-arrow-head" d="M130,84 L125,75 L135,75 Z"></path>
+          <rect class="cf-box" x="10" y="88" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="106">x＝γ(x'＋vt')＝0 を解く</text>
+          <text class="cf-value" x="130" y="124">t'＝1.0（電車自身の時刻）</text>
+          <line class="cf-arrow" x1="130" y1="134" x2="130" y2="162"></line>
+          <path class="cf-arrow-head" d="M130,166 L125,157 L135,157 Z"></path>
+          <rect class="cf-box" x="10" y="170" width="240" height="34" rx="8"></rect>
+          <text class="cf-value" x="130" y="192">t＝γ×0.75＝√3/2≈0.866秒</text>
+        </svg>
+        <div class="diagram-caption">電車の座標系に固定されたDの鏡の位置をローレンツ変換で博士の座標に持ち込むと、光と出会う瞬間はちょうど博士自身の0.866秒（＝√3/2）だと分かる</div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
