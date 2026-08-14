@@ -143,6 +143,18 @@
   .summary4-svg .s4-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
   .summary4-svg .s4-value{fill:var(--ink);font-size:10.5px;font-weight:800;text-anchor:middle}
   .summary4-svg .s4-title{fill:#8a6614;font-size:9.5px;font-weight:800;text-anchor:middle}
+  .gpt-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .gpt-compare .gpt-svg{flex:0 1 200px;min-width:0;width:100%;max-width:210px;height:auto}
+  .gpt-svg .gpt-title{fill:#8a6614;font-size:9.5px;font-weight:800;text-anchor:middle}
+  .gpt-svg .gpt-axis{stroke:var(--line);stroke-width:1.5}
+  .gpt-svg .gpt-dot{stroke-width:1}
+  .gpt-svg .gpt-dot-b{fill:var(--gold);stroke:var(--gold-dark)}
+  .gpt-svg .gpt-dot-f{fill:#c9645c;stroke:#b5504a}
+  .gpt-svg .gpt-bracket{stroke:var(--gold-dark);stroke-width:1.2;fill:none}
+  .gpt-svg .gpt-label{fill:var(--muted);font-size:8px;font-weight:700;text-anchor:middle}
+  .gpt-svg .gpt-time{fill:var(--ink);font-size:8.5px;font-weight:800;text-anchor:middle}
+  .gpt-svg .gpt-note-ok{fill:var(--muted);font-size:8.5px;font-weight:700;text-anchor:middle}
+  .gpt-svg .gpt-note-warn{fill:#b5504a;font-size:8.5px;font-weight:800;text-anchor:middle}
   .ac-coincide-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
   .ac-coincide-svg .ac-track{stroke:var(--gold-dark);stroke-width:2.5;fill:none}
   .ac-coincide-svg .ac-dot{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
@@ -1046,6 +1058,81 @@
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">すごい……！ 「地上から見た博士自身の時計」と「電車から見たうさ美自身の時計」がどちらも当たり前に100%で、「相手側の時計」を見ると、垂直な方も傾いた方も、博士とうさ美のどちらから見ても同じ数字（86.6%と90.7%）になるんですね。前にモヤモヤしていた「お互い相手の時間は遅れて見えるはずなのに、CやDの方はむしろ進んで見える」という疑問も、ローレンツ変換でちゃんと計算すればつじつまが合うことが分かって、やっと腑に落ちました。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">実はもう一つ、ずっと宿題になっていた話があるんだ。ステージ4で出てきた「車庫のパラドックス」――20万kmの車庫Aに、外から見ると18万kmに縮んだ電車がすっぽり収まる、というあの話だよ。「収まる」というのは、実は「後端が入口を通過する瞬間」と「先端が出口に到達する瞬間」という2つの出来事が同時かどうかの話なんだ。地上から見ると、後端が入口を通過してから先端が出口に届くまで、計算すると約0.11秒。その間ずっと、電車全体がすっぽり車庫の中に収まっているんだよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">でも電車自身の視点だと、車庫の方が縮んで見えるから、収まらないはずですよね？ 同じ2つの出来事は、電車から見るとどうなるんですか？</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そこがおもしろいところなんだ。車庫Aは電車から見ると20万km÷1.25＝16万kmに縮んで見える。電車自身の長さは22万5千kmだから、先端が出口に到達した瞬間、入口の壁はまだ後端の手前6万5千km（＝22万5千－16万km）の位置にある。そこから後端に届くまで、秒速18万kmで6万5千km÷18万km/s＝約0.36秒かかる。つまり電車自身の視点では、先端が出口に到達する方が、後端が入口を通過するよりも約0.36秒も先に起きるんだ。後端が入るより先に、もう先端が出てしまっている――だから「電車全体が車庫の中に収まる瞬間」は、電車自身の視点には存在しないんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="gpt-compare">
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="地上系での車庫パラドックスのタイムライン。後端が入口を通過する瞬間（t＝0）から、先端が出口に到達する瞬間（t≈0.11秒）まで、電車全体が車庫に収まっている">
+            <text class="gpt-title" x="100" y="14">地上系（車庫から見ると）</text>
+            <text class="gpt-note-ok" x="100" y="32">電車全体が収まっている</text>
+            <line class="gpt-bracket" x1="55" y1="45" x2="155" y2="45"></line>
+            <line class="gpt-bracket" x1="55" y1="40" x2="55" y2="45"></line>
+            <line class="gpt-bracket" x1="155" y1="40" x2="155" y2="45"></line>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-b" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-f" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">後端が入口通過</text>
+            <text class="gpt-time" x="55" y="121">t＝0</text>
+            <text class="gpt-label" x="155" y="108">先端が出口到達</text>
+            <text class="gpt-time" x="155" y="121">t≈0.11秒</text>
+          </svg>
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="電車系での車庫パラドックスのタイムライン。先端が出口に到達する瞬間（t'＝0）の方が、後端が入口を通過する瞬間（t'≈0.36秒）より先に起きるため、電車全体が収まる瞬間は存在しない">
+            <text class="gpt-title" x="100" y="14">電車系（電車から見ると）</text>
+            <text class="gpt-note-warn" x="100" y="32">収まる瞬間はない</text>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-f" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-b" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">先端が出口到達</text>
+            <text class="gpt-time" x="55" y="121">t'＝0</text>
+            <text class="gpt-label" x="155" y="108">後端が入口通過</text>
+            <text class="gpt-time" x="155" y="121">t'≈0.36秒</text>
+          </svg>
+        </div>
+        <div class="diagram-caption">地上系では、後端が入口を通過してから先端が出口に到達するまでの間（約0.11秒）、電車全体が車庫に収まっている。電車自身の系では、先端が出口に到達する方が後端が入口を通過するより約0.36秒早く起き、電車全体が収まる瞬間は存在しない――同じ2つの出来事の順序が、観測者によって入れ替わる</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">あ、これって最初のAとBの謎や、双子のパラドックスと同じですね！ 「同時」かどうかが観測者によって違うから、2つの出来事の順番まで入れ替わってしまう。矛盾しているように見えたのは、無意識に「同時」を絶対的なものだと思い込んでいたからなんですね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ 車庫のパラドックスも、結局は同時性の相対性で説明がつくんだ。電車がつぶれることも、車庫が壊れることもない――ただ「電車全体が収まって見える瞬間」があるかどうかが、観測者によって変わるだけなんだよ。</div>
         </div>
       </div>
 
