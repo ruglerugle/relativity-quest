@@ -59,6 +59,10 @@
     .clock-b-svg .photon{transform:translateY(-80px);opacity:1}
   }
 
+  .home-compare{display:flex;align-items:flex-start;justify-content:center;gap:12px;flex-wrap:wrap}
+  .home-compare-item{display:flex;flex-direction:column;align-items:center;min-width:0;flex:0 1 105px;max-width:115px}
+  .home-compare-item .home-compare-label{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-top:4px}
+  .home-compare .home-a-svg,.home-compare .home-b-svg{min-width:0;width:100%;height:auto}
   .home-a-svg .train-body{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
   .home-a-svg .wheel{fill:var(--ink)}
   .home-a-svg .gclock-mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
@@ -367,35 +371,39 @@
       </div>
 
       <div class="diagram-box">
-        <svg class="home-a-svg" viewBox="0 0 300 140" width="100%" height="150" role="img" aria-label="電車に乗っている人から見た地上の光時計。電車は止まって見え、地面が流れる中、地上の光時計は動きながら、光は下の鏡から上の鏡へ斜めに進む">
-          <rect class="train-body" x="200" y="10" width="60" height="105" rx="8"></rect>
-          <circle class="wheel" cx="214" cy="121" r="6"></circle>
-          <circle class="wheel" cx="246" cy="121" r="6"></circle>
-          <path class="path-move" d="M40,100 L88,20"></path>
-          <g class="gclock-group">
-            <line class="gclock-mirror" x1="20" y1="100" x2="60" y2="100"></line>
-            <line class="gclock-mirror" x1="20" y1="20" x2="60" y2="20"></line>
-            <circle class="gclock-photon" cx="40" cy="100" r="5"></circle>
-          </g>
-          <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
-        </svg>
-        <div class="diagram-caption">電車に乗っている人から見ると、電車は止まっていて、地上の光時計の方が動く。光は下の鏡から上の鏡へ斜めの道のりを進む――車内視点</div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="home-b-svg" viewBox="0 0 300 140" width="100%" height="150" role="img" aria-label="電車の外にいる人から見た、自分の地上の光時計。光は下の鏡から上の鏡へまっすぐ進み、電車の方が右へ走り去っていく">
-          <line class="gclock-mirror-fixed" x1="100" y1="100" x2="140" y2="100"></line>
-          <line class="gclock-mirror-fixed" x1="100" y1="20" x2="140" y2="20"></line>
-          <path class="path-still" d="M120,100 L120,20"></path>
-          <circle class="gclock-photon-fixed" cx="120" cy="100" r="5"></circle>
-          <g class="train-group-b">
-            <rect class="train-body" x="170" y="10" width="60" height="105" rx="8"></rect>
-            <circle class="wheel" cx="184" cy="121" r="6"></circle>
-            <circle class="wheel" cx="216" cy="121" r="6"></circle>
-          </g>
-          <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
-        </svg>
-        <div class="diagram-caption">電車の外にいる人から見ると、自分の光時計は止まったまま、光は下の鏡から上の鏡へまっすぐ進む。電車の方が動いて見える――外からの視点</div>
+        <div class="home-compare">
+          <div class="home-compare-item">
+            <svg class="home-a-svg" viewBox="0 0 300 140" role="img" aria-label="電車に乗っている人から見た地上の光時計。電車は止まって見え、地面が流れる中、地上の光時計は動きながら、光は下の鏡から上の鏡へ斜めに進む">
+              <rect class="train-body" x="200" y="10" width="60" height="105" rx="8"></rect>
+              <circle class="wheel" cx="214" cy="121" r="6"></circle>
+              <circle class="wheel" cx="246" cy="121" r="6"></circle>
+              <path class="path-move" d="M40,100 L88,20"></path>
+              <g class="gclock-group">
+                <line class="gclock-mirror" x1="20" y1="100" x2="60" y2="100"></line>
+                <line class="gclock-mirror" x1="20" y1="20" x2="60" y2="20"></line>
+                <circle class="gclock-photon" cx="40" cy="100" r="5"></circle>
+              </g>
+              <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
+            </svg>
+            <span class="home-compare-label">車内視点</span>
+          </div>
+          <div class="home-compare-item">
+            <svg class="home-b-svg" viewBox="0 0 300 140" role="img" aria-label="電車の外にいる人から見た、自分の地上の光時計。光は下の鏡から上の鏡へまっすぐ進み、電車の方が右へ走り去っていく">
+              <line class="gclock-mirror-fixed" x1="100" y1="100" x2="140" y2="100"></line>
+              <line class="gclock-mirror-fixed" x1="100" y1="20" x2="140" y2="20"></line>
+              <path class="path-still" d="M120,100 L120,20"></path>
+              <circle class="gclock-photon-fixed" cx="120" cy="100" r="5"></circle>
+              <g class="train-group-b">
+                <rect class="train-body" x="170" y="10" width="60" height="105" rx="8"></rect>
+                <circle class="wheel" cx="184" cy="121" r="6"></circle>
+                <circle class="wheel" cx="216" cy="121" r="6"></circle>
+              </g>
+              <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
+            </svg>
+            <span class="home-compare-label">外からの視点</span>
+          </div>
+        </div>
+        <div class="diagram-caption">お互いに相手の時計が遅く見える――電車に乗っている人から見ると地上の時計が動いて遅れ、外にいる人から見ると電車の時計が動いて遅れる</div>
       </div>
 
       <div class="dialogue-scene">
