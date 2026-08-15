@@ -12,15 +12,15 @@
   gtag('js', new Date());
   gtag('config', 'G-9RTQCP2HXM');
 </script>
-<title>STAGE6 双子のパラドックスの種明かし ― 中学数学で読み解く特殊相対性理論</title>
-<meta name="description" content="特殊相対性理論で最も有名な「双子のパラドックス」を、加速したうさ美自身の視点から計算して種明かしするステージ。同時性のジャンプで博士側と同じ答えに辿り着く。">
-<link rel="canonical" href="https://ruglerugle.github.io/relativity-quest/stage6.html">
+<title>STAGE8 車庫のパラドックスの結末 ― 中学数学で読み解く特殊相対性理論</title>
+<meta name="description" content="最終ステージ。縮んだ電車は車庫に収まるのか？ 車庫のパラドックスを同時性の相対性で解き、電車を無理やり「同時に」止めたら何が起きるかまで見届ける。">
+<link rel="canonical" href="https://ruglerugle.github.io/relativity-quest/stage8.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="中学数学で読み解く特殊相対性理論">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="STAGE6 双子のパラドックスの種明かし ― 中学数学で読み解く特殊相対性理論">
-<meta property="og:description" content="双子のパラドックスを、加速した側の視点から計算して種明かしするステージ。">
-<meta property="og:url" content="https://ruglerugle.github.io/relativity-quest/stage6.html">
+<meta property="og:title" content="STAGE8 車庫のパラドックスの結末 ― 中学数学で読み解く特殊相対性理論">
+<meta property="og:description" content="最終ステージ。車庫のパラドックスを同時性の相対性で解き明かす。">
+<meta property="og:url" content="https://ruglerugle.github.io/relativity-quest/stage8.html">
 <meta property="og:image" content="https://ruglerugle.github.io/relativity-quest/images/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="images/favicon.png">
@@ -407,7 +407,7 @@
   <header class="game-header">
     <div class="brand">
       <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>中学数学で読み解く特殊相対性理論</span></div>
-      <div class="brand-sub">STAGE 6 ― 双子のパラドックスの種明かし ―</div>
+      <div class="brand-sub">STAGE 8 ― 車庫のパラドックスの結末 ―</div>
     </div>
     <div class="head-progress-wrap">
       <div class="head-progress-label" id="progress-label">クリア 0 / 8</div>
@@ -431,13 +431,13 @@
 
     <main class="main-area">
       <div class="chapter-head">
-        <span class="chapter-badge">STAGE 6</span><span class="chapter-title">双子のパラドックスの種明かし</span>
-        <div class="chapter-sub">うさ美自身の視点でも、答えは変わらない</div>
+        <span class="chapter-badge">STAGE 8</span><span class="chapter-title">車庫のパラドックスの結末</span>
+        <div class="chapter-sub">「収まる／収まらない」も、結局は「同時」の話</div>
       </div>
 
       <div class="mission-box">
         <div class="mission-label">🎯 ミッション</div>
-        <div class="mission-text">電車に乗って加速したうさ美自身の視点から計算しても、なぜ同じ結論にたどり着くのかを理解しよう。</div>
+        <div class="mission-text">ステージ4から持ち越した車庫のパラドックスに決着をつけ、動く電車を「同時に」止めたら何が起きるかまで見届けよう。</div>
         <span class="mission-status" id="mission-status">未達成</span>
       </div>
 
@@ -447,7 +447,103 @@
             <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">前のステージで考えた、電車が22万5千km先まで進んで折り返してくる話を続けよう。博士自身の視点で計算するのは簡単だ。博士はずっと出発点で静止していて、光時計A（博士自身の時計）もそのまま地上の時間を刻む。距離22万5千kmを秒速18万kmで往復するから、かかる時間は22万5千km÷18万km/s×2＝2.5秒。これが博士自身の視点での答えだよ。</div>
+          <div class="dialog-bubble">いよいよ最後のステージ。うさ美が持ち出してくれた、ステージ4の車庫のパラドックスに決着をつけよう。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">はい。外から見ると、18万kmに縮んだ電車は20万kmの車庫にすっぽり収まるはずなのに、わたしから見ると車庫の方が縮んで収まらない——結局、どちらが本当なんですか？</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">いいところに気づいたね。実は「収まる」というのは、「後端が入口を通過する瞬間」と「先端が車庫の奥の壁に到達する瞬間」という2つの出来事が同時かどうかの話なんだ。地上から見ると、後端が入口を通過してから先端が奥の壁に届くまで、計算すると約0.11秒。その間ずっと、電車全体がすっぽり車庫の中に収まっているんだよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">でも電車自身の視点だと、車庫の方が縮んで見えるから、収まらないはずですよね？ 同じ2つの出来事は、電車から見るとどうなるんですか？</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そこがおもしろいところなんだ。車庫Aは電車から見ると20万km÷1.25＝16万kmに縮んで見える。電車自身の長さは22万5千kmだから、先端が奥の壁に到達した瞬間、入口の壁はまだ後端の手前6万5千km（＝22万5千－16万km）の位置にある。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">そこから入口が後端に届くまで、6万5千km÷18万km/s＝約0.36秒かかりますね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そう。つまり電車自身の視点では、先端が奥の壁に到達する方が、後端が入口を通過するよりも約0.36秒も先に起きる。後端が入るより先に、もう先端が奥の壁に着いてしまっている――だから「電車全体が車庫の中に収まる瞬間」は、電車自身の視点には存在しないんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="gpt-compare">
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="地上系での車庫パラドックスのタイムライン。後端が入口を通過する瞬間（t＝0）から、先端が奥の壁に到達する瞬間（t≈0.11秒）まで、電車全体が車庫に収まっている">
+            <text class="gpt-title" x="100" y="14">地上系（車庫から見ると）</text>
+            <text class="gpt-note-ok" x="100" y="32">電車全体が収まっている</text>
+            <line class="gpt-bracket" x1="55" y1="45" x2="155" y2="45"></line>
+            <line class="gpt-bracket" x1="55" y1="40" x2="55" y2="45"></line>
+            <line class="gpt-bracket" x1="155" y1="40" x2="155" y2="45"></line>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-b" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-f" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">後端が入口通過</text>
+            <text class="gpt-time" x="55" y="121">t＝0</text>
+            <text class="gpt-label" x="155" y="108">先端が壁に到達</text>
+            <text class="gpt-time" x="155" y="121">t≈0.11秒</text>
+          </svg>
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="電車系での車庫パラドックスのタイムライン。先端が奥の壁に到達する瞬間（t'＝0）の方が、後端が入口を通過する瞬間（t'≈0.36秒）より先に起きるため、電車全体が収まる瞬間は存在しない">
+            <text class="gpt-title" x="100" y="14">電車系（電車から見ると）</text>
+            <text class="gpt-note-warn" x="100" y="32">収まる瞬間はない</text>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-f" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-b" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">先端が壁に到達</text>
+            <text class="gpt-time" x="55" y="121">t'＝0</text>
+            <text class="gpt-label" x="155" y="108">後端が入口通過</text>
+            <text class="gpt-time" x="155" y="121">t'≈0.36秒</text>
+          </svg>
+        </div>
+        <div class="diagram-caption"><strong>同じ2つの出来事の順序が、観測者によって入れ替わる。</strong><br>地上系では、後端の入口通過から先端の壁到達までの約0.11秒間、電車全体が車庫に収まっている。電車自身の系では、先端の壁到達の方が約0.36秒早く起き、「電車全体が収まる瞬間」は存在しない</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">あ、これって最初のAとBの謎や、双子のパラドックスと同じですね！ 「同時」かどうかが観測者によって違うから、2つの出来事の順番まで入れ替わってしまう。矛盾しているように見えたのは、無意識に「同時」を絶対的なものだと思い込んでいたからなんですね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ 車庫のパラドックスも、結局は同時性の相対性で説明がつくんだ。電車がつぶれることも、車庫が壊れることもない――ただ「電車全体が収まって見える瞬間」があるかどうかが、観測者によって変わるだけなんだよ。</div>
         </div>
       </div>
 
@@ -457,18 +553,35 @@
             <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">そうですね。でも、動いているのはお互い様のはずだから、わたしからは博士の時計が遅れて見えるはずですよね。わたしの1.0秒の間に、博士の時計は1.0秒÷1.25＝0.8秒しか進んでいないように見えるはずですよね？</div>
+          <div class="dialog-bubble">電車が収まった瞬間に入口を閉めて、急停止すればどうなりますか？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">するどい指摘だね。実はここが双子のパラドックスでいちばん面白いところで、ちゃんと説明できるんだ。順番に見ていこう。</div>
+          <div class="dialog-bubble">おもしろい設問だね！ 実はこの話、「入口を閉める」ことと「電車を急停止させる」ことを、分けて考える必要があるんだ。</div>
         </div>
+      </div>
+
+      <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">入口を閉めることはできますか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">それはできるよ。入口の扉は、車庫のその一点だけで完結する仕組みだから、後端が入口を通過した瞬間に閉めるのは何の問題もない。難しいのは、そのあとに電車全体を急停止させる方だ。電車は22万5千kmもある長い物体だから、その端から端まで、光より速く「止まれ」という指令を伝えることはできない。それでも、もし無理やり地上時刻でぴったり同時に止めたとしたら、何が起きるか計算してみよう。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">お願いします。</div>
@@ -481,330 +594,94 @@
             <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">うさ美が出発点を離れていく間（うさ美自身の時間で1.0秒）、うさ美から見ると自分は止まっていて、博士の方が秒速18万kmで遠ざかっていくように見える。だから、博士の時計Aの方が遅れて進むように見えるはずだ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">はい。</div>
-        </div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">でも、うさ美が折り返す瞬間、大事なことが起きる。実は「博士の時計が今何秒を指しているか」の感じ方が、折り返しの瞬間に一気に変わるんだ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">え、どういうことですか？</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">行きの電車から見た「博士の今」と、帰りの電車から見た「博士の今」はズレているんだ。まっすぐ進んでいる間は「同時」の感じ方が一定なんだけど、向きを変えた瞬間に、その基準もガラッと切り替わる。ステージ5で学んだ「同時のズレ」と同じ考え方が、ここでも働いているんだよ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">実際どれくらいズレるのか、計算できますか？</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">できるよ。博士までの距離22万5千kmと、速さ秒速18万kmを使うと、行きの区間だけで生まれるズレは、速さ×距離÷光速の2乗＝18万×22.5万÷30万²＝0.45秒。折り返して帰りの区間に入ると、今度は逆向きに同じだけズレが生まれるから、合計でその2倍――0.9秒のジャンプになるんだ。だから、うさ美から見た博士の時計は0.8秒から、0.8＋0.9＝1.7秒へジャンプする。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">自分は一瞬しか経っていないのに、相手の時計の「今」が大きく先に進んで見える…？</div>
+          <div class="dialog-bubble">先端が奥の壁にちょうど届く瞬間（地上時刻で約0.11秒）に、車庫の中のすべての地点で電車を一斉に止めたとする。地上から見ればこの「先端が止まる」出来事と「後端が止まる」出来事はまったく同時だ。でも、電車自身の（動いていたときの）視点でローレンツ変換すると、先端の方が後端よりも約0.45秒も早く止まってしまうことになるんだ。</div>
         </div>
       </div>
 
       <div class="diagram-box">
-        <svg class="jump-svg" viewBox="0 0 280 150" role="img" aria-label="うさ美自身の視点で計算した、博士の時計の読みの変化。行きは0秒から0.8秒までゆっくり進み、折り返しの瞬間に1.7秒へジャンプし、帰りは1.7秒から2.5秒まで進む">
-          <text class="axis-label" x="8" y="14">うさ美から見た「博士の時計は今何秒か」</text>
-          <line class="axis" x1="30" y1="120" x2="260" y2="120"></line>
-          <line class="axis" x1="30" y1="20" x2="30" y2="120"></line>
-          <line class="ref-line" x1="30" y1="20" x2="260" y2="20"></line>
-          <path class="path-out" d="M30,120 L145,88"></path>
-          <path class="path-jump" d="M145,88 L145,52"></path>
-          <path class="path-return" d="M145,52 L260,20"></path>
-          <circle class="pt" cx="30" cy="120" r="3.5"></circle>
-          <circle class="pt" cx="145" cy="88" r="3.5"></circle>
-          <circle class="pt" cx="145" cy="52" r="3.5"></circle>
-          <circle class="pt" cx="260" cy="20" r="3.5"></circle>
-          <text class="lbl" x="30" y="133" text-anchor="middle">0秒</text>
-          <text class="lbl" x="145" y="133" text-anchor="middle" font-size="9.5">1.0秒（折り返し）</text>
-          <text class="lbl" x="260" y="133" text-anchor="middle">2.0秒</text>
-          <text class="lbl" x="26" y="123" text-anchor="end">0</text>
-          <text class="lbl" x="26" y="91" text-anchor="end">0.8</text>
-          <text class="lbl" x="26" y="55" text-anchor="end">1.7</text>
-          <text class="lbl" x="26" y="23" text-anchor="end">2.5</text>
-          <text class="lbl-jump" x="151" y="72">＋0.9秒</text>
-        </svg>
-        <div class="diagram-caption">横軸はうさ美自身の経過時間、縦軸はうさ美から見た博士の時計の読み。折り返しの瞬間だけ0.9秒分ジャンプし、最終的に博士の視点と同じ2.5秒に一致する</div>
-      </div>
-
-      <div class="diagram-box">
-        <div class="b-path-compare">
-          <svg class="bp-svg" viewBox="0 0 150 124" role="img" aria-label="行き：うさ美から見た光時計Aの光の軌道。電車は右へ進むので博士は左へ遠ざかって見え、光は下の鏡から斜め左上へ進むが、折り返しの瞬間（うさ美自身の時間で1.0秒）にはまだ上の鏡の80%の高さまでしか届いていない">
-            <line class="bp-ground" x1="0" y1="104" x2="150" y2="104"></line>
-            <line class="bp-mirror" x1="97" y1="92" x2="132" y2="92"></line>
-            <line class="bp-mirror-faint" x1="39" y1="14" x2="74" y2="14"></line>
-            <path class="bp-path-faint" d="M68,30 L56.5,14"></path>
-            <path class="bp-path" d="M115,92 L68,30"></path>
-            <circle class="bp-photon" cx="68" cy="30" r="4"></circle>
-            <text class="bp-caption" x="75" y="120" text-anchor="middle">行き：1.0秒＝折り返しの瞬間</text>
+        <div class="gpt-compare">
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="地上系では、電車の先端が停止する出来事と後端が停止する出来事はまったく同時（t＝0.11秒）">
+            <text class="gpt-title" x="100" y="14">地上系（同時に停止）</text>
+            <text class="gpt-note-ok" x="100" y="32">先端も後端も同時に停止</text>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-both" cx="100" cy="90" r="6"></circle>
+            <text class="gpt-label" x="100" y="108">先端停止＝後端停止</text>
+            <text class="gpt-time" x="100" y="121">t＝0.11秒</text>
           </svg>
-          <svg class="bp-svg" viewBox="0 0 160 124" role="img" aria-label="帰り：電車は左へ戻るので博士は右から近づいてくるように見え、光は右上から左下へ進む。同時性のジャンプの直後、Aの光は上の鏡から70%下った地点（高さ30%）から進み始め、下の鏡で反射したあと、さらに次の周の半分（高さ50%）まで上る――行きが止まった80%地点とは別の場所">
-            <line class="bp-ground" x1="0" y1="104" x2="160" y2="104"></line>
-            <line class="bp-mirror-faint" x1="4" y1="14" x2="39" y2="14"></line>
-            <line class="bp-mirror" x1="62" y1="92" x2="97" y2="92"></line>
-            <line class="bp-mirror-faint" x1="120" y1="14" x2="155" y2="14"></line>
-            <path class="bp-path-faint" d="M21,14 L62,69"></path>
-            <path class="bp-path" d="M62,69 L79.5,92 L108.5,53"></path>
-            <path class="bp-path-faint" d="M108.5,53 L137.5,14"></path>
-            <circle class="bp-photon" cx="108.5" cy="53" r="4"></circle>
-            <text class="bp-caption" x="80" y="120" text-anchor="middle">帰り：下の鏡で反射し2周目の半分へ</text>
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="電車自身の視点では、先端が停止する出来事の方が後端が停止する出来事より約0.45秒早く起き、その間まだ動いている後ろの車両がすでに止まった先端に衝突する">
+            <text class="gpt-title" x="100" y="14">電車系（順番がある）</text>
+            <text class="gpt-note-warn" x="100" y="32">この間、後ろが先端に衝突</text>
+            <line class="gpt-bracket-warn" x1="55" y1="45" x2="155" y2="45"></line>
+            <line class="gpt-bracket-warn" x1="55" y1="40" x2="55" y2="45"></line>
+            <line class="gpt-bracket-warn" x1="155" y1="40" x2="155" y2="45"></line>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-f" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-b" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">先端停止</text>
+            <text class="gpt-time" x="55" y="121">t'＝0</text>
+            <text class="gpt-label" x="155" y="108">後端停止</text>
+            <text class="gpt-time" x="155" y="121">t'≈0.45秒</text>
           </svg>
         </div>
-        <span class="b-path-caption"><strong>同時性のジャンプは「今のA」の基準ごと切り替えるので、帰りの光は行きの「続き」からは再開しない。</strong><br>うさ美自身は静止していると考えるので、動いているのはA。折り返しの瞬間（左図）、Aの光はまだ80%地点。帰り（右図）は上の鏡から70%下った別の地点から下り始め、下の鏡で反射して次の周の半分（高さ50%）まで上ったところで、うさ美は戻ってくる</span>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="bp-combo-svg" viewBox="0 0 150 110" role="img" aria-label="うさ美から見た博士の光時計（鏡と発射台の一対）そのものが動くアニメーション。鏡と発射台自体は左へ流れて折り返し、右へ戻るだけで瞬間移動はしない。ジャンプするのは光の位置だけで、行きは80%の高さまで上ったところで光が30%の高さへ一瞬で切り替わり、発射台まで下りて反射し、2周目の半分の高さまで上る">
-          <g class="bc-group">
-            <line class="bc-ground" x1="-50" y1="100" x2="200" y2="100"></line>
-            <line class="bc-mirror-anim" x1="55" y1="14" x2="95" y2="14"></line>
-            <line class="bc-pad" x1="55" y1="92" x2="95" y2="92"></line>
-            <line class="bc-pad-leg" x1="63" y1="92" x2="63" y2="99"></line>
-            <line class="bc-pad-leg" x1="87" y1="92" x2="87" y2="99"></line>
-            <circle class="bc-photon" cx="75" cy="92" r="4.5"></circle>
-          </g>
-        </svg>
-        <div class="diagram-caption">鏡と発射台の一対（＝博士の光時計）は、うさ美から見ると左へ流れて折り返し、右へ戻ってくるだけ――瞬間移動はしない。ジャンプするのは光の位置（＝「今」の基準）だけで、80%の高さまで上ったところで一瞬で30%の高さに切り替わり、発射台まで下りて反射し、2周目の半分まで進む</div>
+        <div class="diagram-caption">地上系では先端停止と後端停止はまったく同時（t＝0.11秒）だが、電車自身の視点では先端の方が後端より約0.45秒早く止まる。その間、まだ動いている後ろの車両が、すでに止まった先端に向かって突っ込み続けることになる</div>
       </div>
 
       <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">そう。帰りの電車でも、うさ美から見ると博士の時計はまた遅れて進む（1.0秒の間に0.8秒分）。1.7秒に0.8秒を足すと、2.5秒。博士の時計は、うさ美が戻ってきたときに2.5秒——博士自身の視点で計算したのと同じ答えになるんだ！</div>
-        </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">つまり、行きと帰りは対称に見えても、折り返しの瞬間に「同時」の基準がジャンプするから、最終的にちゃんと同じ答えにたどり着くんですね！ 加速しているのは自分だけだから、このジャンプが起きるのも自分の方だけ——博士にはこんなジャンプは起きないんですね。</div>
+          <div class="dialog-bubble">0.45秒……！ それってさっきの双子のパラドックスで出てきた「0.45秒×2＝0.9秒ジャンプ」の、半分と同じ計算ですよね？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">その通り！ これが双子のパラドックスの本当の種明かしだよ。二人がずっと同じ速度で動き続けていたら「同時」の基準はズレたままだけど、片方が向きを変えると、その瞬間に基準が一気に切り替わる。だから、行って戻ってきた方（＝加速した方）の時間だけが、本当に遅れることになるんだ。</div>
+          <div class="dialog-bubble">その通り、同じ式（速さ×距離÷光速の2乗）だよ。つまり電車自身の立場で見れば、先に止まった先端に、まだ止まっていない後ろの車両が0.45秒間、時速18万kmで突っ込み続けることになる。「収まる／収まらない」どころの話じゃなく、電車が実際に押しつぶされる、本物の衝突事故になるんだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
             <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
-          <div class="dialog-bubble">でも、ちょっと待ってください。折り返しの瞬間、光の点が80%の高さから30%の高さへワープしましたよね。秒速18万kmから一気にマイナス18万kmへかくっと折り返したから起きたと思うんですけど、これって光速不変の原理に反しませんか？ もしもっとなめらかに折り返したら、その短い間だけ光の軌道が光速を超えて動くことになりませんか？</div>
-        </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="bp-combo-svg" viewBox="0 0 150 110" role="img" aria-label="うさ美から見た博士の光時計（鏡と発射台の一対）そのものが動くアニメーション。鏡と発射台と地面はなめらかに減速・加速しながら左へ流れて折り返し、右へ戻るだけ。光もワープはせず、80%の高さから天井鏡まで届いて反射し、そのままなめらかに（でも速く）30%の高さまで下りて、発射台で反射し2周目の半分まで上る">
-          <g class="bc-group bc-group-smooth">
-            <line class="bc-ground" x1="-50" y1="100" x2="200" y2="100"></line>
-            <line class="bc-mirror-anim" x1="55" y1="14" x2="95" y2="14"></line>
-            <line class="bc-pad" x1="55" y1="92" x2="95" y2="92"></line>
-            <line class="bc-pad-leg" x1="63" y1="92" x2="63" y2="99"></line>
-            <line class="bc-pad-leg" x1="87" y1="92" x2="87" y2="99"></line>
-            <circle class="bc-photon bc-photon-smooth" cx="75" cy="92" r="4.5"></circle>
-          </g>
-        </svg>
-        <div class="diagram-caption">実際にはワープしない。鏡と発射台と地面はなめらかに流れているだけで、光も瞬間移動せず、天井鏡まで届いて反射してから、なめらかに（でもとても速く）30%の高さまで下りてくる</div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">するどい質問だね！ 実はこれが、ステージ2で学んだ「どの慣性系から見ても」という言葉が生きてくる場面なんだ。光速不変の原理は慣性系（一定の速さでまっすぐ進んでいる立場）でこそ成り立つルール。でも、うさ美が折り返すときの加速（減速）中は、慣性系が連続的に切り替わっている最中だから、話が少し変わってくるんだ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">じゃあ、折り返しの間だけは光速不変が破れている、ということですか？</div>
+          <div class="dialog-bubble">つまり、動いている物を無理やり同時に止めようとすると、本当に潰れてしまうんですね……「縮んで見える」のはあくまで見かけなのに、無理やり静止させようとした瞬間、本当の圧縮になってしまうんだ。</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
             <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">いや、そうじゃない。ワープして見えるのは「本物の光」じゃなくて、うさ美が「博士の今」をどう決めるかという物差しの方なんだ。光そのものは行きも帰りもずっと秒速30万kmでまっすぐ進んでいて、一瞬たりとも速さは変わっていない。</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">たとえば、すごく遠い壁に向かってレーザーポインターをサッと振ると、点は壁の上を光速より速く走って見えることがある。でも実際に飛んでいる光子1本1本は、ちゃんと秒速30万kmでしか進んでいないよね？ 動いて見えるのは「点の位置」というパターンだけで、物や情報そのものが運ばれているわけじゃないから、光速を超えて見えても問題ないんだ。</div>
+          <div class="dialog-bubble">その通り！ これが「特殊相対性理論の世界に、完全に硬い物体は存在しない」と言われる理由なんだ。力が伝わる速さには限界があるから、長い物体を本当の意味で「一瞬で」止めることはできない。無理やりそれをやろうとした瞬間、電車はその場で崩れてしまうんだよ。</div>
         </div>
       </div>
 
-      <div class="diagram-box">
-        <svg class="beam-svg" viewBox="0 0 260 120" role="img" aria-label="レーザーポインターを振ったときのたとえ。光線1本1本は秒速30万kmで進むが、遠くの壁の上でスポットが動く速さはそれより速く見えることがある">
-          <line class="beam-wall" x1="200" y1="12" x2="200" y2="108"></line>
-          <line class="beam-ray" x1="20" y1="60" x2="200" y2="22"></line>
-          <line class="beam-ray" x1="20" y1="60" x2="200" y2="98"></line>
-          <circle class="beam-source" cx="20" cy="60" r="4"></circle>
-          <circle class="beam-spot" cx="200" cy="22" r="3.5"></circle>
-          <circle class="beam-spot" cx="200" cy="98" r="3.5"></circle>
-          <text class="beam-label" x="95" y="34" text-anchor="middle">秒速30万km</text>
-          <text class="beam-label" x="95" y="92" text-anchor="middle">秒速30万km</text>
-          <line class="beam-tick" x1="208" y1="22" x2="216" y2="22"></line>
-          <line class="beam-tick" x1="208" y1="98" x2="216" y2="98"></line>
-          <line class="beam-jump" x1="212" y1="22" x2="212" y2="98"></line>
-          <text class="beam-jump-label" x="220" y="56">点の移動は</text>
-          <text class="beam-jump-label" x="220" y="67">もっと速く見える</text>
-        </svg>
-        <div class="diagram-caption">レーザーポインターを速く振ると、遠い壁の上でスポットが動く速さは光速を超えて見えることがある。でも実際に飛んでいる光は1本1本、常に秒速30万kmでまっすぐ進んでいるだけ</div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">でも、レーザーポインターの例えだと、壁の点を光らせているのはそのつど別々の光子ですよね？ 光時計の光は、行きも帰りもずっと同じ1つの光子のはずです。同じ粒子の「今どこにいるか」が一瞬で切り替わって見えるのは、やっぱり少し腑に落ちません。</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">いいところに気づいたね。実はレーザーポインターの例えは「別々の光子が代わる代わる点を照らす」ケースの説明だから、「同じ1つの光子」を追いかける今回の場合とは、厳密には少し違う話なんだ。もっとぴったりの例えを見せよう。</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">はさみを閉じるところを想像して。刃自体はゆっくり動いているだけなのに、2枚の刃が交わる「点」は、はさみが長ければ長いほど、閉じる角度の変化に応じてすごく速く動くことができる。金属そのものが速く動いているわけじゃなく、「2つの線が交わる場所」という、物ではない幾何学的な点が動いているだけだからなんだ。</div>
-        </div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="scissors-svg" viewBox="0 0 260 160" role="img" aria-label="はさみが閉じる様子。刃はゆっくり回転するだけだが、支点の少し先で実際に交わる点は、閉じるほどどんどん速く刃先の方向へ動いていく">
-          <circle class="sc-hinge" cx="40" cy="80" r="4"></circle>
-          <line class="sc-path-guide" x1="50" y1="80" x2="178" y2="80"></line>
-          <line class="sc-blade sc-blade-upper" x1="40" y1="86" x2="190" y2="86"></line>
-          <line class="sc-blade sc-blade-lower" x1="40" y1="74" x2="190" y2="74"></line>
-          <circle class="sc-point-echo sc-echo2" cx="50.4" cy="80" r="3"></circle>
-          <circle class="sc-point-echo sc-echo1" cx="50.4" cy="80" r="4"></circle>
-          <circle class="sc-point" cx="50.4" cy="80" r="5"></circle>
-          <text class="sc-label" x="20" y="102">支点</text>
-          <text class="sc-label" x="140" y="24">刃はゆっくり回転</text>
-          <text class="sc-label" x="120" y="148">交わる点はどんどん加速</text>
-        </svg>
-        <div class="diagram-caption">刃自体はゆっくり閉じていくだけなのに、2枚の刃が交わる点は、閉じるほど（角度が小さいほど）どんどん速く外側へ動いていく——物ではない「交わる場所」だから、光速を超えても物理法則に反しない</div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">光子自身は、うさ美が何をしようが関係なく、宇宙の中に決まった1本の道筋をすでに持っている――これがはさみの片方の刃にあたる。もう片方の刃は、うさ美自身の「今」という基準面。折り返しの瞬間、この基準面の向きが急に変わるから、「基準面と光子の道筋が交わる点」――つまりうさ美から見た光の位置――がすごい速さでスライドする。でも動いているのは彼女の物差しの向きだけで、光子という「物」自体は、相変わらず秒速30万kmで自分の道を進んでいるだけなんだ。</div>
-        </div>
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">なるほど……！ 光子そのものが瞬間移動しているんじゃなくて、私の「今」の基準という、物ではない面が向きを変えているだけなんですね。だから同じ1つの粒子でも、光速不変の原理とは矛盾しないんだ。</div>
-        </div>
-      </div>
-
-      <div class="dialogue-scene">
-        <div class="dialog-row right">
-          <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name student">うさ美</div>
-          </div>
-          <div class="dialog-bubble">では例えば、電車にもう一つ光の発射台があったとして、スタート時に進行方向に向かって光が発射されたとします。うさ美にとっては秒速30万kmで遠ざかっていくように見えるはずですが、折り返し時にはどう見えますか？ 博士は「動かない点」でしたけど、光は動き続けていますよね……。</div>
-        </div>
-        <div class="dialog-row">
-          <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
-            <div class="dialog-name mentor">ねこ博士</div>
-          </div>
-          <div class="dialog-bubble">面白い応用問題だね！ うさ美の言う通り、動き続けている目標には、博士のときとは一味違う計算が要る。それは次のステージでじっくり取り組もう。</div>
-        </div>
-      </div>
 
       <div class="quiz-head">確認クイズ</div>
       <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q1. うさ美自身の視点で計算すると、行き・帰りそれぞれの間、博士の時計はどう見える？</p>
+        <p class="quiz-q">Q1. 車庫のパラドックスで、電車自身の視点から見ると、2つの出来事はどの順番で起きる？</p>
         <div class="choice-list">
-          <button class="choice-btn">遅れて進む</button>
-          <button class="choice-btn">同じ速さで進む</button>
-          <button class="choice-btn">一瞬で全部進む</button>
+          <button class="choice-btn">後端が入口を通過する方が先</button>
+          <button class="choice-btn">先端が奥の壁に到達する方が先</button>
+          <button class="choice-btn">まったく同時</button>
         </div>
-        <div class="quiz-explain" hidden>正解！ 動いているのはお互い様だから、行きも帰りも、うさ美からは博士の時計が遅れて（1.0秒あたり0.8秒）進むように見える。</div>
+        <div class="quiz-explain" hidden>正解！ 地上系では「後端の通過→先端の到達」の順なのに、電車系では順番が入れ替わる。だから電車系には「全体が収まる瞬間」が存在しないんだ。</div>
       </div>
 
       <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q2. うさ美と博士、最終的に答えが一致するのはなぜ？</p>
+        <p class="quiz-q">Q2. 地上から見て「同時」に電車全体を急停止させたとき、電車系で先端と後端の停止に生まれる時間差0.45秒を求める式は？</p>
         <div class="choice-list">
-          <button class="choice-btn">折り返しの瞬間に「同時」の基準がジャンプするから</button>
-          <button class="choice-btn">二人とも数え間違えたから</button>
-          <button class="choice-btn">博士の時計だけ特別な時計だから</button>
+          <button class="choice-btn">距離 ÷（光速－電車の速さ）</button>
+          <button class="choice-btn">γ × 速さ × 距離 ÷ 光速の2乗</button>
+          <button class="choice-btn">距離 ÷ 光速</button>
         </div>
-        <div class="quiz-explain" hidden>正解！ 加速して向きを変えたうさ美だけに、「同時」の基準が一気に切り替わるジャンプが起きる。これを合わせて計算すると、博士の視点と同じ答えになるんだ。</div>
-      </div>
-
-      <div class="quiz-card" data-quiz>
-        <p class="quiz-q">Q3.【計算】もし折り返し地点までの距離が2倍の45万kmだったら、折り返しの瞬間の博士の時計のジャンプは何秒になる？（速さは秒速18万kmのまま。元の例では0.9秒）</p>
-        <div class="choice-list">
-          <button class="choice-btn">0.9秒のまま</button>
-          <button class="choice-btn">2倍の1.8秒</button>
-          <button class="choice-btn">4倍の3.6秒</button>
-        </div>
-        <div class="quiz-explain" hidden>正解！ ジャンプ＝2×速さ×距離÷c²は距離に比例する。0.45秒×2（距離が2倍）×2（行きと帰りの分）＝1.8秒。遠くまで旅をするほど、帰ってきたときの時間差は大きくなるんだ。</div>
+        <div class="quiz-explain" hidden>正解！ ステージ5で出てきた「同時のズレ」Δt＝γvL/c²と同じ式。地上系の同時は、電車系では同時じゃない――これが本当の衝突を引き起こす。</div>
       </div>
 
       <div class="stage-nav">
-        <a class="btn" href="stage5.html">← 前へ</a>
-        <button class="btn btn-primary" id="btn-next" disabled>次へ →</button>
+        <a class="btn" href="stage7.html">← 前へ</a>
+        <button class="btn btn-primary" id="btn-next" disabled>まとめへ →</button>
       </div>
 
       <div id="book-recommend"></div>
@@ -813,6 +690,6 @@
 </div>
 
 <script src="js/progress.js"></script>
-<script>RQ.initStagePage(6);</script>
+<script>RQ.initStagePage(8);</script>
 </body>
 </html>

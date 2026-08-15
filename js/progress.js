@@ -21,7 +21,8 @@
     4: [1, 0, 1],
     5: [0, 0, 0, 1],
     6: [0, 0, 1],
-    7: [1, 1]
+    7: [0, 2],
+    8: [1, 1]
   };
 
   var STAGES = [
@@ -31,7 +32,8 @@
     { n: 4, file: "stage4.html", title: "動くと縮んで見える", sub: "ローレンツ収縮" },
     { n: 5, file: "stage5.html", title: "「同時」は人によって違う", sub: "同時性の相対性" },
     { n: 6, file: "stage6.html", title: "双子のパラドックスの種明かし", sub: "うさ美自身の視点でも、答えは変わらない" },
-    { n: 7, file: "stage7.html", title: "光速の世界をもっと深く", sub: "応用問題：3つの謎を同時性で解く" }
+    { n: 7, file: "stage7.html", title: "光速の世界をもっと深く", sub: "応用問題：前方の光と傾いた光時計" },
+    { n: 8, file: "stage8.html", title: "車庫のパラドックスの結末", sub: "「収まる」も「同時」の話だった" }
   ];
 
   function getCleared() {
