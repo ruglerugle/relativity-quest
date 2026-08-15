@@ -72,14 +72,14 @@
   .home-compare .home-a-svg,.home-compare .home-b-svg{min-width:0;width:100%;height:auto}
   .home-compare .ghost-train{fill:var(--felt);opacity:.15}
   .home-compare .home-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
-  .home-a-svg .home-ground{animation:ground-scroll 1s linear infinite}
+  .home-a-svg .ground-slide-group{animation:gclock-slide-left 3s linear infinite}
   .home-a-svg .gclock-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
   .home-a-svg .path-move{stroke:var(--line);stroke-width:1.2;fill:none;stroke-dasharray:4 5}
   .home-a-svg .gclock-group{animation:gclock-slide-left 3s linear infinite}
   .home-a-svg .gclock-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:moving-up 3s linear infinite}
   @media (prefers-reduced-motion:reduce){
-    .home-a-svg .gclock-group,.home-a-svg .gclock-photon,.home-a-svg .home-ground{animation:none}
-    .home-a-svg .gclock-group{transform:translateX(-48px)}
+    .home-a-svg .gclock-group,.home-a-svg .gclock-photon,.home-a-svg .ground-slide-group{animation:none}
+    .home-a-svg .gclock-group,.home-a-svg .ground-slide-group{transform:translateX(-48px)}
     .home-a-svg .gclock-photon{transform:translateY(-80px);opacity:1}
   }
 
@@ -378,7 +378,9 @@
         <div class="home-compare">
           <div class="home-compare-item">
             <svg class="home-a-svg" viewBox="0 0 200 120" role="img" aria-label="電車に乗っている人から見た地上の光時計。電車は止まって見え、地面が流れる中、地上の光時計は動きながら、光は下の鏡から上の鏡へ斜めに進む">
-              <line class="home-ground" x1="10" y1="110" x2="190" y2="110"></line>
+              <g class="ground-slide-group">
+                <line class="home-ground" x1="-20" y1="110" x2="260" y2="110"></line>
+              </g>
               <g class="ghost-train">
                 <rect x="140" y="4" width="48" height="90" rx="5"></rect>
                 <circle cx="151" cy="98" r="4"></circle>
