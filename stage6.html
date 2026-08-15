@@ -150,7 +150,9 @@
   .gpt-svg .gpt-dot{stroke-width:1}
   .gpt-svg .gpt-dot-b{fill:var(--gold);stroke:var(--gold-dark)}
   .gpt-svg .gpt-dot-f{fill:#c9645c;stroke:#b5504a}
+  .gpt-svg .gpt-dot-both{fill:#a06a3f;stroke:#7a4d2e}
   .gpt-svg .gpt-bracket{stroke:var(--gold-dark);stroke-width:1.2;fill:none}
+  .gpt-svg .gpt-bracket-warn{stroke:#b5504a;stroke-width:1.2;fill:none}
   .gpt-svg .gpt-label{fill:var(--muted);font-size:8px;font-weight:700;text-anchor:middle}
   .gpt-svg .gpt-time{fill:var(--ink);font-size:8.5px;font-weight:800;text-anchor:middle}
   .gpt-svg .gpt-note-ok{fill:var(--muted);font-size:8.5px;font-weight:700;text-anchor:middle}
@@ -1133,6 +1135,116 @@
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">その通り！ 車庫のパラドックスも、結局は同時性の相対性で説明がつくんだ。電車がつぶれることも、車庫が壊れることもない――ただ「電車全体が収まって見える瞬間」があるかどうかが、観測者によって変わるだけなんだよ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">車庫なので、出口はないものとして考えて、電車が収まった瞬間に入口を閉めて、急停止すればどうなりますか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">おもしろい設問だね！ 実はこの話、「入口を閉める」ことと「電車を急停止させる」ことを、分けて考える必要があるんだ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">入口を閉めることはできますか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">それはできるよ。入口の扉は、車庫のその一点だけで完結する仕組みだから、後端が入口を通過した瞬間に閉めるのは何の問題もない。難しいのは、そのあとに電車全体を急停止させる方だ。電車は22万5千kmもある長い物体だから、その端から端まで、光より速く「止まれ」という指令を伝えることはできない。それでも、もし無理やり地上時刻でぴったり同時に止めたとしたら、何が起きるか計算してみよう。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">お願いします。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">先端が奥の壁にちょうど届く瞬間（地上時刻で約0.11秒）に、車庫の中のすべての地点で電車を一斉に止めたとする。地上から見ればこの「先端が止まる」出来事と「後端が止まる」出来事はまったく同時だ。でも、電車自身の（動いていたときの）視点でローレンツ変換すると、先端の方が後端よりも約0.45秒も早く止まってしまうことになるんだ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="gpt-compare">
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="地上系では、電車の先端が停止する出来事と後端が停止する出来事はまったく同時（t＝0.11秒）">
+            <text class="gpt-title" x="100" y="14">地上系（同時に停止）</text>
+            <text class="gpt-note-ok" x="100" y="32">先端も後端も同時に停止</text>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-both" cx="100" cy="90" r="6"></circle>
+            <text class="gpt-label" x="100" y="108">先端停止＝後端停止</text>
+            <text class="gpt-time" x="100" y="121">t＝0.11秒</text>
+          </svg>
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="電車自身の視点では、先端が停止する出来事の方が後端が停止する出来事より約0.45秒早く起き、その間まだ動いている後ろの車両がすでに止まった先端に衝突する">
+            <text class="gpt-title" x="100" y="14">電車系（順番がある）</text>
+            <text class="gpt-note-warn" x="100" y="32">この間、後ろが先端に衝突</text>
+            <line class="gpt-bracket-warn" x1="55" y1="45" x2="155" y2="45"></line>
+            <line class="gpt-bracket-warn" x1="55" y1="40" x2="55" y2="45"></line>
+            <line class="gpt-bracket-warn" x1="155" y1="40" x2="155" y2="45"></line>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-f" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-b" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">先端停止</text>
+            <text class="gpt-time" x="55" y="121">t'＝0</text>
+            <text class="gpt-label" x="155" y="108">後端停止</text>
+            <text class="gpt-time" x="155" y="121">t'≈0.45秒</text>
+          </svg>
+        </div>
+        <div class="diagram-caption">地上系では先端停止と後端停止はまったく同時（t＝0.11秒）だが、電車自身の視点では先端の方が後端より約0.45秒早く止まる。その間、まだ動いている後ろの車両が、すでに止まった先端に向かって突っ込み続けることになる</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">0.45秒……！ それってさっきの双子のパラドックスで出てきた「0.45秒×2＝0.9秒ジャンプ」の、半分と同じ計算ですよね？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り、同じ式（速さ×距離÷光速の2乗）だよ。つまり電車自身の立場で見れば、先に止まった先端に、まだ止まっていない後ろの車両が0.45秒間、時速18万kmで突っ込み続けることになる。「収まる／収まらない」どころの話じゃなく、電車が実際に押しつぶされる、本物の衝突事故になるんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">つまり、動いている物を無理やり同時に止めようとすると、本当に潰れてしまうんですね……「縮んで見える」のはあくまで見かけなのに、無理やり静止させようとした瞬間、本当の圧縮になってしまうんだ。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ これが「特殊相対性理論の世界に、完全に硬い物体は存在しない」と言われる理由なんだ。力が伝わる速さには限界があるから、長い物体を本当の意味で「一瞬で」止めることはできない。無理やりそれをやろうとした瞬間、電車はその場で崩れてしまうんだよ。</div>
         </div>
       </div>
 
