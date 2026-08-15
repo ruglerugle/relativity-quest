@@ -203,6 +203,14 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 .book-recommend-lead{font-size:12px;color:var(--muted);margin:0 0 4px;font-weight:700}
 #book-recommend a{font-size:13px;color:var(--gold-dark);font-weight:900;text-decoration:underline}
 
+.recap-list{display:flex;flex-direction:column;gap:10px;margin:4px 0 8px}
+.recap-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--paper2);border:1px solid var(--line);border-radius:10px}
+.recap-num{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:linear-gradient(#d9a441,#a6742a);color:#fff;font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.recap-body{font-size:13px;line-height:1.7}
+.recap-title{font-weight:900;color:var(--ink)}
+.recap-desc{color:var(--muted);font-weight:700}
+.complete-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+
 /* ==========================================================
    6. トップ（ポータル）ページ：ヒーロー＋クエストカード
    ========================================================== */

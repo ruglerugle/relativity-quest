@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241a5e">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9RTQCP2HXM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9RTQCP2HXM');
+</script>
+<title>全ステージクリア ― 中学数学で読み解く特殊相対性理論 ―</title>
+<meta name="description" content="中学数学で読み解く特殊相対性理論、全6ステージクリアおめでとう。ここまでの旅を振り返ろう。">
+<link rel="stylesheet" href="design-system.css">
+</head>
+<body>
+<div class="shell">
+  <nav class="topbar" aria-label="サイト情報">
+    <span class="brand-badge" aria-hidden="true">🌌</span>
+    <span class="brand-copy">
+      <strong>中学数学で読み解く特殊相対性理論</strong>
+      <small>RELATIVITY QUEST</small>
+    </span>
+  </nav>
+
+  <header class="hero">
+    <img class="hero-mascot" src="images/cat.png" alt="ねこ博士">
+    <div class="hero-copy">
+      <h1><span class="line">全6ステージ、クリアおめでとう！</span></h1>
+      <p>光速不変の原理から双子のパラドックスまで、中学数学と理科の道具だけで特殊相対性理論の入り口を歩いてきた。ここまでの旅を振り返ってみよう。</p>
+    </div>
+    <img class="hero-mascot right" src="images/rabbit.png" alt="うさ美">
+  </header>
+
+  <main>
+    <section class="board" aria-labelledby="recap-heading">
+      <div class="board-head">
+        <div><h2 id="recap-heading">ここまでの旅を振り返ろう</h2></div>
+      </div>
+
+      <div class="recap-list">
+        <div class="recap-item">
+          <span class="recap-num">1</span>
+          <div class="recap-body"><span class="recap-title">光の速さは秒速30万km。</span> <span class="recap-desc">光の速さがどれほど圧倒的か、「速さ＝距離÷時間」で実感した。</span></div>
+        </div>
+        <div class="recap-item">
+          <span class="recap-num">2</span>
+          <div class="recap-body"><span class="recap-title">光の速さは誰から見ても同じ。</span> <span class="recap-desc">動く電車の中でも外でも光速は変わらないという、光速不変の原理を知った。</span></div>
+        </div>
+        <div class="recap-item">
+          <span class="recap-num">3</span>
+          <div class="recap-body"><span class="recap-title">動くと時間が遅れる。</span> <span class="recap-desc">光時計と三平方の定理を使って、時間の遅れを自分の手で導いた。</span></div>
+        </div>
+        <div class="recap-item">
+          <span class="recap-num">4</span>
+          <div class="recap-body"><span class="recap-title">動くと縮んで見える。</span> <span class="recap-desc">ローレンツ収縮と、車庫のパラドックスの不思議な見た目の矛盾に触れた。</span></div>
+        </div>
+        <div class="recap-item">
+          <span class="recap-num">5</span>
+          <div class="recap-body"><span class="recap-title">「同時」は人によって違う。</span> <span class="recap-desc">同時性の相対性という、パラドックスを解きほぐす鍵を見つけた。</span></div>
+        </div>
+        <div class="recap-item">
+          <span class="recap-num">6</span>
+          <div class="recap-body"><span class="recap-title">双子のパラドックスの種明かし。</span> <span class="recap-desc">うさ美自身の視点から計算しても、同じ結論にたどり着くことを確かめた。</span></div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">こうして振り返ると、最初はただの光の速さの話だったのに、時間や空間の見え方まで変わってしまうなんて、思いもしませんでした。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">「同時」という当たり前だと思っていた感覚が、実は絶対的なものじゃなかった――それに気づけたなら、もう特殊相対性理論の入り口はくぐったも同然だよ。お疲れさま！</div>
+        </div>
+      </div>
+
+      <div class="complete-actions">
+        <a class="btn btn-primary" href="index.html">トップに戻る →</a>
+        <button class="btn" id="btn-reset-all">🔄 進捗をリセットして最初から</button>
+      </div>
+    </section>
+
+    <div id="book-recommend"></div>
+  </main>
+
+  <footer>
+    <p>NO DOWNLOAD. NO REGISTRATION. JUST LEARN. &nbsp;© <span id="year"></span> ruglerugle</p>
+    <div class="footer-suits" aria-hidden="true"><span>✦</span><span>☾</span><span>✧</span><span>★</span></div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="js/progress.js"></script>
+<script>RQ.initCompletePage();</script>
+</body>
+</html>

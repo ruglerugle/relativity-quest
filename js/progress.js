@@ -207,9 +207,21 @@
       if (nextBtn) {
         nextBtn.addEventListener("click", function () {
           var next = STAGES[stageNum]; // stageNum is 1-indexed, so STAGES[stageNum] is the next stage
-          window.location.href = next ? next.file : "index.html";
+          window.location.href = next ? next.file : "complete.html";
         });
       }
+    });
+  }
+
+  function initCompletePage() {
+    document.addEventListener("DOMContentLoaded", function () {
+      var cleared = getCleared();
+      if (cleared.length < STAGES.length) {
+        window.location.href = "index.html";
+        return;
+      }
+      bindResetAll();
+      renderBookRecommend();
     });
   }
 
@@ -235,6 +247,7 @@
     STAGES: STAGES,
     getCleared: getCleared,
     initStagePage: initStagePage,
-    initCoverPage: initCoverPage
+    initCoverPage: initCoverPage,
+    initCompletePage: initCompletePage
   };
 })(window);
