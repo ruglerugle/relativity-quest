@@ -30,12 +30,9 @@
     { n: 3, file: "stage3.html", title: "動くと時間が遅れる", sub: "光時計と三平方の定理" },
     { n: 4, file: "stage4.html", title: "動くと縮んで見える", sub: "ローレンツ収縮" },
     { n: 5, file: "stage5.html", title: "「同時」は人によって違う", sub: "同時性の相対性" },
-    { n: 6, file: "stage6.html", title: "双子のパラドックスの種明かし", sub: "うさ美自身の視点でも、答えは変わらない" }
+    { n: 6, file: "stage6.html", title: "双子のパラドックスの種明かし", sub: "うさ美自身の視点でも、答えは変わらない" },
+    { n: 7, file: "stage7.html", title: "光速の世界をもっと深く", sub: "応用問題：3つの謎を同時性で解く" }
   ];
-
-  // 発展ステージ（クリアは全体進捗6/6には含めない）
-  var EXTRA_STAGE = { n: 7, file: "extra.html", title: "光速の世界をもっと深く", sub: "発展：応用問題に挑戦" };
-  var ALL_STAGES = STAGES.concat([EXTRA_STAGE]);
 
   function getCleared() {
     try {
@@ -64,7 +61,7 @@
     if (!list) return;
     var cleared = getCleared();
     list.innerHTML = "";
-    ALL_STAGES.forEach(function (stage) {
+    STAGES.forEach(function (stage) {
       var unlocked = isUnlocked(stage.n, cleared) || stage.n === currentStage;
       var isCleared = cleared.indexOf(stage.n) !== -1;
       var item = document.createElement(unlocked ? "a" : "div");
@@ -78,7 +75,7 @@
         item.setAttribute("aria-disabled", "true");
       }
       var icon = isCleared ? "✅" : unlocked ? "🔓" : "🔒";
-      var label = stage.n === EXTRA_STAGE.n ? "EXTRA" : "STAGE" + stage.n;
+      var label = "STAGE" + stage.n;
       item.innerHTML =
         '<span class="side-icon">' + icon + '</span>' +
         '<span class="side-text"><div class="side-main">' + label + " " + stage.title + '</div>' +
