@@ -13,6 +13,16 @@
     url: "https://www.amazon.co.jp/dp/4065149088?tag=senjin-22"
   };
 
+  // 各ステージのクイズ正解（クイズカードの出現順に、正解の選択肢のインデックス）
+  var ANSWERS = {
+    1: [0, 1],
+    2: [0, 2],
+    3: [0, 0],
+    4: [1, 0],
+    5: [0, 0, 0],
+    6: [0, 0]
+  };
+
   var STAGES = [
     { n: 1, file: "stage1.html", title: "光の速さは秒速30万km", sub: "相対性理論のはじまり" },
     { n: 2, file: "stage2.html", title: "光の速さは誰から見ても同じ", sub: "光速不変の原理" },
@@ -77,7 +87,12 @@
     var label = document.getElementById("progress-label");
     var fill = document.getElementById("progress-fill");
     if (label) label.textContent = "クリア " + cleared.length + " / " + total;
-    if (fill) fill.style.width = Math.round((cleared.length / total) * 100) + "%";
+    if (fill) {
+      fill.style.width = Math.round((cleared.length / total) * 100) + "%";
+      if (fill.parentNode && fill.parentNode.setAttribute) {
+        fill.parentNode.setAttribute("aria-valuenow", cleared.length);
+      }
+    }
   }
 
   function markSolved(card) {
@@ -96,13 +111,19 @@
   }
 
   function initQuiz(stageNum, onAllSolved) {
+    var answers = ANSWERS[stageNum] || [];
     var cards = document.querySelectorAll(".quiz-card[data-quiz]");
-    cards.forEach(function (card) {
+    cards.forEach(function (card, cardIndex) {
+      var live = document.createElement("p");
+      live.className = "sr-only";
+      live.setAttribute("aria-live", "polite");
+      card.appendChild(live);
       var buttons = card.querySelectorAll(".choice-btn");
-      buttons.forEach(function (btn) {
+      buttons.forEach(function (btn, btnIndex) {
         btn.addEventListener("click", function () {
           if (card.getAttribute("data-solved") === "true") return;
-          var correct = btn.getAttribute("data-correct") === "true";
+          var correct = answers[cardIndex] === btnIndex;
+          live.textContent = correct ? "正解です" : "不正解です。もう一度選んでください";
           if (correct) {
             buttons.forEach(function (b) { b.disabled = true; });
             btn.classList.add("choice-ok");
@@ -154,7 +175,8 @@
       '<p class="book-recommend-lead">もっと深く学びたい方へ</p>' +
       '<a href="' + BOOK_RECOMMEND.url + '" target="_blank" rel="sponsored noopener">' + BOOK_RECOMMEND.title + "</a>" +
       "</div>" +
-      "</div>";
+      "</div>" +
+      '<p class="book-recommend-note">※ Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。</p>';
   }
 
   function bindSidebarToggle() {
@@ -170,12 +192,13 @@
   }
 
   function initStagePage(stageNum) {
+    // ロック中のステージは、描画を待たずに即トップへ戻す
+    if (!isUnlocked(stageNum, getCleared())) {
+      window.location.replace("index.html");
+      return;
+    }
     document.addEventListener("DOMContentLoaded", function () {
       var cleared = getCleared();
-      if (!isUnlocked(stageNum, cleared)) {
-        window.location.href = "index.html";
-        return;
-      }
       renderSidebar(stageNum);
       updateHeaderProgress();
       bindResetAll();
@@ -214,12 +237,11 @@
   }
 
   function initCompletePage() {
+    if (getCleared().length < STAGES.length) {
+      window.location.replace("index.html");
+      return;
+    }
     document.addEventListener("DOMContentLoaded", function () {
-      var cleared = getCleared();
-      if (cleared.length < STAGES.length) {
-        window.location.href = "index.html";
-        return;
-      }
       bindResetAll();
       renderBookRecommend();
     });

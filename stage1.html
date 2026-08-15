@@ -12,7 +12,18 @@
   gtag('js', new Date());
   gtag('config', 'G-9RTQCP2HXM');
 </script>
-<title>中学数学で読み解く特殊相対性理論 STAGE1 ― 光の速さは秒速30万km ―</title>
+<title>STAGE1 光の速さは秒速30万km ― 中学数学で読み解く特殊相対性理論</title>
+<meta name="description" content="相対性理論の準備運動。「速さ＝距離÷時間」を復習しながら、光の速さ（秒速約30万km・1秒で地球7周半）がどれほど速いかを学ぶステージ。">
+<link rel="canonical" href="https://ruglerugle.github.io/relativity-quest/stage1.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="中学数学で読み解く特殊相対性理論">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="STAGE1 光の速さは秒速30万km ― 中学数学で読み解く特殊相対性理論">
+<meta property="og:description" content="「速さ＝距離÷時間」を復習しながら、光の速さがどれほど速いかを学ぶステージ。">
+<meta property="og:url" content="https://ruglerugle.github.io/relativity-quest/stage1.html">
+<meta property="og:image" content="https://ruglerugle.github.io/relativity-quest/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="design-system.css">
 <style>
   .diagram-box .orbit-svg{max-width:min(100%,320px)}
@@ -37,7 +48,7 @@
     </div>
     <div class="head-progress-wrap">
       <div class="head-progress-label" id="progress-label">クリア 0 / 6</div>
-      <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="head-progress" role="progressbar" aria-label="クリア済みステージ数" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
     </div>
     <div class="header-actions">
       <button class="head-reset" id="btn-reset-all">🔄 最初から</button>
@@ -70,28 +81,28 @@
       <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">相対性理論を学ぶ前に、まず「速さ」の復習をしよう。速さは「距離 ÷ 時間」で求められたね。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">はい、小学校の算数で習いました！ 時速40kmの自転車で80km進むには2時間、みたいな計算ですよね。</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">その通り。実は光にも速さがあって、秒速およそ30万km。1秒間に地球を7周半できるスピードなんだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">そんなに速いんですか!? 想像もつきません。</div>
@@ -127,7 +138,7 @@
       <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">この「光の速さ」こそが、実は相対性理論の主役なんだ。この先のステージで、その理由がだんだんわかっていくよ。</div>
@@ -138,9 +149,9 @@
       <div class="quiz-card" data-quiz>
         <p class="quiz-q">Q1. 「速さ」を求める式はどれ？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="true">距離 ÷ 時間</button>
-          <button class="choice-btn" data-correct="false">距離 × 時間</button>
-          <button class="choice-btn" data-correct="false">時間 ÷ 距離</button>
+          <button class="choice-btn">距離 ÷ 時間</button>
+          <button class="choice-btn">距離 × 時間</button>
+          <button class="choice-btn">時間 ÷ 距離</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 例えば80kmを2時間で進んだら、80÷2＝時速40kmだね。</div>
       </div>
@@ -148,9 +159,9 @@
       <div class="quiz-card" data-quiz>
         <p class="quiz-q">Q2. 光は1秒間におよそ何周、地球のまわりを回れる速さ？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="false">約1周</button>
-          <button class="choice-btn" data-correct="true">約7周半</button>
-          <button class="choice-btn" data-correct="false">約100周</button>
+          <button class="choice-btn">約1周</button>
+          <button class="choice-btn">約7周半</button>
+          <button class="choice-btn">約100周</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 秒速約30万kmという速さは、1秒で地球を7周半できるほどのスピードなんだ。</div>
       </div>

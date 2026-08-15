@@ -12,7 +12,18 @@
   gtag('js', new Date());
   gtag('config', 'G-9RTQCP2HXM');
 </script>
-<title>中学数学で読み解く特殊相対性理論 STAGE5 ― 「同時」は人によって違う ―</title>
+<title>STAGE5 「同時」は人によって違う ― 中学数学で読み解く特殊相対性理論</title>
+<meta name="description" content="2つの出来事が「同時」かどうかは見る人によって変わる。同時性の相対性を、距離÷速さのシンプルな計算とΔt＝γvL/c²の式で確かめるステージ。">
+<link rel="canonical" href="https://ruglerugle.github.io/relativity-quest/stage5.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="中学数学で読み解く特殊相対性理論">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="STAGE5 「同時」は人によって違う ― 中学数学で読み解く特殊相対性理論">
+<meta property="og:description" content="同時性の相対性を、距離÷速さのシンプルな計算で確かめるステージ。">
+<meta property="og:url" content="https://ruglerugle.github.io/relativity-quest/stage5.html">
+<meta property="og:image" content="https://ruglerugle.github.io/relativity-quest/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="design-system.css">
 <style>
   .sim-svg .train{fill:#5b3fa6;opacity:.14}
@@ -102,7 +113,7 @@
     </div>
     <div class="head-progress-wrap">
       <div class="head-progress-label" id="progress-label">クリア 0 / 6</div>
-      <div class="head-progress"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="head-progress" role="progressbar" aria-label="クリア済みステージ数" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
     </div>
     <div class="header-actions">
       <button class="head-reset" id="btn-reset-all">🔄 最初から</button>
@@ -135,28 +146,28 @@
       <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">時間の遅れと長さの収縮が分かったところで、いよいようさ美が持ちかけてくれた「AとBの謎」に迫っていこう。カギは「同時」という考え方そのものにあるんだ。まずは基本の例から確認しよう。動いている電車の真ん中で、光を前後に同時に発射したとしよう。電車の中の人からは、光は前と後ろの壁に同時に届くように見える。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">真ん中から同じ速さで光が出るんだから、そうなりそうですね。</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">でも、外で電車を眺めている人にはどう見えると思う？ 電車は前に進んでいるから…</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">あ、後ろの壁は光に近づいてくるから早く届いて、前の壁は光から逃げるから遅く届く、ってことですか？</div>
@@ -199,35 +210,35 @@
       <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">その通り！ 電車の中の人には「同時」でも、外の人には「同時じゃない」んだ。「同時」かどうかは、見ている人（動いているかどうか）によって変わる。これを同時性の相対性というよ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">どれくらいズレるのか、ちゃんと計算できるんですか？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">できるよ。公式を出す前に、まずは「距離÷速さ＝時間」の関係だけを使って、じかに計算してみよう。電車自身の長さ（静止しているときの長さ）をL＝30万kmとする。速さv＝秒速18万km（0.6c）だから、ステージ3のγ＝1.25を使うと、外から見た電車の長さはL÷γ＝30万km÷1.25＝24万kmに縮んで見える。光は電車の中心から出るから、後ろの壁までも前の壁までも、縮んだ長さの半分＝12万kmだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">さっき言った「近づく」「逃げる」を数字にすると、後ろの壁とは毎秒（光速c＋電車の速さv）で、前の壁とは毎秒（c－v）で距離が縮んでいく、ということですか？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">その通り！ 後ろの壁とは毎秒（c＋v）＝48万kmずつ、前の壁とは毎秒（c－v）＝12万kmずつ縮む。「距離÷速さ＝時間」で、それぞれ計算してみよう。</div>
@@ -262,14 +273,14 @@
       <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">なるほど、速さと距離だけでちゃんと求まるんですね。</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">そう。実はこの計算、速さv・電車自身の長さL・光速cだけを使った一般的な式にもまとめられるんだ。Δt＝γ×v×L÷c²という形になるよ。同じ数字で確かめてみよう。</div>
@@ -327,21 +338,21 @@
       <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">つまり、外から見ると、後ろの壁に光が届いてから0.75秒後に、前の壁に光が届くことになるんだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">電車が長いほど、速いほど、このズレも大きくなるんですね。</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">その通り！ これが「同時のズレ」の正体だよ。時間の遅れ・長さの収縮・そしてこの「同時のズレ」――この3つをまとめて「ローレンツ変換」と呼ぶんだ。</div>
@@ -351,7 +362,7 @@
       <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">絶対的な「同時」なんてものは、そもそもないんですね…</div>
@@ -361,21 +372,21 @@
       <div class="dialogue-scene">
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">じゃあ、いよいようさ美が持ちかけてくれたAとBの謎——電車に乗ったうさ美と、地上で待つ博士が出会った瞬間、二人が見ているものが食い違うんじゃないか、っていう話。これで、もっと正確に解けるよ。実はうさ美から見ると、地上の光時計Aの方が、電車の中の光時計Bより先に発射されていることになるんだ。「AとBが同時に発射された」というのは、あくまでホーム（博士）基準の同時であって、動いている電車から見ると、Aの方が早く発射されていたことになる。だから、出会った瞬間にAがちょうど天井に届いていても、うさ美にとっても不思議じゃないんだよ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">なるほど…！ わたしが「Bはもう届いているはず」って思い込んでいたのは、AとBが本当に同時に発射されたと勘違いしていたからだったんですね。実際には電車から見るとAの方が早く発射されていたから、出会った瞬間にBは4/5まで進んでいて、Aもちょうど届いたところ——これなら、わたしと博士は同じ場所で同じものを見ていて、ちゃんと辻褄が合いますね！</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">その通り！ 「同時」という考え方そのものが絶対的じゃないから、最初は食い違って見える出来事があっても、ちゃんと辻褄が合うようにできているんだ。これが特殊相対性理論のおもしろいところだよ。</div>
@@ -385,14 +396,14 @@
       <div class="dialogue-scene">
         <div class="dialog-row right">
           <div class="dialog-character">
-            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
           <div class="dialog-bubble">じゃあ、こんな場合はどうですか？ 電車がまっすぐ22万5千km進んで、そこで折り返してまた出発点に戻ってくるとします。光の方も、天井の鏡に着いたらそこで折り返して、また発射台に戻ってきます。博士はずっと出発点にいてください。出発の瞬間、光時計AとBが同時に光を発射するのを見て、電車が戻ってきたとき——わたしから見ればBの光はまっすぐ往復しているだけですが、博士から見たBの光は斜めに折れ曲がって見えるはずです。逆にAの光は、博士からはまっすぐ、わたしからは折れ曲がって見えます。それでもやっぱり、戻ってきた瞬間にAとBがどこまで進んでいるかは、二人で一致するんですか？</div>
         </div>
         <div class="dialog-row">
           <div class="dialog-character">
-            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
           <div class="dialog-bubble">面白い設定だね。実はそれ、「双子のパラドックス」と呼ばれる、特殊相対性理論でいちばん有名な問題そのものなんだ。次のステージでは、まさにこの問題に真正面から挑んで、博士とうさ美、双方の視点から計算して同じ答えになることを確かめていくよ。お楽しみに！</div>
@@ -403,9 +414,9 @@
       <div class="quiz-card" data-quiz>
         <p class="quiz-q">Q1. 動く電車の中で、真ん中から前後に同時に光を出すと、電車の中の人にはどう見える？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="true">前後の壁に同時に届く</button>
-          <button class="choice-btn" data-correct="false">後ろの壁に先に届く</button>
-          <button class="choice-btn" data-correct="false">前の壁に先に届く</button>
+          <button class="choice-btn">前後の壁に同時に届く</button>
+          <button class="choice-btn">後ろの壁に先に届く</button>
+          <button class="choice-btn">前の壁に先に届く</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 電車と一緒に動いている人にとっては、前後どちらの壁までも同じ距離、同じ速さなので同時に届く。</div>
       </div>
@@ -413,9 +424,9 @@
       <div class="quiz-card" data-quiz>
         <p class="quiz-q">Q2. 外で静止して見ている人には、光はどちらの壁に先に届く？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="true">後ろの壁（電車が近づいていく側と逆）</button>
-          <button class="choice-btn" data-correct="false">前の壁（電車が進んでいく側）</button>
-          <button class="choice-btn" data-correct="false">同時に届く</button>
+          <button class="choice-btn">後ろの壁（電車が近づいていく側と逆）</button>
+          <button class="choice-btn">前の壁（電車が進んでいく側）</button>
+          <button class="choice-btn">同時に届く</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 電車が前に進む分、後ろの壁の方が光に近づいてくるので先に届く。</div>
       </div>
@@ -423,9 +434,9 @@
       <div class="quiz-card" data-quiz>
         <p class="quiz-q">Q3. 動く電車の中で「同時」に起きた、離れた場所の2つの出来事は、外から見るとどうなる？</p>
         <div class="choice-list">
-          <button class="choice-btn" data-correct="true">同時ではなくなる（速さと距離に応じてズレる）</button>
-          <button class="choice-btn" data-correct="false">やっぱり同時に見える</button>
-          <button class="choice-btn" data-correct="false">常に前の出来事の方が先に見える</button>
+          <button class="choice-btn">同時ではなくなる（速さと距離に応じてズレる）</button>
+          <button class="choice-btn">やっぱり同時に見える</button>
+          <button class="choice-btn">常に前の出来事の方が先に見える</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 動いている人には「同時」でも、外から見るとズレて見える。ズレの大きさは、速さと距離（Δt＝γvL/c²）で計算できる。</div>
       </div>
