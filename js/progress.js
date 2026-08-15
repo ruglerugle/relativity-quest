@@ -19,10 +19,7 @@
     { n: 3, file: "stage3.html", title: "動くと時間が遅れる", sub: "光時計と時間の遅れ" },
     { n: 4, file: "stage4.html", title: "動くと縮んで見える", sub: "ローレンツ収縮" },
     { n: 5, file: "stage5.html", title: "「同時」は人によって違う", sub: "同時性の相対性" },
-    { n: 6, file: "stage6.html", title: "双子のパラドックスの種明かし", sub: "うさ美自身の視点でも、答えは変わらない" },
-    { n: 7, file: "stage7.html", title: "E=mc²", sub: "質量とエネルギーの関係" },
-    { n: 8, file: "stage8.html", title: "重力は空間のゆがみ", sub: "一般相対性理論への入り口" },
-    { n: 9, file: "stage9.html", title: "身近な相対性理論", sub: "ブラックホールとGPS" }
+    { n: 6, file: "stage6.html", title: "双子のパラドックスの種明かし", sub: "うさ美自身の視点でも、答えは変わらない" }
   ];
 
   function getCleared() {
