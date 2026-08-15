@@ -216,14 +216,70 @@
             <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">できるよ。このズレの大きさは、次の式で計算できるんだ。</div>
+          <div class="dialog-bubble">できるよ。公式を出す前に、まずは「距離÷速さ＝時間」の関係だけを使って、じかに計算してみよう。電車自身の長さ（静止しているときの長さ）をL＝30万kmとする。速さv＝秒速18万km（0.6c）だから、ステージ3のγ＝1.25を使うと、外から見た電車の長さはL÷γ＝30万km÷1.25＝24万kmに縮んで見える。光は電車の中心から出るから、後ろの壁までも前の壁までも、縮んだ長さの半分＝12万kmだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">同じ12万kmでも、後ろの壁は光の方へ近づいてきて、前の壁は光から逃げていくから、届くまでの時間は違いますよね？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ 後ろの壁は光の方へ秒速18万kmで近づいてくるから、光との距離は毎秒（c＋v）＝48万kmずつ縮む。前の壁は光から秒速18万kmで逃げていくから、毎秒（c－v）＝12万kmずつしか縮まらない。「距離÷速さ＝時間」で、それぞれ計算してみよう。</div>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <span class="step">後ろの壁までの時間：12万km ÷（30万km＋18万km）＝12万km÷48万km＝0.25秒</span>
+        <span class="step">前の壁までの時間：12万km ÷（30万km－18万km）＝12万km÷12万km＝1.0秒</span>
+        <span class="step">ズレの大きさ Δt ＝ 1.0秒－0.25秒＝0.75秒</span>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="lamp-calc-svg" viewBox="0 0 280 150" role="img" aria-label="外から見ると電車は24万kmに縮む。中央で光った瞬間から、後ろの壁には0.25秒後、前の壁には1.0秒後に届き、その差がちょうど0.75秒になる">
+          <text class="lc-label" x="140" y="14">外から見た電車の長さ（縮んで見える）＝24万km</text>
+          <rect class="lc-train" x="70" y="24" width="140" height="30" rx="6"></rect>
+          <circle class="lc-emit" cx="140" cy="39" r="5"></circle>
+          <line class="lc-arrow" x1="140" y1="39" x2="78" y2="39"></line>
+          <path class="lc-arrow-head" d="M70,39 L79,34 L79,44 Z"></path>
+          <line class="lc-arrow" x1="140" y1="39" x2="202" y2="39"></line>
+          <path class="lc-arrow-head" d="M210,39 L201,34 L201,44 Z"></path>
+          <text class="lc-time" x="70" y="74">後ろの壁</text>
+          <text class="lc-time-value" x="70" y="90">0.25秒後に到達</text>
+          <text class="lc-time" x="210" y="74">前の壁</text>
+          <text class="lc-time-value" x="210" y="90">1.0秒後に到達</text>
+          <rect class="cf-box" x="40" y="100" width="200" height="38" rx="8"></rect>
+          <text class="cf-value" x="140" y="124">差 Δt＝1.0秒－0.25秒＝0.75秒</text>
+        </svg>
+        <div class="diagram-caption">電車の中央から出た光は、外から見ると縮んだ電車（24万km）の後ろの壁に0.25秒後、前の壁に1.0秒後に届く。この到達時刻の差が、まさに求めていたΔt＝0.75秒そのもの</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.png" alt="うさ美"></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">なるほど、速さと距離だけでちゃんと求まるんですね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.png" alt="ねこ博士"></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そう。実はこの計算、速さv・電車自身の長さL・光速cだけを使った一般的な式にもまとめられるんだ。Δt＝γ×v×L÷c²という形になるよ。同じ数字で確かめてみよう。</div>
         </div>
       </div>
 
       <div class="formula-box">
         <span class="step">ズレの大きさ Δt ＝ γ × 速さ(v) × 電車の長さ(L) ÷ 光速(c)²</span>
         <span class="step">γはステージ3で出てきた「時間の遅れの倍率」（速さが光速の0.6倍なら γ＝1.25）</span>
-        <span class="step">例：ここでは新しく、電車自身の長さ（静止しているときの長さ）L＝30万kmとしよう。速さ v＝秒速18万km（0.6c）のとき</span>
+        <span class="step">先ほどと同じく、電車自身の長さ（静止しているときの長さ）L＝30万km、速さ v＝秒速18万km（0.6c）のとき</span>
         <span class="step">Δt ＝ 1.25 × 18万km × 30万km ÷（30万km）² ＝ 1.25 × 0.6 ＝ 0.75秒</span>
       </div>
 
@@ -266,25 +322,6 @@
           <text class="cf-value" x="140" y="240">Δt＝0.6×1.25＝0.75秒</text>
         </svg>
         <div class="diagram-caption">ステージ3と同じ直角三角形（3辺の比は3:4:5で正しい縮尺）。底辺÷斜辺＝0.6（v÷cと同じ比）に、斜辺÷高さで求まるγ＝1.25をかけると、ズレΔt＝0.75秒になる（この例では電車の長さLがちょうど光が1秒で進む距離＝30万kmなので、v×L÷c²の値がv÷cと一致している。Lが違う値ならこの一致は起きない点に注意）</div>
-      </div>
-
-      <div class="diagram-box">
-        <svg class="lamp-calc-svg" viewBox="0 0 280 150" role="img" aria-label="外から見ると電車は24万kmに縮む。中央で光った瞬間から、後ろの壁には0.25秒後、前の壁には1.0秒後に届き、その差がちょうど0.75秒になる">
-          <text class="lc-label" x="140" y="14">外から見た電車の長さ（縮んで見える）＝24万km</text>
-          <rect class="lc-train" x="70" y="24" width="140" height="30" rx="6"></rect>
-          <circle class="lc-emit" cx="140" cy="39" r="5"></circle>
-          <line class="lc-arrow" x1="140" y1="39" x2="78" y2="39"></line>
-          <path class="lc-arrow-head" d="M70,39 L79,34 L79,44 Z"></path>
-          <line class="lc-arrow" x1="140" y1="39" x2="202" y2="39"></line>
-          <path class="lc-arrow-head" d="M210,39 L201,34 L201,44 Z"></path>
-          <text class="lc-time" x="70" y="74">後ろの壁</text>
-          <text class="lc-time-value" x="70" y="90">0.25秒後に到達</text>
-          <text class="lc-time" x="210" y="74">前の壁</text>
-          <text class="lc-time-value" x="210" y="90">1.0秒後に到達</text>
-          <rect class="cf-box" x="40" y="100" width="200" height="38" rx="8"></rect>
-          <text class="cf-value" x="140" y="124">差 Δt＝1.0秒－0.25秒＝0.75秒</text>
-        </svg>
-        <div class="diagram-caption">電車の中央から出た光は、外から見ると縮んだ電車（24万km）の後ろの壁に0.25秒後、前の壁に1.0秒後に届く。この到達時刻の差が、まさに求めていたΔt＝0.75秒そのもの</div>
       </div>
 
       <div class="dialogue-scene">
