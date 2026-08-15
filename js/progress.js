@@ -142,6 +142,7 @@
             }
           } else {
             btn.classList.add("choice-ng");
+            track("quiz_wrong", { stage: stageNum, quiz: cardIndex + 1, choice: btnIndex + 1 });
           }
         });
       });
@@ -167,12 +168,20 @@
     nav.parentNode.insertBefore(banner, nav);
   }
 
+  function track(eventName, params) {
+    if (typeof window.gtag === "function") window.gtag("event", eventName, params || {});
+  }
+
   function enableNext(stageNum) {
     var nextBtn = document.getElementById("btn-next");
     if (nextBtn) nextBtn.disabled = false;
     setCleared(stageNum);
     updateHeaderProgress();
     showClearBanner();
+    track("stage_clear", { stage: stageNum });
+    if (coreClearedCount(getCleared()) === STAGES.length) {
+      track("all_clear");
+    }
   }
 
   function bindResetAll() {
