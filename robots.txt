@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ruglerugle.github.io/relativity-quest/sitemap.xml
+Sitemap: https://special-relativity.habatakijuku.com/sitemap.xml
