@@ -433,6 +433,37 @@
             <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name student">うさ美</div>
           </div>
+          <div class="dialog-bubble">理屈は分かりましたけど、正直まだ半信半疑です……時間が遅れるなんて、実際に確かめられたことはあるんですか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">もちろん。いちばん身近なのはスマホの地図に使われているGPS衛星だよ。衛星は秒速約4kmで飛んでいるから、衛星の時計は地上よりほんの少しだけゆっくり進む。重力の影響（これは一般相対性理論の話）もあわせて補正していて、もし補正をやめると、位置情報は1日で数kmもズレてしまうんだ。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">もう一つ、宇宙から降ってくる「ミュー粒子」という素粒子も証拠になる。寿命が100万分の2秒しかないから、本来は地表に届く前に消えてしまうはずなのに、ほぼ光速で飛ぶおかげで時間の進みが遅くなり、実際に地表までたくさん届くことが観測されているんだよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">わたしのスマホの地図が正しい場所を指すのは、相対性理論のおかげだったんですね！</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
           <div class="dialog-bubble">だとしたら、秒速18万kmで動く電車に光時計Bを設置し、電車の進行方向に18万km離れた地面に光時計Aを設置します。わたしは電車に乗って、博士は光時計Aのところにいてください。そして光時計AとBを同時に光を発射させます。わたしが博士と出会った時、わたしが見ている光時計Bは天井に達していて、Aはまだ天井に達していません。博士が見ている光時計Bはまだ天井に達していないのに、Aは天井に達しています。同じ場所で、同じものを見ているのに、食い違ってしまうんじゃないですか？
             <svg class="brain-diagram" viewBox="0 0 200 124" role="img" aria-label="うさ美から見るとBが到達しAはまだ、博士から見るとBはまだでAが到達という、観測者によって食い違う状況の図">
               <text class="bd-title" x="46" y="15" text-anchor="middle">うさ美から見ると</text>
@@ -522,6 +553,16 @@
           <button class="choice-btn">変わらない</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 速さ＝距離÷時間だから、距離が長くて速さが同じなら、時間は長くなる。これが「動くと時間が遅れる」正体だよ。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q3.【計算】秒速24万km（光速の0.8倍）で走る電車の中の1秒は、外から見ると何秒に見える？　ヒント：√(1−0.8²)＝0.6</p>
+        <div class="choice-list">
+          <button class="choice-btn">0.6秒</button>
+          <button class="choice-btn">1.25秒</button>
+          <button class="choice-btn">約1.67秒（1÷0.6）</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ ④の式で t'＝1秒÷√(1−0.8²)＝1÷0.6≈1.67秒。0.6cのときの1.25秒より大きい――速くなるほど、時間の遅れは急激に大きくなるんだ。</div>
       </div>
 
       <div class="stage-nav">

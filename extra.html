@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241a5e">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9RTQCP2HXM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9RTQCP2HXM');
+</script>
+<title>EXTRA 光速の世界をもっと深く ― 中学数学で読み解く特殊相対性理論</title>
+<meta name="description" content="発展ステージ。前方へ発射した光の見え方、60度傾いた光時計、車庫のパラドックスの結末、急停止した電車の運命――本編で身につけた道具で応用問題に挑む。">
+<link rel="canonical" href="https://ruglerugle.github.io/relativity-quest/extra.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="中学数学で読み解く特殊相対性理論">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="EXTRA 光速の世界をもっと深く ― 中学数学で読み解く特殊相対性理論">
+<meta property="og:description" content="発展ステージ。本編で身につけた道具で応用問題に挑む。">
+<meta property="og:url" content="https://ruglerugle.github.io/relativity-quest/extra.html">
+<meta property="og:image" content="https://ruglerugle.github.io/relativity-quest/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .jump-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
+  .jump-svg .axis{stroke:var(--line);stroke-width:1.5}
+  .jump-svg .ref-line{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4;opacity:.6}
+  .jump-svg .path-out{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .jump-svg .path-jump{stroke:#b5504a;stroke-width:2;stroke-dasharray:3 3;fill:none}
+  .jump-svg .path-return{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .jump-svg .pt{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .jump-svg .axis-label{fill:var(--ink);font-size:10.5px;font-weight:800}
+  .jump-svg .lbl{fill:var(--muted);font-size:10px;font-weight:700}
+  .jump-svg .lbl-jump{fill:#b5504a;font-size:10px;font-weight:800}
+
+  .beam-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .beam-svg .beam-wall{stroke:var(--line);stroke-width:2}
+  .beam-svg .beam-ray{stroke:var(--gold-dark);stroke-width:2;stroke-dasharray:4 3}
+  .beam-svg .beam-source{fill:var(--ink)}
+  .beam-svg .beam-spot{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .beam-svg .beam-jump{stroke:#b5504a;stroke-width:1.5}
+  .beam-svg .beam-tick{stroke:#b5504a;stroke-width:1.5}
+  .beam-svg .beam-label{fill:var(--muted);font-size:9.5px;font-weight:700}
+  .beam-svg .beam-jump-label{fill:#b5504a;font-size:9.5px;font-weight:800}
+
+  .fwd-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
+  .fwd-svg .fwd-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 6;animation:fwd-ground-scroll 6s linear infinite}
+  @keyframes fwd-ground-scroll{
+    0%{stroke-dashoffset:0px}
+    40%{stroke-dashoffset:96px}
+    80%{stroke-dashoffset:0px}
+    90%{stroke-dashoffset:0px}
+    100%{stroke-dashoffset:0px}
+  }
+  @media (prefers-reduced-motion:reduce){.fwd-svg .fwd-ground{animation:none}}
+  .fwd-svg .fwd-launcher{fill:var(--ink)}
+  .fwd-svg .fwd-tick{stroke:var(--muted);stroke-width:1}
+  .fwd-svg .fwd-label{fill:var(--muted);font-size:9px;font-weight:700}
+  .fwd-svg .fwd-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:fwd-move 6s linear infinite}
+  @keyframes fwd-move{
+    0%{transform:translateX(0);opacity:1}
+    39.99%{transform:translateX(230px);opacity:1}
+    40%{transform:translateX(57.5px);opacity:1}
+    80%{transform:translateX(287.5px);opacity:1}
+    90%{transform:translateX(287.5px);opacity:1}
+    96%{transform:translateX(287.5px);opacity:0}
+    98%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
+  @media (prefers-reduced-motion:reduce){.fwd-svg .fwd-photon{animation:none}}
+  .b-path-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap}
+  .b-path-compare .bp-svg{flex:0 1 150px;min-width:0;width:100%;max-width:170px;height:auto}
+  .bp-svg .bp-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .bp-svg .bp-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
+  .bp-svg .bp-mirror-faint{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round;stroke-dasharray:3 3;opacity:.4}
+  .bp-svg .bp-path{stroke:#5b3fa6;stroke-width:2;fill:none}
+  .bp-svg .bp-path-faint{stroke:#5b3fa6;stroke-width:1.5;stroke-dasharray:3 4;fill:none;opacity:.4}
+  .bp-svg .bp-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .bp-svg .bp-caption{fill:var(--muted);font-size:10px;font-weight:700}
+  .b-path-caption{display:block;font-size:11px;color:var(--muted);font-weight:700;text-align:center;margin-top:6px}
+
+  .bp-combo-svg{display:block;max-width:min(100%,200px);width:100%;height:auto;margin:auto}
+  .bp-combo-svg .bc-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .bp-combo-svg .bc-mirror-anim{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
+  .bp-combo-svg .bc-pad{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+  .bp-combo-svg .bc-pad-leg{stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+  .bp-combo-svg .bc-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:bc-rise 3s linear infinite}
+  .bp-combo-svg .bc-group{animation:bc-drift 3s linear infinite}
+  @keyframes bc-drift{
+    0%{transform:translateX(0);opacity:1}
+    40%{transform:translateX(-48px);opacity:1}
+    80%{transform:translateX(0);opacity:1}
+    90%{transform:translateX(0);opacity:1}
+    96%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:0}
+  }
+  @keyframes bc-rise{
+    0%{transform:translateY(0);opacity:1}
+    40%{transform:translateY(-62.4px);opacity:1}
+    41%{transform:translateY(-62.4px);opacity:.15}
+    42%{transform:translateY(-23.4px);opacity:.15}
+    43%{transform:translateY(-23.4px);opacity:1}
+    57%{transform:translateY(0px);opacity:1}
+    80%{transform:translateY(-39px);opacity:1}
+    96%{transform:translateY(-39px);opacity:1}
+    97%{transform:translateY(0px);opacity:1}
+    100%{transform:translateY(0px);opacity:1}
+  }
+  .bp-combo-svg .bc-photon-smooth{animation:bc-rise-smooth 3.5s linear infinite}
+  @keyframes bc-rise-smooth{
+    0%{transform:translateY(0)}
+    36.5%{transform:translateY(-62.4px)}
+    39.17%{transform:translateY(-78px)}
+    42.5%{transform:translateY(-58.5px)}
+    48.5%{transform:translateY(-23.4px)}
+    62.19%{transform:translateY(0px)}
+    85%{transform:translateY(-39px)}
+    90%{transform:translateY(-39px)}
+    96%{transform:translateY(-39px)}
+    97%{transform:translateY(0px)}
+    100%{transform:translateY(0px)}
+  }
+  .bp-combo-svg .bc-group-smooth{animation:bc-drift-smooth 3.5s linear infinite}
+  @keyframes bc-drift-smooth{
+    0%{transform:translateX(0);opacity:1}
+    36.5%{transform:translateX(-43.8px);opacity:1}
+    38%{transform:translateX(-45.38px);opacity:1}
+    39.5%{transform:translateX(-46.5px);opacity:1}
+    41%{transform:translateX(-47.18px);opacity:1}
+    42.5%{transform:translateX(-47.4px);opacity:1}
+    44%{transform:translateX(-47.18px);opacity:1}
+    45.5%{transform:translateX(-46.5px);opacity:1}
+    47%{transform:translateX(-45.38px);opacity:1}
+    48.5%{transform:translateX(-43.8px);opacity:1}
+    85%{transform:translateX(0);opacity:1}
+    90%{transform:translateX(0);opacity:1}
+    96%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:0}
+  }
+  @media (prefers-reduced-motion:reduce){.bp-combo-svg .bc-group,.bp-combo-svg .bc-photon,.bp-combo-svg .bc-photon-smooth,.bp-combo-svg .bc-group-smooth{animation:none}}
+
+  .calc-flow-svg{display:block;max-width:min(100%,300px);width:100%;height:auto;margin:auto}
+  .calc-flow-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .calc-flow-svg .cf-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
+  .calc-flow-svg .cf-value{fill:var(--ink);font-size:11px;font-weight:800;text-anchor:middle}
+  .calc-flow-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
+  .calc-flow-svg .cf-arrow-head{fill:var(--gold-dark)}
+  .summary4-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
+  .summary4-svg .s4-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
+  .summary4-svg .s4-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
+  .summary4-svg .s4-value{fill:var(--ink);font-size:10.5px;font-weight:800;text-anchor:middle}
+  .summary4-svg .s4-title{fill:#8a6614;font-size:10.5px;font-weight:800;text-anchor:middle}
+  .gpt-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .gpt-compare .gpt-svg{flex:0 1 200px;min-width:0;width:100%;max-width:210px;height:auto}
+  .gpt-svg .gpt-title{fill:#8a6614;font-size:10.5px;font-weight:800;text-anchor:middle}
+  .gpt-svg .gpt-axis{stroke:var(--line);stroke-width:1.5}
+  .gpt-svg .gpt-dot{stroke-width:1}
+  .gpt-svg .gpt-dot-b{fill:var(--gold);stroke:var(--gold-dark)}
+  .gpt-svg .gpt-dot-f{fill:#c9645c;stroke:#b5504a}
+  .gpt-svg .gpt-dot-both{fill:#a06a3f;stroke:#7a4d2e}
+  .gpt-svg .gpt-bracket{stroke:var(--gold-dark);stroke-width:1.2;fill:none}
+  .gpt-svg .gpt-bracket-warn{stroke:#b5504a;stroke-width:1.2;fill:none}
+  .gpt-svg .gpt-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .gpt-svg .gpt-time{fill:var(--ink);font-size:9.5px;font-weight:800;text-anchor:middle}
+  .gpt-svg .gpt-note-ok{fill:var(--muted);font-size:9.5px;font-weight:700;text-anchor:middle}
+  .gpt-svg .gpt-note-warn{fill:#b5504a;font-size:9.5px;font-weight:800;text-anchor:middle}
+  .ac-coincide-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .ac-coincide-svg .ac-track{stroke:var(--gold-dark);stroke-width:2.5;fill:none}
+  .ac-coincide-svg .ac-dot{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
+  .ac-coincide-svg .ac-tick{stroke:var(--muted);stroke-width:1.2}
+  .ac-coincide-svg .ac-label{fill:var(--muted);font-size:10px;font-weight:700}
+  .setup4-svg{display:block;max-width:min(100%,320px);width:100%;height:auto;margin:auto}
+  .setup4-svg .s4d-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .setup4-svg .s4d-rod{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
+  .setup4-svg .s4d-train{fill:var(--ink)}
+  .setup4-svg .s4d-label{fill:var(--ink);font-size:11px;font-weight:800;text-anchor:middle}
+  .setup4-svg .s4d-sublabel{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .setup4-svg .s4d-arrow{stroke:var(--muted);stroke-width:1.5}
+  .setup4-svg .s4d-arrowhead{fill:var(--muted)}
+  .setup4-svg .s4d-angle{stroke:var(--gold-dark);stroke-width:1.2;fill:none}
+  .setup4-svg .s4d-angle-label{fill:#8a6614;font-size:10px;font-weight:800;text-anchor:middle}
+  .setup4-svg .s4d-basedot{fill:var(--ink)}
+
+  .cd-compare{display:flex;align-items:flex-start;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .cd-compare .cd-svg{flex:0 1 220px;min-width:0;width:100%;max-width:230px;height:auto}
+  .cd-svg .cd-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .cd-svg .cd-rod{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round;opacity:.6}
+  .cd-svg .cd-vref{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:.6}
+  .cd-svg .cd-train{fill:var(--ink)}
+  .cd-svg .cd-label{fill:var(--muted);font-size:10px;font-weight:700}
+  .cd-svg .cd-caption{fill:var(--muted);font-size:10.5px;font-weight:700;text-anchor:middle}
+  .cd-svg .cd-title{fill:#8a6614;font-size:10.5px;font-weight:800;text-anchor:middle}
+  .cd-svg .c-group{animation:c-drift 3.6s linear infinite}
+  .cd-svg .c-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:c-rise 3.6s linear infinite}
+  @keyframes c-drift{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(60px);opacity:1}
+    85%{transform:translateX(60px);opacity:0}
+    100%{transform:translateX(0);opacity:0}
+  }
+  @keyframes c-rise{
+    0%{transform:translateY(0)}
+    70%{transform:translateY(-104px)}
+    85%{transform:translateY(-104px)}
+    100%{transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion:reduce){.cd-svg .c-group,.cd-svg .c-photon{animation:none}}
+  .cd-svg .d-group{animation:d-drift 3.6s linear infinite}
+  .cd-svg .d-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:d-rise 3.6s linear infinite}
+  @keyframes d-drift{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(60px);opacity:1}
+    85%{transform:translateX(60px);opacity:0}
+    100%{transform:translateX(0);opacity:0}
+  }
+  @keyframes d-rise{
+    0%{transform:translateY(0);opacity:1}
+    70%{transform:translateY(-120px);opacity:1}
+    85%{transform:translateY(-120px);opacity:0}
+    100%{transform:translateY(0);opacity:0}
+  }
+  @media (prefers-reduced-motion:reduce){.cd-svg .d-group,.cd-svg .d-photon{animation:none}}
+
+  .scissors-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
+  .scissors-svg .sc-hinge{fill:var(--ink)}
+  .scissors-svg .sc-path-guide{stroke:var(--gold-dark);stroke-width:1;stroke-dasharray:2 3;opacity:.3}
+  .scissors-svg .sc-blade{stroke:#5b3fa6;stroke-width:2;stroke-linecap:round;animation-duration:4s;animation-timing-function:linear;animation-iteration-count:infinite}
+  .scissors-svg .sc-blade-upper{transform-origin:40px 86px;animation-name:sc-rotate-upper}
+  .scissors-svg .sc-blade-lower{transform-origin:40px 74px;animation-name:sc-rotate-lower}
+  .scissors-svg .sc-point{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center;filter:drop-shadow(0 0 4px rgba(212,160,23,.85));--sc-op:1;animation:sc-point-move 4s linear infinite}
+  .scissors-svg .sc-point-echo{fill:var(--gold);transform-box:fill-box;transform-origin:center;animation:sc-point-move 4s linear infinite}
+  .scissors-svg .sc-echo1{--sc-op:.35;animation-delay:.08s}
+  .scissors-svg .sc-echo2{--sc-op:.15;animation-delay:.16s}
+  .scissors-svg .sc-label{fill:var(--muted);font-size:10px;font-weight:700}
+  @keyframes sc-rotate-upper{
+    0%{transform:rotate(-30deg)}
+    10%{transform:rotate(-27.01deg)}
+    20%{transform:rotate(-24.02deg)}
+    30%{transform:rotate(-21.03deg)}
+    40%{transform:rotate(-18.04deg)}
+    50%{transform:rotate(-15.05deg)}
+    60%{transform:rotate(-12.07deg)}
+    70%{transform:rotate(-9.08deg)}
+    80%{transform:rotate(-6.09deg)}
+    90%{transform:rotate(-3.10deg)}
+    92%{transform:rotate(-2.5deg)}
+    100%{transform:rotate(-30deg)}
+  }
+  @keyframes sc-rotate-lower{
+    0%{transform:rotate(30deg)}
+    10%{transform:rotate(27.01deg)}
+    20%{transform:rotate(24.02deg)}
+    30%{transform:rotate(21.03deg)}
+    40%{transform:rotate(18.04deg)}
+    50%{transform:rotate(15.05deg)}
+    60%{transform:rotate(12.07deg)}
+    70%{transform:rotate(9.08deg)}
+    80%{transform:rotate(6.09deg)}
+    90%{transform:rotate(3.10deg)}
+    92%{transform:rotate(2.5deg)}
+    100%{transform:rotate(30deg)}
+  }
+  @keyframes sc-point-move{
+    0%{transform:translateX(0);opacity:var(--sc-op,1)}
+    5%{transform:translateX(0.66px);opacity:var(--sc-op,1)}
+    10%{transform:translateX(1.38px);opacity:var(--sc-op,1)}
+    15%{transform:translateX(2.18px);opacity:var(--sc-op,1)}
+    20%{transform:translateX(3.07px);opacity:var(--sc-op,1)}
+    25%{transform:translateX(4.07px);opacity:var(--sc-op,1)}
+    30%{transform:translateX(5.21px);opacity:var(--sc-op,1)}
+    35%{transform:translateX(6.52px);opacity:var(--sc-op,1)}
+    40%{transform:translateX(8.03px);opacity:var(--sc-op,1)}
+    45%{transform:translateX(9.80px);opacity:var(--sc-op,1)}
+    50%{transform:translateX(11.92px);opacity:var(--sc-op,1)}
+    55%{transform:translateX(14.49px);opacity:var(--sc-op,1)}
+    60%{transform:translateX(17.68px);opacity:var(--sc-op,1)}
+    65%{transform:translateX(21.76px);opacity:var(--sc-op,1)}
+    70%{transform:translateX(27.17px);opacity:var(--sc-op,1)}
+    75%{transform:translateX(34.69px);opacity:var(--sc-op,1)}
+    80%{transform:translateX(45.87px);opacity:var(--sc-op,1)}
+    81%{transform:translateX(48.80px);opacity:var(--sc-op,1)}
+    82%{transform:translateX(52.04px);opacity:var(--sc-op,1)}
+    83%{transform:translateX(55.66px);opacity:var(--sc-op,1)}
+    84%{transform:translateX(59.72px);opacity:var(--sc-op,1)}
+    85%{transform:translateX(64.31px);opacity:var(--sc-op,1)}
+    86%{transform:translateX(69.53px);opacity:var(--sc-op,1)}
+    87%{transform:translateX(75.53px);opacity:var(--sc-op,1)}
+    88%{transform:translateX(82.50px);opacity:var(--sc-op,1)}
+    89%{transform:translateX(90.70px);opacity:var(--sc-op,1)}
+    90%{transform:translateX(100.47px);opacity:var(--sc-op,1)}
+    91%{transform:translateX(112.33px);opacity:var(--sc-op,1)}
+    92%{transform:translateX(127.03px);opacity:var(--sc-op,1)}
+    94%{opacity:0}
+    98%{opacity:0;transform:translateX(0)}
+    100%{opacity:var(--sc-op,1);transform:translateX(0)}
+  }
+  @media (prefers-reduced-motion:reduce){.scissors-svg .sc-blade,.scissors-svg .sc-point,.scissors-svg .sc-point-echo{animation:none}}
+
+  .rt-compare{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .rt-compare .rt-svg{flex:0 1 200px;min-width:0;width:100%;max-width:210px;height:auto}
+  .rt-svg .rt-title{fill:#8a6614;font-size:10px;font-weight:800;text-anchor:middle}
+  .rt-svg .rt-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .rt-svg .rt-base{fill:var(--ink);transform-box:fill-box;transform-origin:center}
+  .rt-svg .rt-start-dot{fill:var(--ink)}
+  .rt-svg .rt-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;transform-box:fill-box;transform-origin:center}
+  .rt-svg .rt-label{fill:var(--muted);font-size:9.5px;font-weight:700;text-anchor:middle}
+  .rt-svg .rt-base-D{animation:rt-base-D 6s linear infinite}
+  .rt-svg .rt-photon-D{animation:rt-photon-D 6s linear infinite}
+  @keyframes rt-base-D{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(139px);opacity:1}
+    85%{transform:translateX(139px);opacity:0}
+    86%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
+  @keyframes rt-photon-D{
+    0%{transform:translate(0,0);opacity:1}
+    26.25%{transform:translate(0,-104px);opacity:1}
+    70%{transform:translate(139px,0);opacity:1}
+    85%{transform:translate(139px,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  .rt-svg .rt-base-C{animation:rt-base-C 6s linear infinite}
+  .rt-svg .rt-photon-C{animation:rt-photon-C 6s linear infinite}
+  @keyframes rt-base-C{
+    0%{transform:translateX(0);opacity:1}
+    70%{transform:translateX(-139px);opacity:1}
+    85%{transform:translateX(-139px);opacity:0}
+    86%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
+  @keyframes rt-photon-C{
+    0%{transform:translate(0,0);opacity:1}
+    26.25%{transform:translate(0,-104px);opacity:1}
+    70%{transform:translate(-139px,0);opacity:1}
+    85%{transform:translate(-139px,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  .rt-svg .rt-train{fill:var(--ink)}
+  .rt-svg .rt-ground-scroll{animation:rt-ground-C 6s linear infinite}
+  @keyframes rt-ground-C{
+    0%{stroke-dashoffset:0px}
+    70%{stroke-dashoffset:170px}
+    85%{stroke-dashoffset:170px}
+    86%{stroke-dashoffset:0px}
+    100%{stroke-dashoffset:0px}
+  }
+  .rt-svg .rt-track-ref{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:.6}
+  .rt-svg .rt-photon-ref{animation:rt-photon-ref 6s linear infinite}
+  @keyframes rt-photon-ref{
+    0%{transform:translate(0,0);opacity:1}
+    30.3%{transform:translate(0,-120px);opacity:1}
+    60.6%{transform:translate(0,0);opacity:1}
+    85%{transform:translate(0,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  .rt-svg .rt-photon-zz{fill:#2f8a8f;stroke:#1f6a6f;stroke-width:1;transform-box:fill-box;transform-origin:center}
+  .rt-svg .rt-photon-zz-right{animation:rt-photon-zz-right 6s linear infinite}
+  .rt-svg .rt-photon-zz-left{animation:rt-photon-zz-left 6s linear infinite}
+  @keyframes rt-photon-zz-right{
+    0%{transform:translate(0,0);opacity:1}
+    35%{transform:translate(69.5px,-120px);opacity:1}
+    70%{transform:translate(139px,0);opacity:1}
+    85%{transform:translate(139px,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  @keyframes rt-photon-zz-left{
+    0%{transform:translate(0,0);opacity:1}
+    35%{transform:translate(-69.5px,-120px);opacity:1}
+    70%{transform:translate(-139px,0);opacity:1}
+    85%{transform:translate(-139px,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  .rt-svg .rt-photon-diag{fill:#5b3fa6;stroke:#3f2b74;stroke-width:1;transform-box:fill-box;transform-origin:center}
+  .rt-svg .rt-photon-diag-right{animation:rt-photon-diag-right 6s linear infinite}
+  .rt-svg .rt-photon-diag-left{animation:rt-photon-diag-left 6s linear infinite}
+  @keyframes rt-photon-diag-right{
+    0%{transform:translate(0,0);opacity:1}
+    30.3%{transform:translate(60px,-104px);opacity:1}
+    60.6%{transform:translate(0,0);opacity:1}
+    85%{transform:translate(0,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  @keyframes rt-photon-diag-left{
+    0%{transform:translate(0,0);opacity:1}
+    30.3%{transform:translate(-60px,-104px);opacity:1}
+    60.6%{transform:translate(0,0);opacity:1}
+    85%{transform:translate(0,0);opacity:0}
+    86%{transform:translate(0,0);opacity:0}
+    100%{transform:translate(0,0);opacity:1}
+  }
+  @media (prefers-reduced-motion:reduce){.rt-svg .rt-base-D,.rt-svg .rt-photon-D,.rt-svg .rt-base-C,.rt-svg .rt-photon-C,.rt-svg .rt-ground-scroll,.rt-svg .rt-photon-ref,.rt-svg .rt-photon-zz-right,.rt-svg .rt-photon-zz-left,.rt-svg .rt-photon-diag-right,.rt-svg .rt-photon-diag-left{animation:none}}
+</style>
+</head>
+<body>
+<div class="app-shell side-collapsed" id="app-shell">
+  <header class="game-header">
+    <div class="brand">
+      <div class="brand-title"><a class="head-reset home-badge" href="index.html" title="トップへ" aria-label="トップへ">🌌</a> <span>中学数学で読み解く特殊相対性理論</span></div>
+      <div class="brand-sub">EXTRA ― 光速の世界をもっと深く ―</div>
+    </div>
+    <div class="head-progress-wrap">
+      <div class="head-progress-label" id="progress-label">クリア 0 / 6</div>
+      <div class="head-progress" role="progressbar" aria-label="クリア済みステージ数" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><div class="head-progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="header-actions">
+      <button class="head-reset" id="btn-reset-all">🔄 最初から</button>
+      <button class="head-reset" id="head-nav-toggle" title="ステージ一覧の表示切替">☰ ナビ</button>
+    </div>
+  </header>
+
+  <div class="game-layout">
+    <div class="side-backdrop" id="side-backdrop"></div>
+    <aside class="side-panel">
+      <div class="side-head">
+        <button class="side-toggle" id="sidebar-toggle" title="ステージ一覧の表示切替" aria-label="ステージ一覧の表示切替">☰</button>
+        <span class="side-head-text">📚 ステージ一覧</span>
+      </div>
+      <div class="side-list" id="side-list"></div>
+    </aside>
+
+    <main class="main-area">
+      <div class="chapter-head">
+        <span class="chapter-badge">EXTRA</span><span class="chapter-title">光速の世界をもっと深く</span>
+        <div class="chapter-sub">発展：本編の道具で応用問題に挑む</div>
+      </div>
+
+      <div class="mission-box">
+        <div class="mission-label">🎯 ミッション</div>
+        <div class="mission-text">前方へ発射した光・60度傾いた光時計・車庫のパラドックスの結末を、本編で手に入れた「同時性のジャンプ」を武器に解き明かそう。</div>
+        <span class="mission-status" id="mission-status">未達成</span>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">ここからは発展ステージ。本編で手に入れた「時間の遅れ」「長さの収縮」「同時性のジャンプ」を総動員して、もっと不思議な問題に挑んでいこう。さっそくだけど、うさ美、まだ気になっていることがあるんじゃないかい？</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">では例えば、電車にもう一つ光の発射台があったとして、スタート時に進行方向に向かって光が発射されたとします。うさ美にとっては秒速30万kmで遠ざかっていくように見えるはずですが、折り返し時にはどう見えますか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">面白い応用問題だね！ まず行きの区間から考えよう。うさ美自身の視点では、自分は止まっていて、この光は光速不変の原理どおり、電車の速さに関係なく秒速30万kmでまっすぐ前方へ飛んでいく。彼女自身の時間で1.0秒経った折り返しの瞬間には、光は彼女から見て30万km先にいることになる。ここでも「今」の基準がジャンプするのは博士のときと同じだよ。でも博士は動かない点だったのに対して、この光は動き続けている目標だから、「切り替わった後の基準面が、光の（すでに進み続けている）軌道のどこと交わるか」を計算し直す必要があるんだ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="jump-svg" viewBox="0 0 280 150" role="img" aria-label="うさ美から見た、前方へ発射された光までの距離の変化。折り返し直前は30万kmまで一定の速さで遠ざかり、折り返しの瞬間に7.5万kmまで一気に近づき、その後また一定の速さで遠ざかっていく">
+          <text class="axis-label" x="18" y="14">うさ美から見た「前方の光までの距離」</text>
+          <line class="axis" x1="50" y1="120" x2="260" y2="120"></line>
+          <line class="axis" x1="50" y1="20" x2="50" y2="120"></line>
+          <line class="ref-line" x1="50" y1="20" x2="260" y2="20"></line>
+          <path class="path-out" d="M50,120 L145,40"></path>
+          <path class="path-jump" d="M145,40 L145,100"></path>
+          <path class="path-return" d="M145,100 L260,20"></path>
+          <circle class="pt" cx="50" cy="120" r="3.5"></circle>
+          <circle class="pt" cx="145" cy="40" r="3.5"></circle>
+          <circle class="pt" cx="145" cy="100" r="3.5"></circle>
+          <circle class="pt" cx="260" cy="20" r="3.5"></circle>
+          <text class="lbl" x="50" y="133" text-anchor="middle">0秒</text>
+          <text class="lbl" x="145" y="133" text-anchor="middle" font-size="9.5">1.0秒（折り返し）</text>
+          <text class="lbl" x="260" y="133" text-anchor="middle">2.0秒</text>
+          <text class="lbl" x="46" y="123" text-anchor="end">0</text>
+          <text class="lbl" x="46" y="103" text-anchor="end">7.5万km</text>
+          <text class="lbl" x="46" y="43" text-anchor="end">30万km</text>
+          <text class="lbl" x="46" y="23" text-anchor="end">37.5万km</text>
+          <text class="lbl-jump" x="151" y="73">－22.5万km</text>
+        </svg>
+        <div class="diagram-caption">横軸はうさ美自身の経過時間、縦軸はうさ美から見た「前方の光までの距離」。博士の時計のグラフとは逆に、折り返しの瞬間だけ距離が縮む向きにジャンプする</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">計算すると、帰りの基準に切り替わった瞬間、光は7.5万km先にいることになる。30万kmから7.5万kmへ、22.5万km分「近づいた」ように見えるんだ。博士のジャンプとは向きが逆――博士はうさ美の後ろ（進行方向と逆側）にいたから時計が進む向きにジャンプしたけど、この光は前（進行方向と同じ側）にあるから、距離が縮む向きにジャンプするんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="fwd-svg" viewBox="0 0 330 100" role="img" aria-label="うさ美が出発時に前方へ発射した光の動き。地面の破線は行きは前へ、折り返しからは後ろへ流れて電車の進行方向と折り返しを表す。光は折り返し直前は30万km先まで進むが、折り返しの瞬間に7.5万km先まで一瞬で近づき、その後また一定の速さで遠ざかっていく">
+          <line class="fwd-ground" x1="0" y1="80" x2="330" y2="80"></line>
+          <rect class="fwd-launcher" x="14" y="70" width="12" height="10"></rect>
+          <line class="fwd-tick" x1="77.5" y1="70" x2="77.5" y2="90"></line>
+          <text class="fwd-label" x="77.5" y="60" text-anchor="middle">7.5万km</text>
+          <line class="fwd-tick" x1="250" y1="70" x2="250" y2="90"></line>
+          <text class="fwd-label" x="250" y="60" text-anchor="middle">30万km</text>
+          <line class="fwd-tick" x1="307.5" y1="70" x2="307.5" y2="90"></line>
+          <text class="fwd-label" x="307.5" y="60" text-anchor="middle">37.5万km</text>
+          <circle class="fwd-photon" cx="20" cy="75" r="4.5"></circle>
+        </svg>
+        <div class="diagram-caption">発射台（左端）は、うさ美自身の視点なので動かない。地面の破線は、行きは前へ、折り返しからは後ろへ流れて、電車の進行方向と折り返しを表している。光は秒速30万kmで遠ざかり、折り返しの瞬間だけ7.5万kmの地点へワープして見え、そこからまた秒速30万kmで遠ざかっていく</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">折り返した後も光速不変は変わらないから、光は7.5万kmの地点から、また秒速30万kmで彼女から遠ざかっていく。うさ美が戻ってくるまでに、7.5万＋30万＝37.5万km先まで進んでいることになるんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">なるほど……！ 博士は「後ろ」にあったから時計が進む向きにジャンプして、この光は「前」にあったから距離が縮む向きにジャンプするんですね。同じ「同時性のジャンプ」でも、位置関係によって向きが変わるんだ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">ではもう一つ。例えば先ほどの光時計AとBに加えて、地上では電車の進行方向に30度傾いた（地上との角度60度）光時計Cと、電車の上には進行方向逆向きに30度傾いた（地上との角度60度）光時計Dを置いて、秒速15万kmで走る電車のスタートと同時に光を発射させた場合、博士とわたし、それぞれの視点で、相手の時間はどう見えますか？ つまりわたしからはCが真上に打ちあがっている状態で、博士からはDが真上に打ちあがっている状態です。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="setup4-svg" viewBox="0 0 320 190" role="img" aria-label="4つの光時計の配置。地上ではAとCが同じ点から出発し、Aは垂直に、Cは進行方向へ60度の角度で傾いて立つ。電車の上ではBとDが同じ点から出発し、Bは垂直に、Dは進行方向と逆向きに60度の角度で傾いて立つ">
+          <line class="s4d-ground" x1="10" y1="162" x2="310" y2="162"></line>
+          <line class="s4d-rod" x1="60" y1="162" x2="60" y2="102"></line>
+          <text class="s4d-label" x="60" y="94">A</text>
+          <line class="s4d-rod" x1="60" y1="162" x2="90" y2="110"></line>
+          <text class="s4d-label" x="97" y="109">C</text>
+          <path class="s4d-angle" d="M84,162 A24,24 0 0,0 72,141"></path>
+          <text class="s4d-angle-label" x="93" y="148">60°</text>
+          <circle class="s4d-basedot" cx="60" cy="162" r="2.5"></circle>
+          <text class="s4d-sublabel" x="60" y="178">A・Cは同じ点から出発</text>
+          <rect class="s4d-train" x="190" y="145" width="90" height="18" rx="3"></rect>
+          <text class="s4d-sublabel" x="235" y="157" fill="#fff">電車</text>
+          <line class="s4d-rod" x1="235" y1="145" x2="235" y2="85"></line>
+          <text class="s4d-label" x="235" y="77">B</text>
+          <line class="s4d-rod" x1="235" y1="145" x2="205" y2="93"></line>
+          <text class="s4d-label" x="197" y="90">D</text>
+          <path class="s4d-angle" d="M211,145 A24,24 0 0,1 223,124"></path>
+          <text class="s4d-angle-label" x="202" y="129">60°</text>
+          <circle class="s4d-basedot" cx="235" cy="145" r="2.5"></circle>
+          <line class="s4d-arrow" x1="285" y1="154" x2="305" y2="154"></line>
+          <path class="s4d-arrowhead" d="M307,154 L300,150 L300,158 Z"></path>
+          <text class="s4d-sublabel" x="295" y="143">進行方向</text>
+        </svg>
+        <div class="diagram-caption">A・Cは地上の同じ点から、B・Dは電車の同じ点から、電車のスタートと同時に光を発射する。Aは地面に垂直、Cは地面との角度60度（進行方向へ）。Bは電車の床に垂直、Dは電車の床との角度60度（進行方向と逆向きに）</div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="cd-compare">
+          <svg class="cd-svg" viewBox="0 0 220 175" role="img" aria-label="うさ美から見たCの光の動き。地上に固定されたCから60度で発射された光は、水平方向には電車とちょうど同じ速さで進むため、電車と共に動くうさ美から見ると、光は常に電車の真上にあり続け、まっすぐ上に打ちあがるように見える">
+            <text class="cd-title" x="110" y="14">うさ美から見ると</text>
+            <line class="cd-ground" x1="10" y1="148" x2="210" y2="148"></line>
+            <line class="cd-rod" x1="45" y1="148" x2="60" y2="122"></line>
+            <text class="cd-label" x="64" y="120">C</text>
+            <g class="c-group">
+              <rect class="cd-train" x="37" y="143" width="16" height="9" rx="2"></rect>
+              <circle class="c-photon" cx="45" cy="147" r="4.2"></circle>
+            </g>
+            <text class="cd-caption" x="110" y="166">Cは真上へ打ちあがって見える</text>
+          </svg>
+          <svg class="cd-svg" viewBox="0 0 220 175" role="img" aria-label="博士から見たDの光の動き。電車に固定されたDから発射された光は、水平方向の速さがちょうど0になるため、地上に立つ博士から見ると、電車が先に進んでも光はその場から動かずまっすぐ上に打ちあがるように見える">
+            <text class="cd-title" x="110" y="14">博士から見ると</text>
+            <line class="cd-ground" x1="10" y1="148" x2="210" y2="148"></line>
+            <line class="cd-vref" x1="90" y1="143" x2="90" y2="24"></line>
+            <g class="d-group">
+              <rect class="cd-train" x="82" y="143" width="16" height="9" rx="2"></rect>
+              <line class="cd-rod" x1="90" y1="143" x2="75" y2="117"></line>
+              <text class="cd-label" x="70" y="113">D</text>
+            </g>
+            <circle class="d-photon" cx="90" cy="147" r="4.2"></circle>
+            <text class="cd-caption" x="110" y="166">Dは真上へ打ちあがって見える</text>
+          </svg>
+        </div>
+        <div class="diagram-caption">Cは地上に固定されているのに、光の水平方向の速さがちょうど電車と同じになるので、うさ美からは真上へ。Dは電車に固定されているのに、光の水平方向の速さがちょうど0になるので、博士からは真上へ――電車が先に進んでも、Dの光はその場に取り残されたようにまっすぐ上る</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">面白い設問だね！ 整理しよう。A（地上に固定・垂直）とB（電車に固定・垂直）はもう馴染みのある光時計、C（地上に固定・60度前傾き）とD（電車に固定・60度後ろ傾き）が今回の新顔だ。速さは全部秒速15万km（0.5c）で統一しよう。まず博士自身の視点から考えよう。AとCはどちらも地上に固定された時計だから、博士にとっては当たり前の話――光速はどの向きでも同じだから、彼自身の1.0秒後には、AもCもちょうど鏡に届く（100%）んだ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">じゃあ、うさ美自身から見たBとDも、同じ理由で当たり前に100%になりますね！ 自分に固定された時計だから。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ 難しいのは、博士から見たBとD、うさ美から見たAとC――つまり「相手側の時計」の方だ。何か気になることはあるかい？</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">はい……実は、DもCも、もう鏡に反射して戻ってきている途中なんです。つまり、お互い相手の方が時間が遅れて見えるはずなのに、わたしにとってのC、博士にとってのDの時計はむしろ進んでる——そこが分からないんです。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="ac-coincide-svg" viewBox="0 0 220 170" role="img" aria-label="AとDの光は、反射するまでまったく同じ道――真上へ光速で一直線に進む。ただし、Aの鏡は地上に固定されているため博士自身の1.0秒で届くのに対し、Dの鏡は電車に固定されて動いているため、より早い0.866秒で光と出会ってしまう">
+          <line class="ac-track" x1="100" y1="150" x2="100" y2="25"></line>
+          <circle class="ac-dot" cx="100" cy="150" r="4"></circle>
+          <line class="ac-tick" x1="88" y1="42" x2="112" y2="42"></line>
+          <text class="ac-label" x="118" y="39">Dの鏡（動いている）</text>
+          <text class="ac-label" x="118" y="51">0.866秒で反射</text>
+          <line class="ac-tick" x1="88" y1="25" x2="112" y2="25"></line>
+          <text class="ac-label" x="118" y="16">Aの鏡（固定）</text>
+          <text class="ac-label" x="118" y="28">1.0秒で到達</text>
+          <text class="ac-label" x="100" y="165" text-anchor="middle">共通の出発点――真上へ光速で一直線</text>
+        </svg>
+        <div class="diagram-caption">AとDの光は、反射するまでまったく同じ「真上へ光速」の一本道を進む。違うのは鏡がどこにあるか（Aは固定、Dは動いている）だけで、それが反射のタイミングの違いを生む</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">じゃあ、一緒に考えてみよう。1.0秒のところで止めずに、光が完全に1往復し終えるまで待ったらどうなるか考えてみよう。Cの光は地上に固定された鏡へ行って戻ってくるだけだから、往復にかかる時間はAとまったく同じ、博士自身の2.0秒だ。一方、うさ美から見たBとDは、電車という同じ場所から出て同じ場所に戻ってくる往復だから、うさ美自身の2.0秒になる。これを博士から見た時間に直すとどうなるか、計算してみよう。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="calc-flow-svg" viewBox="0 0 260 210" role="img" aria-label="うさ美自身の2.0秒を博士から見た時間に直す計算の流れ。秒速15万km（0.5c）での時間の遅れの倍率γを求め、γ＝2／√3≈1.1547になる。うさ美自身の2.0秒にγをかけると、博士から見た時間は約2.309秒になる">
+          <rect class="cf-box" x="10" y="6" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="24">秒速15万km（0.5c）での遅れの倍率</text>
+          <text class="cf-value" x="130" y="42">γ＝1／√(1－0.5²)</text>
+          <line class="cf-arrow" x1="130" y1="52" x2="130" y2="80"></line>
+          <path class="cf-arrow-head" d="M130,84 L125,75 L135,75 Z"></path>
+          <rect class="cf-box" x="10" y="88" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="106">γを計算すると</text>
+          <text class="cf-value" x="130" y="124">γ＝2／√3≈1.1547</text>
+          <line class="cf-arrow" x1="130" y1="134" x2="130" y2="162"></line>
+          <path class="cf-arrow-head" d="M130,166 L125,157 L135,157 Z"></path>
+          <rect class="cf-box" x="10" y="170" width="240" height="34" rx="8"></rect>
+          <text class="cf-value" x="130" y="192">うさ美自身の2.0秒×γ≈2.309秒</text>
+        </svg>
+        <div class="diagram-caption">うさ美自身の2.0秒は、博士から見ると時間の遅れの倍率γ（≈1.1547）をかけて約2.309秒になる</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">博士から見ると2.309秒――これもBとDでまったく同じになる。つまり、Cが「もう折り返して戻ってきている」ように見えたのは、往復の途中経過にすぎない。傾きが変えるのは「いつ折り返すか」というタイミングだけで、往復の合計時間は、垂直な時計とぴったり同じになるように帳尻が合うんだ。だから、光が完全に1往復し終えた瞬間には、AとC、BとDは、それぞれ博士自身・うさ美自身の時計とぴったり同じ時刻を指していて、二人が最終的に見るものに食い違いは起きないんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="rt-compare">
+          <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="博士から見た光の1往復。Aは真上を垂直に往復し2.0秒で終わる。Cも地上という同じ出発点に戻ってくるが、斜めに上って1.0秒で反射しその後斜めに下る。DとBはどちらも電車という同じ出発点に戻ってくるが、Dはまっすぐ上って0.866秒で反射しその後斜めに下り、Bは斜めに上って1.1547秒で反射しその後斜めに下る。道筋はそれぞれ違うが、どちらも2.309秒後にちょうど電車に合流する">
+            <text class="rt-title" x="100" y="14">博士から見ると</text>
+            <line class="rt-ground" x1="15" y1="140" x2="195" y2="140"></line>
+            <line class="rt-track-ref" x1="24" y1="140" x2="24" y2="20"></line>
+            <circle class="rt-photon rt-photon-ref" cx="24" cy="140" r="4"></circle>
+            <circle class="rt-photon-diag rt-photon-diag-right" cx="24" cy="140" r="4"></circle>
+            <text class="rt-label" x="24" y="156">出発点</text>
+            <circle class="rt-start-dot" cx="24" cy="140" r="2.5"></circle>
+            <rect class="rt-base rt-base-D" x="34" y="135" width="12" height="10" rx="2"></rect>
+            <circle class="rt-photon rt-photon-D" cx="40" cy="140" r="4.5"></circle>
+            <circle class="rt-photon-zz rt-photon-zz-right" cx="40" cy="140" r="4"></circle>
+            <text class="rt-label" x="100" y="166">進行方向 →</text>
+          </svg>
+          <svg class="rt-svg" viewBox="0 0 200 170" role="img" aria-label="うさ美から見た光の1往復。Bは真上を垂直に往復し2.0秒で終わる。CとAはどちらも地上という同じ出発点に戻ってくるが、Cはまっすぐ上って0.866秒で反射しその後斜めに下り、Aは斜めに上って1.1547秒で反射しその後斜めに下る。Dは電車という同じ出発点で、斜めに上って0.866秒相当で反射しその後斜めに下る。道筋はそれぞれ違うが、どちらも2.309秒後にちょうど出発点に合流する">
+            <text class="rt-title" x="100" y="14">うさ美から見ると</text>
+            <line class="rt-ground rt-ground-scroll" x1="15" y1="140" x2="195" y2="140"></line>
+            <line class="rt-track-ref" x1="180" y1="140" x2="180" y2="20"></line>
+            <text class="rt-label" x="180" y="15">B</text>
+            <rect class="rt-train" x="174" y="135" width="12" height="10" rx="2"></rect>
+            <circle class="rt-base rt-base-C" cx="162" cy="140" r="2.5"></circle>
+            <circle class="rt-photon rt-photon-C" cx="162" cy="140" r="4.5"></circle>
+            <circle class="rt-photon-zz rt-photon-zz-left" cx="162" cy="140" r="4"></circle>
+            <circle class="rt-photon rt-photon-ref" cx="180" cy="140" r="4"></circle>
+            <circle class="rt-photon-diag rt-photon-diag-left" cx="180" cy="140" r="4"></circle>
+            <text class="rt-label" x="180" y="156">電車</text>
+            <text class="rt-label" x="100" y="166">← 地面が流れる</text>
+          </svg>
+        </div>
+        <div class="diagram-caption"><strong>道筋はそれぞれ違っても、相手側の時計はすべて2.309秒でちょうど出発点に合流する。</strong><br>点線（自分の垂直な時計＝A・B）は自分自身の2.0秒で往復を終える。ゴールド（相手の傾いた時計＝D・C）は真上に上って0.866秒で反射し、斜めに下って合流。ティール（相手の垂直な時計）は斜めに上って1.1547秒で反射。紫（自分の傾いた時計）は斜めに上って1.0秒で反射する</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">違うのは「どこで鏡に当たるか」だけだよ。ローレンツ変換で考えてみよう。Dの鏡は、電車自身の座標系（x'，t'）ではx'＝－h/2の位置にずっと固定されている（hは鏡までの距離、後ろ向きに60度傾いている分の水平成分がh/2になる）。これを博士の座標(x，t)に変換すると、x＝γ(x'＋vt')になるから、電車が進むにつれて鏡の位置はx＝0に向かって近づいてくる。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">光の方はどう動くんですか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">光はAともDとも共通の出発点（x＝0）から真上へ発射されるから、光の位置はずっとx＝0のまま。だから光と鏡が出会うのは、電車の鏡がちょうどx＝0まで移動してきた瞬間——計算すると、博士自身の時刻で0.866秒（＝√3/2）だ。Aの鏡は地上に固定されてx＝0から動かないから、光の道のりがそのまま博士自身の1.0秒になるだけだね。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">あ、だから博士の1.0秒後には、Dの光はもう反射を終えて、0.134秒分だけ戻ってきている途中なんですね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り。高さで言うと、ちょうど90.7%の地点にいる計算になる。「Aと同じ道を進んだ光が、Aより早く鏡に当たって跳ね返り、少しだけ戻ってきた」——これがDの正体だよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="calc-flow-svg" viewBox="0 0 260 210" role="img" aria-label="Dの鏡が博士自身の時刻でいつ光と出会うかを求める計算の流れ。電車の座標系でのDの鏡の位置x'＝－h/2をローレンツ変換で博士の座標に移し、光の位置x＝0と一致する時刻を求めると、博士自身の0.866秒になる">
+          <rect class="cf-box" x="10" y="6" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="24">Dの鏡の位置（電車の座標系）</text>
+          <text class="cf-value" x="130" y="42">x'＝－h/2（一定）</text>
+          <line class="cf-arrow" x1="130" y1="52" x2="130" y2="80"></line>
+          <path class="cf-arrow-head" d="M130,84 L125,75 L135,75 Z"></path>
+          <rect class="cf-box" x="10" y="88" width="240" height="46" rx="8"></rect>
+          <text class="cf-label" x="130" y="106">x＝γ(x'＋vt')＝0 を解く</text>
+          <text class="cf-value" x="130" y="124">t'＝1.0（電車自身の時刻）</text>
+          <line class="cf-arrow" x1="130" y1="134" x2="130" y2="162"></line>
+          <path class="cf-arrow-head" d="M130,166 L125,157 L135,157 Z"></path>
+          <rect class="cf-box" x="10" y="170" width="240" height="34" rx="8"></rect>
+          <text class="cf-value" x="130" y="192">t＝γ×0.75＝√3/2≈0.866秒</text>
+        </svg>
+        <div class="diagram-caption">電車の座標系に固定されたDの鏡の位置をローレンツ変換で博士の座標に持ち込むと、光と出会う瞬間はちょうど博士自身の0.866秒（＝√3/2）だと分かる</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">なるほど……！ CとBの関係も、まったく同じ理屈なんですね。同じ道を進むのに、鏡が動いているかどうかで、反射のタイミングだけが変わるんだ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り。同じ理屈を使えば、A・B・C・D全部の割合が求められるよ。結果をまとめてみよう。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <svg class="summary4-svg" viewBox="0 0 280 230" role="img" aria-label="4つの光時計について、博士から見た場合とうさ美から見た場合の光の位置をまとめた表。自分自身に固定された時計はどちらも100パーセント、相手側の時計はAとBが86.6パーセント、CとDが90.7パーセントで一致する">
+          <text class="s4-title" x="140" y="16">秒速15万kmでの4つの光時計</text>
+          <rect class="s4-box" x="10" y="26" width="130" height="90" rx="8"></rect>
+          <text class="s4-label" x="75" y="42">博士の1.0秒後</text>
+          <text class="s4-value" x="75" y="60">A・C（地上）：100%</text>
+          <text class="s4-value" x="75" y="78">B（60度）：86.6%</text>
+          <text class="s4-value" x="75" y="96">D（真上）：90.7%</text>
+          <rect class="s4-box" x="150" y="26" width="120" height="90" rx="8"></rect>
+          <text class="s4-label" x="210" y="42">うさ美の1.0秒後</text>
+          <text class="s4-value" x="210" y="60">B・D（電車）：100%</text>
+          <text class="s4-value" x="210" y="78">A（60度）：86.6%</text>
+          <text class="s4-value" x="210" y="96">C（真上）：90.7%</text>
+          <rect class="s4-box" x="10" y="126" width="260" height="70" rx="8"></rect>
+          <text class="s4-label" x="140" y="144">対称性</text>
+          <text class="s4-value" x="140" y="164">「相手側の垂直な時計」はどちらも86.6%</text>
+          <text class="s4-value" x="140" y="182">「相手側の60度傾いた時計」はどちらも90.7%</text>
+        </svg>
+        <div class="diagram-caption">自分自身に固定された時計はどちらから見ても当然100%。相手側の時計を見ると、垂直な方（A・B）は86.6%、60度傾いた方（C・D）は90.7%で、博士とうさ美のどちらから見ても同じ数字になる――これが相対性理論の「相互性」だ</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">そうか！光時計の仕組みが鏡に反射した度に1秒ずつカウントする想定でいたから、斜めに置くと片道では正確に測れないだけの話なんですね。……あ、そういえば、まだ引っかかっていることがもうひとつあります。ステージ4で出てきた「車庫のパラドックス」――20万kmの車庫Aに、外から見ると18万kmに縮んだ電車がすっぽり収まる、というあの話です。あれ、結局どういうことだったんでしょう？</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">いいところに気づいたね。実は「収まる」というのは、「後端が入口を通過する瞬間」と「先端が車庫の奥の壁に到達する瞬間」という2つの出来事が同時かどうかの話なんだ。地上から見ると、後端が入口を通過してから先端が奥の壁に届くまで、計算すると約0.11秒。その間ずっと、電車全体がすっぽり車庫の中に収まっているんだよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">でも電車自身の視点だと、車庫の方が縮んで見えるから、収まらないはずですよね？ 同じ2つの出来事は、電車から見るとどうなるんですか？</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そこがおもしろいところなんだ。車庫Aは電車から見ると20万km÷1.25＝16万kmに縮んで見える。電車自身の長さは22万5千kmだから、先端が奥の壁に到達した瞬間、入口の壁はまだ後端の手前6万5千km（＝22万5千－16万km）の位置にある。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">そこから入口が後端に届くまで、6万5千km÷18万km/s＝約0.36秒かかりますね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">そう。つまり電車自身の視点では、先端が奥の壁に到達する方が、後端が入口を通過するよりも約0.36秒も先に起きる。後端が入るより先に、もう先端が奥の壁に着いてしまっている――だから「電車全体が車庫の中に収まる瞬間」は、電車自身の視点には存在しないんだよ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="gpt-compare">
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="地上系での車庫パラドックスのタイムライン。後端が入口を通過する瞬間（t＝0）から、先端が奥の壁に到達する瞬間（t≈0.11秒）まで、電車全体が車庫に収まっている">
+            <text class="gpt-title" x="100" y="14">地上系（車庫から見ると）</text>
+            <text class="gpt-note-ok" x="100" y="32">電車全体が収まっている</text>
+            <line class="gpt-bracket" x1="55" y1="45" x2="155" y2="45"></line>
+            <line class="gpt-bracket" x1="55" y1="40" x2="55" y2="45"></line>
+            <line class="gpt-bracket" x1="155" y1="40" x2="155" y2="45"></line>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-b" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-f" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">後端が入口通過</text>
+            <text class="gpt-time" x="55" y="121">t＝0</text>
+            <text class="gpt-label" x="155" y="108">先端が壁に到達</text>
+            <text class="gpt-time" x="155" y="121">t≈0.11秒</text>
+          </svg>
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="電車系での車庫パラドックスのタイムライン。先端が奥の壁に到達する瞬間（t'＝0）の方が、後端が入口を通過する瞬間（t'≈0.36秒）より先に起きるため、電車全体が収まる瞬間は存在しない">
+            <text class="gpt-title" x="100" y="14">電車系（電車から見ると）</text>
+            <text class="gpt-note-warn" x="100" y="32">収まる瞬間はない</text>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-f" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-b" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">先端が壁に到達</text>
+            <text class="gpt-time" x="55" y="121">t'＝0</text>
+            <text class="gpt-label" x="155" y="108">後端が入口通過</text>
+            <text class="gpt-time" x="155" y="121">t'≈0.36秒</text>
+          </svg>
+        </div>
+        <div class="diagram-caption"><strong>同じ2つの出来事の順序が、観測者によって入れ替わる。</strong><br>地上系では、後端の入口通過から先端の壁到達までの約0.11秒間、電車全体が車庫に収まっている。電車自身の系では、先端の壁到達の方が約0.36秒早く起き、「電車全体が収まる瞬間」は存在しない</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">あ、これって最初のAとBの謎や、双子のパラドックスと同じですね！ 「同時」かどうかが観測者によって違うから、2つの出来事の順番まで入れ替わってしまう。矛盾しているように見えたのは、無意識に「同時」を絶対的なものだと思い込んでいたからなんですね。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ 車庫のパラドックスも、結局は同時性の相対性で説明がつくんだ。電車がつぶれることも、車庫が壊れることもない――ただ「電車全体が収まって見える瞬間」があるかどうかが、観測者によって変わるだけなんだよ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">電車が収まった瞬間に入口を閉めて、急停止すればどうなりますか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">おもしろい設問だね！ 実はこの話、「入口を閉める」ことと「電車を急停止させる」ことを、分けて考える必要があるんだ。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">入口を閉めることはできますか？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">それはできるよ。入口の扉は、車庫のその一点だけで完結する仕組みだから、後端が入口を通過した瞬間に閉めるのは何の問題もない。難しいのは、そのあとに電車全体を急停止させる方だ。電車は22万5千kmもある長い物体だから、その端から端まで、光より速く「止まれ」という指令を伝えることはできない。それでも、もし無理やり地上時刻でぴったり同時に止めたとしたら、何が起きるか計算してみよう。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">お願いします。</div>
+        </div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">先端が奥の壁にちょうど届く瞬間（地上時刻で約0.11秒）に、車庫の中のすべての地点で電車を一斉に止めたとする。地上から見ればこの「先端が止まる」出来事と「後端が止まる」出来事はまったく同時だ。でも、電車自身の（動いていたときの）視点でローレンツ変換すると、先端の方が後端よりも約0.45秒も早く止まってしまうことになるんだ。</div>
+        </div>
+      </div>
+
+      <div class="diagram-box">
+        <div class="gpt-compare">
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="地上系では、電車の先端が停止する出来事と後端が停止する出来事はまったく同時（t＝0.11秒）">
+            <text class="gpt-title" x="100" y="14">地上系（同時に停止）</text>
+            <text class="gpt-note-ok" x="100" y="32">先端も後端も同時に停止</text>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-both" cx="100" cy="90" r="6"></circle>
+            <text class="gpt-label" x="100" y="108">先端停止＝後端停止</text>
+            <text class="gpt-time" x="100" y="121">t＝0.11秒</text>
+          </svg>
+          <svg class="gpt-svg" viewBox="0 0 200 150" role="img" aria-label="電車自身の視点では、先端が停止する出来事の方が後端が停止する出来事より約0.45秒早く起き、その間まだ動いている後ろの車両がすでに止まった先端に衝突する">
+            <text class="gpt-title" x="100" y="14">電車系（順番がある）</text>
+            <text class="gpt-note-warn" x="100" y="32">この間、後ろが先端に衝突</text>
+            <line class="gpt-bracket-warn" x1="55" y1="45" x2="155" y2="45"></line>
+            <line class="gpt-bracket-warn" x1="55" y1="40" x2="55" y2="45"></line>
+            <line class="gpt-bracket-warn" x1="155" y1="40" x2="155" y2="45"></line>
+            <line class="gpt-axis" x1="30" y1="90" x2="180" y2="90"></line>
+            <circle class="gpt-dot gpt-dot-f" cx="55" cy="90" r="5"></circle>
+            <circle class="gpt-dot gpt-dot-b" cx="155" cy="90" r="5"></circle>
+            <text class="gpt-label" x="55" y="108">先端停止</text>
+            <text class="gpt-time" x="55" y="121">t'＝0</text>
+            <text class="gpt-label" x="155" y="108">後端停止</text>
+            <text class="gpt-time" x="155" y="121">t'≈0.45秒</text>
+          </svg>
+        </div>
+        <div class="diagram-caption">地上系では先端停止と後端停止はまったく同時（t＝0.11秒）だが、電車自身の視点では先端の方が後端より約0.45秒早く止まる。その間、まだ動いている後ろの車両が、すでに止まった先端に向かって突っ込み続けることになる</div>
+      </div>
+
+      <div class="dialogue-scene">
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">0.45秒……！ それってさっきの双子のパラドックスで出てきた「0.45秒×2＝0.9秒ジャンプ」の、半分と同じ計算ですよね？</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り、同じ式（速さ×距離÷光速の2乗）だよ。つまり電車自身の立場で見れば、先に止まった先端に、まだ止まっていない後ろの車両が0.45秒間、時速18万kmで突っ込み続けることになる。「収まる／収まらない」どころの話じゃなく、電車が実際に押しつぶされる、本物の衝突事故になるんだ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">つまり、動いている物を無理やり同時に止めようとすると、本当に潰れてしまうんですね……「縮んで見える」のはあくまで見かけなのに、無理やり静止させようとした瞬間、本当の圧縮になってしまうんだ。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ これが「特殊相対性理論の世界に、完全に硬い物体は存在しない」と言われる理由なんだ。力が伝わる速さには限界があるから、長い物体を本当の意味で「一瞬で」止めることはできない。無理やりそれをやろうとした瞬間、電車はその場で崩れてしまうんだよ。</div>
+        </div>
+      </div>
+
+
+      <div class="quiz-head">確認クイズ</div>
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q1. 車庫のパラドックスで、電車自身の視点から見ると、2つの出来事はどの順番で起きる？</p>
+        <div class="choice-list">
+          <button class="choice-btn">後端が入口を通過する方が先</button>
+          <button class="choice-btn">先端が奥の壁に到達する方が先</button>
+          <button class="choice-btn">まったく同時</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 地上系では「後端の通過→先端の到達」の順なのに、電車系では順番が入れ替わる。だから電車系には「全体が収まる瞬間」が存在しないんだ。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q2. 地上から見て「同時」に電車全体を急停止させたとき、電車系で先端と後端の停止に生まれる時間差0.45秒を求める式は？</p>
+        <div class="choice-list">
+          <button class="choice-btn">距離 ÷（光速－電車の速さ）</button>
+          <button class="choice-btn">γ × 速さ × 距離 ÷ 光速の2乗</button>
+          <button class="choice-btn">距離 ÷ 光速</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ ステージ5で出てきた「同時のズレ」Δt＝γvL/c²と同じ式。地上系の同時は、電車系では同時じゃない――これが本当の衝突を引き起こす。</div>
+      </div>
+
+      <div class="stage-nav">
+        <a class="btn" href="stage6.html">← 前へ</a>
+        <button class="btn btn-primary" id="btn-next" disabled>まとめへ →</button>
+      </div>
+
+      <div id="book-recommend"></div>
+    </main>
+  </div>
+</div>
+
+<script src="js/progress.js"></script>
+<script>RQ.initStagePage(7);</script>
+</body>
+</html>

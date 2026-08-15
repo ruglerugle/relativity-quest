@@ -81,11 +81,11 @@
 
   .calc-flow-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
   .calc-flow-svg .cf-box,.pyth-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
-  .calc-flow-svg .cf-label,.pyth-svg .cf-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .calc-flow-svg .cf-label,.pyth-svg .cf-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
   .calc-flow-svg .cf-value,.pyth-svg .cf-value{fill:var(--ink);font-size:12px;font-weight:800;text-anchor:middle}
   .calc-flow-svg .cf-arrow,.pyth-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
   .calc-flow-svg .cf-arrow-head,.pyth-svg .cf-arrow-head{fill:var(--gold-dark)}
-  .calc-flow-svg .cf-op,.pyth-svg .cf-op{fill:#8a6614;font-size:9px;font-weight:800}
+  .calc-flow-svg .cf-op,.pyth-svg .cf-op{fill:#8a6614;font-size:10px;font-weight:800}
 
   .pyth-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
   .pyth-svg .pt-triangle{fill:none;stroke:#5b3fa6;stroke-width:2;stroke-linejoin:round}
@@ -97,7 +97,7 @@
   .lamp-calc-svg .lc-emit{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1}
   .lamp-calc-svg .lc-arrow{stroke:#8a6614;stroke-width:2}
   .lamp-calc-svg .lc-arrow-head{fill:#8a6614}
-  .lamp-calc-svg .lc-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .lamp-calc-svg .lc-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
   .lamp-calc-svg .lc-time{fill:var(--ink);font-size:10px;font-weight:800;text-anchor:middle}
   .lamp-calc-svg .lc-time-value{fill:#8a6614;font-size:10px;font-weight:800;text-anchor:middle}
   .lamp-calc-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
@@ -202,7 +202,7 @@
             <line class="tail" x1="98" y1="50" x2="112" y2="50" stroke="#d9a441" stroke-opacity=".45"></line>
             <circle class="core" cx="112" cy="50" r="4"></circle>
           </g>
-          <text x="10" y="88" font-size="9" fill="#8a7a5c" font-weight="700">外から見ると：後ろの壁（左）に光が先に届く</text>
+          <text x="10" y="88" font-size="10" fill="#8a7a5c" font-weight="700">外から見ると：後ろの壁（左）に光が先に届く</text>
         </svg>
         <div class="diagram-caption">電車の中心から出た光は、外から見ると後ろの壁に先に届く（電車が右へ動いているため）</div>
       </div>
@@ -227,7 +227,21 @@
             <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">できるよ。公式を出す前に、まずは「距離÷速さ＝時間」の関係だけを使って、じかに計算してみよう。電車自身の長さ（静止しているときの長さ）をL＝30万kmとする。速さv＝秒速18万km（0.6c）だから、ステージ3のγ＝1.25を使うと、外から見た電車の長さはL÷γ＝30万km÷1.25＝24万kmに縮んで見える。光は電車の中心から出るから、後ろの壁までも前の壁までも、縮んだ長さの半分＝12万kmだ。</div>
+          <div class="dialog-bubble">できるよ。公式を出す前に、まずは「距離÷速さ＝時間」の関係だけを使って、じかに計算してみよう。電車自身の長さ（静止しているときの長さ）をL＝30万km、速さをv＝秒速18万km（0.6c）とするよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbit.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">ステージ4と同じですね。γ＝1.25だから、外から見た電車の長さはL÷γ＝30万km÷1.25＝24万kmに縮んで見えるはずです。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ そして光は電車の中心から出るから、後ろの壁までも前の壁までも、縮んだ長さの半分＝12万kmだ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
@@ -375,7 +389,21 @@
             <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
             <div class="dialog-name mentor">ねこ博士</div>
           </div>
-          <div class="dialog-bubble">じゃあ、いよいようさ美が持ちかけてくれたAとBの謎——電車に乗ったうさ美と、地上で待つ博士が出会った瞬間、二人が見ているものが食い違うんじゃないか、っていう話。これで、もっと正確に解けるよ。実はうさ美から見ると、地上の光時計Aの方が、電車の中の光時計Bより先に発射されていることになるんだ。「AとBが同時に発射された」というのは、あくまでホーム（博士）基準の同時であって、動いている電車から見ると、Aの方が早く発射されていたことになる。だから、出会った瞬間にAがちょうど天井に届いていても、うさ美にとっても不思議じゃないんだよ。</div>
+          <div class="dialog-bubble">じゃあ、いよいようさ美が持ちかけてくれたAとBの謎——電車に乗ったうさ美と、地上で待つ博士が出会った瞬間、二人が見ているものが食い違うんじゃないか、っていう話。これで、もっと正確に解けるよ。</div>
+        </div>
+        <div class="dialog-row right">
+          <div class="dialog-character">
+            <div class="dialog-avatar student"><img src="images/rabbitThink.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name student">うさ美</div>
+          </div>
+          <div class="dialog-bubble">あのとき「AとBを同時に発射させる」と言いましたけど……その「同時」が、あやしくなってきました。</div>
+        </div>
+        <div class="dialog-row">
+          <div class="dialog-character">
+            <div class="dialog-avatar mentor"><img src="images/cat.webp" width="300" height="386" alt=""></div>
+            <div class="dialog-name mentor">ねこ博士</div>
+          </div>
+          <div class="dialog-bubble">その通り！ 「AとBが同時に発射された」というのは、あくまでホーム（博士）基準の同時。動いている電車から見ると、実は地上の光時計Aの方が、電車の中の光時計Bより先に発射されていたことになるんだ。だから、出会った瞬間にAがちょうど天井に届いていても、うさ美にとっても不思議じゃないんだよ。</div>
         </div>
         <div class="dialog-row right">
           <div class="dialog-character">
@@ -439,6 +467,16 @@
           <button class="choice-btn">常に前の出来事の方が先に見える</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 動いている人には「同時」でも、外から見るとズレて見える。ズレの大きさは、速さと距離（Δt＝γvL/c²）で計算できる。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q4.【計算】電車自身の長さが2倍の60万kmになったら、同時のズレΔt＝γvL/c²はどうなる？（γ＝1.25、v＝0.6cのまま）</p>
+        <div class="choice-list">
+          <button class="choice-btn">0.75秒のまま</button>
+          <button class="choice-btn">2倍の1.5秒</button>
+          <button class="choice-btn">半分の0.375秒</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ ΔtはL（電車の長さ）に比例する。1.25×0.6×2＝1.5秒。電車が長いほど、そして速いほど、「同時」のズレは大きくなるんだ。</div>
       </div>
 
       <div class="stage-nav">

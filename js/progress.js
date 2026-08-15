@@ -17,10 +17,11 @@
   var ANSWERS = {
     1: [0, 1],
     2: [0, 2],
-    3: [0, 0],
-    4: [1, 0],
-    5: [0, 0, 0],
-    6: [0, 0]
+    3: [0, 0, 2],
+    4: [1, 0, 1],
+    5: [0, 0, 0, 1],
+    6: [0, 0, 1],
+    7: [1, 1]
   };
 
   var STAGES = [
@@ -31,6 +32,10 @@
     { n: 5, file: "stage5.html", title: "「同時」は人によって違う", sub: "同時性の相対性" },
     { n: 6, file: "stage6.html", title: "双子のパラドックスの種明かし", sub: "うさ美自身の視点でも、答えは変わらない" }
   ];
+
+  // 発展ステージ（クリアは全体進捗6/6には含めない）
+  var EXTRA_STAGE = { n: 7, file: "extra.html", title: "光速の世界をもっと深く", sub: "発展：応用問題に挑戦" };
+  var ALL_STAGES = STAGES.concat([EXTRA_STAGE]);
 
   function getCleared() {
     try {
@@ -59,7 +64,7 @@
     if (!list) return;
     var cleared = getCleared();
     list.innerHTML = "";
-    STAGES.forEach(function (stage) {
+    ALL_STAGES.forEach(function (stage) {
       var unlocked = isUnlocked(stage.n, cleared);
       var isCleared = cleared.indexOf(stage.n) !== -1;
       var item = document.createElement(unlocked ? "a" : "div");
@@ -73,24 +78,29 @@
         item.setAttribute("aria-disabled", "true");
       }
       var icon = isCleared ? "✅" : unlocked ? "🔓" : "🔒";
+      var label = stage.n === EXTRA_STAGE.n ? "EXTRA" : "STAGE" + stage.n;
       item.innerHTML =
         '<span class="side-icon">' + icon + '</span>' +
-        '<span class="side-text"><div class="side-main">STAGE' + stage.n + " " + stage.title + '</div>' +
+        '<span class="side-text"><div class="side-main">' + label + " " + stage.title + '</div>' +
         '<div class="side-sub">' + stage.sub + "</div></span>";
       list.appendChild(item);
     });
   }
 
+  function coreClearedCount(cleared) {
+    return cleared.filter(function (n) { return n >= 1 && n <= STAGES.length; }).length;
+  }
+
   function updateHeaderProgress() {
-    var cleared = getCleared();
+    var cleared = coreClearedCount(getCleared());
     var total = STAGES.length;
     var label = document.getElementById("progress-label");
     var fill = document.getElementById("progress-fill");
-    if (label) label.textContent = "クリア " + cleared.length + " / " + total;
+    if (label) label.textContent = "クリア " + cleared + " / " + total;
     if (fill) {
-      fill.style.width = Math.round((cleared.length / total) * 100) + "%";
+      fill.style.width = Math.round((cleared / total) * 100) + "%";
       if (fill.parentNode && fill.parentNode.setAttribute) {
-        fill.parentNode.setAttribute("aria-valuenow", cleared.length);
+        fill.parentNode.setAttribute("aria-valuenow", cleared);
       }
     }
   }
@@ -147,11 +157,23 @@
     }
   }
 
+  function showClearBanner() {
+    if (document.querySelector(".stage-clear-banner")) return;
+    var nav = document.querySelector(".stage-nav");
+    if (!nav) return;
+    var banner = document.createElement("div");
+    banner.className = "stage-clear-banner";
+    banner.setAttribute("role", "status");
+    banner.textContent = "🎉 STAGE CLEAR!";
+    nav.parentNode.insertBefore(banner, nav);
+  }
+
   function enableNext(stageNum) {
     var nextBtn = document.getElementById("btn-next");
     if (nextBtn) nextBtn.disabled = false;
     setCleared(stageNum);
     updateHeaderProgress();
+    showClearBanner();
   }
 
   function bindResetAll() {
@@ -237,7 +259,7 @@
   }
 
   function initCompletePage() {
-    if (getCleared().length < STAGES.length) {
+    if (coreClearedCount(getCleared()) < STAGES.length) {
       window.location.replace("index.html");
       return;
     }
@@ -257,6 +279,7 @@
           card.removeAttribute("href");
         }
         if (cleared.indexOf(n) !== -1) {
+          card.classList.add("cleared");
           var cta = card.querySelector(".q-cta");
           if (cta) cta.textContent = "クリア済み ✓";
         }

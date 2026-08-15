@@ -34,25 +34,25 @@
   .tview-svg .tv-wheel{fill:var(--ink)}
   .tview-svg .tv-ground{stroke:var(--line);stroke-width:2;stroke-dasharray:6 6;animation:shrink-ground-scroll .5s linear infinite}
   .tview-svg .tv-tick{stroke:var(--muted);stroke-width:1.5}
-  .tview-svg .tv-station-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .tview-svg .tv-station-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
   .tview-svg .tv-bracket{stroke:#2f8a8f;stroke-width:2}
   .tview-svg .tv-bracket-tick{stroke:#2f8a8f;stroke-width:2}
   .tview-svg .tv-bracket-label{fill:#2f8a8f;font-size:10px;font-weight:800;text-anchor:middle}
   .tview-svg .tv-bracket-faint{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:3 4;opacity:.55}
   .tview-svg .tv-bracket-faint-tick{stroke:var(--muted);stroke-width:1.5;opacity:.55}
-  .tview-svg .tv-bracket-faint-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .tview-svg .tv-bracket-faint-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
   .tview-svg .tv-arrow{stroke:var(--muted);stroke-width:1.5}
   .tview-svg .tv-arrowhead{fill:var(--muted)}
-  .tview-svg .tv-arrow-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .tview-svg .tv-arrow-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
   @media (prefers-reduced-motion:reduce){.tview-svg .tv-ground{animation:none}}
 
   .calc-flow-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
   .calc-flow-svg .cf-box,.pyth-svg .cf-box{fill:var(--paper2);stroke:var(--line);stroke-width:1.5}
-  .calc-flow-svg .cf-label,.pyth-svg .cf-label{fill:var(--muted);font-size:9px;font-weight:700;text-anchor:middle}
+  .calc-flow-svg .cf-label,.pyth-svg .cf-label{fill:var(--muted);font-size:10px;font-weight:700;text-anchor:middle}
   .calc-flow-svg .cf-value,.pyth-svg .cf-value{fill:var(--ink);font-size:12px;font-weight:800;text-anchor:middle}
   .calc-flow-svg .cf-arrow,.pyth-svg .cf-arrow{stroke:var(--gold-dark);stroke-width:2;fill:none}
   .calc-flow-svg .cf-arrow-head,.pyth-svg .cf-arrow-head{fill:var(--gold-dark)}
-  .calc-flow-svg .cf-op,.pyth-svg .cf-op{fill:#8a6614;font-size:9px;font-weight:800}
+  .calc-flow-svg .cf-op,.pyth-svg .cf-op{fill:#8a6614;font-size:10px;font-weight:800}
 
   .pyth-svg{display:block;max-width:min(100%,280px);width:100%;height:auto;margin:auto}
   .pyth-svg .pt-triangle{fill:none;stroke:#5b3fa6;stroke-width:2;stroke-linejoin:round}
@@ -69,7 +69,7 @@
   .garage-svg .gp-train-warn{fill:#5b3fa6;opacity:.85}
   .garage-svg .gp-overflow{fill:none;stroke:#b5504a;stroke-width:1.5;stroke-dasharray:3 2}
   .garage-svg .gp-wheel{fill:var(--ink)}
-  .garage-svg .gp-label{fill:var(--muted);font-size:8.5px;font-weight:700;text-anchor:middle}
+  .garage-svg .gp-label{fill:var(--muted);font-size:9.5px;font-weight:700;text-anchor:middle}
   .garage-svg .gp-result-ok{fill:var(--ok);font-size:10px;font-weight:800;text-anchor:middle}
   .garage-svg .gp-result-warn{fill:#b5504a;font-size:10px;font-weight:800;text-anchor:middle}
 </style>
@@ -366,6 +366,16 @@
           <button class="choice-btn">変わらない</button>
         </div>
         <div class="quiz-explain" hidden>正解！ 速さが一定なら、時間が短くなった分だけ距離も短くなる。これがローレンツ収縮の考え方だよ。</div>
+      </div>
+
+      <div class="quiz-card" data-quiz>
+        <p class="quiz-q">Q3.【計算】自分で測った長さが30万kmの電車が、秒速18万km（γ＝1.25）で走っている。外から見た電車の長さは？</p>
+        <div class="choice-list">
+          <button class="choice-btn">30万kmのまま</button>
+          <button class="choice-btn">24万km（30万÷1.25）</button>
+          <button class="choice-btn">37万5千km</button>
+        </div>
+        <div class="quiz-explain" hidden>正解！ 動いている物体の長さは「自分で測った長さ÷γ」。30万km÷1.25＝24万kmに縮んで見える。この電車、次のステージでも登場するよ。</div>
       </div>
 
       <div class="stage-nav">
