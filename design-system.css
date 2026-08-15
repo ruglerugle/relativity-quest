@@ -134,7 +134,7 @@ a.head-reset{text-decoration:none;display:inline-flex;align-items:center}
 .dialog-avatar.mentor{background:linear-gradient(#fde3d6,#f7c2a4)}
 .dialog-avatar.student{background:linear-gradient(#dcefe9,#b9dcd0)}
 .dialog-avatar img{width:100%;height:100%;object-fit:contain}
-.dialog-name{position:relative;z-index:2;margin-top:-14px;padding:3px 10px;border-radius:7px;color:#fff;font-weight:900;font-size:11px;line-height:1.2;box-shadow:0 2px 0 rgba(0,0,0,.16);white-space:nowrap;text-align:center}
+.dialog-name{position:relative;z-index:2;margin-top:-8px;padding:3px 10px;border-radius:7px;color:#fff;font-weight:900;font-size:11px;line-height:1.2;box-shadow:0 2px 0 rgba(0,0,0,.16);white-space:nowrap;text-align:center}
 .dialog-name.mentor{background:linear-gradient(#f0b868,#c19a3a)}
 .dialog-name.student{background:linear-gradient(#5cc2ab,#2f8f78)}
 .dialog-bubble{position:relative;align-self:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:var(--ink);font-size:13.5px;line-height:1.75;font-weight:700;min-height:56px;display:flex;flex-direction:column;justify-content:center}
@@ -147,7 +147,7 @@ a.head-reset{text-decoration:none;display:inline-flex;align-items:center}
   .dialog-row.right .dialog-character{order:0}
   .dialog-row.right .dialog-bubble{order:1}
   .dialog-avatar{width:59px;height:76px;font-size:27px}
-  .dialog-name{font-size:9.5px;padding:3px 7px;margin-top:-11px}
+  .dialog-name{font-size:9.5px;padding:3px 7px;margin-top:-6px}
   .dialog-bubble{font-size:13px;padding:9px 11px;min-height:0}
   .dialog-row.right .dialog-bubble::before{left:-10px;right:auto;border-left:0;border-right:10px solid var(--line)}
   .dialog-row.right .dialog-bubble::after{left:-8px;right:auto;border-left:0;border-right:9px solid var(--paper)}
