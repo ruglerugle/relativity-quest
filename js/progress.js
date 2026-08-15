@@ -65,7 +65,7 @@
     var cleared = getCleared();
     list.innerHTML = "";
     ALL_STAGES.forEach(function (stage) {
-      var unlocked = isUnlocked(stage.n, cleared);
+      var unlocked = isUnlocked(stage.n, cleared) || stage.n === currentStage;
       var isCleared = cleared.indexOf(stage.n) !== -1;
       var item = document.createElement(unlocked ? "a" : "div");
       item.className = "side-item";
@@ -214,11 +214,8 @@
   }
 
   function initStagePage(stageNum) {
-    // ロック中のステージは、描画を待たずに即トップへ戻す
-    if (!isUnlocked(stageNum, getCleared())) {
-      window.location.replace("index.html");
-      return;
-    }
+    // ロック中でも直URLアクセスは許可する（検索エンジン経由の流入を妨げないため）。
+    // 順路の誘導はトップのカードとサイドバーのロック表示で行う。
     document.addEventListener("DOMContentLoaded", function () {
       var cleared = getCleared();
       renderSidebar(stageNum);
