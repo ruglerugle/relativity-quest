@@ -53,35 +53,39 @@
     94%{transform:translateX(0);opacity:0}
     100%{transform:translateX(0);opacity:1}
   }
+  @keyframes gclock-slide-left{
+    0%,10%{transform:translateX(0);opacity:1}
+    70%,85%{transform:translateX(-48px);opacity:1}
+    90%{transform:translateX(-48px);opacity:0}
+    94%{transform:translateX(0);opacity:0}
+    100%{transform:translateX(0);opacity:1}
+  }
   @media (prefers-reduced-motion:reduce){
     .clock-b-svg .train-group,.clock-b-svg .photon{animation:none}
     .clock-b-svg .train-group{transform:translateX(48px)}
     .clock-b-svg .photon{transform:translateY(-80px);opacity:1}
   }
 
-  .home-compare{display:flex;align-items:flex-start;justify-content:center;gap:12px;flex-wrap:wrap}
-  .home-compare-item{display:flex;flex-direction:column;align-items:center;min-width:0;flex:0 1 105px;max-width:115px}
+  .home-compare{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap}
+  .home-compare-item{display:flex;flex-direction:column;align-items:center;min-width:0;flex:0 0 150px}
   .home-compare-item .home-compare-label{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-top:4px}
   .home-compare .home-a-svg,.home-compare .home-b-svg{min-width:0;width:100%;height:auto}
-  .home-a-svg .train-body{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
-  .home-a-svg .wheel{fill:var(--ink)}
-  .home-a-svg .gclock-mirror{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
+  .home-compare .ghost-train{fill:var(--felt);opacity:.15}
+  .home-compare .home-ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+  .home-a-svg .home-ground{animation:ground-scroll 1s linear infinite}
+  .home-a-svg .gclock-mirror{stroke:var(--gold-dark);stroke-width:2.5;stroke-linecap:round}
   .home-a-svg .path-move{stroke:var(--line);stroke-width:1.2;fill:none;stroke-dasharray:4 5}
-  .home-a-svg .gclock-group{animation:clock-train-slide 3s linear infinite}
+  .home-a-svg .gclock-group{animation:gclock-slide-left 3s linear infinite}
   .home-a-svg .gclock-photon{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:moving-up 3s linear infinite}
-  .home-a-svg .ground{stroke:var(--line);stroke-width:2;stroke-dasharray:6 6;animation:ground-scroll 1s linear infinite}
   @media (prefers-reduced-motion:reduce){
-    .home-a-svg .gclock-group,.home-a-svg .gclock-photon,.home-a-svg .ground{animation:none}
-    .home-a-svg .gclock-group{transform:translateX(48px)}
+    .home-a-svg .gclock-group,.home-a-svg .gclock-photon,.home-a-svg .home-ground{animation:none}
+    .home-a-svg .gclock-group{transform:translateX(-48px)}
     .home-a-svg .gclock-photon{transform:translateY(-80px);opacity:1}
   }
 
   .home-b-svg .gclock-mirror-fixed{stroke:var(--gold-dark);stroke-width:2;stroke-linecap:round}
   .home-b-svg .path-still{stroke:var(--line);stroke-width:1.2;fill:none;stroke-dasharray:3 4}
   .home-b-svg .gclock-photon-fixed{fill:var(--gold);stroke:var(--gold-dark);stroke-width:1;animation:still-up 3s linear infinite}
-  .home-b-svg .train-body{fill:var(--paper2);stroke:var(--felt);stroke-width:1.6}
-  .home-b-svg .wheel{fill:var(--ink)}
-  .home-b-svg .ground{stroke:var(--line);stroke-width:2;stroke-dasharray:6 6}
   .home-b-svg .train-group-b{animation:clock-train-slide 3s linear infinite}
   @media (prefers-reduced-motion:reduce){
     .home-b-svg .train-group-b,.home-b-svg .gclock-photon-fixed{animation:none}
@@ -373,32 +377,36 @@
       <div class="diagram-box">
         <div class="home-compare">
           <div class="home-compare-item">
-            <svg class="home-a-svg" viewBox="0 0 300 140" role="img" aria-label="電車に乗っている人から見た地上の光時計。電車は止まって見え、地面が流れる中、地上の光時計は動きながら、光は下の鏡から上の鏡へ斜めに進む">
-              <rect class="train-body" x="200" y="10" width="60" height="105" rx="8"></rect>
-              <circle class="wheel" cx="214" cy="121" r="6"></circle>
-              <circle class="wheel" cx="246" cy="121" r="6"></circle>
-              <path class="path-move" d="M40,100 L88,20"></path>
-              <g class="gclock-group">
-                <line class="gclock-mirror" x1="20" y1="100" x2="60" y2="100"></line>
-                <line class="gclock-mirror" x1="20" y1="20" x2="60" y2="20"></line>
-                <circle class="gclock-photon" cx="40" cy="100" r="5"></circle>
+            <svg class="home-a-svg" viewBox="0 0 200 120" role="img" aria-label="電車に乗っている人から見た地上の光時計。電車は止まって見え、地面が流れる中、地上の光時計は動きながら、光は下の鏡から上の鏡へ斜めに進む">
+              <line class="home-ground" x1="10" y1="110" x2="190" y2="110"></line>
+              <g class="ghost-train">
+                <rect x="140" y="4" width="48" height="90" rx="5"></rect>
+                <circle cx="151" cy="98" r="4"></circle>
+                <circle cx="177" cy="98" r="4"></circle>
               </g>
-              <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
+              <path class="path-move" d="M89,90 L41,10"></path>
+              <g class="gclock-group">
+                <line class="gclock-mirror" x1="68" y1="90" x2="110" y2="90"></line>
+                <line class="gclock-mirror" x1="68" y1="10" x2="110" y2="10"></line>
+                <circle class="gclock-photon" cx="89" cy="90" r="4"></circle>
+              </g>
             </svg>
             <span class="home-compare-label">車内視点</span>
           </div>
           <div class="home-compare-item">
-            <svg class="home-b-svg" viewBox="0 0 300 140" role="img" aria-label="電車の外にいる人から見た、自分の地上の光時計。光は下の鏡から上の鏡へまっすぐ進み、電車の方が右へ走り去っていく">
-              <line class="gclock-mirror-fixed" x1="100" y1="100" x2="140" y2="100"></line>
-              <line class="gclock-mirror-fixed" x1="100" y1="20" x2="140" y2="20"></line>
-              <path class="path-still" d="M120,100 L120,20"></path>
-              <circle class="gclock-photon-fixed" cx="120" cy="100" r="5"></circle>
+            <svg class="home-b-svg" viewBox="0 0 200 120" role="img" aria-label="電車の外にいる人から見た、自分の地上の光時計。光は下の鏡から上の鏡へまっすぐ進み、電車の方が右へ走り去っていく">
+              <line class="home-ground" x1="10" y1="110" x2="190" y2="110"></line>
+              <line class="gclock-mirror-fixed" x1="20" y1="90" x2="62" y2="90"></line>
+              <line class="gclock-mirror-fixed" x1="20" y1="10" x2="62" y2="10"></line>
+              <path class="path-still" d="M41,90 L41,10"></path>
+              <circle class="gclock-photon-fixed" cx="41" cy="90" r="4"></circle>
               <g class="train-group-b">
-                <rect class="train-body" x="170" y="10" width="60" height="105" rx="8"></rect>
-                <circle class="wheel" cx="184" cy="121" r="6"></circle>
-                <circle class="wheel" cx="216" cy="121" r="6"></circle>
+                <g class="ghost-train">
+                  <rect x="95" y="4" width="48" height="90" rx="5"></rect>
+                  <circle cx="106" cy="98" r="4"></circle>
+                  <circle cx="132" cy="98" r="4"></circle>
+                </g>
               </g>
-              <line class="ground" x1="0" y1="132" x2="300" y2="132"></line>
             </svg>
             <span class="home-compare-label">外からの視点</span>
           </div>
