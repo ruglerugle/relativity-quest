@@ -185,20 +185,6 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 .quiz-explain{margin-top:9px;font-size:12.5px;line-height:1.6;color:#3a2c08;background:#fff8e6;border:1px solid #e3c877;border-radius:8px;padding:8px 10px}
 
 /* ==========================================================
-   4. 用語ポップオーバー（クリックで説明が出る用語）
-   ========================================================== */
-.glossary-term{border-bottom:1.5px dashed currentColor;opacity:.92;cursor:help;touch-action:manipulation}
-.glossary-term:hover,.glossary-term:active{background:rgba(217,164,65,.22);border-radius:2px}
-#glossary-tooltip{position:fixed;z-index:300;max-width:280px;background:#1c2f2b;color:#fff;border:1px solid var(--gold);
-  border-radius:8px;padding:10px 30px 10px 12px;font-size:12.5px;line-height:1.6;box-shadow:0 8px 24px rgba(0,0,0,.45);
-  display:none}
-#glossary-tooltip.show{display:block}
-#glossary-tooltip .gt-term{font-weight:950;color:var(--gold);margin-bottom:4px;font-size:12.5px}
-#glossary-tooltip .gt-def{color:#eaf6f2}
-#glossary-tooltip .gt-close{position:absolute;top:4px;right:6px;width:22px;height:22px;cursor:pointer;color:#cfe4de;
-  font-size:14px;background:none;border:none;font-family:inherit}
-
-/* ==========================================================
    4.5 SVG図解ボックス（relativity-quest 独自拡張）
    ========================================================== */
 .diagram-box{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:14px;margin:16px 0;text-align:center}
@@ -210,16 +196,6 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 /* ==========================================================
    5. 終了画面／外部リンク案内
    ========================================================== */
-.ending{text-align:center;padding:20px 10px}
-.ending h2{font-size:22px;margin-bottom:14px;color:#1c2f2b}
-.ending p{font-size:13.5px;line-height:1.8;color:#3a2c08;margin-bottom:16px}
-.ending-list{text-align:left;display:inline-block;background:#fff8e6;border:1px solid #e3c877;border-radius:10px;padding:14px 18px;font-size:12.5px;line-height:2;color:#3a2c08;margin-bottom:18px}
-
-#callout-box{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(0,0,0,.14));border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px 16px}
-.callout-label{display:inline-block;font-size:10px;font-weight:900;color:#cfe4de;border:1px solid #cfe4de;border-radius:4px;padding:0 5px;margin:0 0 6px}
-.callout-lead{font-size:12px;color:#cfe4de;margin:0 0 4px;font-weight:700}
-#callout-box a{font-size:13px;color:#f3c47a;font-weight:900;text-decoration:underline}
-
 #book-recommend{margin-top:14px;background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;box-shadow:0 2px 0 rgba(0,0,0,.04)}
 #book-recommend:empty{display:none}
 .book-recommend-label{display:inline-block;font-size:10px;font-weight:900;color:var(--muted);border:1px solid var(--muted);border-radius:4px;padding:0 4px;margin:0 0 6px}
@@ -294,10 +270,6 @@ footer{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;justify-co
   .hero{gap:8px;padding-top:10px}
   .board{padding:16px 14px 18px;border-radius:18px}
 }
-@media (max-width:520px){
-  .topbar .pill{display:none}
-}
-
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important}
