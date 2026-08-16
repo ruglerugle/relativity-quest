@@ -27,7 +27,7 @@
 
   var STAGES = [
     { n: 1, file: "stage1.html", title: "光の速さは秒速30万km", sub: "相対性理論のはじまり" },
-    { n: 2, file: "stage2.html", title: "光の速さは誰から見ても同じ", sub: "光速不変の原理" },
+    { n: 2, file: "stage2.html", title: "光の速さは誰から見ても同じ", sub: "光速度不変の原理" },
     { n: 3, file: "stage3.html", title: "動くと時間が遅れる", sub: "光時計と三平方の定理" },
     { n: 4, file: "stage4.html", title: "動くと縮んで見える", sub: "ローレンツ収縮" },
     { n: 5, file: "stage5.html", title: "「同時」は人によって違う", sub: "同時性の相対性" },
