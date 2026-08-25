@@ -112,7 +112,7 @@ a.head-reset{text-decoration:none;display:inline-flex;align-items:center}
 }
 
 /* メインエリア */
-.main-area{background:var(--paper);border:1px solid #e3d8bd;border-radius:12px;padding:18px 18px 20px;box-shadow:var(--shadow);min-height:520px}
+.main-area{background:var(--paper);border:1px solid #e3d8bd;border-radius:12px;padding:18px 18px 20px;box-shadow:var(--shadow);min-height:520px;min-width:0}
 .chapter-head{margin-bottom:12px}
 .chapter-badge{display:inline-block;background:linear-gradient(#e8c07f,var(--gold-dark));color:#3a2705;border-radius:7px;
   padding:4px 11px;font-size:12px;font-weight:950;letter-spacing:.02em;margin-right:8px;box-shadow:0 2px 0 rgba(0,0,0,.15)}
@@ -201,8 +201,23 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 .diagram-box{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:14px;margin:16px 0;text-align:center}
 .diagram-box svg{max-width:min(100%,460px);height:auto}
 .diagram-caption{font-size:12.5px;color:var(--muted);margin-top:8px;font-weight:700;line-height:1.6}
-.formula-box{background:#fff8e6;border:1px solid #e3c877;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:14px;line-height:2.1;color:#3a2c08;font-weight:700;overflow-x:auto}
-.formula-box .step{display:block}
+.formula-box{background:#fff8e6;border:1px solid #e3c877;border-radius:10px;padding:14px 16px;margin:12px 0;font-size:14px;line-height:1.85;color:#3a2c08;font-weight:700;overflow-x:auto}
+/* 各ステップは折り返しても頭が分かるよう、ぶら下げインデント＋行間で区切る */
+.formula-box .step{display:block;margin-bottom:11px;padding-left:1.3em;text-indent:-1.3em;word-break:keep-all;overflow-wrap:break-word}
+.formula-box .step.multi{padding-left:0;text-indent:0}
+.formula-box .step.multi .item{display:inline-block;max-width:100%;padding-left:1.3em;text-indent:-1.3em;word-break:keep-all;overflow-wrap:break-word}
+.formula-box .step:last-child{margin-bottom:0}
+/* 折り返しても項目の切れ目が分かるよう、2つめ以降に区切り線を引く */
+.formula-box .step + .step{border-top:1px dashed #e6cf94;padding-top:11px}
+/* 途中で割れると読めなくなる項だけ、折り返しを禁じる */
+.formula-box .nw{white-space:nowrap}
+/* 幅の狭い画面では、見出しと式を別の行に分ける */
+.formula-box br.wbr{display:none}
+@media(max-width:480px){ .formula-box br.wbr{display:inline} }
+@media(max-width:480px){
+  .formula-box{font-size:13.5px;padding:12px 13px;line-height:1.8}
+  .formula-box .step{margin-bottom:12px}
+}
 
 /* ==========================================================
    5. 終了画面／外部リンク案内
