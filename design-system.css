@@ -217,6 +217,8 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 @media(max-width:480px){
   .formula-box{font-size:13.5px;padding:12px 13px;line-height:1.8}
   .formula-box .step{margin-bottom:12px}
+  .app-shell.side-collapsed{padding-left:0;padding-right:0}
+  .app-shell.side-collapsed .main-area{padding-left:8px;padding-right:8px;border-left:none;border-right:none;border-radius:0}
 }
 
 /* ==========================================================
