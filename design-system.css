@@ -50,7 +50,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .head-reset:hover{background:rgba(255,255,255,.12)}
 a.head-reset{text-decoration:none;display:inline-flex;align-items:center}
 /* 円形バッジ（ブランドアイコン兼トップへ戻るボタン） */
-.head-reset.home-badge{width:38px;height:38px;padding:0;border-radius:50%;justify-content:center;background:radial-gradient(circle at 35% 30%, rgba(217,164,65,.5), rgba(10,40,38,1) 75%);border:1.5px solid var(--gold);box-shadow:0 0 0 3px rgba(0,0,0,.25),0 0 10px -2px var(--gold);font-size:18px}
+.head-reset.home-badge{width:38px;height:38px;flex-shrink:0;padding:0;border-radius:50%;justify-content:center;background:radial-gradient(circle at 35% 30%, rgba(217,164,65,.5), rgba(10,40,38,1) 75%);border:1.5px solid var(--gold);box-shadow:0 0 0 3px rgba(0,0,0,.25),0 0 10px -2px var(--gold);font-size:18px}
 .head-reset.home-badge:hover{box-shadow:0 0 0 3px rgba(0,0,0,.25),0 0 16px 0 var(--gold);background:rgba(0,0,0,.12);transform:translateY(-2px) scale(1.07)}
 .header-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
 
